@@ -1,4 +1,4 @@
-class pala:
+class bsp:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Angel Ray
+        self.pname = "Angel Ray"
+        self.pskilldmg = 175.5
+        self.phitcount = 8
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
+        # Bahamut
+        self.sname = "Bahamut"
+        self.sskilldmg = 227.3
+        self.shitcount = 1
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,43 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
+        # Blessed Ensemble
+        self.atkp += 9
+        # High Wisdom
+        self.dmg += 4
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
-        self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Arcane Overdrive
+        self.cr += 4
+        self.cd += 10
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Advanced Blessing
+        self.atkp += 20
+        # Infinity
+        self.batk += 8
+        # Arcane Aim
+        self.atkp += 15
+        # Blessed Harmony
+        self.atkp += 9
+        self.fd += 20
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
         # Epic Adventure
         self.cd += 30
-        # Sacrosanctity
+        # Righteously Indignant
         self.atkp += 40
+        # Advanced Blessing - Bonus Damage
+        self.atkp += 15
+        # Advanced Blessing - Boss Rush
+        self.batk += 15
+        # Infinity - Reinforce
+        self.batk += 20
+        # Holy Magic Shell - Reinforce
 
-        # Hyper Skill
-        # Blast - Reinforce
-        self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Holy Symbol - Experience
 
     def atkp(self):
         atkp = self.atkp

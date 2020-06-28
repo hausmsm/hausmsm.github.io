@@ -1,4 +1,4 @@
-class pala:
+class bw:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Final Orbital Flame
+        self.pname = "Final Orbital Flame"
+        self.pskilldmg = 190
+        self.phitcount = 2
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
+        # Blazing Extinction
+        self.sname = "Blazing Extinction"
+        self.sskilldmg = 433.8
+        self.shitcount = 2
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,46 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
+        # Natural Talent
+        self.cr += 5
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
-        self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Liberated Magic
+        self.dmg += 30
+        # Burning Focus
+        self.cd += 10
+        # Brilliant Enlightenment
+        self.atkp += 6
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Final Flame Elemental
+        self.atkp += 15
+        self.dmg += 10
+        self.batk += 5
+        self.cr += 5
+        # Burning Conduit
+        self.atkp += 20
+        self.dmg += 5
+        # Pure Magic
+        self.atkp += 10
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
-        # Epic Adventure
+        # Glory Of The Guardians
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
 
         # Hyper Skill
-        # Blast - Reinforce
-        self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Orbital Flame- Boss Rush
+        self.phbatk += 20
+        # Orbital Flame - Crit DMG
+        self.phcd += 20
+        # Orbtial Flame - Split Attack
+        self.phfd -= 10
+        self.phitcount += 2
+        # Blazing Extinction - Reinforce
+        self.shdmg += 25
+        # Blazing Extinction - Max Extinction
 
     def atkp(self):
         atkp = self.atkp

@@ -6,22 +6,29 @@ class dk:
         self.cr = 0
         self.cd = 0
         self.fd = 0
-        self.hatkp = 0
-        self.hdmg = 0
-        self.hbatk = 0
-        self.hcr = 0
-        self.hcd = 0
 
         # Gungnir's Descent
         self.pname = "Gungnir's Descent"
         self.pskilldmg = 226.6
         self.phitcount = 10
+        self.phatkp = 0
+        self.phdmg = 0
+        self.phbatk = 0
+        self.phcr = 0
+        self.phcd = 0
+        self.phfd = 0
 
         # Nightshade Explosion
         self.sname = "Nightshade Explosion"
         self.sskilldmg = 320.1
         self.shitcount = 10
         self.schance = 100
+        self.shatkp = 0
+        self.shdmg = 0
+        self.shbatk = 0
+        self.shcr = 0
+        self.shcd = 0
+        self.shfd = 0
 
         # Skills
 
@@ -37,7 +44,7 @@ class dk:
         # Cross Surge
         self.atkp += 15
         self.dmg += 10
-        #Lord of Darkness
+        # Lord of Darkness
         self.cr += 4
         self.cd += 10
 
@@ -52,16 +59,16 @@ class dk:
         self.atkp += 20
         # Beholder - Sacrifice
 
-        #Dark Thirst
+        # Dark Thirst
         self.atkp += 30
         # Epic Adventure
         self.cd += 30
 
         # Hyper Skill
         # Gungnir's Descent - Reinforce
-        self.hdmg += 20
+        self.phdmg += 20
         # Gungnir's Descent - Boss Rush
-        self.hbatk += 20
+        self.phbatk += 20
         # Gungnir's Descent - Extra Strike
         self.phitcount += 1
 
@@ -81,29 +88,13 @@ class dk:
         cr = self.cr
         return cr
 
+    def cd(self):
+        cd = self.cd
+        return cd
+
     def fd(self):
         fd = self.fd
         return fd
-
-    def hatkp(self):
-        hatkp = self.hatkp
-        return hatkp
-
-    def hdmg(self):
-        hdmg = self.hdmg
-        return hdmg
-
-    def hbatk(self):
-        hbatk = self.hbatk
-        return hbatk
-
-    def hcr(self):
-        hcr = self.hcr
-        return hcr
-
-    def hcd(self):
-        hcd = self.hcd
-        return hcd
 
     def pname(self):
         pname = self.pname
@@ -116,6 +107,30 @@ class dk:
     def phitcount(self):
         phitcount = self.phitcount
         return phitcount
+
+    def phatkp(self):
+        phatkp = self.phatkp
+        return phatkp
+
+    def phdmg(self):
+        phdmg = self.phdmg
+        return phdmg
+
+    def phbatk(self):
+        phbatk = self.phbatk
+        return phbatk
+
+    def phcr(self):
+        phcr = self.phcr
+        return phcr
+
+    def phcd(self):
+        phcd = self.phcd
+        return phcd
+
+    def phfd(self):
+        phfd = self.phfd
+        return phfd
 
     def sname(self):
         sname = self.sname
@@ -132,3 +147,27 @@ class dk:
     def schance(self):
         schance = self.schance
         return schance
+
+    def shatkp(self):
+        shatkp = self.shatkp
+        return shatkp
+
+    def shdmg(self):
+        shdmg = self.shdmg
+        return shdmg
+
+    def shbatk(self):
+        shbatk = self.shbatk
+        return shbatk
+
+    def shcr(self):
+        shcr = self.shcr
+        return shcr
+
+    def shcd(self):
+        shcd = self.shcd
+        return shcd
+
+    def shfd(self):
+        shfd = self.shfd
+        return shfd

@@ -1,4 +1,4 @@
-class pala:
+class wa:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Song Of Heaven
+        self.pname = "Song Of Heaven"
+        self.pskilldmg = 305
+        self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
-        self.schance = 100
+        # Trifling Wind
+        self.sname = "Trifling Wind"
+        self.sskilldmg = 135
+        self.shitcount = 1
+        self.schance = 30
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,43 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
+        # Storm Elemental
         self.atkp += 15
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
-        self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Second Wind
+        self.batk += 8
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Emerald Dust
+        self.dmg += 20
+        # Sharp Eyes
+        self.dmg += 6
+        # Albatross Max
+        self.cr += 5
+        self.atkp += 15
+        self.cd += 25
+        # Bow Expert
+        self.batk += 6
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
-        # Epic Adventure
+        # Glory Of The Guardians
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
 
         # Hyper Skill
-        # Blast - Reinforce
+        # Song Of Heaven - Reinforce
         self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Song Of Heaven - Boss Rush
+        self.phbatk += 20
+        # Song Of Heaven - Crit DMG
+        self.phcd += 20
+        # Trifling Wind - Enhance
+        self.schance += 40
+        # Trifling Wind - Double Chance
+        self.shfd -= 40
+        self.shitcount += 1
 
     def atkp(self):
         atkp = self.atkp

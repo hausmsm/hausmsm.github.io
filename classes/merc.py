@@ -1,4 +1,4 @@
-class pala:
+class merc:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Ishtar's Ring
+        self.pname = "Ishtar's Ring"
+        self.pskilldmg = 165
+        self.phitcount = 2
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
-        self.schance = 100
+        # Final Attack: Dual Bowguns
+        self.sname = "Final Attack: Dual Bowguns"
+        self.sskilldmg = 64.4
+        self.shitcount = 1
+        self.schance = 60
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,48 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
+        # Potential Power
         self.atkp += 15
+        # Sharp Aim
+        self.cr += 4
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
+        # Dual Bowguns Mastery
+        self.dmg += 20
+        # Spirit Surge
+        self.cd += 18
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
-        self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Unicorn Spike
+        self.dmg += 10
+        # Ignis Roar
+        self.dmg += 50
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Spikes Royale
+        self.dmg += 15
+        # Dual Bowguns Expert
+        self.batk += 15
+        # Defense Break
+        self.atkp += 20
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
-        # Epic Adventure
+        # Heroic Memories
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
+        # Elvish Blessing
+        self.atkp += 30
+        self.dmg += 10
 
         # Hyper Skill
-        # Blast - Reinforce
+        # Ishtar's Ring - Reinforce
         self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Ishtar's Ring - Boss Rush
+        self.phbatk += 20
+        # Ishtar's Ring - Crit DMG
+        self.phcd += 20
+        # Ignis Roar - Reinforce
+
+        # Spikes Royale - Armorbreak
 
     def atkp(self):
         atkp = self.atkp

@@ -9,7 +9,7 @@ class flame:
         self.cd_on_batk = 0.06
         self.cd_on_cr = 0.11
         self.cd_on_exp = 0.12
-        self.cr_on_ba = 0.06
+        self.cr_on_batk = 0.06
         self.cr_on_cd = 0.014
         self.cr_on_exp = 0.06
 
@@ -41,7 +41,7 @@ class flame:
         return atkflame, atkflamebase
 
     def crcalculation(self,batk,cd,exp,lines):
-        cr_on_batk = self.cr_on_ba * batk
+        cr_on_batk = self.cr_on_batk * batk
         cr_on_cd = self.cr_on_cd * cd
         cr_on_exp = self.cr_on_exp * exp
         crflame = max(cr_on_batk,cr_on_cd,cr_on_exp)*lines
@@ -54,7 +54,7 @@ class flame:
         return crflame, crflamebase
 
     def cdcalculation(self,batk,cr,exp,lines):
-        cd_on_batk = self.cd_on_ba * batk
+        cd_on_batk = self.cd_on_batk * batk
         cd_on_cr = self.cd_on_cr * cr
         cd_on_exp = self.cd_on_exp * exp
         cdflame = max(cd_on_batk,cd_on_cr,cd_on_exp)*lines

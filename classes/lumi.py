@@ -1,4 +1,4 @@
-class pala:
+class lumi:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,9 +7,9 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
+        # Ender
+        self.pname = "Ender"
+        self.pskilldmg = 309.8
         self.phitcount = 9
         self.phatkp = 0
         self.phdmg = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
+        # Armageddon
+        self.sname = "Armagedoon"
+        self.sskilldmg = 800.3
         self.shitcount = 10
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,42 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
+        # Bless Of Darkness
+        self.atkp += 32.4
+        # Spell Mastery
+        self.cr += 4.8
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
-        self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Photic Meditation
+        self.atkp += 21.6
+        # Lunar Tide
+        self.cd += 15
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Dark Crescendo
+        self.cd += 20
+        self.atkp += 15
+        # Arcane Pitch
+        self.batk += 15
+        # Magic Mastery
+        self.cd += 18
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
-        # Epic Adventure
+        # Heroic Memories
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
 
         # Hyper Skill
-        # Blast - Reinforce
+        # Ender - Reinforce
         self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Ender - Crit DMG
+        self.phcd += 20
+        # Reflection - Reinforce
+
+        # Apocalypse - Reinforce
+
+        # Apocalypse - Recharge
 
     def atkp(self):
         atkp = self.atkp

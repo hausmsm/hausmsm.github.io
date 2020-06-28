@@ -2,7 +2,7 @@ import pandas as pd
 class character_selection:
     def __init__(self):
         self.warrior_list = {"DK", "HERO", "PALA", "DW", "ARAN"}
-        self.mage_list = {"BSP", "ILM", "FPM", "BW", "EVAN", "LUMI"}
+        self.mage_list = {"BSP", "ILM", "FPM", "BW", "EVAN", "LUMI", "BAM"}
         self.archer_list = {"BM", "MM", "WA", "MERC"}
         self.thief_list = {"NL", "SHAD", "NW", "PHAN"}
         self.pirate_list = {"CSR", "BUCC", "TB", "SHADE"}
@@ -20,7 +20,7 @@ class character_selection:
     def mage(self):
         while True:
             self.character_class = str(input("Please enter your class:\n"
-                                  "BSP, ILM, FPM, BW, EVAN, LUMI\n")).upper()
+                                  "BSP, ILM, FPM, BW, EVAN, LUMI, BAM\n")).upper()
             if self.character_class not in self.mage_list:
                 continue
             else:

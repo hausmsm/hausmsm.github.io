@@ -1,4 +1,4 @@
-class pala:
+class mm:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Snipe
+        self.pname = "Snipe"
+        self.pskilldmg = 187.9
+        self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
+        # Arrow Illusion
+        self.sname = "Arrow Illusion"
+        self.sskilldmg = 85
+        self.shitcount = 3
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,51 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
+        # Critical Shot
+        self.cr += 2
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
+        # Soul Arrow: Crossbow
+        self.atkp += 21
+        # Rangefinder
+        self.fd += 15
+        # Crossbow Mastery
+        self.batk += 10
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
+        # Reckless Hunt: Crossbow
         self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Sharp Eyes
+        self.cd += 20
+        # Boltsurplus
+        self.fd += 15
+        # Last Man Standing
+        self.fd += 30
+        # Vital Hunter
+        self.cd += 14
+        # Crossbow Expert
+        self.dmg += 8
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
+        # Bullseye Shot
+        self.atkp += 10
+        self.cr += 10
+        self.dmg += 10
         # Epic Adventure
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
+        # Sharp Eyes - Enhance
+        self.atkp += 20
+        # Sharp Eyes - Crit DMG
+        self.cd += 15
 
         # Hyper Skill
-        # Blast - Reinforce
+        # Snipe - Reinforce
         self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Snipe - Boss Rush
+        self.phbatk += 20
+        # Snipe - Cooldown Cutter
 
     def atkp(self):
         atkp = self.atkp

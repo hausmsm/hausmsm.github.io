@@ -1,4 +1,4 @@
-class pala:
+class bm:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Hurricane
+        self.pname = "Hurricane"
+        self.pskilldmg = 215
+        self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
-        self.schance = 100
+        # Advanced Final Attack
+        self.sname = "Advanced Final Attack"
+        self.sskilldmg = 42.3
+        self.shitcount = 1
+        self.schance = 60
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,46 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
+        # Critical Shot
+        self.cr += 4
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
+        # Soul Arrow: Bow
+        self.atkp += 21
+        # Bow Mastery
+        self.batk += 10
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
+        # Reckless Hunt: Bow
+        self.dmg += 30
+        # Focused Fury
         self.atkp += 20
-        # Combat Orders
-        self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Sharp Eyes
+        self.cd += 20
+        # Armor Break
+        self.dmg += 10
+        # Bow Expert
+        self.dmg += 4
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
+        # Concentration
+        self.atkp += 25
         # Epic Adventure
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
+        # Sharp Eyes - Enhance
+        self.atkp += 20
 
         # Hyper Skill
-        # Blast - Reinforce
+        # Hurricane - Reinforce
         self.phdmg += 20
-        # Blast - Extra Strike
+        # Hurricane - Boss Rush
+        self.phbatk += 20
+        # Hurricane - Split Attack
+        self.phfd -= 40
         self.phitcount += 1
+        # Hurricane - Maintain
 
     def atkp(self):
         atkp = self.atkp

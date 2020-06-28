@@ -1,4 +1,4 @@
-class pala:
+class fpm:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,25 +7,25 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Mist Eruption
+        self.pname = "Mist Eruption"
+        self.pskilldmg = 185
+        self.phitcount = 8
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
         self.phcr = 0
         self.phcd = 0
-        self.phfd = 0
+        self.phfd = 32
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
+        # Flame Haze
+        self.sname = "Flame Haze"
+        self.sskilldmg = 275
+        self.shitcount = 9
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,48 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
+        # High Wisdom
         self.dmg += 8
+        # Meditation
+        self.dmg += 10
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
+        # Elemental Decrease
         self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Elemental Amplification
+        self.dmg += 15
+        # Arcane Overdrive
+        self.cr += 2
+        self.cd += 10
+        # Mana Burn
+        self.cd += 15
+        # Burning Magic
+        self.dmg += 15
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Infinity
+        self.batk += 8
+        # Fervent Drain
+        self.dmg += 30
+        # Arcane Aim
+        self.atkp += 20
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
         # Epic Adventure
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
 
         # Hyper Skill
-        # Blast - Reinforce
-        self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Mist Eruption - Reinforce
+        self.phdmg += 35
+        # Mist Eruption - Crit DMG
+        self.phcd += 35
+        # Mist Eruption - Cooldown Cutter
+
+        # Paralyze - Reinforce
+
+        # Paralyze - Extra Strike
 
     def atkp(self):
         atkp = self.atkp

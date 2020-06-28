@@ -1,4 +1,4 @@
-class pala:
+class evan:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -7,10 +7,10 @@ class pala:
         self.cd = 0
         self.fd = 0
 
-        # Blast
-        self.pname = "Blast"
-        self.pskilldmg = 231
-        self.phitcount = 9
+        # Earth Dive
+        self.pname = "Earth Dive"
+        self.pskilldmg = 930.8
+        self.phitcount = 6
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -18,14 +18,14 @@ class pala:
         self.phcd = 0
         self.phfd = 0
 
-        # Heaven's Hammer
-        self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
+        # Magic Debris
+        self.sname = "Magic Debris"
+        self.sskilldmg = 72.3
+        self.shitcount = 1
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 0
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -33,47 +33,49 @@ class pala:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 15
 
         # 2nd Job
-        # Elemental Charge
-        self.atkp += 20
-        # Weapon Mastery
-        self.dmg += 8
+        # Return Flash
+        self.dmg += 15
+        # Partners
+        self.dmg += 14.4
+        # Spell Mastery
+        self.cr += 4.8
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        # Parashock Guard
-        self.atkp += 20
-        # Combat Orders
+        # Elemental Decrease
+        self.dmg += 14.4
+        # Return Dive
         self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Critical Magic
+        self.cr += 4.8
+        # Magic Amplification
+        self.dmg += 20
+        # Dragon Potential
+        self.atkp += 10.8
 
         # 4th Job
-        # Elemental Force
-        self.cd += 15
-        # High Paladin
-        self.cr += 2
-        self.cd += 15
-        # Advanced Charge
+        # Magic Mastery
+        self.cd += 8
+        # Dragon Fury
+        self.atkp += 15
+        # High Dragon Potential
+        self.batk += 9.6
 
         # Hyper Buff
-        # Smite Shield
-        self.dmg += 20
-        # Epic Adventure
+        # Heroic Memories
         self.cd += 30
-        # Sacrosanctity
-        self.atkp += 40
 
         # Hyper Skill
-        # Blast - Reinforce
-        self.phdmg += 20
-        # Blast - Extra Strike
-        self.phitcount += 1
+        # Dragon Dive - Cooldown Reduction
+
+        # Dragon Dive - Enhance Earth
+
+        # Dragon Breath - Cooldown Reduction
+
+        # Dragon Breath - Reinforce Wind
+
+        # Dragon Breath - Affix Earth
 
     def atkp(self):
         atkp = self.atkp

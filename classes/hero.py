@@ -6,22 +6,29 @@ class hero:
         self.cr = 0
         self.cd = 0
         self.fd = 0
-        self.hatkp = 0
-        self.hdmg = 0
-        self.hbatk = 0
-        self.hcr = 0
-        self.hcd = 0
 
         # Raging Blow
         self.pname = "Raging Blow"
         self.pskilldmg = 225.6
         self.phitcount = 6
+        self.phatkp = 0
+        self.phdmg = 0
+        self.phbatk = 0
+        self.phcr = 0
+        self.phcd = 0
+        self.phfd = 0
 
         # Advanced Final Attack
         self.sname = "Advanced Final Attack"
         self.sskilldmg = 67.8
         self.shitcount = 1
         self.schance = 70
+        self.shatkp = 0
+        self.shdmg = 0
+        self.shbatk = 0
+        self.shcr = 0
+        self.shcd = 0
+        self.shfd = 0
 
         # Skills
 
@@ -60,9 +67,9 @@ class hero:
 
         # Hyper Skill
         # Raging Blow - Reinforce
-        self.hdmg += 20
+        self.phdmg += 20
         # Chance Attack
-        self.hcd += 15
+        self.cd += 15
         # Raging Blow - Extra Strike
         self.phitcount += 1
 
@@ -82,29 +89,13 @@ class hero:
         cr = self.cr
         return cr
 
+    def cd(self):
+        cd = self.cd
+        return cd
+
     def fd(self):
         fd = self.fd
         return fd
-
-    def hatkp(self):
-        hatkp = self.hatkp
-        return hatkp
-
-    def hdmg(self):
-        hdmg = self.hdmg
-        return hdmg
-
-    def hbatk(self):
-        hbatk = self.hbatk
-        return hbatk
-
-    def hcr(self):
-        hcr = self.hcr
-        return hcr
-
-    def hcd(self):
-        hcd = self.hcd
-        return hcd
 
     def pname(self):
         pname = self.pname
@@ -117,6 +108,30 @@ class hero:
     def phitcount(self):
         phitcount = self.phitcount
         return phitcount
+
+    def phatkp(self):
+        phatkp = self.phatkp
+        return phatkp
+
+    def phdmg(self):
+        phdmg = self.phdmg
+        return phdmg
+
+    def phbatk(self):
+        phbatk = self.phbatk
+        return phbatk
+
+    def phcr(self):
+        phcr = self.phcr
+        return phcr
+
+    def phcd(self):
+        phcd = self.phcd
+        return phcd
+
+    def phfd(self):
+        phfd = self.phfd
+        return phfd
 
     def sname(self):
         sname = self.sname
@@ -133,3 +148,27 @@ class hero:
     def schance(self):
         schance = self.schance
         return schance
+
+    def shatkp(self):
+        shatkp = self.shatkp
+        return shatkp
+
+    def shdmg(self):
+        shdmg = self.shdmg
+        return shdmg
+
+    def shbatk(self):
+        shbatk = self.shbatk
+        return shbatk
+
+    def shcr(self):
+        shcr = self.shcr
+        return shcr
+
+    def shcd(self):
+        shcd = self.shcd
+        return shcd
+
+    def shfd(self):
+        shfd = self.shfd
+        return shfd
