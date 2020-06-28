@@ -1,4 +1,4 @@
-class hero:
+class pala:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -12,58 +12,60 @@ class hero:
         self.hcr = 0
         self.hcd = 0
 
-        # Raging Blow
-        self.pname = "Raging Blow"
-        self.pskilldmg = 225.6
-        self.phitcount = 6
+        # Blast
+        self.pname = "Blast"
+        self.pskilldmg = 231
+        self.phitcount = 9
 
-        # Advanced Final Attack
-        self.sname = "Advanced Final Attack"
-        self.sskilldmg = 67.8
-        self.shitcount = 1
-        self.schance = 70
+        # Heaven's Hammer
+        self.sname = "Heaven's Hammer"
+        self.sskilldmg = 312.4
+        self.shitcount = 10
+        self.schance = 100
 
         # Skills
 
         # 1st Job
         # Warrior Mastery
-        self.atkp += 9
+        self.atkp += 15
 
         # 2nd Job
-        # Unmanaged Anger
-        self.atkp += 21
+        # Elemental Charge
+        self.atkp += 20
         # Weapon Mastery
-        self.dmg += 4
+        self.dmg += 8
 
         # 3rd Job
-        # Combo Synergy
-        self.cr += 2
+        # Sheild Mastery
+        self.atkp += 15
+        # Parashock Guard
+        self.atkp += 20
+        # Combat Orders
+        self.dmg += 15
+        # Threaten
+        self.cd += 16
+        self.cr += 30
 
         # 4th Job
-        # Enrage
-        self.fd += 25
-        # Advanced Combo Attack
-        self.fd += 20
-        # Combat Mastery
-        self.batk += 4
+        # Elemental Force
+        self.cd += 15
+        # High Paladin
+        self.cr += 2
+        self.cd += 15
+        # Advanced Charge
 
         # Hyper Buff
-        # Cry Valhalla
-        self.fd += 10
-        self.atkp += 25
+        # Smite Shield
+        self.dmg += 20
         # Epic Adventure
         self.cd += 30
-        # Advanced Combo Attack - Reinforce
-        self.fd += 10
-        # Advanced Combo Attack - Boss Rush
-        self.batk += 20
+        # Sacrosanctity
+        self.atkp += 40
 
         # Hyper Skill
-        # Raging Blow - Reinforce
+        # Blast - Reinforce
         self.hdmg += 20
-        # Chance Attack
-        self.hcd += 15
-        # Raging Blow - Extra Strike
+        # Blast - Extra Strike
         self.phitcount += 1
 
     def atkp(self):

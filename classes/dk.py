@@ -1,4 +1,4 @@
-class hero:
+class dk:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -12,58 +12,57 @@ class hero:
         self.hcr = 0
         self.hcd = 0
 
-        # Raging Blow
-        self.pname = "Raging Blow"
-        self.pskilldmg = 225.6
-        self.phitcount = 6
+        # Gungnir's Descent
+        self.pname = "Gungnir's Descent"
+        self.pskilldmg = 226.6
+        self.phitcount = 10
 
-        # Advanced Final Attack
-        self.sname = "Advanced Final Attack"
-        self.sskilldmg = 67.8
-        self.shitcount = 1
-        self.schance = 70
+        # Nightshade Explosion
+        self.sname = "Nightshade Explosion"
+        self.sskilldmg = 320.1
+        self.shitcount = 10
+        self.schance = 100
 
         # Skills
 
         # 1st Job
         # Warrior Mastery
-        self.atkp += 9
+        self.atkp += 12
 
         # 2nd Job
-        # Unmanaged Anger
-        self.atkp += 21
         # Weapon Mastery
-        self.dmg += 4
+        self.dmg += 6
 
         # 3rd Job
-        # Combo Synergy
-        self.cr += 2
+        # Cross Surge
+        self.atkp += 15
+        self.dmg += 10
+        #Lord of Darkness
+        self.cr += 4
+        self.cd += 10
 
         # 4th Job
-        # Enrage
-        self.fd += 25
-        # Advanced Combo Attack
-        self.fd += 20
-        # Combat Mastery
-        self.batk += 4
+        # Advanced Weapon Mastery
+        self.batk += 6
+        # Final Pact
+        self.atkp += 5
 
         # Hyper Buff
-        # Cry Valhalla
-        self.fd += 10
-        self.atkp += 25
+        # Beholder - Reinforce
+        self.atkp += 20
+        # Beholder - Sacrifice
+
+        #Dark Thirst
+        self.atkp += 30
         # Epic Adventure
         self.cd += 30
-        # Advanced Combo Attack - Reinforce
-        self.fd += 10
-        # Advanced Combo Attack - Boss Rush
-        self.batk += 20
 
         # Hyper Skill
-        # Raging Blow - Reinforce
+        # Gungnir's Descent - Reinforce
         self.hdmg += 20
-        # Chance Attack
-        self.hcd += 15
-        # Raging Blow - Extra Strike
+        # Gungnir's Descent - Boss Rush
+        self.hbatk += 20
+        # Gungnir's Descent - Extra Strike
         self.phitcount += 1
 
     def atkp(self):

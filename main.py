@@ -1,7 +1,8 @@
 from common.mapletree import mapletree
-from classes.hero import hero
+from common.link import link
 from classes.character_selection import character_selection
 
+#Maple Tree Festival
 tree = mapletree()
 atkp = tree.atkp
 dmg = tree.dmg
@@ -9,6 +10,15 @@ batk = tree.batk
 cr = tree.cr
 cd = tree.cd
 fd = tree.fd
+
+#Link Skills
+link = link()
+atkp += link.atkp
+dmg += link.dmg
+batk += link.batk
+cr += link.cr
+cd += link.cd
+fd += link.fd
 
 while True:
     character_type = str(input("Please enter your class type:\n"
@@ -22,6 +32,17 @@ while True:
 if character_type == "WARRIOR":
     warrior = character_selection().warrior()
     character_class = warrior
+    if character_class == "DK":
+        from classes.dk import dk
+        char = dk()
+
+    elif character_class == "HERO":
+        from classes.hero import hero
+        char = hero()
+
+    elif character_class == "PALA":
+        from classes.pala import pala
+        char = pala()
 
 if character_type == "MAGE":
     mage = character_selection.mage()
@@ -39,8 +60,7 @@ if character_type == "PIRATE":
     pirate = character_selection.pirate()
     character_class = pirate
 
-if character_class == "HERO":
-    char = hero()
+
 
 atkp += char.atkp
 dmg += char.dmg
@@ -49,4 +69,7 @@ cr += char.cr
 cd += char.cd
 fd += char.fd
 
+pname = char.pname
+sname = char.sname
 print(atkp,dmg,batk,cr,cd,fd)
+print(pname,sname)
