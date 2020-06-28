@@ -6,6 +6,7 @@ class merc:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Ishtar's Ring
         self.pname = "Ishtar's Ring"
@@ -175,3 +176,7 @@ class merc:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

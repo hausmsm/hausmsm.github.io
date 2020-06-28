@@ -6,6 +6,7 @@ class wa:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Song Of Heaven
         self.pname = "Song Of Heaven"
@@ -20,9 +21,9 @@ class wa:
 
         # Trifling Wind
         self.sname = "Trifling Wind"
-        self.sskilldmg = 135
-        self.shitcount = 1
-        self.schance = 30
+        self.sskilldmg = 0
+        self.shitcount = 0
+        self.schance = 0
         self.shatkp = 0
         self.shdmg = 0
         self.shbatk = 0
@@ -37,10 +38,17 @@ class wa:
         self.atkp += 15
 
         # 2nd Job
+        # Trifling Wind I
+        self.schance += 15
+        self.sskilldmg += 100
+        self.shitcount += 1
 
         # 3rd Job
         # Second Wind
         self.batk += 8
+        # Trifling Wind II
+        self.schance += 5
+        self.sskilldmg += 15
 
         # 4th Job
         # Emerald Dust
@@ -53,6 +61,9 @@ class wa:
         self.cd += 25
         # Bow Expert
         self.batk += 6
+        # Trifling Wind III
+        self.schance += 10
+        self.sskilldmg += 20
 
         # Hyper Buff
         # Glory Of The Guardians
@@ -170,3 +181,7 @@ class wa:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

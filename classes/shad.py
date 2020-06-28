@@ -1,4 +1,4 @@
-class dk:
+class shad:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -6,23 +6,23 @@ class dk:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.6
-        self.phitcount = 10
+        # Assassinate
+        self.pname = "Assassinate"
+        self.pskilldmg = 265
+        self.phitcount = 4
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
         self.phcr = 0
         self.phcd = 0
         self.phfd = 0
-        self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 320.1
-        self.shitcount = 10
+        # Meso Explosion
+        self.sname = "Meso Explosion"
+        self.sskilldmg = 151.8
+        self.shitcount = 1
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -34,44 +34,50 @@ class dk:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 12
+        # Nimble Body
+        self.cr += 2
 
         # 2nd Job
-        # Weapon Mastery
-        self.dmg += 6
+        # Critical Growth
+        self.cd += 17.5
+        # Dagger Mastery
+        self.atkp += 9
 
         # 3rd Job
-        # Cross Surge
-        self.atkp += 15
-        self.dmg += 10
-        # Lord of Darkness
-        self.cr += 4
-        self.cd += 10
+        # Shadow Partner
+        self.spmulti += 30
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.batk += 6
-        # Final Pact
-        self.atkp += 5
+        # Prime Critical
+        self.cr += 2
+        # Dagger Expert
+        self.batk += 10
+        self.cd += 10
+        # Shadower Instinct
+        self.atkp += 20
+        # Shadow Shifter
+        self.dmg += 6
+        # Smokescreen
+        self.cd += 15
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 30
+        # Flip of the Coin
+        self.atkp += 15
+        self.cd += 10
         # Epic Adventure
         self.cd += 30
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
+        # Assassinate - Reinforce
         self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
+        # Assassinate - Boss Rush
         self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
-        self.phitcount += 1
+        # Assassinate - Critical Damage
+        self.phcd += 20
+        # Meso Explosion - Reinforce
+        self.shdmg += 20
+        # Meso Explosion - Crit DMG
+        self.shcd += 20
 
     def atkp(self):
         atkp = self.atkp

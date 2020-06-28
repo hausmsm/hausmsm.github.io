@@ -6,6 +6,7 @@ class bw:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti =0
 
         # Final Orbital Flame
         self.pname = "Final Orbital Flame"
@@ -173,3 +174,7 @@ class bw:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

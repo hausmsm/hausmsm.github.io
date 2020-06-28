@@ -1,4 +1,4 @@
-class dk:
+class phan:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -6,24 +6,24 @@ class dk:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.6
-        self.phitcount = 10
+        # Mille Aiguilles
+        self.pname = "Mille Aiguilles"
+        self.pskilldmg = 235
+        self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
         self.phcr = 0
         self.phcd = 0
         self.phfd = 0
-        self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 320.1
-        self.shitcount = 10
-        self.schance = 100
+        # Carte Noire
+        self.sname = "Carte Noire"
+        self.sskilldmg = 0
+        self.shitcount = 0
+        self.schance = 0
         self.shatkp = 0
         self.shdmg = 0
         self.shbatk = 0
@@ -34,44 +34,57 @@ class dk:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 12
 
         # 2nd Job
-        # Weapon Mastery
-        self.dmg += 6
+        # Impeccable Memory 2 - Unmanaged Anger
+        self.atkp += 21
+        # Judgement Draw
+        self.cd += 12
+        self.schance += 60
+        # Carte Blanc
+        self.sskilldmg += 70
+        # Cane Mastery
+        self.atkp += 20
+        # Devil's Luck
+        self.cr += 5
 
         # 3rd Job
-        # Cross Surge
-        self.atkp += 15
-        self.dmg += 10
-        # Lord of Darkness
-        self.cr += 4
-        self.cd += 10
+        # Impeccable Memory 3 - Combat Orders
+        self.dmg += 15
+        # Clair de Lune
+        self.dmg += 25
+        # Piercing Vision
+        self.cr += 3
+        self.cd += 15
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.batk += 6
-        # Final Pact
-        self.atkp += 5
+        # Aria Armour
+        self.dmg += 15
+        self.atkp += 15
+        # Carte Noire
+        self.sskilldmg += 145
+        self.schance += 40
+        # Cane Expert
+        self.atkp += 15
+        self.dmg += 15
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 30
-        # Epic Adventure
+        # Impeccable Memory H - Cry Valhalla
+        self.atkp += 25
+        self.fd += 10
+        # Heroic Memores
         self.cd += 30
+        # Bad Luck Ward
+        self.atkp += 20
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
+        # Mille Aiguilles - Reinforce
         self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
-        self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
-        self.phitcount += 1
+        # Mille Aiguilles - Crit DMG
+        self.phcd += 15
+        # Tempest - Reinforce
+
+        # Tempest - Cooldown Cutter
 
     def atkp(self):
         atkp = self.atkp

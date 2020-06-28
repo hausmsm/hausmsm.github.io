@@ -6,6 +6,7 @@ class fpm:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Mist Eruption
         self.pname = "Mist Eruption"
@@ -175,3 +176,7 @@ class fpm:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

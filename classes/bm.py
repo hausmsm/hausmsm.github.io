@@ -6,6 +6,7 @@ class bm:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.shmulti = 0
 
         # Hurricane
         self.pname = "Hurricane"
@@ -173,3 +174,7 @@ class bm:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

@@ -6,6 +6,7 @@ class evan:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Earth Dive
         self.pname = "Earth Dive"
@@ -176,3 +177,7 @@ class evan:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

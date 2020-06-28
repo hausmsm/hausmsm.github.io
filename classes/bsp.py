@@ -6,6 +6,7 @@ class bsp:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Angel Ray
         self.pname = "Angel Ray"
@@ -170,3 +171,7 @@ class bsp:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

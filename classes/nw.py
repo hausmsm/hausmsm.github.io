@@ -1,4 +1,4 @@
-class dk:
+class nw:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -6,24 +6,24 @@ class dk:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.6
-        self.phitcount = 10
+        # Quintuple Star
+        self.pname = "Quintuple Star"
+        self.pskilldmg = 371.8
+        self.phitcount = 5
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
         self.phcr = 0
         self.phcd = 0
         self.phfd = 0
-        self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 320.1
-        self.shitcount = 10
-        self.schance = 100
+        # Shadow Bat
+        self.sname = "Shadow Bat"
+        self.sskilldmg = 0
+        self.shitcount = 0
+        self.schance = 0
         self.shatkp = 0
         self.shdmg = 0
         self.shbatk = 0
@@ -34,44 +34,56 @@ class dk:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 12
+        # Shadow Bat
+        self.schance += 18
+        self.shitcount += 1
+        self.sskilldmg += 50
 
         # 2nd Job
-        # Weapon Mastery
-        self.dmg += 6
+        # Critical Throw
+        self.cr += 5
+        # Bat Affinity
+        self.sskilldmg += 6
+        self.schance += 7
 
         # 3rd Job
-        # Cross Surge
-        self.atkp += 15
-        self.dmg += 10
-        # Lord of Darkness
-        self.cr += 4
-        self.cd += 10
+        # Spirit Projection
+        self.atkp += 25
+        self.dmg += 6
+        self.batk += 6
+        # Bat Affinity II
+        self.sskilldmg += 11
+        self.schance += 7
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.batk += 6
-        # Final Pact
-        self.atkp += 5
+        # Throwing Expert
+        self.cr += 5
+        self.cd += 10
+        # Dark Blessing
+        self.batk += 5
+        # Bat Affinity III
+        self.schance += 7
+        self.sskilldmg += 16
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 30
-        # Epic Adventure
+        # Dominion
+        self.atkp += 25
+        # Shadow Illusion
+        self.spmulti += 45
+        # Glory of the Guardians
         self.cd += 30
+        # Darkness Ascending - Enhance
+        self.atkp += 30
+        # Darkness Ascending - Crit DMG
+        self.cd += 20
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
+        # Quintuple Star - Reinforce
         self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
+        # Quintuple Star - Boss Rush
         self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
-        self.phitcount += 1
+        # Quintuple Star - Crit DMG
+        self.phcd += 20
 
     def atkp(self):
         atkp = self.atkp

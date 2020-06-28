@@ -6,6 +6,7 @@ class pala:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Blast
         self.pname = "Blast"
@@ -174,3 +175,7 @@ class pala:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

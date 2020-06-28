@@ -6,6 +6,7 @@ class lumi:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Ender
         self.pname = "Ender"
@@ -19,7 +20,7 @@ class lumi:
         self.phfd = 0
 
         # Armageddon
-        self.sname = "Armagedoon"
+        self.sname = "Armageddon"
         self.sskilldmg = 800.3
         self.shitcount = 10
         self.schance = 100
@@ -169,3 +170,7 @@ class lumi:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti

@@ -1,4 +1,4 @@
-class dk:
+class nl:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -6,24 +6,24 @@ class dk:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.6
-        self.phitcount = 10
+        # Quad Star
+        self.pname = "Quad Star"
+        self.pskilldmg = 355.7
+        self.phitcount = 4
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
         self.phcr = 0
         self.phcd = 0
         self.phfd = 0
-        self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 320.1
-        self.shitcount = 10
-        self.schance = 100
+        # Night Lord's Mark
+        self.sname = "Night Lord's Mark"
+        self.sskilldmg = 0
+        self.shitcount = 0
+        self.schance = 0
         self.shatkp = 0
         self.shdmg = 0
         self.shbatk = 0
@@ -34,43 +34,53 @@ class dk:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 12
+        # Nimble Body
+        self.cr += 4
 
         # 2nd Job
-        # Weapon Mastery
-        self.dmg += 6
-
-        # 3rd Job
-        # Cross Surge
-        self.atkp += 15
-        self.dmg += 10
-        # Lord of Darkness
+        # Critical Throw
         self.cr += 4
         self.cd += 10
+        # Assassin's Mark
+        self.sskilldmg += 35
+        self.schance += 30
+        self.shitcount += 1
+
+        # 3rd Job
+        # Shadow Stars
+        self.dmg += 15
+        # Expert Throwing Star Technique
+        self.atkp += 13
+        # Shadow Partner
+        self.spmulti += 30
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.batk += 6
-        # Final Pact
-        self.atkp += 5
+        # Frailty Curse
+        self.dmg += 10
+        # Dark Serenity
+        self.batk += 11
+        # Shadow Shifter
+        self.dmg += 6
+        # Night Lord's Mark
+        self.schance += 20
+        self.sskilldmg += 45
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 30
+        # Bleed Dart
+        self.atkp += 25
         # Epic Adventure
+        self.cd += 30
+        # Frailty Curse - Enhance
+        self.dmg += 20
+        # Frailty Curse - Crit DMG
         self.cd += 30
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
+        # Quad Star - Reinforce
         self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
+        # Quad Star - Boss Rush
         self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
+        # Quad Star - Extra Strike
         self.phitcount += 1
 
     def atkp(self):

@@ -1,4 +1,4 @@
-class dk:
+class bam:
     def __init__(self):
         self.atkp = 0
         self.dmg = 0
@@ -6,23 +6,23 @@ class dk:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.6
-        self.phitcount = 10
+        # Finishing Blow
+        self.pname = "Finishing Blow"
+        self.pskilldmg = 180
+        self.phitcount = 8
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
-        self.phcr = 0
+        self.phcr = 20
         self.phcd = 0
         self.phfd = 0
-        self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 320.1
-        self.shitcount = 10
+        # Dark Genesis - Lightning Explosion
+        self.sname = "Dark Genesis - Lightning Explosion"
+        self.sskilldmg = 110.3
+        self.shitcount = 1
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -34,44 +34,49 @@ class dk:
         # Skills
 
         # 1st Job
-        # Warrior Mastery
-        self.atkp += 12
+        # Staff Artist
+        self.cr += 4
+        self.batk += 8
 
         # 2nd Job
-        # Weapon Mastery
-        self.dmg += 6
+        # Staff Mastery
+        self.atkp += 15
+        # High Wisdom
+        self.dmg += 10
 
         # 3rd Job
-        # Cross Surge
-        self.atkp += 15
-        self.dmg += 10
-        # Lord of Darkness
-        self.cr += 4
+        # Battle Mastery
         self.cd += 10
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.batk += 6
-        # Final Pact
-        self.atkp += 5
+        # Battle Rage
+        self.fd += 25
+        self.cd += 10
+        # Dark Aura
+        self.dmg += 20
+        # Staff Expert
+        self.cd += 15
+        self.atkp += 25
+        # Spell Boost
+        self.dmg += 25
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 30
-        # Epic Adventure
+        # For Liberty
         self.cd += 30
+        # Master of Death
+        self.dmg += 15
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
-        self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
-        self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
-        self.phitcount += 1
+        # Dark Aura - Boss Rush
+        self.batk += 10
+        # Party Shield - Cooldown Cutter
+
+        # Party Shield - Persist
+
+        # Party Shield - Enhance
+
+        # Dark Genesis - Additional Reinforce
+        self.shdmg += 20
 
     def atkp(self):
         atkp = self.atkp

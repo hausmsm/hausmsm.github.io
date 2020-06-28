@@ -6,6 +6,7 @@ class mm:
         self.cr = 0
         self.cd = 0
         self.fd = 0
+        self.spmulti = 0
 
         # Snipe
         self.pname = "Snipe"
@@ -51,7 +52,7 @@ class mm:
         # 4th Job
         # Sharp Eyes
         self.cd += 20
-        # Boltsurplus
+        # Bolt Surplus
         self.fd += 15
         # Last Man Standing
         self.fd += 30
@@ -178,3 +179,7 @@ class mm:
     def shfd(self):
         shfd = self.shfd
         return shfd
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti
