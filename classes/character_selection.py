@@ -1,4 +1,3 @@
-import pandas as pd
 class character_selection:
     def __init__(self):
         self.warrior_list = {"DK", "HERO", "PALA", "DW", "ARAN"}

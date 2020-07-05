@@ -19,16 +19,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/bam.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.04">
+      <change afterPath="$PROJECT_DIR$/common/commonsum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/bottom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/equip_selection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/outfit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/seteffect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/top.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bam.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bam.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/bw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/character_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/character_selection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/evan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/evan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/fpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/fpm.py" afterDir="false" />
@@ -37,8 +50,16 @@
       <change beforePath="$PROJECT_DIR$/classes/lumi.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/lumi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/merc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/merc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/nl.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/nw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/phan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/shad.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/wa.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mapletree.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mapletree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +124,14 @@
       <option name="presentableId" value="Default" />
       <updated>1593322532823</updated>
     </task>
+    <task id="LOCAL-00001" summary="0.04">
+      <created>1593369663224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593369663224</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,11 +146,19 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0.04" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.04" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1593335765041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="9" width="816" height="729" key="#Intentions/0.0.1366.738@0.0.1366.738" timestamp="1593335765041" />
+    <state x="459" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593935759120">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="459" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1593935759120" />
     <state x="392" y="0" key="#mapletree" timestamp="1593336318377">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -130,33 +167,33 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1593324977824" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1593365159306">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1593369960296">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593365159306" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1593365159306">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593369960296" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1593369960296">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593365159306" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1593365159306">
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593369960296" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1593369960295">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593365159306" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1593365159306">
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593369960295" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1593369960296">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593365159306" />
-    <state x="184" y="14" key="SettingsEditor" timestamp="1593336631194">
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593369960296" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1593933239016">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1593336631194" />
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1593933239016" />
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593336661373">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1593336661373" />
-    <state x="1" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593351285246">
+    <state x="1" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593977875413">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="1" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593351285246" />
+    <state x="1" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593977875413" />
   </component>
 </project>
