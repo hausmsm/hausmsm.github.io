@@ -59,6 +59,9 @@ class weapon:
         self.empsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Empress
         if self.equip_type in self.emplist:
@@ -68,6 +71,7 @@ class weapon:
             elif self.stattype in self.explist:
                 self.exp += 20
             self.empsetcount += 1
+            self.atklinecount += 2
 
         # Necro
         elif self.equip_type in self.necrolist:
@@ -76,6 +80,7 @@ class weapon:
                 self.cd += 120
             elif self.stattype in self.explist:
                 self.exp += 20
+            self.atklinecount += 2
 
         # Fafnir
         elif self.equip_type in self.faflist:
@@ -83,9 +88,10 @@ class weapon:
             self.fd += 20
             self.dmg += 5
             self.fafsetcount += 1
+            self.atklinecount += 2
 
         # Potential
-        self.cd += 15
+        self.cd += 18
 
     def atk(self):
         atk = self.atk
@@ -270,3 +276,15 @@ class weapon:
     def fafsetcount(self):
         fafsetcount = self.fafsetcount
         return fafsetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

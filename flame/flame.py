@@ -1,5 +1,5 @@
 class flame:
-    def __init__(self):
+    def __init__(self,equip):
         self.atk_on_hp = 0.01
         self.atk_on_mp = 0.035
         self.atk_on_batk = 11.3
@@ -12,56 +12,84 @@ class flame:
         self.cr_on_batk = 0.06
         self.cr_on_cd = 0.014
         self.cr_on_exp = 0.06
+        self.hp = equip.hp
+        self.mp = equip.mp
+        self.batk = equip.batk
+        self.cr = equip.cr
+        self.cd = equip.cd
+        self.exp = equip.exp
+        self.atklinecount = equip.atklinecount
+        self.crlinecount = equip.crlinecount
+        self.cdlinecount = equip.cdlinecount
 
-    def atkcalculation(self,hp,mp,batk,cr,cd,exp,lines):
-        atk_on_hp = self.atk_on_hp * hp
-        atk_on_mp = self.atk_on_mp * mp
-        atk_on_batk = self.atk_on_batk * batk
-        atk_on_cr = self.atk_on_cr * cr
-        atk_on_cd = self.atk_on_cd * cd
-        atk_on_exp = self.atk_on_exp * exp
-        atkflame = max(atk_on_hp,atk_on_mp,atk_on_batk,atk_on_cr,atk_on_cd,atk_on_exp)*lines
-        if atk_on_hp > atk_on_mp and atk_on_hp > atk_on_batk and atk_on_hp > atk_on_cr and atk_on_hp > atk_on_cd \
-                and atk_on_hp > atk_on_exp:
-            atkflamebase = "HP"
-        elif atk_on_mp > atk_on_hp and atk_on_mp > atk_on_batk and atk_on_mp > atk_on_cr and atk_on_mp > atk_on_cd \
-                and atk_on_mp > atk_on_exp:
-            atkflamebase = "MP"
-        elif atk_on_batk > atk_on_hp and atk_on_batk > atk_on_mp and atk_on_batk > atk_on_cr and atk_on_batk > atk_on_cd \
-                and atk_on_batk > atk_on_exp:
-            atkflamebase = "BATK"
-        elif atk_on_cr > atk_on_hp and atk_on_cr > atk_on_mp and atk_on_cr > atk_on_batk and atk_on_cr > atk_on_cd \
-                and atk_on_cr > atk_on_exp:
-            atkflamebase = "CR"
-        elif atk_on_cd > atk_on_hp and atk_on_cd > atk_on_mp and atk_on_cd > atk_on_batk and atk_on_cd > atk_on_cr \
-                and atk_on_hp > atk_on_exp:
-            atkflamebase = "CD"
+        self.f_atk_on_hp = self.atk_on_hp * self.hp
+        self.f_atk_on_mp = self.atk_on_mp * self.mp
+        self.f_atk_on_batk = self.atk_on_batk * self.batk
+        self.f_atk_on_cr = self.atk_on_cr * self.cr
+        self.f_atk_on_cd = self.atk_on_cd * self.cd
+        self.f_atk_on_exp = self.atk_on_exp * self.exp
+        self.f_atkflame = max(self.f_atk_on_hp,self.f_atk_on_mp,self.f_atk_on_batk,self.f_atk_on_cr,self.f_atk_on_cd,
+                              self.f_atk_on_exp)* self.atklinecount
+        if self.f_atk_on_hp > self.f_atk_on_mp and self.f_atk_on_hp > self.f_atk_on_batk and self.f_atk_on_hp > self.f_atk_on_cr \
+                and self.f_atk_on_hp > self.f_atk_on_cd and self.f_atk_on_hp > self.f_atk_on_exp:
+            self.f_atkflamebase = "HP"
+        elif self.f_atk_on_mp > self.f_atk_on_hp and self.f_atk_on_mp > self.f_atk_on_batk and self.f_atk_on_mp > self.f_atk_on_cr \
+                and self.f_atk_on_mp > self.f_atk_on_cd and self.f_atk_on_mp > self.f_atk_on_exp:
+            self.f_atkflamebase = "MP"
+        elif self.f_atk_on_batk > self.f_atk_on_hp and self.f_atk_on_batk > self.f_atk_on_mp and self.f_atk_on_batk > self.f_atk_on_cr \
+                and self.f_atk_on_batk > self.f_atk_on_cd and self.f_atk_on_batk > self.f_atk_on_exp:
+            self.f_atkflamebase = "BATK"
+        elif self.f_atk_on_cr > self.f_atk_on_hp and self.f_atk_on_cr > self.f_atk_on_mp and self.f_atk_on_cr > self.f_atk_on_batk \
+                and self.f_atk_on_cr > self.f_atk_on_cd and self.f_atk_on_cr > self.f_atk_on_exp:
+            self.f_atkflamebase = "CR"
+        elif self.f_atk_on_cd > self.f_atk_on_hp and self.f_atk_on_cd > self.f_atk_on_mp and self.f_atk_on_cd > self.f_atk_on_batk \
+                and self.f_atk_on_cd > self.f_atk_on_cr and self.f_atk_on_hp > self.f_atk_on_exp:
+            self.f_atkflamebase = "CD"
         else:
-            atkflamebase = "EXP"
-        return atkflame, atkflamebase
+            self.f_atkflamebase = "EXP"
 
-    def crcalculation(self,batk,cd,exp,lines):
-        cr_on_batk = self.cr_on_batk * batk
-        cr_on_cd = self.cr_on_cd * cd
-        cr_on_exp = self.cr_on_exp * exp
-        crflame = max(cr_on_batk,cr_on_cd,cr_on_exp)*lines
-        if cr_on_batk > cr_on_cd and cr_on_batk > cr_on_exp:
-            crflamebase = "BATK"
-        elif cr_on_cd > cr_on_batk and cr_on_cd > cr_on_exp:
-            crflamebase = "CD"
+        self.f_cr_on_batk = self.cr_on_batk * self.batk
+        self.f_cr_on_cd = self.cr_on_cd * self.cd
+        self.f_cr_on_exp = self.cr_on_exp * self.exp
+        self.f_crflame = max(self.f_cr_on_batk,self.f_cr_on_cd,self.f_cr_on_exp)* self.crlinecount
+        if self.f_cr_on_batk > self.f_cr_on_cd and self.f_cr_on_batk > self.f_cr_on_exp:
+            self.f_crflamebase = "BATK"
+        elif self.f_cr_on_cd > self.f_cr_on_batk and self.f_cr_on_cd > self.f_cr_on_exp:
+            self.f_crflamebase = "CD"
         else:
-            crflamebase = "EXP"
-        return crflame, crflamebase
+            self.f_crflamebase = "EXP"
 
-    def cdcalculation(self,batk,cr,exp,lines):
-        cd_on_batk = self.cd_on_batk * batk
-        cd_on_cr = self.cd_on_cr * cr
-        cd_on_exp = self.cd_on_exp * exp
-        cdflame = max(cd_on_batk,cd_on_cr,cd_on_exp)*lines
-        if cd_on_batk > cd_on_cr and cd_on_batk > cd_on_exp:
-            cdflamebase = "BATK"
-        elif cd_on_cr > cd_on_batk and cd_on_cr > cd_on_exp:
-            cdflamebase = "CR"
+        self.f_cd_on_batk = self.cd_on_batk * self.batk
+        self.f_cd_on_cr = self.cd_on_cr * self.cr
+        self.f_cd_on_exp = self.cd_on_exp * self.exp
+        self.f_cdflame = max(self.f_cd_on_batk,self.f_cd_on_cr,self.f_cd_on_exp)* self.cdlinecount
+        if self.f_cd_on_batk > self.f_cd_on_cr and self.f_cd_on_batk > self.f_cd_on_exp:
+            self.f_cdflamebase = "BATK"
+        elif self.f_cd_on_cr > self.f_cd_on_batk and self.f_cd_on_cr > self.f_cd_on_exp:
+            self.f_cdflamebase = "CR"
         else:
-            cdflamebase = "EXP"
-        return cdflame, cdflamebase
+            self.f_cdflamebase = "EXP"
+
+    def fatk(self):
+        atkflame = self.f_atkflame
+        return atkflame
+
+    def fcr(self):
+        crflame = self.f_crflame
+        return crflame
+
+    def fcd(self):
+        cdflame = self.f_cdflame
+        return cdflame
+
+    def fatkbase(self):
+        atkbase = self.f_atkflamebase
+        return atkbase
+
+    def fcrbase(self):
+        crbase = self.f_crflamebase
+        return crbase
+
+    def fcdbase(self):
+        cdbase = self.f_cdflamebase
+        return cdbase

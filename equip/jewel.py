@@ -57,7 +57,6 @@ class jewel:
         self.fafsetcount = 0
         self.bosssetcount = 0
 
-
         # Boss Atk Jewel
         if self.stattype in self.normallist:
             self.batk += 6.5 + 5
@@ -70,7 +69,6 @@ class jewel:
             self.exp += 15.5 + 4.5
             self.dr += 5
             self.kbkres += 300
-
 
     def atk(self):
         atk = self.atk

@@ -219,6 +219,60 @@ class commonsum:
         self.necrosetcount += mt.necrosetcount
         self.fafsetcount += mt.fafsetcount
 
+        # Hyper Stats
+        self.atk += 0
+        self.atkp += 0
+        self.dmg += 20
+        self.batk += 0
+        self.platk += 0
+        self.cr += 0
+        self.cratk += 0
+        self.cd += 0
+        self.maxdmg += 1500000
+        self.fd += 15
+
+        self.pdef += 0
+        self.pdefinc += 0
+        self.pdefdec += 0
+        self.mdef += 0
+        self.mdefinc += 0
+        self.mdefdec += 0
+        self.bdef += 0
+        self.pldef += 0
+        self.critres += 0
+        self.critdmgres += 0
+
+        self.acc += 0
+        self.accp += 0
+        self.evd += 0
+        self.evdp += 0
+        self.penrate += 0
+        self.block += 0
+        self.abnormalstatres += 0
+
+        self.hp += 0
+        self.hpinc += 0
+        self.mp += 0
+        self.mpinc += 0
+
+        self.spd += 0
+        self.jmp += 0
+        self.kbkres += 0
+
+        self.exp += 0
+        self.dr += 0
+        self.meso += 0
+        self.glincrease += 0
+        self.partyexp += 0
+        self.feverchargeinc += 0
+        self.feverduration += 0
+        self.maxfeverchance += 0
+        self.spmulti += 0
+        self.empsetcount += 0
+        self.necrosetcount += 0
+        self.fafsetcount += 0
+
+
     def atk(self):
         atk = self.atk
         return atk

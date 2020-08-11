@@ -2,9 +2,9 @@ class character_selection:
     def __init__(self):
         self.warrior_list = {"DK", "HERO", "PALA", "DW", "ARAN"}
         self.mage_list = {"BSP", "ILM", "FPM", "BW", "EVAN", "LUMI", "BAM"}
-        self.archer_list = {"BM", "MM", "WA", "MERC"}
+        self.archer_list = {"BM", "MM", "WA", "MERC", "WH"}
         self.thief_list = {"NL", "SHAD", "NW", "PHAN"}
-        self.pirate_list = {"CSR", "BUCC", "TB", "SHADE"}
+        self.pirate_list = {"CSR", "BUCC", "TB", "SHADE", "MECH"}
         self.character_class = str
 
     def warrior(self):
@@ -28,7 +28,7 @@ class character_selection:
     def archer(self):
         while True:
             self.character_class = str(input("Please enter your class:\n"
-                                  "BM, MM, WA, MERC\n")).upper()
+                                  "BM, MM, WA, MERC, WH\n")).upper()
             if self.character_class not in self.archer_list:
                 continue
             else:
@@ -46,7 +46,7 @@ class character_selection:
     def pirate(self):
         while True:
             self.character_class = str(input("Please enter your class:\n"
-                                  "CSR, BUCC, TB, SHADE\n")).upper()
+                                  "CSR, BUCC, TB, SHADE, MECH\n")).upper()
             if self.character_class not in self.pirate_list:
                 continue
             else:

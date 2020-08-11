@@ -60,7 +60,7 @@ class buffs:
 
         # Wild Hunter (STILL UNKNOWN)
         if character_class != "WH":
-            self.dmg += 10
+            self.atkp += 14.7
 
         # Mage
         if type == "MAGICAL":

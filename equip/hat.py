@@ -59,6 +59,9 @@ class hat:
         self.empsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Empress
         if self.equip_type in self.emplist:
@@ -70,6 +73,7 @@ class hat:
             elif self.stattype in self.explist:
                 self.exp += 2
             self.empsetcount += 1
+            self.cdlinecount += 2
 
         # Necro
         elif self.equip_type in self.necrolist:
@@ -81,6 +85,7 @@ class hat:
             elif self.stattype in self.explist:
                 self.exp += 2
             self.necrosetcount += 1
+            self.cdlinecount += 2
 
         # Fafnir
         elif self.equip_type in self.faflist:
@@ -89,9 +94,10 @@ class hat:
             self.hp += 0 # ALL VALUES TO BE ADDED
             self.dmg += 5
             self.fafsetcount += 1
+            self.cdlinecount += 2
 
         # Potential
-        self.atkp += 3
+        self.atkp += 4.5
 
     def atk(self):
         atk = self.atk
@@ -276,3 +282,15 @@ class hat:
     def fafsetcount(self):
         fafsetcount = self.fafsetcount
         return fafsetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

@@ -51,12 +51,18 @@ class secweapon:
         self.empsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
-        # Attack
-        self.atk += 1510 + 1100
+        # Ancient Longinus Spear
+        self.atk += 3559
+        self.batk += 30
+        self.atkp += 10
+        self.atklinecount += 2
 
         # Potential
-        self.cd += 15
+        self.cd += 18
 
     def atk(self):
         atk = self.atk
@@ -241,3 +247,15 @@ class secweapon:
     def fafsetcount(self):
         fafsetcount = self.fafsetcount
         return fafsetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

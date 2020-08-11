@@ -1,6 +1,10 @@
 from common.commonsum import commonsum
 from classes.character_selection import character_selection
 from equip.equip_selection import equip_selection
+from common.nonemblemcalculations import nonemblemcalculations
+from common.emblemcalculations import emblemcalculations
+from scipy.optimize import linprog
+import pandas as pd
 
 while True:
     character_type = str(input("Please enter your class type:\n"
@@ -32,7 +36,7 @@ if character_type == "WARRIOR":
 
         char = pala()
 
-if character_type == "MAGE":
+elif character_type == "MAGE":
     mage = character_selection().mage()
     character_class = mage
     if character_class == "BSP":
@@ -77,7 +81,7 @@ if character_type == "MAGE":
 
         char = bam()
 
-if character_type == "ARCHER":
+elif character_type == "ARCHER":
     archer = character_selection().archer()
     character_class = archer
     if character_class == "BM":
@@ -104,7 +108,13 @@ if character_type == "ARCHER":
 
         char = merc()
 
-if character_type == "THIEF":
+    elif character_class == "WH":
+        type = "PHYSICAL"
+        from classes.wh import wh
+
+        char = wh()
+
+elif character_type == "THIEF":
     thief = character_selection().thief()
     character_class = thief
     if character_class == "NL":
@@ -131,7 +141,7 @@ if character_type == "THIEF":
 
         char = phan()
 
-if character_type == "PIRATE":
+elif character_type == "PIRATE":
     pirate = character_selection().pirate()
     character_class = pirate
     if character_class == "CSR":
@@ -158,82 +168,11 @@ if character_type == "PIRATE":
 
         char = shade()
 
-commonsum = commonsum(type, character_class)
+    elif character_class == "MECH":
+        type = "MAGICAL"
+        from classes.mech import mech
 
-# Non Flame Stats
-nfatk = commonsum.atk + char.atk
-nfatkp = commonsum.atkp + char.atkp
-nfdmg = commonsum.dmg + char.dmg
-nfbatk = commonsum.batk + char.batk
-nfplatk = commonsum.platk + char.platk
-nfcr = commonsum.cr + char.cr
-nfcatk = commonsum.cratk + char.cratk
-nfcd = commonsum.cd + char.cd
-nfmaxdmg = commonsum.maxdmg + char.maxdmg
-nffd = commonsum.fd + char.fd
-
-nfpdef = commonsum.pdef + char.pdef
-nfpdefinc = commonsum.pdefinc + char.pdefinc
-nfpdefdec = commonsum.pdefdec + char.pdefdec
-nfmdef = commonsum.mdef + char.mdef
-nfmdefinc = commonsum.mdefinc + char.mdefinc
-nfmdefdec = commonsum.mdefdec + char.mdefdec
-nfbdef = commonsum.bdef + char.bdef
-nfpldef = commonsum.pldef + char.pldef
-nfcritres = commonsum.critres + char.critres
-nfcritdmgres = commonsum.critdmgres + char.critdmgres
-
-nfacc = commonsum.acc + char.acc
-nfaccp = commonsum.accp + char.accp
-nfevd = commonsum.evd + char.evd
-nfevdp = commonsum.evdp + char.evdp
-nfpenrate = commonsum.penrate + char.penrate
-nfblock = commonsum.block + char.block
-nfabnormalstatres = commonsum.abnormalstatres + char.abnormalstatres
-
-nfhp = commonsum.hp + char.hp
-nfhpinc = commonsum.hpinc + char.hpinc
-nfmp = commonsum.mp + char.mp
-nfmpinc = commonsum.mpinc + char.mpinc
-
-nfspd = commonsum.spd + char.spd
-nfjmp = commonsum.jmp + char.jmp
-nfkbkres = commonsum.kbkres + char.kbkres
-
-nfexp = commonsum.exp + char.exp
-nfdr = commonsum.dr + char.dr
-nfmeso = commonsum.meso + char.meso
-nfglincrease = commonsum.glincrease + char.glincrease
-nfpartyexp = commonsum.partyexp + char.partyexp
-nffeverchargeinc = commonsum.feverchargeinc + char.feverchargeinc
-nffeverduration = commonsum.feverduration + char.feverduration
-nfmaxfeverchance = commonsum.maxfeverchance + char.maxfeverchance
-nfspmulti = commonsum.spmulti + char.spmulti
-
-# Character Skill Specific
-pname = char.pname
-pskilldmg = char.pskilldmg
-phitcount = char.phitcount
-phatkp = char.phatkp
-phdmg = char.phdmg
-phbatk = char.phbatk
-phcr = char.phcr
-phcd = char.phcd
-phfd = char.phfd
-
-sname = char.sname
-sskilldmg = char.sskilldmg
-shitcount = char.shitcount
-schance = char.schance
-shatkp = char.shatkp
-shdmg = char.shdmg
-shbatk = char.shbatk
-shcr = char.shcr
-shcd = char.shcd
-shfd = char.shfd
-
-pname = char.pname
-sname = char.sname
+        char = mech()
 
 # Equipment Choosing
 while True:
@@ -263,8 +202,43 @@ while True:
         continue
     else:
         break
+commonsum = commonsum(type, character_class)
 equip = equip_selection(equip_type, stat_type, character_class, cash_type)
-atk = equip.atk
-print(atk)
-print(nfatkp, nfdmg, nfbatk, nfcr, nfcd, nffd)
-print(pname, sname)
+necalculations = nonemblemcalculations(commonsum, equip)
+
+
+finalcalculations = emblemcalculations(necalculations, char)
+
+atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg, finalcalculations.batk,
+            finalcalculations.cr, finalcalculations.cd, finalcalculations.fd]
+
+pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
+sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput(),
+               finalcalculations.schance]
+firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput())/ finalcalculations.bpoutput() * 100
+secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput())/ finalcalculations.bpoutput() * 100
+firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput())/ finalcalculations.bsoutput() * 100
+secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput())/ finalcalculations.bsoutput() * 100
+
+
+embstats = [finalcalculations.ncdemb, finalcalculations.natkpemb, finalcalculations.nbatkemb, finalcalculations.bpoutput()
+    , firstppercentage, finalcalculations.bsoutput(), firstspercentage]
+sembstats = [finalcalculations.secondncdemb, finalcalculations.secondnatkpemb, finalcalculations.secondnbatkemb,
+             finalcalculations.sbpoutput(), secondppercentage, finalcalculations.sbsoutput(), secondspercentage]
+atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
+atkstatsdf.loc[0] = atkstats
+
+pskillstatsdf = pd.DataFrame(columns=["Primary Skill", "Boss Output", "Non-Boss Output"])
+pskillstatsdf.loc[0] = pskillstats
+
+sskillstatsdf = pd.DataFrame(columns=["Secondary Skill", "Boss Output", "Non-Boss Output", "Chance %"])
+sskillstatsdf.loc[0] = sskillstats
+
+embstatsdf = pd.DataFrame(columns=["CD Emb", "ATK Emb", "BATK Emb", "Primary DMG", "Primary %", "Secondary DMG", "Secondary %"])
+embstatsdf.loc[0] = embstats
+embstatsdf.loc[1] = sembstats
+
+print(atkstatsdf, "\n")
+print(pskillstatsdf, "\n")
+print(sskillstatsdf, "\n")
+print(embstatsdf)

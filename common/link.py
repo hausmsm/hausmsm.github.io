@@ -2,7 +2,7 @@ class link:
     def __init__(self):
         self.atk = 4 #Buccaneer/FPM
         self.atkp = 0
-        self.dmg = 4 #Lumi/
+        self.dmg = 4 #Lumi
         self.batk = 4 #Evan
         self.platk = 0
         self.cr = 4 #Shadower

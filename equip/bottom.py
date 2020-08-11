@@ -55,6 +55,9 @@ class bottom:
         self.empsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Fafnir
         if self.equip_type in self.faflist:
@@ -62,9 +65,10 @@ class bottom:
             self.mdef += 1212.9 + 0 + 0  # LEVEL UP & SF VALUES TO BE ADDED
             self.hp += 0  # ALL VALUES TO BE ADDED
             self.fafsetcount += 1
+            self.atklinecount += 2
 
             # Potential
-            self.hp += 900
+            self.atk += 450
 
     def atk(self):
         atk = self.atk
@@ -249,3 +253,15 @@ class bottom:
     def fafsetcount(self):
         fafsetcount = self.fafsetcount
         return fafsetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

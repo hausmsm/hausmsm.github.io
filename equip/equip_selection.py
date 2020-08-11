@@ -12,7 +12,6 @@ from equip.secweapon import secweapon
 from equip.seteffect import seteffect
 from equip.jewel import jewel
 
-
 class equip_selection:
     def __init__(self, equip_type, stattype, character_class, cash_type):
         self.cash_type = cash_type
@@ -80,6 +79,9 @@ class equip_selection:
         self.necrosetcount = 0
         self.fafsetcount = 0
         self.bosssetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Hat
         self.atk += hat.atk
@@ -133,6 +135,9 @@ class equip_selection:
         self.empsetcount += hat.empsetcount
         self.necrosetcount += hat.necrosetcount
         self.fafsetcount += hat.fafsetcount
+        self.atklinecount += hat.atklinecount
+        self.crlinecount += hat.crlinecount
+        self.cdlinecount += hat.cdlinecount
 
         # Weapon
         self.atk += wp.atk
@@ -186,6 +191,9 @@ class equip_selection:
         self.empsetcount += wp.empsetcount
         self.necrosetcount += wp.necrosetcount
         self.fafsetcount += wp.fafsetcount
+        self.atklinecount += wp.atklinecount
+        self.crlinecount += wp.crlinecount
+        self.cdlinecount += wp.cdlinecount
 
         # Top
         self.atk += tp.atk
@@ -239,6 +247,9 @@ class equip_selection:
         self.empsetcount += tp.empsetcount
         self.necrosetcount += tp.necrosetcount
         self.fafsetcount += tp.fafsetcount
+        self.atklinecount += tp.atklinecount
+        self.crlinecount += tp.crlinecount
+        self.cdlinecount += tp.cdlinecount
 
         # Bottom
         self.atk += btm.atk
@@ -292,6 +303,9 @@ class equip_selection:
         self.empsetcount += btm.empsetcount
         self.necrosetcount += btm.necrosetcount
         self.fafsetcount += btm.fafsetcount
+        self.atklinecount += btm.atklinecount
+        self.crlinecount += btm.crlinecount
+        self.cdlinecount += btm.cdlinecount
 
         # Cape
         self.atk += cp.atk
@@ -345,6 +359,9 @@ class equip_selection:
         self.empsetcount += cp.empsetcount
         self.necrosetcount += cp.necrosetcount
         self.fafsetcount += cp.fafsetcount
+        self.atklinecount += cp.atklinecount
+        self.crlinecount += cp.crlinecount
+        self.cdlinecount += cp.cdlinecount
 
         # Glove
         self.atk += gl.atk
@@ -398,6 +415,9 @@ class equip_selection:
         self.empsetcount += gl.empsetcount
         self.necrosetcount += gl.necrosetcount
         self.fafsetcount += gl.fafsetcount
+        self.atklinecount += gl.atklinecount
+        self.crlinecount += gl.crlinecount
+        self.cdlinecount += gl.cdlinecount
 
         # Shoe
         self.atk += sh.atk
@@ -451,6 +471,9 @@ class equip_selection:
         self.empsetcount += sh.empsetcount
         self.necrosetcount += sh.necrosetcount
         self.fafsetcount += sh.fafsetcount
+        self.atklinecount += sh.atklinecount
+        self.crlinecount += sh.crlinecount
+        self.cdlinecount += sh.cdlinecount
 
         # Outfit
         self.atk += out.atk
@@ -504,6 +527,9 @@ class equip_selection:
         self.empsetcount += out.empsetcount
         self.necrosetcount += out.necrosetcount
         self.fafsetcount += out.fafsetcount
+        self.atklinecount += out.atklinecount
+        self.crlinecount += out.crlinecount
+        self.cdlinecount += out.cdlinecount
 
         # Shoulder
         self.atk += sho.atk
@@ -557,6 +583,9 @@ class equip_selection:
         self.empsetcount += sho.empsetcount
         self.necrosetcount += sho.necrosetcount
         self.fafsetcount += sho.fafsetcount
+        self.atklinecount += sho.atklinecount
+        self.crlinecount += sho.crlinecount
+        self.cdlinecount += sho.cdlinecount
 
         # Belt
         self.atk += be.atk
@@ -610,6 +639,9 @@ class equip_selection:
         self.empsetcount += be.empsetcount
         self.necrosetcount += be.necrosetcount
         self.fafsetcount += be.fafsetcount
+        self.atklinecount += be.atklinecount
+        self.crlinecount += be.crlinecount
+        self.cdlinecount += be.cdlinecount
 
         # Secondary Weapon
         self.atk += sw.atk
@@ -663,6 +695,9 @@ class equip_selection:
         self.empsetcount += sw.empsetcount
         self.necrosetcount += sw.necrosetcount
         self.fafsetcount += sw.fafsetcount
+        self.atklinecount += sw.atklinecount
+        self.crlinecount += sw.crlinecount
+        self.cdlinecount += sw.cdlinecount
 
         # Jewel
         self.atk += jwl.atk

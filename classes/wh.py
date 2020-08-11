@@ -1,12 +1,5 @@
-class glove:
-    def __init__(self, equip_type, stattype):
-        self.emplist = {"1", "3", "4"}
-        self.necrolist = {"2", "5", "6"}
-        self.normallist = {"1", "2"}
-        self.explist = {"3"}
-        self.equip_type = str(equip_type)
-        self.stattype = str(stattype)
-
+class wh:
+    def __init__(self):
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
@@ -55,39 +48,131 @@ class glove:
         self.feverduration = 0
         self.maxfeverchance = 0
         self.spmulti = 0
-        self.empsetcount = 0
-        self.necrosetcount = 0
-        self.fafsetcount = 0
-        self.atklinecount = 0
-        self.crlinecount = 0
-        self.cdlinecount = 0
 
-        # Empress
-        if self.equip_type in self.emplist:
-            self.pdef += 2883.4 + 1648 + 0 # SF VALUE TO BE ADDED
-            self.mdef += 2883.4 + 1648 + 0 # SF VALUE TO BE ADDED
-            self.hp += 10640
-            if self.stattype in self.normallist:
-                self.cd += 16
-            elif self.stattype in self.explist:
-                self.exp += 2
-            self.empsetcount += 1
-            self.cdlinecount += 2
+        # Wild Arrow Blast
+        self.pname = "Wild Arrow Blast"
+        self.pskilldmg = 192
+        self.phitcount = 1
+        self.phatkp = 0
+        self.phdmg = 0
+        self.phbatk = 0
+        self.phcr = 0
+        self.phcd = 0
+        self.phfd = 0
 
-        # Necro
-        elif self.equip_type in self.necrolist:
-            self.pdef += 4048.2 + 2007 + 0  # SF VALUE TO BE ADDED
-            self.mdef += 4048.2 + 2007 + 0  # SF VALUE TO BE ADDED
-            self.hp += 11491
-            if self.stattype in self.normallist:
-                self.cd += 16
-            elif self.stattype in self.explist:
-                self.exp += 2
-            self.necrosetcount += 1
-            self.cdlinecount += 2
+        # Advanced Final Attack
+        self.sname = "Advanced Final Attack"
+        self.sskilldmg = 150
+        self.shitcount = 1
+        self.schance = 70
+        self.shatkp = 0
+        self.shdmg = 0
+        self.shbatk = 0
+        self.shcr = 0
+        self.shcd = 0
+        self.shfd = 0
 
-        # Potential
-        self.dmg += 2.7
+        # Skills
+
+        # 1st Job
+        # Graviboots
+
+        # Resistance Auto Crank
+        self.atkp += 13.5
+        self.spd += 15
+        self.jmp += 15
+
+        # Nature's Wrath
+        self.cr += 4
+        self.critres += 4
+
+        # 2nd Job
+        # Crossbow Mastery
+        self.batk += 8
+        self.platk += 8
+
+        # Physical Training
+        self.hpinc += 5
+        self.mpinc += 2.5
+
+        # Jaguar Mastery
+        self.kbkres += 26
+        self.spd += 15
+        self.jmp += 15
+
+        # Soul Arrow: Crossbow
+        self.atkp += 21
+
+        # Call of the Wild
+        self.atkp += 14.7
+
+        # Crossbow Booster
+
+        # 3rd Job
+        # Flurry
+        self.accp += 4
+        self.block += 12
+        self.evdp += 12
+        self.penrate += 4
+
+        # Jaguar Link
+        self.dmg += 5
+
+        # Feline Berserk
+        self.dmg += 12
+        self.hpinc += 10
+        self.mpinc += 5
+
+        # Backstep
+        self.batk += 8
+        self.bdef += 8
+        self.platk += 8
+        self.pldef += 8
+
+        # 4th Job
+        # Extended Magazine
+        self.cd += 10
+        self.critdmgres += 10
+
+        # Crossbow Expert
+        self.cd += 10
+        self.dmg += 10
+
+        # Wild Instinct
+        self.pdefinc += 9
+        self.pdefdec += 6
+        self.mdefinc += 9
+        self.mdefdec += 6
+
+        # Natural Force
+        self.abnormalstatres += 10
+
+        # Sharp Eyes
+        self.pdefdec += 6
+        self.cd += 20
+        self.mdefdec += 6
+
+        # Hyper Buff
+        # For Liberty
+        self.cd += 30
+
+        # Silent Rampage
+        self.fd += 15
+
+        # Feline Berserk - Reinforce
+        self.dmg += 15
+
+        # Hyper Skill
+        # Wild Arrow Blast - Reinforce
+        self.phdmg += 20
+
+        # Wild Arrow Blast - Crit DMG
+        self.phcd += 20
+
+        # Wild Arrow Blast - Boss Rush
+        self.batk += 20
+
+        # Summon Jaguar - Cooldown Cutter
 
     def atk(self):
         atk = self.atk
@@ -257,30 +342,82 @@ class glove:
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
 
+    def pname(self):
+        pname = self.pname
+        return pname
+
+    def pskilldmg(self):
+        pskilldmg = self.pskilldmg
+        return pskilldmg
+
+    def phitcount(self):
+        phitcount = self.phitcount
+        return phitcount
+
+    def phatkp(self):
+        phatkp = self.phatkp
+        return phatkp
+
+    def phdmg(self):
+        phdmg = self.phdmg
+        return phdmg
+
+    def phbatk(self):
+        phbatk = self.phbatk
+        return phbatk
+
+    def phcr(self):
+        phcr = self.phcr
+        return phcr
+
+    def phcd(self):
+        phcd = self.phcd
+        return phcd
+
+    def phfd(self):
+        phfd = self.phfd
+        return phfd
+
+    def sname(self):
+        sname = self.sname
+        return sname
+
+    def sskilldmg(self):
+        sskilldmg = self.sskilldmg
+        return sskilldmg
+
+    def shitcount(self):
+        shitcount = self.shitcount
+        return shitcount
+
+    def schance(self):
+        schance = self.schance
+        return schance
+
+    def shatkp(self):
+        shatkp = self.shatkp
+        return shatkp
+
+    def shdmg(self):
+        shdmg = self.shdmg
+        return shdmg
+
+    def shbatk(self):
+        shbatk = self.shbatk
+        return shbatk
+
+    def shcr(self):
+        shcr = self.shcr
+        return shcr
+
+    def shcd(self):
+        shcd = self.shcd
+        return shcd
+
+    def shfd(self):
+        shfd = self.shfd
+        return shfd
+
     def spmulti(self):
         spmulti = self.spmulti
         return spmulti
-
-    def empsetcount(self):
-        empsetcount = self.empsetcount
-        return empsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount
