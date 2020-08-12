@@ -1,5 +1,6 @@
 from scipy.optimize import minimize
 
+
 class emblemcalculations:
     def __init__(self, necalculations, char):
         self.cdemb = 20
@@ -82,8 +83,6 @@ class emblemcalculations:
         self.pname = char.pname
         self.sname = char.sname
 
-        print(self.cd)
-
         if self.cr >= 90:
             self.croverflow = 90.0
         else:
@@ -93,8 +92,9 @@ class emblemcalculations:
             cd = x[0] * self.cdemb
             atkp = x[1] * self.atkpemb
             batk = x[2] * self.batkemb
-            obj = -((1 + ((self.atkp + atkp)/ 100) + (((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + batk) / 100))) \
-                   * (1 + ((self.cd + cd) / 100) + (self.phcd / 100) + 0.2))
+            obj = -((1 + ((self.atkp + atkp) / 100) + (
+                    ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + batk) / 100))) \
+                    * (1 + ((self.cd + cd) / 100) + (self.phcd / 100) + 0.2))
             return obj
 
         def constraint1(x):
@@ -102,12 +102,11 @@ class emblemcalculations:
             sum = sum - x[0] - x[1] - x[2]
             return sum
 
-
-        x0 =[0,0,0]
-        bound = (0,8)
-        bnds = (bound,bound,bound)
+        x0 = [0, 0, 0]
+        bound = (0, 8)
+        bnds = (bound, bound, bound)
         cons = {'type': 'eq', 'fun': constraint1}
-        sol = minimize(objective,x0, method ='SLSQP',bounds=bnds,constraints=cons)
+        sol = minimize(objective, x0, method='SLSQP', bounds=bnds, constraints=cons)
 
         ncdemb = int(round(sol.x[0]))
         natkpemb = int(round(sol.x[1]))
@@ -131,7 +130,7 @@ class emblemcalculations:
                              * (self.pskilldmg / 100) \
                              * self.phitcount \
                              * (1 + (self.fd / 100)) \
-                             * (1 + self.spmulti/100)
+                             * (1 + (self.spmulti / 100))
         # Non Boss Crit
         self.nb_c_poutput = self.atk \
                             * (1 + (self.dmg / 100)) \
@@ -141,30 +140,35 @@ class emblemcalculations:
                             * (self.pskilldmg / 100) \
                             * self.phitcount \
                             * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti/100)
+                            * (1 + (self.spmulti / 100))
         # Non Boss Average
-        self.nb_poutput = int(round((((self.nb_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_poutput)) / 100), 0))
+        self.nb_poutput = int(
+            round((((self.nb_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_poutput)) / 100),
+                  0))
         # Boss Non Crit
         self.b_nc_poutput = self.atk \
                             * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.embatkp) / 100) + (((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
+                            * (1 + ((self.atkp + self.embatkp) / 100) + (
+                ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
                             * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
                             * (self.pskilldmg / 100) \
                             * self.phitcount \
                             * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti/100)
+                            * (1 + (self.spmulti / 100))
         # Boss Crit
         self.b_c_poutput = self.atk \
                            * (1 + (self.dmg / 100)) \
-                           * (1 + ((self.atkp + self.embatkp) / 100) + (((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
+                           * (1 + ((self.atkp + self.embatkp) / 100) + (
+                ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
                            * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
                            * (1 + ((self.cd + self.embcd) / 100) + (self.phcd / 100) + 0.2) \
                            * (self.pskilldmg / 100) \
                            * self.phitcount \
                            * (1 + (self.fd / 100)) \
-                           * (1 + self.spmulti/100)
+                           * (1 + (self.spmulti / 100))
 
-        self.b_poutput = int(round((((self.b_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_poutput)) / 100), 0))
+        self.b_poutput = int(
+            round((((self.b_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_poutput)) / 100), 0))
 
         # Secondary Skill
         # Non Boss Non Crit
@@ -175,7 +179,7 @@ class emblemcalculations:
                              * (self.sskilldmg / 100) \
                              * self.shitcount \
                              * (1 + (self.fd / 100)) \
-                             * (1 + self.spmulti/100)
+                             * (1 + (self.spmulti / 100))
         # Non Boss Crit
         self.nb_c_soutput = self.atk \
                             * (1 + (self.dmg / 100)) \
@@ -185,32 +189,37 @@ class emblemcalculations:
                             * (self.sskilldmg / 100) \
                             * self.shitcount \
                             * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti/100)
+                            * (1 + (self.spmulti / 100))
         # Non Boss Average
-        self.nb_soutput = int(round((((self.nb_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_soutput)) / 100), 0))
+        self.nb_soutput = int(round(((((self.nb_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_soutput)) / 100)
+                                     * (self.schance / 100)), 0))
 
         # Boss Non Crit
         self.b_nc_soutput = self.atk \
                             * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.embatkp) / 100) + (((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.embbatk)/ 100))) \
+                            * (1 + ((self.atkp + self.embatkp) / 100) + (
+                ((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
                             * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
                             * (self.sskilldmg / 100) \
                             * self.shitcount \
                             * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti/100)
+                            * (1 + (self.spmulti / 100))
+
         # Boss Crit
         self.b_c_soutput = self.atk \
                            * (1 + (self.dmg / 100)) \
-                           * (1 + ((self.atkp + self.embatkp) / 100) + (((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
+                           * (1 + ((self.atkp + self.embatkp) / 100) + (
+                ((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
                            * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
                            * (1 + ((self.cd + self.embcd) / 100) + (self.shcd / 100) + 0.2) \
                            * (self.sskilldmg / 100) \
                            * self.shitcount \
                            * (1 + (self.fd / 100)) \
-                           * (1 + self.spmulti/100)
+                           * (1 + self.spmulti / 100)
 
-        self.b_soutput = int(round((((self.b_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_soutput)) / 100 \
-                         * (self.schance/100)), 0))
+        self.b_soutput = int(
+            round((((self.b_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_soutput)) / 100 \
+                   * (self.schance / 100)), 0))
 
         self.secondncdemb = ncdemb - 1
         self.secondnbatkemb = nbatkemb + 1
@@ -224,72 +233,72 @@ class emblemcalculations:
         # Primary Skill
         # Non Boss Non Crit
         self.snb_nc_poutput = self.atk \
+                              * (1 + (self.dmg / 100)) \
+                              * (1 + ((self.atkp + self.sembatkp) / 100)) \
+                              * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
+                              * (self.pskilldmg / 100) \
+                              * self.phitcount \
+                              * (1 + (self.fd / 100)) \
+                              * (1 + self.spmulti / 100)
+
+        # Non Boss Crit
+        self.snb_c_poutput = self.atk \
                              * (1 + (self.dmg / 100)) \
                              * (1 + ((self.atkp + self.sembatkp) / 100)) \
                              * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
+                             * (1 + ((self.cd + self.sembcd) / 100) + (self.phcd / 100) + 0.2) \
                              * (self.pskilldmg / 100) \
                              * self.phitcount \
                              * (1 + (self.fd / 100)) \
                              * (1 + self.spmulti / 100)
-        # Non Boss Crit
-        self.snb_c_poutput = self.atk \
-                            * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.sembatkp) / 100)) \
-                            * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
-                            * (1 + ((self.cd + self.sembcd) / 100) + (self.phcd / 100) + 0.2) \
-                            * (self.pskilldmg / 100) \
-                            * self.phitcount \
-                            * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti / 100)
         # Non Boss Average
         self.snb_poutput = int(
             round((((self.snb_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.snb_nc_poutput)) / 100),
                   0))
         # Boss Non Crit
         self.sb_nc_poutput = self.atk \
+                             * (1 + (self.dmg / 100)) \
+                             * (1 + ((self.atkp + self.sembatkp) / 100) + (((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
+                             * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
+                             * (self.pskilldmg / 100) \
+                             * self.phitcount \
+                             * (1 + (self.fd / 100)) \
+                             * (1 + self.spmulti / 100)
+        # Boss Crit
+        self.sb_c_poutput = self.atk \
                             * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.sembatkp) / 100) + (
-                    ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
+                            * (1 + ((self.atkp + self.sembatkp) / 100) + (((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
                             * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
+                            * (1 + ((self.cd + self.sembcd) / 100) + (self.phcd / 100) + 0.2) \
                             * (self.pskilldmg / 100) \
                             * self.phitcount \
                             * (1 + (self.fd / 100)) \
                             * (1 + self.spmulti / 100)
-        # Boss Crit
-        self.sb_c_poutput = self.atk \
-                           * (1 + (self.dmg / 100)) \
-                           * (1 + ((self.atkp + self.sembatkp) / 100) + (
-                    ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
-                           * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
-                           * (1 + ((self.cd + self.sembcd) / 100) + (self.phcd / 100) + 0.2) \
-                           * (self.pskilldmg / 100) \
-                           * self.phitcount \
-                           * (1 + (self.fd / 100)) \
-                           * (1 + self.spmulti / 100)
 
         self.sb_poutput = int(
-            round((((self.sb_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.sb_nc_poutput)) / 100), 0))
+            round((((self.sb_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.sb_nc_poutput)) / 100),
+                  0))
 
         # Secondary Skill
         # Non Boss Non Crit
         self.snb_nc_soutput = self.atk \
+                              * (1 + (self.dmg / 100)) \
+                              * (1 + ((self.atkp + self.sembatkp) / 100)) \
+                              * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
+                              * (self.sskilldmg / 100) \
+                              * self.shitcount \
+                              * (1 + (self.fd / 100)) \
+                              * (1 + self.spmulti / 100)
+        # Non Boss Crit
+        self.snb_c_soutput = self.atk \
                              * (1 + (self.dmg / 100)) \
                              * (1 + ((self.atkp + self.sembatkp) / 100)) \
                              * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
+                             * (1 + ((self.cd + self.sembcd) / 100) + (self.shcd / 100) + 0.2) \
                              * (self.sskilldmg / 100) \
                              * self.shitcount \
                              * (1 + (self.fd / 100)) \
                              * (1 + self.spmulti / 100)
-        # Non Boss Crit
-        self.snb_c_soutput = self.atk \
-                            * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.sembatkp) / 100)) \
-                            * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
-                            * (1 + ((self.cd + self.sembcd) / 100) + (self.shcd / 100) + 0.2) \
-                            * (self.sskilldmg / 100) \
-                            * self.shitcount \
-                            * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti / 100)
         # Non Boss Average
         self.snb_soutput = int(
             round((((self.snb_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.snb_nc_soutput)) / 100),
@@ -297,25 +306,23 @@ class emblemcalculations:
 
         # Boss Non Crit
         self.sb_nc_soutput = self.atk \
+                             * (1 + (self.dmg / 100)) \
+                             * (1 + ((self.atkp + self.sembatkp) / 100) + (((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
+                             * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
+                             * (self.sskilldmg / 100) \
+                             * self.shitcount \
+                             * (1 + (self.fd / 100)) \
+                             * (1 + (self.spmulti / 100))
+        # Boss Crit
+        self.sb_c_soutput = self.atk \
                             * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.sembatkp) / 100) + (
-                    ((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
+                            * (1 + ((self.atkp + self.sembatkp) / 100) + (((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
                             * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
+                            * (1 + ((self.cd + self.sembcd) / 100) + (self.shcd / 100) + 0.2) \
                             * (self.sskilldmg / 100) \
                             * self.shitcount \
                             * (1 + (self.fd / 100)) \
-                            * (1 + self.spmulti / 100)
-        # Boss Crit
-        self.sb_c_soutput = self.atk \
-                           * (1 + (self.dmg / 100)) \
-                           * (1 + ((self.atkp + self.sembatkp) / 100) + (
-                    ((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.sembbatk) / 100))) \
-                           * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
-                           * (1 + ((self.cd + self.sembcd) / 100) + (self.shcd / 100) + 0.2) \
-                           * (self.sskilldmg / 100) \
-                           * self.shitcount \
-                           * (1 + (self.fd / 100)) \
-                           * (1 + self.spmulti / 100)
+                            * (1 + (self.spmulti / 100))
 
         self.sb_soutput = int(
             round((((self.sb_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.sb_nc_soutput)) / 100 \
@@ -548,5 +555,3 @@ class emblemcalculations:
     def sname(self):
         sname = self.sname
         return sname
-
-

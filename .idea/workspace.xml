@@ -19,29 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.04">
-      <change afterPath="$PROJECT_DIR$/classes/mech.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/wh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/emblemcalculations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/nonemblemcalculations.py" afterDir="false" />
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.05">
+      <change afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/shade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/character_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/character_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/commonsum.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/commonsum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/bottom.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/bottom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/equip_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/equip_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/outfit.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/outfit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoulder.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/top.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/top.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/phan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/emblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/emblemcalculations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/nonemblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/nonemblemcalculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flame/flame.py" beforeDir="false" afterPath="$PROJECT_DIR$/flame/flame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -116,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593369663224</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="0.05">
+      <created>1597136635235</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597136635235</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,7 +126,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.04" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.04" />
+    <MESSAGE value="0.05" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.05" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1593335765041">

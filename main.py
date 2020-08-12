@@ -213,32 +213,44 @@ atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg
             finalcalculations.cr, finalcalculations.cd, finalcalculations.fd]
 
 pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
-sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput(),
-               finalcalculations.schance]
+sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput()]
 firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput())/ finalcalculations.bpoutput() * 100
 secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput())/ finalcalculations.bpoutput() * 100
 firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput())/ finalcalculations.bsoutput() * 100
 secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput())/ finalcalculations.bsoutput() * 100
 
+atkflamestats = ['ATK', necalculations.atkflame, necalculations.atkflamebase, necalculations.atklinecount]
+crflamestats = ["CR", necalculations.crflame, necalculations.crflamebase, necalculations.crlinecount]
+cdflamestats = ["CD", necalculations.cdflame, necalculations.cdflamebase, necalculations.cdlinecount]
+flamestatsdf = pd.DataFrame(columns =['Type', 'Amount', 'Base Used', 'Number of Lines'])
+flamestatsdf.loc[0] = atkflamestats
+flamestatsdf.loc[1] = crflamestats
+flamestatsdf.loc[2] = cdflamestats
 
-embstats = [finalcalculations.ncdemb, finalcalculations.natkpemb, finalcalculations.nbatkemb, finalcalculations.bpoutput()
+
+embstats = [int(finalcalculations.ncdemb), int(finalcalculations.natkpemb), int(finalcalculations.nbatkemb), finalcalculations.bpoutput()
     , firstppercentage, finalcalculations.bsoutput(), firstspercentage]
-sembstats = [finalcalculations.secondncdemb, finalcalculations.secondnatkpemb, finalcalculations.secondnbatkemb,
+sembstats = [int(finalcalculations.secondncdemb), int(finalcalculations.secondnatkpemb), int(finalcalculations.secondnbatkemb),
              finalcalculations.sbpoutput(), secondppercentage, finalcalculations.sbsoutput(), secondspercentage]
 atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
 atkstatsdf.loc[0] = atkstats
 
-pskillstatsdf = pd.DataFrame(columns=["Primary Skill", "Boss Output", "Non-Boss Output"])
-pskillstatsdf.loc[0] = pskillstats
-
-sskillstatsdf = pd.DataFrame(columns=["Secondary Skill", "Boss Output", "Non-Boss Output", "Chance %"])
-sskillstatsdf.loc[0] = sskillstats
+skillstatsdf = pd.DataFrame(columns=["Skill", "Boss Output", "Non-Boss Output"])
+skillstatsdf.loc[0] = pskillstats
+skillstatsdf.loc[1] = sskillstats
 
 embstatsdf = pd.DataFrame(columns=["CD Emb", "ATK Emb", "BATK Emb", "Primary DMG", "Primary %", "Secondary DMG", "Secondary %"])
 embstatsdf.loc[0] = embstats
 embstatsdf.loc[1] = sembstats
+skillstatsdf['Boss Output'] = skillstatsdf['Boss Output'].apply(lambda x : "{:,}".format(x))
+skillstatsdf['Non-Boss Output'] = skillstatsdf['Non-Boss Output'].apply(lambda x : "{:,}".format(x))
 
+embstatsdf['Primary DMG'] = embstatsdf['Primary DMG'].apply(lambda x : "{:,}".format(x))
+embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x : "{:,}".format(x))
+embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x : "{:.2f}".format(x))
+embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x : "{:.2f}".format(x))
+
+print(flamestatsdf, "\n")
 print(atkstatsdf, "\n")
-print(pskillstatsdf, "\n")
-print(sskillstatsdf, "\n")
+print(skillstatsdf, "\n")
 print(embstatsdf)

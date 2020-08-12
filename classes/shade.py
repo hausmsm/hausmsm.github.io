@@ -1,4 +1,4 @@
-class phan:
+class shade:
     def __init__(self):
         self.atk = 0
         self.atkp = 0
@@ -49,10 +49,10 @@ class phan:
         self.maxfeverchance = 0
         self.spmulti = 0
 
-        # Mille Aiguilles
-        self.pname = "Mille Aiguilles"
-        self.pskilldmg = 235
-        self.phitcount = 1
+        # Spirit Claw
+        self.pname = "Spirit Claw"
+        self.pskilldmg = 118.2
+        self.phitcount = 8
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -60,10 +60,10 @@ class phan:
         self.phcd = 0
         self.phfd = 0
 
-        # Carte Noire
-        self.sname = "Carte Noire"
+        # Fox Spirits
+        self.sname = "Fox Spirit"
         self.sskilldmg = 0
-        self.shitcount = 1
+        self.shitcount = 0
         self.schance = 0
         self.shatkp = 0
         self.shdmg = 0
@@ -75,57 +75,84 @@ class phan:
         # Skills
 
         # 1st Job
+        # Cosmic Balance
+        self.pdefinc += 10.8
+        self.mdefinc += 10.8
+
+        # Spirit Bond I
+        self.kbkres += 31
 
         # 2nd Job
-        # Impeccable Memory 2 - Unmanaged Anger
-        self.atkp += 21
-        # Judgement Draw
-        self.cd += 12
-        self.schance += 60
-        # Carte Blanc
-        self.sskilldmg += 70
-        # Cane Mastery
-        self.atkp += 20
-        # Devil's Luck
-        self.cr += 5
+        # Knuckle Mastery
+        self.atkp += 15
+        self.dmg += 8
+
+        # Spirit Bond II
+        self.spd += 15
+        self.jmp += 15
+
+        # Strength Training
+        self.cd += 10
+        self.critdmgres += 10
+
+        # Fox Spirit Mastery
 
         # 3rd Job
-        # Impeccable Memory 3 - Combat Orders
+        # Spirit Bond III
         self.dmg += 15
-        # Clair de Lune
-        self.dmg += 25
-        # Piercing Vision
-        self.cr += 3
-        self.cd += 15
+
+        # Harmonious Defence
+        self.pdefdec += 8
+        self.mdefdec += 8
+        self.abnormalstatres += 10
+
+        # Weaken
+        self.dmg += 10
 
         # 4th Job
-        # Aria Armour
-        self.dmg += 15
-        self.atkp += 15
-        # Carte Noire
-        self.sskilldmg += 145
-        self.schance += 40
-        # Cane Expert
-        self.atkp += 15
-        self.dmg += 15
+        # Fire Fox Spirit Mastery
+        self.sskilldmg += 251.4
+        self.shitcount += 1
+        self.schance += 10
+
+        # Spirit Bond IV
+        self.block += 6
+        self.evdp += 6
+        self.batk += 15
+        self.platk += 15
+
+        # Advanced Knuckle Mastery
+        self.accp += 4
+        self.penrate += 4
+        self.cr += 8
+        self.critres += 8
+
+        # Critical Insight
+        self.fd += 20
 
         # Hyper Buff
-        # Impeccable Memory H - Cry Valhalla
-        self.atkp += 25
-        self.fd += 10
+        # True Spirit Bond
+        self.atkp += 10
+        self.dmg += 10
+        self.batk += 10
+
         # Heroic Memores
         self.cd += 30
-        # Bad Luck Ward
-        self.atkp += 20
 
         # Hyper Skill
-        # Mille Aiguilles - Reinforce
-        self.phdmg += 20
-        # Mille Aiguilles - Crit DMG
-        self.phcd += 15
-        # Tempest - Reinforce
+        # Spirit Claw - Reinforce
+        self.phdmg += 15
 
-        # Tempest - Cooldown Cutter
+        # Spirit Claw - Boss Rush
+        self.phbatk += 15
+
+        # Spirit Claw - Extra Strike
+        self.phitcount += 1
+
+        # Fire Fox Spirits - Repeat Attack Chance
+
+        # Fire Fox Spirits - Summon Chance
+        self.schance += 10
 
     def atk(self):
         atk = self.atk

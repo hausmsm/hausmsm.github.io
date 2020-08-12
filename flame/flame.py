@@ -93,3 +93,15 @@ class flame:
     def fcdbase(self):
         cdbase = self.f_cdflamebase
         return cdbase
+
+    def fatklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def fcrlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def fcdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

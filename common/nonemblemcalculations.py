@@ -174,18 +174,21 @@ class nonemblemcalculations:
         self.atkflame = atkflame
         atkflamebase = self.flame.fatkbase()
         self.atkflamebase = atkflamebase
+        self.atklinecount = self.flame.fatklinecount()
 
         crflame = self.flame.fcr()
         self.cr += crflame
         self.crflame = crflame
         crflamebase = self.flame.fcrbase()
         self.crflamebase = crflamebase
+        self.crlinecount = self.flame.fcrlinecount()
 
         cdflame = self.flame.fcd()
         self.cd += cdflame
         self.cdflame = cdflame
         cdflamebase = self.flame.fcdbase()
         self.cdflamebase = cdflamebase
+        self.cdlinecount = self.flame.fcdlinecount()
 
         def atk(self):
             atk = self.atk
@@ -394,3 +397,15 @@ class nonemblemcalculations:
         def cdflame(self):
             cdflame = self.cdflame
             return cdflame
+
+        def atklinecount(self):
+            atklinecount = self.atklinecount
+            return atklinecount
+
+        def crlinecount(self):
+            crlinecount = self.crlinecount
+            return crlinecount
+
+        def cdlinecount(self):
+            cdlinecount = self.cdlinecount
+            return cdlinecount

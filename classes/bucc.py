@@ -1,4 +1,4 @@
-class phan:
+class bucc:
     def __init__(self):
         self.atk = 0
         self.atkp = 0
@@ -49,10 +49,10 @@ class phan:
         self.maxfeverchance = 0
         self.spmulti = 0
 
-        # Mille Aiguilles
-        self.pname = "Mille Aiguilles"
-        self.pskilldmg = 235
-        self.phitcount = 1
+        # Octopunch
+        self.pname = "Octopunch"
+        self.pskilldmg = 220
+        self.phitcount = 11
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -60,11 +60,11 @@ class phan:
         self.phcd = 0
         self.phfd = 0
 
-        # Carte Noire
-        self.sname = "Carte Noire"
-        self.sskilldmg = 0
-        self.shitcount = 1
-        self.schance = 0
+        # Dragon Strike
+        self.sname = "Dragon Strike"
+        self.sskilldmg = 283
+        self.shitcount = 12
+        self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
         self.shbatk = 0
@@ -75,57 +75,108 @@ class phan:
         # Skills
 
         # 1st Job
+        # Quick Motion
+        self.kbkres += 26
+        self.spd += 15
+
+        # Shadow Heart
+        self.cr += 2
+        self.cd += 10
 
         # 2nd Job
-        # Impeccable Memory 2 - Unmanaged Anger
-        self.atkp += 21
-        # Judgement Draw
-        self.cd += 12
-        self.schance += 60
-        # Carte Blanc
-        self.sskilldmg += 70
-        # Cane Mastery
-        self.atkp += 20
-        # Devil's Luck
-        self.cr += 5
+        # Energy Charge
+        self.atkp += 10
+        self.pdefinc += 10
+        self.mdefinc += 10
+
+        # Dark Clarity
+        self.block += 6
+        self.evdp += 6
+
+        # Knuckle Mastery
+        self.accp += 2
+        self.penrate += 2
+
+        # HP Increase
+        self.hpinc += 20
+
+        # Perseverance
+
+        # Physical Training
+
+        # Knuckle Booster
 
         # 3rd Job
-        # Impeccable Memory 3 - Combat Orders
-        self.dmg += 15
-        # Clair de Lune
-        self.dmg += 25
-        # Piercing Vision
-        self.cr += 3
-        self.cd += 15
+        # Super Charge
+        self.atkp += 15
+        self.pdefinc += 15
+        self.mdefinc += 15
+
+        # Wallow Defense
+        self.pdefdec += 4
+        self.mdefdec += 4
+
+        # Precision Strikes
+        self.cd += 10
+        self.critdmgres += 10
+
+        # Opportunistic Fighter
+        self.pdefinc += 21
+        self.atkp += 21
+        self.mdefinc += 21
+
+        # Luck of the Die
 
         # 4th Job
-        # Aria Armour
+        # Ultra Charge
+        self.atkp += 20
+        self.pdefinc += 15
+        self.mdefinc += 15
+
+        # Double Down
+        self.dmg += 10
+        self.cd += 10
+
+        # Typhoon Crush
+        self.pdefinc += 10
+        self.mdefinc += 10
+
+        # Counterattack
         self.dmg += 15
-        self.atkp += 15
-        # Carte Noire
-        self.sskilldmg += 145
-        self.schance += 40
-        # Cane Expert
-        self.atkp += 15
-        self.dmg += 15
+        self.pdefdec += 15
+        self.mdefdec += 15
+
+        # Speed Infusion
+        self.batk += 9.6
+        self.platk += 9.6
+
+        # Crossbones
+        self.dmg += 25
+
+        # Dragon Strike
+        self.cd += 10
 
         # Hyper Buff
-        # Impeccable Memory H - Cry Valhalla
-        self.atkp += 25
-        self.fd += 10
-        # Heroic Memores
+        # Stimulating Conversation
+
+        # Epic Adventure
         self.cd += 30
-        # Bad Luck Ward
-        self.atkp += 20
 
         # Hyper Skill
-        # Mille Aiguilles - Reinforce
-        self.phdmg += 20
-        # Mille Aiguilles - Crit DMG
-        self.phcd += 15
-        # Tempest - Reinforce
+        # Octopunch - Boss Rush
+        self.phbatk += 20
 
-        # Tempest - Cooldown Cutter
+        # Octopunch - Crit DMG
+        self.phcd += 20
+
+        # Octopunch - Extra Strike
+        self.phitcount += 1
+
+        # Crossbones - Boss Rush
+        self.batk += 20
+
+        # Crossbones - Deadly Crits
+        self.cd += 15
 
     def atk(self):
         atk = self.atk

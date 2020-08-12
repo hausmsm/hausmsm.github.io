@@ -1,4 +1,4 @@
-class phan:
+class tb:
     def __init__(self):
         self.atk = 0
         self.atkp = 0
@@ -49,10 +49,10 @@ class phan:
         self.maxfeverchance = 0
         self.spmulti = 0
 
-        # Mille Aiguilles
-        self.pname = "Mille Aiguilles"
-        self.pskilldmg = 235
-        self.phitcount = 1
+        # Annihilate
+        self.pname = "Annihilate"
+        self.pskilldmg = 163
+        self.phitcount = 2
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -60,11 +60,11 @@ class phan:
         self.phcd = 0
         self.phfd = 0
 
-        # Carte Noire
-        self.sname = "Carte Noire"
-        self.sskilldmg = 0
-        self.shitcount = 1
-        self.schance = 0
+        # Thunderbolt
+        self.sname = "Thunderbolt"
+        self.sskilldmg = 155
+        self.shitcount = 7
+        self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
         self.shbatk = 0
@@ -75,57 +75,86 @@ class phan:
         # Skills
 
         # 1st Job
+        # Electrify
+        self.spd += 15
+        self.jmp += 15
+
+        # Lightning Elemental
+        self.atkp += 10
 
         # 2nd Job
-        # Impeccable Memory 2 - Unmanaged Anger
-        self.atkp += 21
-        # Judgement Draw
-        self.cd += 12
-        self.schance += 60
-        # Carte Blanc
-        self.sskilldmg += 70
-        # Cane Mastery
-        self.atkp += 20
-        # Devil's Luck
-        self.cr += 5
+        # Knuckle Mastery
+        self.atkp += 5
+        self.dmg += 4
+
+        # Gains
+        self.accp += 6
+        self.penrate += 6
+
+        # Knuckle Booster
 
         # 3rd Job
-        # Impeccable Memory 3 - Combat Orders
-        self.dmg += 15
-        # Clair de Lune
-        self.dmg += 25
-        # Piercing Vision
-        self.cr += 3
-        self.cd += 15
+        # Seawall
+        self.dmg += 4
+        self.pdefdec += 10
+        self.mdefdec += 10
+
+        # Ironclad
+        self.kbkres += 30
+        self.pdefinc += 15
+        self.mdefinc += 15
+        self.bdef += 5
+        self.pldef += 5
+
+        # Link Mastery
+        self.pskilldmg += 18
+        self.sskilldmg += 18
 
         # 4th Job
-        # Aria Armour
-        self.dmg += 15
-        self.atkp += 15
-        # Carte Noire
-        self.sskilldmg += 145
-        self.schance += 40
-        # Cane Expert
-        self.atkp += 15
-        self.dmg += 15
+        # Knuckle Expert
+        self.cr += 4
+        self.critres += 4
+
+        # Electrify
+        self.hpinc += 20
+        self.mpinc += 10
+
+        # Thunder God
+        self.cd += 15
+        self.critres += 15
+
+        # Arc Charger
+        self.spmulti += 30
+
+        # Speed Infusion
+        self.batk += 8
+        self.platk += 8
+
+        # Typhoon
+        self.dmg += 25
 
         # Hyper Buff
-        # Impeccable Memory H - Cry Valhalla
-        self.atkp += 25
-        self.fd += 10
-        # Heroic Memores
+        # Primal Bolt
+        self.atkp += 30
+
+        # Glory Of The Guardians
         self.cd += 30
-        # Bad Luck Ward
-        self.atkp += 20
 
         # Hyper Skill
-        # Mille Aiguilles - Reinforce
-        self.phdmg += 20
-        # Mille Aiguilles - Crit DMG
-        self.phcd += 15
-        # Tempest - Reinforce
+        # Annihilate - Boss Rush
+        self.phbatk += 20
 
-        # Tempest - Cooldown Cutter
+        # Annihilate - Crit DMG
+        self.phcd += 20
+
+        # Annihilate - Reinforce
+        self.phdmg += 20
+
+        # Thunderbolt - Reinforce
+        self.shdmg += 20
+
+        # Thunderbolt - Extra Strike
+        self.shitcount += 1
 
     def atk(self):
         atk = self.atk
