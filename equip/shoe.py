@@ -58,6 +58,7 @@ class shoe:
         self.empsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.bosssetcount = 0
         self.atklinecount = 0
         self.crlinecount = 0
         self.cdlinecount = 0
@@ -76,8 +77,8 @@ class shoe:
 
         # Necro
         elif self.equip_type in self.necrolist:
-            self.pdef += 4048.2 + 2007 + 0  # SF VALUE TO BE ADDED
-            self.mdef += 4048.2 + 2007 + 0  # SF VALUE TO BE ADDED
+            self.pdef += 4048.2 + 2007 + 0 # SF VALUE TO BE ADDED
+            self.mdef += 4048.2 + 2007 + 0 # SF VALUE TO BE ADDED
             self.hp += 11491
             if self.stattype in self.normallist:
                 self.evd += 1700
@@ -272,6 +273,10 @@ class shoe:
     def fafsetcount(self):
         fafsetcount = self.fafsetcount
         return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
 
     def atklinecount(self):
         atklinecount = self.atklinecount

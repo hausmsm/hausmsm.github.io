@@ -275,6 +275,10 @@ class belt:
         fafsetcount = self.fafsetcount
         return fafsetcount
 
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
+
     def atklinecount(self):
         atklinecount = self.atklinecount
         return atklinecount

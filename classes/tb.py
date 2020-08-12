@@ -1,9 +1,5 @@
-class jewel:
-    def __init__(self, stattype):
-        self.normallist = {"1", "2"}
-        self.explist = {"3"}
-        self.stattype = str(stattype)
-
+class tb:
+    def __init__(self):
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
@@ -52,23 +48,113 @@ class jewel:
         self.feverduration = 0
         self.maxfeverchance = 0
         self.spmulti = 0
-        self.empsetcount = 0
-        self.necrosetcount = 0
-        self.fafsetcount = 0
-        self.bosssetcount = 0
 
-        # Boss Atk Jewel
-        if self.stattype in self.normallist:
-            self.batk += 6.5 + 5
-            self.bdef += 5
-            self.cr += 2
-            self.cd += 4
+        # Annihilate
+        self.pname = "Annihilate"
+        self.pskilldmg = 163
+        self.phitcount = 2
+        self.phatkp = 0
+        self.phdmg = 0
+        self.phbatk = 0
+        self.phcr = 0
+        self.phcd = 0
+        self.phfd = 0
 
-        # EXP
-        elif self.stattype in self.explist:
-            self.exp += 15.5 + 4.5
-            self.dr += 5
-            self.kbkres += 300
+        # Thunderbolt
+        self.sname = "Thunderbolt"
+        self.sskilldmg = 155
+        self.shitcount = 7
+        self.schance = 100
+        self.shatkp = 0
+        self.shdmg = 0
+        self.shbatk = 0
+        self.shcr = 0
+        self.shcd = 0
+        self.shfd = 0
+
+        # Skills
+
+        # 1st Job
+        # Electrify
+        self.spd += 15
+        self.jmp += 15
+
+        # Lightning Elemental
+        self.atkp += 10
+
+        # 2nd Job
+        # Knuckle Mastery
+        self.atkp += 5
+        self.dmg += 4
+
+        # Gains
+        self.accp += 6
+        self.penrate += 6
+
+        # Knuckle Booster
+
+        # 3rd Job
+        # Seawall
+        self.dmg += 4
+        self.pdefdec += 10
+        self.mdefdec += 10
+
+        # Ironclad
+        self.kbkres += 30
+        self.pdefinc += 15
+        self.mdefinc += 15
+        self.bdef += 5
+        self.pldef += 5
+
+        # Link Mastery
+        self.pskilldmg += 18
+        self.sskilldmg += 18
+
+        # 4th Job
+        # Knuckle Expert
+        self.cr += 4
+        self.critres += 4
+
+        # Electrify
+        self.hpinc += 20
+        self.mpinc += 10
+
+        # Thunder God
+        self.cd += 15
+        self.critres += 15
+
+        # Arc Charger
+        self.spmulti += 30
+
+        # Speed Infusion
+        self.batk += 8
+        self.platk += 8
+
+        # Typhoon
+        self.dmg += 25
+
+        # Hyper Buff
+        # Primal Bolt
+        self.atkp += 30
+
+        # Glory Of The Guardians
+        self.cd += 30
+
+        # Hyper Skill
+        # Annihilate - Boss Rush
+        self.phbatk += 20
+
+        # Annihilate - Crit DMG
+        self.phcd += 20
+
+        # Annihilate - Reinforce
+        self.phdmg += 20
+
+        # Thunderbolt - Reinforce
+        self.shdmg += 20
+
+        # Thunderbolt - Extra Strike
+        self.shitcount += 1
 
     def atk(self):
         atk = self.atk
@@ -238,22 +324,82 @@ class jewel:
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
 
+    def pname(self):
+        pname = self.pname
+        return pname
+
+    def pskilldmg(self):
+        pskilldmg = self.pskilldmg
+        return pskilldmg
+
+    def phitcount(self):
+        phitcount = self.phitcount
+        return phitcount
+
+    def phatkp(self):
+        phatkp = self.phatkp
+        return phatkp
+
+    def phdmg(self):
+        phdmg = self.phdmg
+        return phdmg
+
+    def phbatk(self):
+        phbatk = self.phbatk
+        return phbatk
+
+    def phcr(self):
+        phcr = self.phcr
+        return phcr
+
+    def phcd(self):
+        phcd = self.phcd
+        return phcd
+
+    def phfd(self):
+        phfd = self.phfd
+        return phfd
+
+    def sname(self):
+        sname = self.sname
+        return sname
+
+    def sskilldmg(self):
+        sskilldmg = self.sskilldmg
+        return sskilldmg
+
+    def shitcount(self):
+        shitcount = self.shitcount
+        return shitcount
+
+    def schance(self):
+        schance = self.schance
+        return schance
+
+    def shatkp(self):
+        shatkp = self.shatkp
+        return shatkp
+
+    def shdmg(self):
+        shdmg = self.shdmg
+        return shdmg
+
+    def shbatk(self):
+        shbatk = self.shbatk
+        return shbatk
+
+    def shcr(self):
+        shcr = self.shcr
+        return shcr
+
+    def shcd(self):
+        shcd = self.shcd
+        return shcd
+
+    def shfd(self):
+        shfd = self.shfd
+        return shfd
+
     def spmulti(self):
         spmulti = self.spmulti
         return spmulti
-
-    def empsetcount(self):
-        empsetcount = self.empsetcount
-        return empsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount

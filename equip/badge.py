@@ -1,8 +1,5 @@
-class jewel:
-    def __init__(self, stattype):
-        self.normallist = {"1", "2"}
-        self.explist = {"3"}
-        self.stattype = str(stattype)
+class badge:
+    def __init__(self):
 
         self.atk = 0
         self.atkp = 0
@@ -56,19 +53,14 @@ class jewel:
         self.necrosetcount = 0
         self.fafsetcount = 0
         self.bosssetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
-        # Boss Atk Jewel
-        if self.stattype in self.normallist:
-            self.batk += 6.5 + 5
-            self.bdef += 5
-            self.cr += 2
-            self.cd += 4
-
-        # EXP
-        elif self.stattype in self.explist:
-            self.exp += 15.5 + 4.5
-            self.dr += 5
-            self.kbkres += 300
+        # Crystal Ventus Badge
+        self.atk += 55
+        self.cd += 5
+        self.bosssetcount += 1
 
     def atk(self):
         atk = self.atk
@@ -257,3 +249,15 @@ class jewel:
     def bosssetcount(self):
         bosssetcount = self.bosssetcount
         return bosssetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

@@ -58,6 +58,7 @@ class glove:
         self.empsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.bosssetcount = 0
         self.atklinecount = 0
         self.crlinecount = 0
         self.cdlinecount = 0
@@ -87,7 +88,7 @@ class glove:
             self.cdlinecount += 2
 
         # Potential
-        self.dmg += 2.7
+        self.dmg += 6
 
     def atk(self):
         atk = self.atk
@@ -272,6 +273,10 @@ class glove:
     def fafsetcount(self):
         fafsetcount = self.fafsetcount
         return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
 
     def atklinecount(self):
         atklinecount = self.atklinecount

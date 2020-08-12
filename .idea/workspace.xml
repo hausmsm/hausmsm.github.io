@@ -19,17 +19,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.05">
-      <change afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/shade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tb.py" afterDir="false" />
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.06">
+      <change afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/earring.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/eye.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/face.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/medal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/necklace.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/title.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/phan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/emblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/emblemcalculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/nonemblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/nonemblemcalculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flame/flame.py" beforeDir="false" afterPath="$PROJECT_DIR$/flame/flame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/bottom.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/bottom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/equip_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/equip_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/outfit.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/outfit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/seteffect.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/seteffect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/shoulder.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/top.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/top.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +69,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.r.configuration.RSettingsProjectConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Calvin\Documents\GitHub\hausmsm.github.io\classes" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="mapletree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -109,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597136635235</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="0.06">
+      <created>1597243565814</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597243565814</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.04" />
     <MESSAGE value="0.05" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.05" />
+    <MESSAGE value="0.06" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.06" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1593335765041">
@@ -146,10 +175,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="392" y="0" key="#mapletree/0.0.1366.738@0.0.1366.738" timestamp="1593336318377" />
-    <state x="463" y="110" key="FileChooserDialogImpl" timestamp="1596380990953">
+    <state x="463" y="110" key="FileChooserDialogImpl" timestamp="1597248861046">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1596380990953" />
+    <state x="463" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1597248861046" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1593369960296">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

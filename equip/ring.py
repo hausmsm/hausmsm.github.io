@@ -1,7 +1,7 @@
-class jewel:
+class ring:
     def __init__(self, stattype):
-        self.normallist = {"1", "2"}
-        self.explist = {"3"}
+        self.normallist = {"1"}
+        self.explist = {"2", "3"}
         self.stattype = str(stattype)
 
         self.atk = 0
@@ -56,19 +56,59 @@ class jewel:
         self.necrosetcount = 0
         self.fafsetcount = 0
         self.bosssetcount = 0
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
-        # Boss Atk Jewel
+        # Normal
         if self.stattype in self.normallist:
-            self.batk += 6.5 + 5
-            self.bdef += 5
-            self.cr += 2
-            self.cd += 4
+            # Attendance Ring
+            self.hp += 200
+            self.mp += 100
+            self.atk += 200
+            self.pdef += 400
+            self.mdef += 400
+
+            # Cygnus Kohinoor Ring
+            self.hp += 230
+            self.mp += 120
+            self.pdefdec += 1.6
+            self.mdefdec += 1.6
+            self.bosssetcount += 1
+            # Potential
+            self.atk += 69
+
+            # SS Jewel / SS Soul Ring
+            self.atk += 150
+            self.pdef += 300
+            self.mdef += 300
+            # Potential
+            self.atk += 69
+
+            # Blessed Kerning M Ring
+            self.dmg += 10
 
         # EXP
         elif self.stattype in self.explist:
-            self.exp += 15.5 + 4.5
-            self.dr += 5
-            self.kbkres += 300
+            # Attendance Ring
+            self.hp += 200
+            self.mp += 100
+            self.atk += 200
+            self.pdef += 400
+            self.mdef += 400
+
+            # Kerning M Ring
+            self.exp += 15
+
+            # SS Jewel / SS Soul Ring
+            self.atk += 150
+            self.pdef += 300
+            self.mdef += 300
+            # Potential
+            self.atk += 69
+
+            # Blessed Kerning M Ring
+            self.dmg += 10
 
     def atk(self):
         atk = self.atk
@@ -257,3 +297,15 @@ class jewel:
     def bosssetcount(self):
         bosssetcount = self.bosssetcount
         return bosssetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

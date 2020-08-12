@@ -3,7 +3,6 @@ from classes.character_selection import character_selection
 from equip.equip_selection import equip_selection
 from common.nonemblemcalculations import nonemblemcalculations
 from common.emblemcalculations import emblemcalculations
-from scipy.optimize import linprog
 import pandas as pd
 
 while True:
@@ -35,6 +34,18 @@ if character_type == "WARRIOR":
         from classes.pala import pala
 
         char = pala()
+
+    elif character_class == "DW":
+        type = "PHYSICAL"
+        from classes.dw import dw
+
+        char = dw()
+
+    elif character_class == "ARAN":
+        type = "PHYSICAL"
+        from classes.aran import aran
+
+        char = aran()
 
 elif character_type == "MAGE":
     mage = character_selection().mage()
@@ -187,7 +198,7 @@ while True:
 
 while True:
     stat_type = str(input("Please enter your equipment stat using the numbers:\n"
-                          "NORMAL (1), PARTIAL EXP [DOUBLE ML PEND + KTOWER RING + LEGENDS MEDAL] (2), FULL EXP (3) \n")).upper()
+                          "NORMAL (1), PARTIAL EXP [DOUBLE ML PEND + KTOWER EXP RING + LEGENDS MEDAL] (2), FULL EXP (3) \n")).upper()
     stat_type_list = {"1", "2", "3"}
     if stat_type not in stat_type_list:
         continue

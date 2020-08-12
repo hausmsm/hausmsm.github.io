@@ -1,5 +1,5 @@
 class seteffect:
-    def __init__(self,empsetcount,necrosetcount,fafsetcount,bosssetcount,cash_type):
+    def __init__(self, empsetcount, necrosetcount, fafsetcount, bosssetcount, cash_type):
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
