@@ -62,7 +62,7 @@ class tb:
 
         # Thunderbolt
         self.sname = "Thunderbolt"
-        self.sskilldmg = 155
+        self.sskilldmg = 175
         self.shitcount = 7
         self.schance = 100
         self.shatkp = 0
@@ -135,7 +135,8 @@ class tb:
 
         # Hyper Buff
         # Primal Bolt
-        self.atkp += 30
+        self.atkp += 25
+        self.dmg += 15
 
         # Glory Of The Guardians
         self.cd += 30

@@ -51,7 +51,7 @@ class bm:
 
         # Hurricane
         self.pname = "Hurricane"
-        self.pskilldmg = 215
+        self.pskilldmg = 225
         self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
@@ -101,6 +101,7 @@ class bm:
         # Hyper Buff
         # Concentration
         self.atkp += 25
+        self.dmg += 15
         # Epic Adventure
         self.cd += 30
         # Sharp Eyes - Enhance

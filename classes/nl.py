@@ -93,7 +93,7 @@ class nl:
         # Expert Throwing Star Technique
         self.atkp += 13
         # Shadow Partner
-        self.spmulti += 30
+        self.spmulti += 35
 
         # 4th Job
         # Frailty Curse

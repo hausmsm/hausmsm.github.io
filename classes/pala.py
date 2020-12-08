@@ -62,8 +62,8 @@ class pala:
 
         # Heaven's Hammer
         self.sname = "Heaven's Hammer"
-        self.sskilldmg = 312.4
-        self.shitcount = 10
+        self.sskilldmg = 295
+        self.shitcount = 11
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -87,6 +87,8 @@ class pala:
         # 3rd Job
         # Sheild Mastery
         self.atkp += 15
+        self.block += 10
+        self.block += 5
         # Parashock Guard
         self.atkp += 20
         # Combat Orders
@@ -102,6 +104,11 @@ class pala:
         self.cr += 2
         self.cd += 15
         # Advanced Charge
+        # Achilles
+        self.pdef += 20
+        self.mdef += 20
+        self.batk += 15
+        self.bdef += 15
 
         # Hyper Buff
         # Smite Shield
@@ -109,7 +116,8 @@ class pala:
         # Epic Adventure
         self.cd += 30
         # Sacrosanctity
-        self.atkp += 40
+        self.atkp += 25
+        self.dmg += 15
 
         # Hyper Skill
         # Blast - Reinforce

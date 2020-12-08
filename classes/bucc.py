@@ -158,6 +158,8 @@ class bucc:
 
         # Hyper Buff
         # Stimulating Conversation
+        self.batk += 10
+        self.atkp += 10
 
         # Epic Adventure
         self.cd += 30

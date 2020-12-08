@@ -51,7 +51,7 @@ class shad:
 
         # Assassinate
         self.pname = "Assassinate"
-        self.pskilldmg = 265
+        self.pskilldmg = 275
         self.phitcount = 4
         self.phatkp = 0
         self.phdmg = 0
@@ -86,7 +86,7 @@ class shad:
 
         # 3rd Job
         # Shadow Partner
-        self.spmulti += 30
+        self.spmulti += 35
 
         # 4th Job
         # Prime Critical
@@ -104,7 +104,7 @@ class shad:
         # Hyper Buff
         # Flip of the Coin
         self.atkp += 15
-        self.cd += 10
+        self.cd += 15
         # Epic Adventure
         self.cd += 30
 

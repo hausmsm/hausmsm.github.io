@@ -89,7 +89,7 @@ class belt:
             self.crlinecount += 2
 
         # Potential
-        self.atkp += 4.5
+        self.atkp += 6
 
     def atk(self):
         atk = self.atk

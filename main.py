@@ -1,218 +1,206 @@
 from common.commonsum import commonsum
-from classes.character_selection import character_selection
 from equip.equip_selection import equip_selection
 from common.nonemblemcalculations import nonemblemcalculations
 from common.emblemcalculations import emblemcalculations
 import pandas as pd
+import streamlit as st
 
-while True:
-    character_type = str(input("Please enter your class type:\n"
-                               "WARRIOR, MAGE, ARCHER, THIEF, PIRATE\n")).upper()
-    character_type_list = {"WARRIOR", "MAGE", "ARCHER", "THIEF", "PIRATE"}
-    if character_type not in character_type_list:
-        continue
-    else:
-        break
-
-if character_type == "WARRIOR":
-    warrior = character_selection().warrior()
-    character_class = warrior
-    if character_class == "DK":
+character_type = st.selectbox("Choose Class Type",["Warrior", "Mage", "Archer", "Thief", "Pirate"])
+if character_type == "Warrior":
+    character_class = st.selectbox("Choose Class",["Dark Knight", "Hero", "Paladin", "Dawn Warrior", "Aran"])
+    if character_class == "Dark Knight":
         type = "PHYSICAL"
         from classes.dk import dk
 
         char = dk()
 
-    elif character_class == "HERO":
+    elif character_class == "Hero":
         type = "PHYSICAL"
         from classes.hero import hero
 
         char = hero()
 
-    elif character_class == "PALA":
+    elif character_class == "Paladin":
         type = "PHYSICAL"
         from classes.pala import pala
 
         char = pala()
 
-    elif character_class == "DW":
+    elif character_class == "Dawn Warrior":
         type = "PHYSICAL"
         from classes.dw import dw
 
         char = dw()
 
-    elif character_class == "ARAN":
+    elif character_class == "Aran":
         type = "PHYSICAL"
         from classes.aran import aran
 
         char = aran()
 
-elif character_type == "MAGE":
-    mage = character_selection().mage()
-    character_class = mage
-    if character_class == "BSP":
+elif character_type == "Mage":
+    character_class = st.selectbox("Choose Class",["Bishop","Ice Lightning Mage","Fire Poison Mage","Blaze Wizard","Evan","Luminous","Battle Mage"])
+    if character_class == "Bishop":
         type = "MAGICAL"
         from classes.bsp import bsp
 
         char = bsp()
 
-    elif character_class == "ILM":
+    elif character_class == "Ice Lightning Mage":
         type = "MAGICAL"
         from classes.ilm import ilm
 
         char = ilm()
 
-    elif character_class == "FPM":
+    elif character_class == "Fire Poison Mage":
         type = "MAGICAL"
         from classes.fpm import fpm
 
         char = fpm()
 
-    elif character_class == "BW":
+    elif character_class == "Blaze Wizard":
         type = "MAGICAL"
         from classes.bw import bw
 
         char = bw()
 
-    elif character_class == "EVAN":
+    elif character_class == "Evan":
         type = "MAGICAL"
         from classes.evan import evan
 
         char = evan()
 
-    elif character_class == "LUMI":
+    elif character_class == "Luminous":
         type = "MAGICAL"
         from classes.lumi import lumi
 
         char = lumi()
 
-    elif character_class == "BAM":
+    elif character_class == "Battle Mage":
         type = "MAGICAL"
         from classes.bam import bam
 
         char = bam()
 
-elif character_type == "ARCHER":
-    archer = character_selection().archer()
-    character_class = archer
-    if character_class == "BM":
+elif character_type == "Archer":
+    character_class = st.selectbox("Choose Class",["Bow Master","Marksman","Wind Archer","Mercedes","Wild Hunter"])
+    if character_class == "Bow Master":
         type = "PHYSICAL"
         from classes.bm import bm
 
         char = bm()
 
-    elif character_class == "MM":
+    elif character_class == "Marksman":
         type = "PHYSICAL"
         from classes.mm import mm
 
         char = mm()
 
-    elif character_class == "WA":
+    elif character_class == "Wind Archer":
         type = "PHYSICAL"
         from classes.wa import wa
 
         char = wa()
 
-    elif character_class == "MERC":
+    elif character_class == "Mercedes":
         type = "PHYSICAL"
         from classes.merc import merc
 
         char = merc()
 
-    elif character_class == "WH":
+    elif character_class == "Wild Hunter":
         type = "PHYSICAL"
         from classes.wh import wh
 
         char = wh()
 
-elif character_type == "THIEF":
-    thief = character_selection().thief()
-    character_class = thief
-    if character_class == "NL":
+elif character_type == "Thief":
+    character_class = st.selectbox("Choose Class",["Night Lord","Shadower","Night Walker","Phantom"])
+    if character_class == "Night Lord":
         type = "PHYSICAL"
         from classes.nl import nl
 
         char = nl()
 
-    elif character_class == "SHAD":
+    elif character_class == "Shadower":
         type = "PHYSICAL"
         from classes.shad import shad
 
         char = shad()
 
-    elif character_class == "NW":
+    elif character_class == "Night Walker":
         type = "PHYSICAL"
         from classes.nw import nw
 
         char = nw()
 
-    elif character_class == "PHAN":
+    elif character_class == "Phantom":
         type = "PHYSICAL"
         from classes.phan import phan
 
         char = phan()
 
-elif character_type == "PIRATE":
-    pirate = character_selection().pirate()
-    character_class = pirate
-    if character_class == "CSR":
+elif character_type == "Pirate":
+    character_class = st.selectbox("Choose Class",["Corsair","Buccaneer","Thunder Breaker","Shade","Mechanic"])
+    if character_class == "Corsair":
         type = "MAGICAL"
         from classes.csr import csr
 
         char = csr()
 
-    elif character_class == "BUCC":
+    elif character_class == "Buccaneer":
         type = "PHYSICAL"
         from classes.bucc import bucc
 
         char = bucc()
 
-    elif character_class == "TB":
+    elif character_class == "Thunder Breaker":
         type = "PHYSICAL"
         from classes.tb import tb
 
         char = tb()
 
-    elif character_class == "SHADE":
+    elif character_class == "Shade":
         type = "PHYSICAL"
         from classes.shade import shade
 
         char = shade()
 
-    elif character_class == "MECH":
+    elif character_class == "Mechanic":
         type = "MAGICAL"
         from classes.mech import mech
 
         char = mech()
 
 # Equipment Choosing
-while True:
-    equip_type = str(input("Please enter your equipment type using the numbers:\n"
-                           "FULL EMP (1), FULL NECRO (2), 2 PIECE FAF + EMP (3),"
-                           " 4 PIECE FAF + EMP (4), 2 PIECE FAF + NECRO (5), 4 PIECE FAF + NECRO (6)\n")).upper()
-    equip_type_list = {"1", "2", "3", "4", "5", "6"}
-    if equip_type not in equip_type_list:
-        continue
-    else:
-        break
+equip_type_combination = st.radio("Equipment Combination",["Full Empress", "Full Necro", "2 Piece Fafnir + Empress","4 Piece Fafnir + Empress","2 Piece Fafnir + Necro","4 Piece Fafnir + Necro"])
+if equip_type_combination == "Full Empress":
+    equip_type = "1"
+elif equip_type_combination == "Full Necro":
+    equip_type = "2"
+elif equip_type_combination == "2 Piece Fafnir + Empress":
+    equip_type = "3"
+elif equip_type_combination == "4 Piece Fafnir + Empress":
+    equip_type = "4"
+elif equip_type_combination == "2 Piece Fafnir + Necro":
+    equip_type = "5"
+else:
+    equip_type = "6"
 
-while True:
-    stat_type = str(input("Please enter your equipment stat using the numbers:\n"
-                          "NORMAL (1), PARTIAL EXP [DOUBLE ML PEND + KTOWER EXP RING + LEGENDS MEDAL] (2), FULL EXP (3) \n")).upper()
-    stat_type_list = {"1", "2", "3"}
-    if stat_type not in stat_type_list:
-        continue
-    else:
-        break
+stat_type_combination = st.radio("Exp Set",["Normal","Partial Exp","Full Exp"])
+if stat_type_combination == "Normal":
+    stat_type = "1"
+elif stat_type_combination == "Partial Exp":
+    stat_type = "2"
+else:
+    stat_type = "3"
 
-while True:
-    cash_type = str(input("Please enter your cash set style using the numbers:\n"
-                          "3 + 3 (1), 5 SET (2) \n")).upper()
-    cash_type_list = {"1", "2"}
-    if cash_type not in cash_type_list:
-        continue
-    else:
-        break
+cash_type_combination = st.radio("Cash Set Combination",["3+3 Set","5 Set"])
+if cash_type_combination == "3+3 Set":
+    cash_type = "1"
+else:
+    cash_type = "2"
+
 commonsum = commonsum(type, character_class)
 equip = equip_selection(equip_type, stat_type, character_class, cash_type)
 necalculations = nonemblemcalculations(commonsum, equip)
@@ -261,7 +249,7 @@ embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x : "{:,}
 embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x : "{:.2f}".format(x))
 embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x : "{:.2f}".format(x))
 
-print(flamestatsdf, "\n")
-print(atkstatsdf, "\n")
-print(skillstatsdf, "\n")
-print(embstatsdf)
+st.dataframe(skillstatsdf)
+st.dataframe(flamestatsdf)
+st.dataframe(atkstatsdf)
+st.dataframe(embstatsdf)

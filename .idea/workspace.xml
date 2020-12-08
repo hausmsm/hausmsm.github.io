@@ -19,32 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.06">
-      <change afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/earring.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/eye.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/face.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/medal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/necklace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/title.py" afterDir="false" />
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.07">
+      <change afterPath="$PROJECT_DIR$/classes/aran.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/dw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bucc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/csr.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/nl.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/nw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/shad.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/wa.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/bottom.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/bottom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/equip_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/equip_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/outfit.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/outfit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/seteffect.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/seteffect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoulder.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/top.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/top.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597243565814</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="0.07">
+      <created>1597249850092</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597249850092</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,13 +159,18 @@
     <MESSAGE value="0.04" />
     <MESSAGE value="0.05" />
     <MESSAGE value="0.06" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.06" />
+    <MESSAGE value="0.07" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.07" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1593335765041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="9" width="816" height="729" key="#Intentions/0.0.1366.738@0.0.1366.738" timestamp="1593335765041" />
+    <state x="820" y="238" key="#Notifications" timestamp="1597311989645">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="820" y="238" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1597311989645" />
     <state x="459" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593935759120">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

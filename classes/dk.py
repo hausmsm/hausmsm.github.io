@@ -63,8 +63,8 @@ class dk:
 
         # Nightshade Explosion
         self.sname = "Nightshade Explosion"
-        self.sskilldmg = 320.1
-        self.shitcount = 10
+        self.sskilldmg = 335
+        self.shitcount = 18
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -103,7 +103,8 @@ class dk:
         # Beholder - Sacrifice
 
         # Dark Thirst
-        self.atkp += 30
+        self.atkp += 25
+        self.dmg += 15
         # Epic Adventure
         self.cd += 30
 

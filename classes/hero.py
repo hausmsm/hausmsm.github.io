@@ -51,8 +51,8 @@ class hero:
 
         # Raging Blow
         self.pname = "Raging Blow"
-        self.pskilldmg = 225.6
-        self.phitcount = 6
+        self.pskilldmg = 252
+        self.phitcount = 7
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -98,8 +98,8 @@ class hero:
 
         # Hyper Buff
         # Cry Valhalla
-        self.fd += 10
-        self.atkp += 25
+        self.fd += 15
+        self.atkp += 15
         # Epic Adventure
         self.cd += 30
         # Advanced Combo Attack - Reinforce

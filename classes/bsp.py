@@ -102,7 +102,8 @@ class bsp:
         # Epic Adventure
         self.cd += 30
         # Righteously Indignant
-        self.atkp += 40
+        self.atkp += 25
+        self.dmg += 15
         # Advanced Blessing - Bonus Damage
         self.atkp += 15
         # Advanced Blessing - Boss Rush

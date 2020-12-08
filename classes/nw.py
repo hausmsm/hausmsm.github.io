@@ -110,7 +110,7 @@ class nw:
         # Dominion
         self.atkp += 25
         # Shadow Illusion
-        self.spmulti += 45
+        self.spmulti += 75
         # Glory of the Guardians
         self.cd += 30
         # Darkness Ascending - Enhance

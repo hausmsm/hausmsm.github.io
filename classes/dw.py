@@ -1,13 +1,5 @@
-class hat:
-    def __init__(self, equip_type, stattype):
-        self.emplist = {"1", "3"}
-        self.necrolist = {"2", "5"}
-        self.faflist = {"4", "6"}
-        self.normallist = {"1", "2"}
-        self.explist = {"3"}
-        self.equip_type = str(equip_type)
-        self.stattype = str(stattype)
-
+class dw:
+    def __init__(self):
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
@@ -56,49 +48,119 @@ class hat:
         self.feverduration = 0
         self.maxfeverchance = 0
         self.spmulti = 0
-        self.empsetcount = 0
-        self.necrosetcount = 0
-        self.fafsetcount = 0
-        self.bosssetcount = 0
-        self.atklinecount = 0
-        self.crlinecount = 0
-        self.cdlinecount = 0
 
-        # Empress
-        if self.equip_type in self.emplist:
-            self.pdef += 1921.4 + 1100 + 0 # SF VALUE TO BE ADDED
-            self.mdef += 1921.4 + 1100 + 0 # SF VALUE TO BE ADDED
-            self.hp += 14000
-            if self.stattype in self.normallist:
-                self.cd += 16
-            elif self.stattype in self.explist:
-                self.exp += 2
-            self.empsetcount += 1
-            self.cdlinecount += 2
+        # Moon Dancer
+        self.pname = "Moon Dancer"
+        self.pskilldmg = 125
+        self.phitcount = 8
+        self.phatkp = 0
+        self.phdmg = 0
+        self.phbatk = 0
+        self.phcr = 0
+        self.phcd = 0
+        self.phfd = 0
 
-        # Necro
-        elif self.equip_type in self.necrolist:
-            self.pdef += 2700.1 + 1339 + 0  # SF VALUE TO BE ADDED
-            self.mdef += 2700.1 + 1339 + 0  # SF VALUE TO BE ADDED
-            self.hp += 15120
-            if self.stattype in self.normallist:
-                self.cd += 16
-            elif self.stattype in self.explist:
-                self.exp += 2
-            self.necrosetcount += 1
-            self.cdlinecount += 2
+        # Speeding Sunset
+        self.sname = "Speeding Sunset"
+        self.sskilldmg = 250
+        self.shitcount = 4
+        self.schance = 100
+        self.shatkp = 0
+        self.shdmg = 0
+        self.shbatk = 0
+        self.shcr = 0
+        self.shcd = 0
+        self.shfd = 0
 
-        # Fafnir
-        elif self.equip_type in self.faflist:
-            self.pdef += 0 + 0 + 0  # ALL VALUES TO BE ADDED
-            self.mdef += 0 + 0 + 0  # ALL VALUES TO BE ADDED
-            self.hp += 0 # ALL VALUES TO BE ADDED
-            self.dmg += 5
-            self.fafsetcount += 1
-            self.cdlinecount += 2
+        # Skills
 
-        # Potential
-        self.atkp += 6
+        # 1st Job
+        # Hand of Light
+        self.atkp += 8
+
+        # Inner Voice
+        self.spd += 15
+        self.jmp += 15
+
+        # 2nd Job
+        # Divine Hand
+        self.pdefinc += 15
+        self.mdefinc += 15
+
+        # Sword Mastery
+        self.dmg += 6
+
+        # Inner Harmony
+        self.kbkres += 30
+        self.pdefdec += 10
+        self.mdefdec += 10
+
+        # Falling Moon
+
+        # Soul Speed
+
+        # 3rd Job
+        # Soul of the Guardian
+        self.hpinc += 30
+        self.mpinc += 10
+
+        # Will of Steel
+
+        # Inner Shout
+        self.accp += 6
+        self.penrate += 6
+
+        # True Sight
+        self.atkp += 15
+        self.bdef += 10
+        self.pldef += 10
+
+        # 4th Job
+        # Soul Pledge
+        self.cr += 4
+
+        # Student of the Blade
+        self.cd += 10
+        self.critdmgres += 10
+
+        # Unpredictable
+        self.batk += 10
+        self.platk += 10
+
+        # Master of the Sword
+        self.pskilldmg += 10
+        self.sskilldmg += 15
+
+        # Equinox Cycle
+        self.cr += 10
+        self.cd += 15
+        self.fd += 20
+
+        # Hyper Buff
+        # Soul Forge
+        self.atkp += 25
+        self.dmg += 15
+
+        # Glory of the Guardians
+        self.cd += 30
+
+        # Student of the Blade - Reinforce
+        self.cd += 10
+        # Unpredictable - Reinforce
+        self.batk += 10
+
+        # Hyper Skill
+        # Careening Dance - Reinforce
+        self.phdmg += 10
+        self.shdmg += 10
+
+        # Careening Dance - Extra Strike
+        self.phitcount += 2
+        self.shitcount += 1
+
+        # Careening Dance - Boss Rush
+        self.phbatk += 10
+        self.shbatk += 10
 
     def atk(self):
         atk = self.atk
@@ -268,34 +330,82 @@ class hat:
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
 
+    def pname(self):
+        pname = self.pname
+        return pname
+
+    def pskilldmg(self):
+        pskilldmg = self.pskilldmg
+        return pskilldmg
+
+    def phitcount(self):
+        phitcount = self.phitcount
+        return phitcount
+
+    def phatkp(self):
+        phatkp = self.phatkp
+        return phatkp
+
+    def phdmg(self):
+        phdmg = self.phdmg
+        return phdmg
+
+    def phbatk(self):
+        phbatk = self.phbatk
+        return phbatk
+
+    def phcr(self):
+        phcr = self.phcr
+        return phcr
+
+    def phcd(self):
+        phcd = self.phcd
+        return phcd
+
+    def phfd(self):
+        phfd = self.phfd
+        return phfd
+
+    def sname(self):
+        sname = self.sname
+        return sname
+
+    def sskilldmg(self):
+        sskilldmg = self.sskilldmg
+        return sskilldmg
+
+    def shitcount(self):
+        shitcount = self.shitcount
+        return shitcount
+
+    def schance(self):
+        schance = self.schance
+        return schance
+
+    def shatkp(self):
+        shatkp = self.shatkp
+        return shatkp
+
+    def shdmg(self):
+        shdmg = self.shdmg
+        return shdmg
+
+    def shbatk(self):
+        shbatk = self.shbatk
+        return shbatk
+
+    def shcr(self):
+        shcr = self.shcr
+        return shcr
+
+    def shcd(self):
+        shcd = self.shcd
+        return shcd
+
+    def shfd(self):
+        shfd = self.shfd
+        return shfd
+
     def spmulti(self):
         spmulti = self.spmulti
         return spmulti
-
-    def empsetcount(self):
-        empsetcount = self.empsetcount
-        return empsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount

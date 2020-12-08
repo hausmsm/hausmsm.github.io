@@ -58,7 +58,7 @@ class buffs:
             self.batk += 15
             self.exp += 20
 
-        # Wild Hunter (STILL UNKNOWN)
+        # Wild Hunter
         if character_class != "WH":
             self.atkp += 14.7
 

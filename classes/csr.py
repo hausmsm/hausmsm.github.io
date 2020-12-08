@@ -51,7 +51,7 @@ class csr:
 
         # Rapid Fire
         self.pname = "Rapid Fire"
-        self.pskilldmg = 292
+        self.pskilldmg = 295
         self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
@@ -144,6 +144,7 @@ class csr:
         # Hyper Buff
         # Whaler's Potion
         self.atkp += 25
+        self.dmg += 15
         self.abnormalstatres += 20
 
         # Epic Adventure

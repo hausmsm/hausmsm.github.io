@@ -104,9 +104,9 @@ class mm:
 
         # Hyper Buff
         # Bullseye Shot
-        self.atkp += 10
-        self.cr += 10
-        self.dmg += 10
+        self.atkp += 15
+        self.cr += 15
+        self.dmg += 15
         # Epic Adventure
         self.cd += 30
         # Sharp Eyes - Enhance

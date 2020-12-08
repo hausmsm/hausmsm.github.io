@@ -104,11 +104,13 @@ class wa:
         self.batk += 6
         # Trifling Wind III
         self.schance += 10
-        self.sskilldmg += 20
+        self.sskilldmg += 30
 
         # Hyper Buff
         # Glory Of The Guardians
         self.cd += 30
+        # Storm Bringer
+        self.dmg += 15
 
         # Hyper Skill
         # Song Of Heaven - Reinforce
