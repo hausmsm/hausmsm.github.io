@@ -19,29 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.07">
-      <change afterPath="$PROJECT_DIR$/classes/aran.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/dw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bucc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/csr.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/nl.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/nw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/shad.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/wa.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/top.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/top.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.08" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597249850092</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="0.08">
+      <created>1607451837308</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607451837309</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,7 +145,8 @@
     <MESSAGE value="0.05" />
     <MESSAGE value="0.06" />
     <MESSAGE value="0.07" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.07" />
+    <MESSAGE value="0.08" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.08" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1593335765041">
