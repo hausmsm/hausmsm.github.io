@@ -176,7 +176,6 @@ if swep_type in ["Unique Longinus Spear","Legendary Longinus Spear","Mythic Long
     swep_level = st.slider('Sharenian Ability', min_value=1, max_value=10)
 
 
-
 equip_type_combination = st.radio("Equipment Combination",["Full Empress", "Full Necro", "2 Piece Fafnir + Empress","4 Piece Fafnir + Empress","2 Piece Fafnir + Necro","4 Piece Fafnir + Necro"])
 if equip_type_combination == "Full Empress":
     equip_type = "1"
