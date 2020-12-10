@@ -299,23 +299,104 @@ with st.beta_expander("Cape"):
 st.header("Accessory Selections")
 ## Necklace
 with st.beta_expander("Necklace"):
-    st.multiselect("Choose 2 Necklaces",["Unique Horntail Necklace","Legendary Horntail Necklace","Epic Mulung Necklace"])
-
-    _,neck1,_,neck2,_ = st.beta_columns([0.02,0.47,0.02,0.47,0.02])
+    necklaces = st.multiselect("Choose 2 Necklaces",["Horntail Necklace (Unique)","Horntail Necklace (Legendary)","Mu Lung Dojo Pendant (Epic)","Mu Lung Dojo Pendant (Unique)","Ifia's Necklace","Spigelmann's Necklace of Chaos"])
+    if len(necklaces) == 2:
+        _,neck1,_,neck2,_ = st.beta_columns([0.02,0.47,0.02,0.47,0.02])
+        if necklaces[0] in ["Horntail Necklace (Unique)","Horntail Necklace (Legendary)","Ifia's Necklace"]:
+            neck1_sf_level = neck1.slider(f"{necklaces[0]} SF Level", min_value=0, max_value=5)
+            if neck1_sf_level == 5:
+                neck1_emblem_stat = neck1.radio(f"Choose {necklaces[0]} Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                neck1_emblem_level = neck1.slider(f"{necklaces[0]} Emblem Level", min_value=1,max_value=5)
+        if necklaces[1] in ["Horntail Necklace (Unique)", "Horntail Necklace (Legendary)", "Ifia's Necklace"]:
+            neck2_sf_level = neck2.slider(f"{necklaces[1]} SF Level", min_value=0, max_value=5)
+            if neck2_sf_level == 5:
+                neck2_emblem_stat = neck2.radio(f"Choose {necklaces[1]} Emblem Stat",
+                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                neck2_emblem_level = neck2.slider(f"{necklaces[1]} Emblem Level", min_value=1, max_value=5)
+    else:
+        st.write("Error: Please Select 2 Necklaces Only")
 
 ## Ring
-
+with st.beta_expander("Rings"):
+    rings = st.multiselect("Choose 4 Rings",["Cygnus Ring (Unique)","Cygnus Ring (Legendary)","Horntail Ring (Legendary)","Horntail Ring (Unique)","Kerning Tower 50F Ring","Kerning M Ring","Attendance Ring","Ifia's Ring","Noble Ifia's Ring","Master Soul Ring SS"])
+    if len(rings) == 4:
+        _,ring1,_,ring2,_,ring3,_,ring4,_ = st.beta_columns([0.02,0.225,0.02,0.225,0.02,0.225,0.02,0.225,0.02])
+        if rings[0] in ["Cygnus Ring (Unique)","Cygnus Ring (Legendary)","Horntail Ring (Legendary)","Horntail Ring (Unique)","Ifia's Ring","Noble Ifia's Ring"]:
+            ring1_sf_level = ring1.slider(f"{rings[0]} SF Level",min_value=0,max_value=5)
+            if ring1_sf_level == 5:
+                ring1_emblem_stat = ring1.radio(f"Choose {rings[0]} Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                ring1_emblem_level = ring1.slider(f"{rings[0]} Emblem Level", min_value=1, max_value=5)
+        else:
+            ring1.subheader(f"{rings[0]}")
+        if rings[1] in ["Cygnus Ring (Unique)","Cygnus Ring (Legendary)","Horntail Ring (Legendary)","Horntail Ring (Unique)","Ifia's Ring","Noble Ifia's Ring"]:
+            ring2_sf_level = ring2.slider(f"{rings[1]} SF Level",min_value=0,max_value=5)
+            if ring2_sf_level == 5:
+                ring2_emblem_stat = ring2.radio(f"Choose {rings[1]} Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                ring2_emblem_level = ring2.slider(f"{rings[1]} Emblem Level", min_value=1, max_value=5)
+        else:
+            ring2.subheader(f"{rings[1]}")
+        if rings[2] in ["Cygnus Ring (Unique)","Cygnus Ring (Legendary)","Horntail Ring (Legendary)","Horntail Ring (Unique)","Ifia's Ring","Noble Ifia's Ring"]:
+            ring3_sf_level = ring3.slider(f"{rings[2]} SF Level",min_value=0,max_value=5)
+            if ring3_sf_level == 5:
+                ring3_emblem_stat = ring3.radio(f"Choose {rings[2]} Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                ring3_emblem_level = ring3.slider(f"{rings[2]} Emblem Level", min_value=1, max_value=5)
+        else:
+            ring3.subheader(f"{rings[2]}")
+        if rings[3] in ["Cygnus Ring (Unique)","Cygnus Ring (Legendary)","Horntail Ring (Legendary)","Horntail Ring (Unique)","Ifia's Ring","Noble Ifia's Ring"]:
+            ring4_sf_level = ring4.slider(f"{rings[3]} SF Level",min_value=0,max_value=5)
+            if ring4_sf_level == 5:
+                ring4_emblem_stat = ring4.radio(f"Choose {rings[3]} Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                ring4_emblem_level = ring4.slider(f"{rings[3]} Emblem Level", min_value=1, max_value=5)
+        else:
+            ring4.subheader(f"{rings[3]}")
+    else:
+        st.write("Error: Please Select 4 Rings Only")
 ## Earring
+with st.beta_expander("Earring"):
+    _,earring1,_ = st.beta_columns([0.02,0.96,0.02])
+    earring = earring1.selectbox("Choose Earring",["Horntail Earring (Unique)","Horntail Earring (Legendary)","Ifia's Earring"])
+    earring_sf_level = earring1.slider("Earring SF Level",min_value=0,max_value=5)
+    if earring_sf_level == 5:
+        earring_emblem_stat = earring1.radio("Choose Earring Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+        earring_emblem_level = earring1.slider("Earring Emblem Level", min_value=1, max_value=5)
 
 ## Title
+with st.beta_expander("Title"):
+    _,title1,_ = st.beta_columns([0.02,0.96,0.02])
+    title = title1.selectbox("Choose Title",["Holy Pink Beanity"])
 
 ## Badge
+with st.beta_expander("Badge"):
+    _, badge1, _ = st.beta_columns([0.02, 0.96, 0.02])
+    badge = badge1.selectbox("Choose Badge", ["Crystal Ventus Badge"])
 
 ## Medal
+with st.beta_expander("Medal"):
+    _, medal1, _ = st.beta_columns([0.02, 0.96, 0.02])
+    medal = medal1.selectbox("Choose Medal", ["Holy Pink Beanity"])
 
 ## Face Accessory
+with st.beta_expander("Face Accessory"):
+    _, face1, _ = st.beta_columns([0.02, 0.96, 0.02])
+    face = face1.selectbox("Choose Face Accessory", ["Dark Premium Symbol (Legendary)"])
 
 ## Eye Accessory
+with st.beta_expander("Eye Accessory"):
+    _, eye1, _ = st.beta_columns([0.02, 0.96, 0.02])
+    eye = eye1.selectbox("Choose Eye Accessory", ["Chaos Pink Bean Mark (Legendary)"])
+
+## Common Stats Stuff
+with st.beta_expander("Link Skills"):
+    linkskills = ["HP/MP Rec (Wind Archer)", "Meso (Night Lord)", "Gold Leaf (Bow Master)",
+                  "Fever Duration (Blaze Wizard)","Drop (Night Walker)","HP% (Thunder Breaker)","Fever Recharge (Aran)",
+                  "Boss ATK (Evan)","KBK RES (Corsair)","Crit Rate (Shadower)","EXP (Mercedes)","MP% (Ice Lightning Mage)",
+                  "Phy DEF (Dark Knight)","Phy ATK (Buccaneer)","PEN (Paladin)","Crit DMG (Phantom)","Mag ATK (Fire Poison Mage)",
+                  "ACC (Marksman)","Mag DMG (Luminous)","Mag DEF (Dawn Warrior)","Alive Chance (Shade)","Boss DEF (Hero)",
+                  "Abnormal Status RES (Battle Mage, Wild Hunter & Mechanic)","Boss ATK (Demon Slayer)","Phy DMG (Demon Avenger)",
+                  "Party EXP (Bishop)"]
+
+    _, links1, _ = st.beta_columns([0.02, 0.96, 0.02])
+    links = links1.multiselect("Choose 12 Link Skills",linkskills)
 
 equip_type_combination = st.radio("Equipment Combination",["Full Empress", "Full Necro", "2 Piece Fafnir + Empress","4 Piece Fafnir + Empress","2 Piece Fafnir + Necro","4 Piece Fafnir + Necro"])
 if equip_type_combination == "Full Empress":
