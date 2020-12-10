@@ -20,6 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.08">
+      <change beforePath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -45,8 +47,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.r.configuration.RSettingsProjectConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -82,6 +86,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -150,59 +155,5 @@
     <MESSAGE value="0.07" />
     <MESSAGE value="0.08" />
     <option name="LAST_COMMIT_MESSAGE" value="0.08" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1593335765041">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="275" y="9" width="816" height="729" key="#Intentions/0.0.1366.738@0.0.1366.738" timestamp="1593335765041" />
-    <state x="820" y="238" key="#Notifications" timestamp="1597311989645">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="820" y="238" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1597311989645" />
-    <state x="459" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593935759120">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="459" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1593935759120" />
-    <state x="363" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596867380253">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="363" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738@0.0.1366.738" timestamp="1596867380253" />
-    <state x="392" y="0" key="#mapletree" timestamp="1593336318377">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="392" y="0" key="#mapletree/0.0.1366.738@0.0.1366.738" timestamp="1593336318377" />
-    <state x="463" y="110" key="FileChooserDialogImpl" timestamp="1597248861046">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="463" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1597248861046" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1593369960296">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593369960296" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1593369960296">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593369960296" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1593369960295">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593369960295" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1593369960296">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593369960296" />
-    <state x="184" y="14" key="SettingsEditor" timestamp="1596380983241">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1596380983241" />
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593336661373">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1593336661373" />
-    <state x="1" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593977875413">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="1" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593977875413" />
   </component>
 </project>
