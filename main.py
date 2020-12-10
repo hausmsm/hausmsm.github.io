@@ -4,7 +4,8 @@ from common.nonemblemcalculations import nonemblemcalculations
 from common.emblemcalculations import emblemcalculations
 import pandas as pd
 import streamlit as st
-
+import warnings
+warnings.filterwarnings("ignore")
 st.title("Automatic Emblem Calculator")
 
 # Character Selection
@@ -152,52 +153,169 @@ with st.beta_expander("Class"):
             char = mech()
 
 # Equipment Choosing
-st.header("Equipment Selection")
+st.header("Weapon Selections")
 
 ## Weapon
 with st.beta_expander("Weapon"):
-    _,wep1,wep2,wep3,_ = st.beta_columns([0.02,0.32,0.32,0.32,0.02])
+    _,wep1,_,wep2,_,wep3,_ = st.beta_columns([0.02,0.303,0.02,0.303,0.02,0.303,0.02])
     weapon_type = wep1.selectbox("Choose Weapon Type",["Mythic Empress","Ancient Empress","Necro","Fafnir"])
+    if weapon_type == "Mythic Empress":
+        weapon_level = wep2.slider("Choose Weapon Level", min_value=30, max_value=40)
+    else:
+        weapon_level = wep2.slider("Choose Weapon Level", min_value=30, max_value=50)
+    weapon_sf_level = wep2.slider("Weapon SF Level", min_value=0, max_value=31)
+    if weapon_type in ["Mythic Empress","Ancient Empress"]:
+        weapon_refine_level = wep2.slider("Weapon Refinement Level",min_value=1,max_value=10)
     if weapon_type != "Fafnir":
-        weapon_stat = wep2.radio("Choose Weapon Stat",["Boss ATK","Crit DMG","Crit Rate","EXP"])
+        weapon_stat = wep1.radio("Choose Weapon Stat",["Boss ATK","Crit DMG","Crit Rate","EXP"])
     else:
         weapon_stat = "None"
-    weapon_emblem = wep3.radio("Choose Weapon Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK", "Boss DEF"])
-    if weapon_type in ["Mythic Empress","Ancient Empress"]:
-        weapon_refine_level = wep1.slider("Weapon Refinement Level",min_value=1,max_value=10)
-    weapon_level = wep1.slider("Choose Weapon Level",min_value=30,max_value=50)
+    weapon_emblem = wep3.radio("Choose Weapon Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
     weapon_emblem_level = wep3.slider("Weapon Emblem Level", min_value=1,max_value=5)
 
 ## Secondary Weapon
 with st.beta_expander("Secondary Weapon"):
-    swep_type = st.selectbox("Choose Secondary Weapon Type",["Unique Class","Legendary Class","Mythic Class","Unique Longinus Spear","Legendary Longinus Spear","Mythic Longinus Spear"])
-    if swep_type in ["Unique Longinus Spear","Legendary Longinus Spear","Mythic Longinus Spear"]:
-        swep_level = st.slider('Sharenian Ability', min_value=1, max_value=10)
+    _,swep1,_,swep2,_ = st.beta_columns([0.02,0.47,0.02,0.47,0.02])
+    swep_type = swep1.selectbox("Choose Secondary Weapon Type",["Normal Class Specific","Longinus Spear"])
+    swep_rank = swep2.selectbox("Choose Secondary Weapon Rank",["Unique","Legendary","Mythic"])
+    _,swep3,_ = st.beta_columns([0.02,0.96,0.02])
+    if swep_rank == "Unique":
+        swep_sf_level = swep3.slider("SWep SF Level",min_value=0,max_value=11)
+    elif swep_rank == "Legendary":
+        swep_sf_level = swep3.slider("SWep SF Level", min_value=0, max_value=13)
+    else:
+        swep_sf_level = swep3.slider("SWep SF Level", min_value=0, max_value=16)
+    if swep_type == "Longinus Spear":
+        swep_level = swep3.slider('Sharenian Ability', min_value=1, max_value=10)
 
+st.header("Armor Selections")
 ## Hat
 with st.beta_expander("Hat"):
-    hat1,hat2,hat3 = st.beta_columns(3)
+    _,hat1,_,hat2,_,hat3,_ = st.beta_columns([0.02,0.303,0.02,0.303,0.02,0.303,0.02])
     hat_type = hat1.selectbox("Choose Hat Type",["Mythic Empress","Ancient Empress","Necro","Fafnir"])
-    if hat_type == "Mythic Empress":
-        hat_level = hat1.slider('Hat Level', min_value=30,max_value=40)
-    else:
-        hat_level = hat1.slider('Hat Level', min_value=30,max_value=50)
     if hat_type != "Fafnir":
-        hat_stat = hat2.radio("Choose Hat Stat",["Boss ATK","Crit ATK","Crit DMG","EXP"])
+        hat_stat = hat1.radio("Choose Hat Stat",["Boss ATK","Crit ATK","Crit DMG","EXP"])
     else:
         hat_stat = "None"
+    if hat_type == "Mythic Empress":
+        hat_level = hat2.slider('Hat Level', min_value=30,max_value=40)
+    else:
+        hat_level = hat2.slider('Hat Level', min_value=30,max_value=50)
+    hat_sf_level = hat2.slider("Hat SF Level", min_value=0,max_value=30)
     hat_emblem = hat3.radio("Choose Hat Emblem Stat",["Crit DMG","Boss ATK","Phy/Mag ATK"])
     hat_emblem_level = hat3.slider("Hat Emblem Level", min_value=1,max_value=5)
 
 ## Glove
 with st.beta_expander("Gloves"):
-    glove1,glove2,glove3 = st.beta_columns(3)
-    glove_type = glove1.selectbox("Choose Glove Type",["Ancient Empress","Necro"])
-    glove_level = glove2.radio("Glove Level",[30,40,50])
-    glove_stat = glove3.radio("Choose Glove Stat",["ACC","Crit Atk","Crit Dmg","EXP"])
+    _,glove1,_,glove2,_,glove3,_ = st.beta_columns([0.02,0.303,0.02,0.303,0.02,0.303,0.02])
+    glove_type = glove1.selectbox("Choose Glove Type",["Mythic Empress","Ancient Empress","Necro"])
+    glove_stat = glove1.radio("Choose Glove Stat",["ACC","Crit Atk","Crit Dmg","EXP"])
+    if glove_type == "Mythic Empress":
+        glove_level = glove2.slider('Glove Level', min_value=30, max_value=40)
+    else:
+        glove_level = glove2.slider('Glove Level', min_value=30, max_value=50)
+    glove_sf_level = glove2.slider("Glove SF Level", min_value=0, max_value=30)
+    glove_emblem = glove3.radio("Choose Glove Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+    glove_emblem_level = glove3.slider("Glove Emblem Level", min_value=1, max_value=5)
 
 ## Top+Bottom/Outfit
-st.subheader("Top+Bottom/Outfit Selection")
+with st.beta_expander("Top+Bottom/Outfit"):
+    tbo_type = st.selectbox("Choose Combination",["Top+Bottom","Outfit"])
+    if tbo_type == "Outfit":
+        _,outfit1,_,outfit2,_,outfit3,_ = st.beta_columns([0.02,0.303,0.02,0.303,0.02,0.303,0.02])
+        outfit_type = outfit1.selectbox("Choose Outfit Type",["Mythic Empress","Ancient Empress"])
+        outfit_stat = outfit1.radio("Choose Outfit Stat", ["Boss ATK", "Crit ATK", "MP Rec", "EXP"])
+        if outfit_type == "Mythic Empress":
+            outfit_level = outfit2.slider('Outfit Level', min_value=30, max_value=40)
+        else:
+            outfit_level = outfit2.slider('Outfit Level', min_value=30, max_value=50)
+        outfit_sf_level = outfit2.slider("Outfit SF Level",min_value=0,max_value=30)
+        outfit_emblem = outfit3.radio("Choose Outfit Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+        outfit_emblem_level = outfit3.slider("Outfit Emblem Level", min_value=1, max_value=5)
+    else:
+        _,tb1,_,tb2,_ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
+        top_level = tb1.slider("Top Level",min_value=30, max_value=50)
+        top_sf_Level = tb1.slider("Top SF Level", min_value=0, max_value=20)
+        top_emblem = tb1.radio("Choose Top Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+        top_emblem_level = tb1.slider("Top Emblem Level", min_value=1, max_value=5)
+        btm_level = tb2.slider("Bottom Level", min_value=30, max_value=50)
+        btm_sf_Level = tb2.slider("Bottom SF Level", min_value=0, max_value=20)
+        btm_emblem = tb2.radio("Choose Bottom Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+        btm_emblem_level = tb2.slider("Bottom Emblem Level", min_value=1, max_value=5)
+
+
+## Shoulders
+with st.beta_expander("Shoulder"):
+    _,shoulder1,_,shoulder2,_,shoulder3,_ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
+    shoulder_type = shoulder1.selectbox("Choose Shoulder Type",["Mythic Empress","Ancient Empress","Necro"])
+    shoulder_stat = shoulder1.radio("Choose Shoulder Stat", ["Crit Atk", "EXP", "HP Rec", "MP Rec"])
+    if shoulder_type == "Mythic Empress":
+        shoulder_level = shoulder2.slider('Shoulder Level', min_value=30, max_value=40)
+    else:
+        shoulder_level = shoulder2.slider('Shoulder Level', min_value=30, max_value=50)
+    shoulder_sf_level = shoulder2.slider("Shoulder SF Level",min_value=0,max_value=30)
+    shoulder_emblem = shoulder3.radio("Choose Shoulder Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+    shoulder_emblem_level = shoulder3.slider("Shoulder Emblem Level", min_value=1, max_value=5)
+
+## Shoes
+with st.beta_expander("Shoes"):
+    _,shoes1,_,shoes2,_,shoes3,_ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
+    shoes_type = shoes1.selectbox("Choose Shoes Type",["Mythic Empress","Ancient Empress","Necro"])
+    shoes_stat = shoes1.radio("Choose Shoes Stat", ["Crit Atk", "EVD", "EXP", "HP Rec"])
+    if shoes_type == "Mythic Empress":
+        shoes_level = shoes2.slider('Shoes Level', min_value=30, max_value=40)
+    else:
+        shoes_level = shoes2.slider('Shoes Level', min_value=30, max_value=50)
+    shoes_sf_level = shoes2.slider("Shoes SF Level",min_value=0, max_value=30)
+    shoes_emblem = shoes3.radio("Choose Shoes Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+    shoes_emblem_level = shoes3.slider("Shoes Emblem Level", min_value=1, max_value=5)
+
+## Belt
+with st.beta_expander("Belt"):
+    _,belt1,_,belt2,_,belt3,_ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
+    belt_type = belt1.selectbox("Choose Belt Type",["Mythic Empress","Ancient Empress","Necro"])
+    belt_stat = belt1.radio("Choose Belt Stat", ["ACC", "Crit Rate", "Drop", "EXP"])
+    if belt_type == "Mythic Empress":
+        belt_level = belt2.slider('Belt Level', min_value=30, max_value=40)
+    else:
+        belt_level = belt2.slider('Belt Level', min_value=30, max_value=50)
+    belt_sf_level = belt2.slider("Belt SF Level",min_value=0, max_value=30)
+    belt_emblem = belt3.radio("Choose Belt Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+    belt_emblem_level = belt3.slider("Belt Emblem Level", min_value=1, max_value=5)
+
+## Cape
+with st.beta_expander("Cape"):
+    _,cape1,_,cape2,_,cape3,_ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
+    cape_type = cape1.selectbox("Choose Cape Type",["Mythic Empress","Ancient Empress","Necro"])
+    cape_stat = cape1.radio("Choose Cape Stat", ["Crit Rate", "EVD", "EXP", "Meso"])
+    if cape_type == "Mythic Empress":
+        cape_level = cape2.slider('Cape Level', min_value=30, max_value=40)
+    else:
+        cape_level = cape2.slider('Cape Level', min_value=30, max_value=50)
+    cape_sf_level = cape2.slider("Cape SF Level",min_value=0, max_value=30)
+    cape_emblem = cape3.radio("Choose Cape Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+    cape_emblem_level = cape3.slider("Cape Emblem Level", min_value=1, max_value=5)
+
+st.header("Accessory Selections")
+## Necklace
+with st.beta_expander("Necklace"):
+    st.multiselect("Choose 2 Necklaces",["Unique Horntail Necklace","Legendary Horntail Necklace","Epic Mulung Necklace"])
+
+    _,neck1,_,neck2,_ = st.beta_columns([0.02,0.47,0.02,0.47,0.02])
+
+## Ring
+
+## Earring
+
+## Title
+
+## Badge
+
+## Medal
+
+## Face Accessory
+
+## Eye Accessory
 
 equip_type_combination = st.radio("Equipment Combination",["Full Empress", "Full Necro", "2 Piece Fafnir + Empress","4 Piece Fafnir + Empress","2 Piece Fafnir + Necro","4 Piece Fafnir + Necro"])
 if equip_type_combination == "Full Empress":
