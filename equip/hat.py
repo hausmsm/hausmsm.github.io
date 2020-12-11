@@ -1,13 +1,16 @@
-class hat:
-    def __init__(self, equip_type, stattype):
-        self.emplist = {"1", "3"}
-        self.necrolist = {"2", "5"}
-        self.faflist = {"4", "6"}
-        self.normallist = {"1", "2"}
-        self.explist = {"3"}
-        self.equip_type = str(equip_type)
-        self.stattype = str(stattype)
+import streamlit as st
 
+
+class hat:
+    def __init__(self):
+        # Initialize
+        self.stat_amount = 0
+        self.emblem_amount = 0
+
+        # SF Stats
+        self.sf = 0
+
+        # Offensive Stats
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
@@ -19,6 +22,7 @@ class hat:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 0
         self.pdefdec = 0
@@ -30,6 +34,7 @@ class hat:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
         self.evd = 0
@@ -38,15 +43,19 @@ class hat:
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 0
         self.jmp = 0
         self.kbkres = 0
 
+        # Misc Stats
         self.exp = 0
         self.dr = 0
         self.meso = 0
@@ -55,50 +64,241 @@ class hat:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
-        self.empsetcount = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
         self.bosssetcount = 0
+
+        # Flame Stats
         self.atklinecount = 0
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Empress
-        if self.equip_type in self.emplist:
-            self.pdef += 1921.4 + 1100 + 0 # SF VALUE TO BE ADDED
-            self.mdef += 1921.4 + 1100 + 0 # SF VALUE TO BE ADDED
-            self.hp += 14000
-            if self.stattype in self.normallist:
-                self.cd += 16
-            elif self.stattype in self.explist:
-                self.exp += 2
-            self.empsetcount += 1
-            self.cdlinecount += 2
+        sfdefdict = {
+            0: 0,
+            1: 69,
+            2: 141,
+            3: 214,
+            4: 290,
+            5: 369,
+            6: 450,
+            7: 533,
+            8: 619,
+            9: 708,
+            10: 800,
+            11: 894,
+            12: 993,
+            13: 1094,
+            14: 1200,
+            15: 1309,
+            16: 1422,
+            17: 1539,
+            18: 1661,
+            19: 1788,
+            20: 1920,
+            21: 2057,
+            22: 2200,
+            23: 2349,
+            24: 2504,
+            25: 2666,
+            26: 2836,
+            27: 3014,
+            28: 3200,
+            29: 3395,
+            30: 3600,
+        }
+        emblem_cd_stats = {
+            1: 5,
+            2: 7,
+            3: 10,
+            4: 15,
+            5: 20
+        }
 
-        # Necro
-        elif self.equip_type in self.necrolist:
-            self.pdef += 2700.1 + 1339 + 0  # SF VALUE TO BE ADDED
-            self.mdef += 2700.1 + 1339 + 0  # SF VALUE TO BE ADDED
-            self.hp += 15120
-            if self.stattype in self.normallist:
-                self.cd += 16
-            elif self.stattype in self.explist:
-                self.exp += 2
-            self.necrosetcount += 1
-            self.cdlinecount += 2
+        emblem_ba_stats = {
+            1: 3,
+            2: 4,
+            3: 5,
+            4: 7,
+            5: 10
+        }
 
-        # Fafnir
-        elif self.equip_type in self.faflist:
-            self.pdef += 0 + 0 + 0  # ALL VALUES TO BE ADDED
-            self.mdef += 0 + 0 + 0  # ALL VALUES TO BE ADDED
-            self.hp += 0 # ALL VALUES TO BE ADDED
-            self.dmg += 5
-            self.fafsetcount += 1
-            self.cdlinecount += 2
+        emblem_atk_stats = {
+            1: 3,
+            2: 4,
+            3: 5,
+            4: 7,
+            5: 10
+        }
+
+        with st.beta_expander("Hat"):
+            _, hat1, _, hat2, _, hat3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
+            hat_type = hat1.selectbox("Choose Hat Type", ["Mythic Empress", "Ancient Empress", "Necro", "Fafnir"])
+            self.type = hat_type
+            if hat_type != "Fafnir":
+                hat_stat = hat1.radio("Choose Hat Stat", ["Boss ATK", "Crit ATK", "Crit DMG", "EXP"])
+            else:
+                hat_stat = "None"
+            if hat_type == "Mythic Empress":
+                hat_level = hat2.slider('Hat Level', min_value=30, max_value=40)
+            else:
+                hat_level = hat2.slider('Hat Level', min_value=30, max_value=50)
+            self.stat = hat_stat
+            self.level = hat_level
+            hat_sf_level = hat2.slider("Hat SF Level", min_value=0, max_value=30)
+            self.sf = hat_sf_level
+            if hat_type == "Mythic Empress":
+                hat_refine_level = hat2.slider("Hat Refinement Level", min_value=1, max_value=10)
+                # Base
+                self.pdef += 860
+                self.mdef += 860
+                # Level
+                self.pdef += ((hat_level-30)*31.5 + 630)
+                self.mdef += ((hat_level-30)*31.5 + 630)
+                self.hp += ((hat_level-30)*360.2 + 7205)
+                # SF
+                self.pdef += sfdefdict[hat_sf_level]
+                self.mdef += sfdefdict[hat_sf_level]
+                # Refinement
+                self.pdef += ((hat_refine_level-1) * 32 + 160)
+                self.mdef += ((hat_refine_level - 1) * 32 + 160)
+                # Stat
+                if hat_stat == "Boss ATK":
+                    self.batk += ((hat_level-30)*0.14 + 1.6)
+                    self.stat_amount += self.batk
+                elif hat_stat == "Crit ATK":
+                    self.cratk += ((hat_level-30)*5.4 + 108)
+                    self.stat_amount += self.cratk
+                elif hat_stat == "Crit DMG":
+                    self.cd += ((hat_level-30)*0.67 + 6.7)
+                    self.stat_amount += self.cd
+                else:
+                    self.exp += ((hat_level-30)*0.5 + 1)
+                    self.stat_amount += self.exp
+                self.mempsetcount += 1
+            elif hat_type == "Ancient Empress":
+                hat_refine_level = hat2.slider("Hat Refinement Level", min_value=1, max_value=10)
+                # Base
+                self.pdef += 2112
+                self.mdef += 2112
+                # Level
+                self.pdef += ((hat_level-30)*22.45 + 651)
+                self.mdef += ((hat_level-30)*22.45 + 651)
+                self.hp += ((hat_level-30)*107.15 + 11857)
+                # SF
+                self.pdef += sfdefdict[hat_sf_level]
+                self.mdef += sfdefdict[hat_sf_level]
+                # Refinement
+                self.pdef += ((hat_refine_level-1) * 32 + 160)
+                self.mdef += ((hat_refine_level - 1) * 32 + 160)
+                # Stat
+                if hat_stat == "Boss ATK":
+                    self.batk += ((hat_level-1)*0.048 + 1.6)
+                    self.stat_amount += self.batk
+                elif hat_stat == "Crit ATK":
+                    self.cratk += ((hat_level-1)*1.8 + 110)
+                    self.stat_amount += self.cratk
+                elif hat_stat == "Crit DMG":
+                    self.cd += ((hat_level-1)*0.182 + 6.9)
+                    self.stat_amount += self.cd
+                else:
+                    self.exp += ((hat_level-1)*0.02 + 1)
+                    self.stat_amount += self.exp
+                self.aempsetcount += 1
+            elif hat_type == "Fafnir":
+                # Base
+                self.pdef += 971
+                self.mdef += 971
+                # Level
+                self.pdef += ((hat_level - 30) * 22.45 + 651)
+                self.mdef += ((hat_level - 30) * 22.45 + 651)
+                self.hp += ((hat_level - 30) * 107.15 + 8750)
+                # SF
+                self.pdef += sfdefdict[hat_sf_level]
+                self.mdef += sfdefdict[hat_sf_level]
+                self.fafsetcount += 1
+            else:
+                # Base
+                self.pdef += 2969
+                self.mdef += 2969
+                # Level
+                self.pdef += ((hat_level - 1) * 27.3)
+                self.mdef += ((hat_level - 1) * 27.3)
+                self.hp += ((hat_level - 1) * 115.7 + 9450)
+                # SF
+                self.pdef += sfdefdict[hat_sf_level]
+                self.mdef += sfdefdict[hat_sf_level]
+                # Stat
+                if hat_stat == "Boss ATK":
+                    self.batk += ((hat_level - 1) * 0.048 + 1.6)
+                    self.stat_amount += self.batk
+                elif hat_stat == "Crit ATK":
+                    self.cratk += ((hat_level - 1) * 1.8 + 110)
+                    self.stat_amount += self.cratk
+                elif hat_stat == "Crit DMG":
+                    self.cd += ((hat_level - 1) * 0.182 + 6.9)
+                    self.stat_amount += self.cd
+                else:
+                    self.exp += ((hat_level - 1) * 0.02 + 1)
+                    self.stat_amount += self.exp
+                self.necrosetcount += 1
+
+            hat_emblem = hat3.radio("Choose Hat Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+            hat_emblem_level = hat3.slider("Hat Emblem Level", min_value=1, max_value=5)
+            self.emblem = hat_emblem
+            self.emblem_level = hat_emblem_level
+            # Emblem
+            if hat_emblem == "Crit DMG":
+                self.emblem_amount += emblem_cd_stats[hat_emblem_level]
+                self.cd += self.emblem_amount
+            elif hat_emblem == "Boss ATK":
+                self.emblem_amount += emblem_ba_stats[hat_emblem_level]
+                self.batk += self.emblem_amount
+            else:
+                self.emblem_amount += emblem_atk_stats[hat_emblem_level]
+                self.atkp += self.emblem_amount
+
 
         # Potential
         self.atkp += 6
+
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
+
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
+
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
+
+    def type(self):
+        type = self.type
+        return type
+
+    def sf(self):
+        sf = self.sf
+        return sf
+
+    def stat(self):
+        stat = self.stat
+        return stat
+
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
+
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -272,9 +472,13 @@ class hat:
         spmulti = self.spmulti
         return spmulti
 
-    def empsetcount(self):
-        empsetcount = self.empsetcount
-        return empsetcount
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
 
     def necrosetcount(self):
         necrosetcount = self.necrosetcount
