@@ -894,10 +894,7 @@ class weapon:
                 self.atkp += self.emblem_amount
 
             # Potential
-            if weapon_type == "Mythic Empress":
-                self.cd += 15
-            else:
-                self.cd += 18
+            self.cd += 18
 
             # Flames
             self.atklinecount += 2

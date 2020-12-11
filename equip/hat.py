@@ -264,6 +264,8 @@ class hat:
                 self.emblem_amount += emblem_atk_stats[hat_emblem_level]
                 self.atkp += self.emblem_amount
 
+        # Flame Stat
+        self.cdlinecount += 2
 
         # Potential
         self.atkp += 6

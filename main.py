@@ -56,42 +56,39 @@ with st.sidebar.beta_expander("Hat"):
     st.write(f"Emblem Stat Amount: {hat.emblem_amount}")
 
 ## Glove
-with st.beta_expander("Gloves"):
-    _, glove1, _, glove2, _, glove3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-    glove_type = glove1.selectbox("Choose Glove Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-    glove_stat = glove1.radio("Choose Glove Stat", ["ACC", "Crit Atk", "Crit Dmg", "EXP"])
-    if glove_type == "Mythic Empress":
-        glove_level = glove2.slider('Glove Level', min_value=30, max_value=40)
-    else:
-        glove_level = glove2.slider('Glove Level', min_value=30, max_value=50)
-    glove_sf_level = glove2.slider("Glove SF Level", min_value=0, max_value=30)
-    glove_emblem = glove3.radio("Choose Glove Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-    glove_emblem_level = glove3.slider("Glove Emblem Level", min_value=1, max_value=5)
+from equip.glove import glove
+glove = glove()
+with st.sidebar.beta_expander("Glove"):
+    st.write(f"{glove.type}")
+    st.write(f"Level: {glove.level}")
+    st.write(f"{glove.stat}: {glove.stat_amount:.1f}")
+    st.write(f"SF: {glove.sf}")
+    st.write(f"Emblem: {glove.emblem}")
+    st.write(f"Emblem Level: {glove.emblem_level}")
+    st.write(f"Emblem Stat Amount: {glove.emblem_amount}")
 
 ## Top+Bottom/Outfit
-with st.beta_expander("Top+Bottom/Outfit"):
-    tbo_type = st.selectbox("Choose Combination", ["Top+Bottom", "Outfit"])
-    if tbo_type == "Outfit":
-        _, outfit1, _, outfit2, _, outfit3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-        outfit_type = outfit1.selectbox("Choose Outfit Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-        outfit_stat = outfit1.radio("Choose Outfit Stat", ["Boss ATK", "Crit ATK", "MP Rec", "EXP"])
-        if outfit_type == "Mythic Empress":
-            outfit_level = outfit2.slider('Outfit Level', min_value=30, max_value=40)
-        else:
-            outfit_level = outfit2.slider('Outfit Level', min_value=30, max_value=50)
-        outfit_sf_level = outfit2.slider("Outfit SF Level", min_value=0, max_value=30)
-        outfit_emblem = outfit3.radio("Choose Outfit Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-        outfit_emblem_level = outfit3.slider("Outfit Emblem Level", min_value=1, max_value=5)
-    else:
-        _, tb1, _, tb2, _ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
-        top_level = tb1.slider("Top Level", min_value=30, max_value=50)
-        top_sf_Level = tb1.slider("Top SF Level", min_value=0, max_value=20)
-        top_emblem = tb1.radio("Choose Top Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-        top_emblem_level = tb1.slider("Top Emblem Level", min_value=1, max_value=5)
-        btm_level = tb2.slider("Bottom Level", min_value=30, max_value=50)
-        btm_sf_Level = tb2.slider("Bottom SF Level", min_value=0, max_value=20)
-        btm_emblem = tb2.radio("Choose Bottom Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-        btm_emblem_level = tb2.slider("Bottom Emblem Level", min_value=1, max_value=5)
+from equip.tbo import tbo
+tbo = tbo()
+if tbo.tbo() == "Top+Bottom":
+    with st.sidebar.beta_expander("Top+Bottom"):
+        st.write(f"Top Level: {tbo.top_level}, Bottom Level: {tbo.btm_level}")
+        st.write(f"Top SF: {tbo.top_sf}, Bottom SF: {tbo.btm_sf}")
+        st.write(f"Top Emblem: {tbo.top_emblem}")
+        st.write(f"Top Emblem Level: {tbo.top_emblem_level}")
+        st.write(f"Top Emblem Stat Amount: {tbo.top_emblem_amount}")
+        st.write(f"Bottom Emblem: {tbo.btm_emblem}")
+        st.write(f"Bottom Emblem Level: {tbo.btm_emblem_level}")
+        st.write(f"Bottom Emblem Stat Amount: {tbo.btm_emblem_amount}")
+else:
+    with st.sidebar.beta_expander("Outfit"):
+        st.write(f"{tbo.type}")
+        st.write(f"Level: {tbo.level}")
+        st.write(f"{tbo.stat}: {tbo.stat_amount:.1f}")
+        st.write(f"SF: {tbo.sf}")
+        st.write(f"Emblem: {tbo.emblem}")
+        st.write(f"Emblem Level: {tbo.emblem_level}")
+        st.write(f"Emblem Stat Amount: {tbo.emblem_amount}")
 
 ## Shoulders
 with st.beta_expander("Shoulder"):

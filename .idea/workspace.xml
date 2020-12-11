@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.10">
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.14">
+      <change afterPath="$PROJECT_DIR$/equip/tbo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/character_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/character_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -142,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607587399305</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="0.14">
+      <created>1607706801764</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607706801764</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +171,8 @@
     <MESSAGE value="0.07" />
     <MESSAGE value="0.08" />
     <MESSAGE value="0.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.10" />
+    <MESSAGE value="0.14" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.14" />
   </component>
   <component name="WindowStateProjectService">
     <state x="526" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1607676704933">
