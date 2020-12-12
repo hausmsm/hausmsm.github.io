@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.17">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607754074338</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="0.19">
+      <created>1607801791405</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607801791405</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,7 +188,8 @@
     <MESSAGE value="0.14" />
     <MESSAGE value="0.16" />
     <MESSAGE value="0.17" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.17" />
+    <MESSAGE value="0.19" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.19" />
   </component>
   <component name="WindowStateProjectService">
     <state x="526" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1607676704933">
