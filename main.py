@@ -103,43 +103,40 @@ with st.sidebar.beta_expander("Shoulder"):
     st.write(f"Emblem Stat Amount: {shoulder.emblem_amount}")
 
 ## Shoes
-with st.beta_expander("Shoes"):
-    _, shoes1, _, shoes2, _, shoes3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-    shoes_type = shoes1.selectbox("Choose Shoes Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-    shoes_stat = shoes1.radio("Choose Shoes Stat", ["Crit Atk", "EVD", "EXP", "HP Rec"])
-    if shoes_type == "Mythic Empress":
-        shoes_level = shoes2.slider('Shoes Level', min_value=30, max_value=40)
-    else:
-        shoes_level = shoes2.slider('Shoes Level', min_value=30, max_value=50)
-    shoes_sf_level = shoes2.slider("Shoes SF Level", min_value=0, max_value=30)
-    shoes_emblem = shoes3.radio("Choose Shoes Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-    shoes_emblem_level = shoes3.slider("Shoes Emblem Level", min_value=1, max_value=5)
+from equip.shoe import shoe
+shoes = shoe()
+with st.sidebar.beta_expander("Shoes"):
+    st.write(f"{shoes.type}")
+    st.write(f"Level: {shoes.level}")
+    st.write(f"{shoes.stat}: {shoes.stat_amount:.1f}")
+    st.write(f"SF: {shoes.sf}")
+    st.write(f"Emblem: {shoes.emblem}")
+    st.write(f"Emblem Level: {shoes.emblem_level}")
+    st.write(f"Emblem Stat Amount: {shoes.emblem_amount}")
 
 ## Belt
-with st.beta_expander("Belt"):
-    _, belt1, _, belt2, _, belt3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-    belt_type = belt1.selectbox("Choose Belt Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-    belt_stat = belt1.radio("Choose Belt Stat", ["ACC", "Crit Rate", "Drop", "EXP"])
-    if belt_type == "Mythic Empress":
-        belt_level = belt2.slider('Belt Level', min_value=30, max_value=40)
-    else:
-        belt_level = belt2.slider('Belt Level', min_value=30, max_value=50)
-    belt_sf_level = belt2.slider("Belt SF Level", min_value=0, max_value=30)
-    belt_emblem = belt3.radio("Choose Belt Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-    belt_emblem_level = belt3.slider("Belt Emblem Level", min_value=1, max_value=5)
+from equip.belt import belt
+belt = belt()
+with st.sidebar.beta_expander("Belt"):
+    st.write(f"{belt.type}")
+    st.write(f"Level: {belt.level}")
+    st.write(f"{belt.stat}: {belt.stat_amount:.1f}")
+    st.write(f"SF: {belt.sf}")
+    st.write(f"Emblem: {belt.emblem}")
+    st.write(f"Emblem Level: {belt.emblem_level}")
+    st.write(f"Emblem Stat Amount: {belt.emblem_amount}")
 
 ## Cape
-with st.beta_expander("Cape"):
-    _, cape1, _, cape2, _, cape3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-    cape_type = cape1.selectbox("Choose Cape Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-    cape_stat = cape1.radio("Choose Cape Stat", ["Crit Rate", "EVD", "EXP", "Meso"])
-    if cape_type == "Mythic Empress":
-        cape_level = cape2.slider('Cape Level', min_value=30, max_value=40)
-    else:
-        cape_level = cape2.slider('Cape Level', min_value=30, max_value=50)
-    cape_sf_level = cape2.slider("Cape SF Level", min_value=0, max_value=30)
-    cape_emblem = cape3.radio("Choose Cape Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-    cape_emblem_level = cape3.slider("Cape Emblem Level", min_value=1, max_value=5)
+from equip.cape import cape
+cape = cape()
+with st.sidebar.beta_expander("Cape"):
+    st.write(f"{cape.type}")
+    st.write(f"Level: {cape.level}")
+    st.write(f"{cape.stat}: {cape.stat_amount:.1f}")
+    st.write(f"SF: {cape.sf}")
+    st.write(f"Emblem: {cape.emblem}")
+    st.write(f"Emblem Level: {cape.emblem_level}")
+    st.write(f"Emblem Stat Amount: {cape.emblem_amount}")
 
 st.header("Accessory Selections")
 ## Necklace

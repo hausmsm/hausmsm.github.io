@@ -19,14 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.16">
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.17">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoulder.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/tbo.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/tbo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607718799351</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="0.17">
+      <created>1607754074338</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607754074338</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,12 +186,17 @@
     <MESSAGE value="0.10" />
     <MESSAGE value="0.14" />
     <MESSAGE value="0.16" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.16" />
+    <MESSAGE value="0.17" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.17" />
   </component>
   <component name="WindowStateProjectService">
     <state x="526" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1607676704933">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="526" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.738@0.0.1366.738" timestamp="1607676704933" />
+    <state x="47" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607797812216">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="47" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1607797812216" />
   </component>
 </project>
