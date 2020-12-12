@@ -50,6 +50,8 @@ class weapon:
         self.mp = 0
         self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -1062,6 +1064,14 @@ class weapon:
     def mpinc(self):
         mpinc = self.mpinc
         return mpinc
+
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
 
     def spd(self):
         spd = self.spd

@@ -50,6 +50,8 @@ class tbo:
         self.mp = 0
         self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -200,8 +202,8 @@ class tbo:
                         self.cratk += ((outfit_level - 30) * 18.8 + 375)
                         self.stat_amount += self.cratk
                     elif outfit_stat == "MP Rec":
-                        self.mpinc += ((outfit_level - 30) * 0.2 + 3)
-                        self.stat_amount += self.mpinc
+                        self.mprec += ((outfit_level - 30) * 0.2 + 3)
+                        self.stat_amount += self.mprec
                     else:
                         self.exp += ((outfit_level - 30) * 0.04 + 1.1)
                         self.stat_amount += self.exp
@@ -245,8 +247,8 @@ class tbo:
                         self.cratk += ((outfit_level - 1) * (299/49) + 381)
                         self.stat_amount += self.cratk
                     elif outfit_stat == "MP Rec":
-                        self.mpinc += ((outfit_level - 1) * (3/49) + 3)
-                        self.stat_amount += self.mpinc
+                        self.mprec += ((outfit_level - 1) * (3/49) + 3)
+                        self.stat_amount += self.mprec
                     else:
                         self.exp += ((outfit_level - 1) * (0.9/49) + 1.1)
                         self.stat_amount += self.exp
@@ -286,8 +288,8 @@ class tbo:
                         self.cratk += ((outfit_level - 1) * (299 / 49) + 381)
                         self.stat_amount += self.cratk
                     elif outfit_stat == "MP Rec":
-                        self.mpinc += ((outfit_level - 1) * (3 / 49) + 3)
-                        self.stat_amount += self.mpinc
+                        self.mprec += ((outfit_level - 1) * (3 / 49) + 3)
+                        self.stat_amount += self.mprec
                     else:
                         self.exp += ((outfit_level - 1) * (0.9 / 49) + 1.1)
                         self.stat_amount += self.exp
@@ -564,6 +566,14 @@ class tbo:
     def mpinc(self):
         mpinc = self.mpinc
         return mpinc
+
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
 
     def spd(self):
         spd = self.spd

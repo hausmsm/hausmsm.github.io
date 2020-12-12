@@ -91,17 +91,16 @@ else:
         st.write(f"Emblem Stat Amount: {tbo.emblem_amount}")
 
 ## Shoulders
-with st.beta_expander("Shoulder"):
-    _, shoulder1, _, shoulder2, _, shoulder3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-    shoulder_type = shoulder1.selectbox("Choose Shoulder Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-    shoulder_stat = shoulder1.radio("Choose Shoulder Stat", ["Crit Atk", "EXP", "HP Rec", "MP Rec"])
-    if shoulder_type == "Mythic Empress":
-        shoulder_level = shoulder2.slider('Shoulder Level', min_value=30, max_value=40)
-    else:
-        shoulder_level = shoulder2.slider('Shoulder Level', min_value=30, max_value=50)
-    shoulder_sf_level = shoulder2.slider("Shoulder SF Level", min_value=0, max_value=30)
-    shoulder_emblem = shoulder3.radio("Choose Shoulder Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-    shoulder_emblem_level = shoulder3.slider("Shoulder Emblem Level", min_value=1, max_value=5)
+from equip.shoulder import shoulder
+shoulder = shoulder()
+with st.sidebar.beta_expander("Shoulder"):
+    st.write(f"{shoulder.type}")
+    st.write(f"Level: {shoulder.level}")
+    st.write(f"{shoulder.stat}: {shoulder.stat_amount:.1f}")
+    st.write(f"SF: {shoulder.sf}")
+    st.write(f"Emblem: {shoulder.emblem}")
+    st.write(f"Emblem Level: {shoulder.emblem_level}")
+    st.write(f"Emblem Stat Amount: {shoulder.emblem_amount}")
 
 ## Shoes
 with st.beta_expander("Shoes"):
