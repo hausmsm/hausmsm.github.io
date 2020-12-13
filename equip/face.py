@@ -1,5 +1,16 @@
+import streamlit as st
+
+
 class face:
     def __init__(self):
+        # Initialize
+        self.emblem = "None"
+        self.emblem_amount = 0
+
+        # SF Stats
+        self.sf = 0
+
+        # Offensive Stats
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
@@ -11,6 +22,7 @@ class face:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 0
         self.pdefdec = 0
@@ -22,6 +34,7 @@ class face:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
         self.evd = 0
@@ -30,15 +43,21 @@ class face:
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 0
         self.jmp = 0
         self.kbkres = 0
 
+        # Misc Stats
         self.exp = 0
         self.dr = 0
         self.meso = 0
@@ -47,19 +66,98 @@ class face:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
-        self.empsetcount = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
         self.bosssetcount = 0
+        self.commandersetcount = 0
+
+        # Flame Stats
         self.atklinecount = 0
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Dark Premium Symbol
-        self.atk += 50
-        self.cd += 4
-        self.bosssetcount += 1
+        emblem_cd_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
+
+        emblem_ba_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
+
+        emblem_atk_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
+
+        with st.beta_expander("Face Accessory"):
+            face_list = st.selectbox("Choose an Face Accessory", ["Condensed Power Crystal","Dark Premium Symbol (Unique)","Dark Premium Symbol (Legendary)"])
+            self.type = face_list
+            _, face1, _ = st.beta_columns([0.02, 0.96, 0.02])
+            if "Condensed Power Crystal" in [face_list]:
+                # Base
+                self.atk += 30
+                self.cr += 2
+                self.bosssetcount += 1
+            elif "Dark Premium Symbol (Legendary)" in [face_list]:
+                # Base
+                self.atk += 50
+                self.cd += 4
+                self.bosssetcount += 1
+            elif "Dark Premium Symbol (Unique)" in [face_list]:
+                # Base
+                self.atk += 35
+                self.cd += 2
+                self.bosssetcount += 1
+
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
+
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
+
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
+
+    def type(self):
+        type = self.type
+        return type
+
+    def sf(self):
+        sf = self.sf
+        return sf
+
+    def stat(self):
+        stat = self.stat
+        return stat
+
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
+
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -185,6 +283,14 @@ class face:
         mpinc = self.mpinc
         return mpinc
 
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
+
     def spd(self):
         spd = self.spd
         return spd
@@ -233,9 +339,13 @@ class face:
         spmulti = self.spmulti
         return spmulti
 
-    def empsetcount(self):
-        empsetcount = self.empsetcount
-        return empsetcount
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
 
     def necrosetcount(self):
         necrosetcount = self.necrosetcount
@@ -248,6 +358,10 @@ class face:
     def bosssetcount(self):
         bosssetcount = self.bosssetcount
         return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
 
     def atklinecount(self):
         atklinecount = self.atklinecount

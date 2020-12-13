@@ -143,111 +143,103 @@ st.header("Accessory Selections")
 from equip.necklace import necklace
 necklace = necklace()
 with st.sidebar.beta_expander("Necklaces"):
-    st.write(f"{necklace.neck1}")
-    st.write(f"SF: {necklace.neck1_sf}")
-    st.write(f"Emblem: {necklace.neck1_emblem}")
-    st.write(f"Emblem Level: {necklace.neck1_emblem_level}")
-    st.write(f"Emblem Stat Amount: {necklace.neck1_emblem_amount}")
+    if necklace.neck_amount == 2:
+        st.write(f"{necklace.neck1}")
+        st.write(f"SF: {necklace.neck1_sf}")
+        if necklace.neck1_emblem != "None":
+            st.write(f"Emblem: {necklace.neck1_emblem}")
+            st.write(f"Emblem Level: {necklace.neck1_emblem_level}")
+            st.write(f"Emblem Stat Amount: {necklace.neck1_emblem_amount}")
+            st.write("\n")
+        st.write(f"{necklace.neck2}")
+        st.write(f"SF: {necklace.neck2_sf}")
+        if necklace.neck2_emblem != "None":
+            st.write(f"Emblem: {necklace.neck2_emblem}")
+            st.write(f"Emblem Level: {necklace.neck2_emblem_level}")
+            st.write(f"Emblem Stat Amount: {necklace.neck2_emblem_amount}")
+    else:
+        st.write("Error: Please Select 2 Necklaces Only")
 
 ## Ring
-with st.beta_expander("Rings"):
-    rings = st.multiselect("Choose 4 Rings",
-                           ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)", "Horntail Ring (Legendary)",
-                            "Horntail Ring (Unique)", "Kerning Tower 50F Ring", "Kerning M Ring", "Attendance Ring",
-                            "Ifia's Ring", "Noble Ifia's Ring", "Master Soul Ring SS"])
-    if len(rings) == 4:
-        _, ring1, _, ring2, _, ring3, _, ring4, _ = st.beta_columns(
-            [0.02, 0.225, 0.02, 0.225, 0.02, 0.225, 0.02, 0.225, 0.02])
-        if rings[0] in ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)", "Horntail Ring (Legendary)",
-                        "Horntail Ring (Unique)", "Ifia's Ring", "Noble Ifia's Ring"]:
-            ring1_sf_level = ring1.slider(f"{rings[0]} SF Level", min_value=0, max_value=5)
-            if ring1_sf_level == 5:
-                ring1_emblem_stat = ring1.radio(f"Choose {rings[0]} Emblem Stat",
-                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                ring1_emblem_level = ring1.slider(f"{rings[0]} Emblem Level", min_value=1, max_value=5)
-        else:
-            ring1.subheader(f"{rings[0]}")
-        if rings[1] in ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)", "Horntail Ring (Legendary)",
-                        "Horntail Ring (Unique)", "Ifia's Ring", "Noble Ifia's Ring"]:
-            ring2_sf_level = ring2.slider(f"{rings[1]} SF Level", min_value=0, max_value=5)
-            if ring2_sf_level == 5:
-                ring2_emblem_stat = ring2.radio(f"Choose {rings[1]} Emblem Stat",
-                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                ring2_emblem_level = ring2.slider(f"{rings[1]} Emblem Level", min_value=1, max_value=5)
-        else:
-            ring2.subheader(f"{rings[1]}")
-        if rings[2] in ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)", "Horntail Ring (Legendary)",
-                        "Horntail Ring (Unique)", "Ifia's Ring", "Noble Ifia's Ring"]:
-            ring3_sf_level = ring3.slider(f"{rings[2]} SF Level", min_value=0, max_value=5)
-            if ring3_sf_level == 5:
-                ring3_emblem_stat = ring3.radio(f"Choose {rings[2]} Emblem Stat",
-                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                ring3_emblem_level = ring3.slider(f"{rings[2]} Emblem Level", min_value=1, max_value=5)
-        else:
-            ring3.subheader(f"{rings[2]}")
-        if rings[3] in ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)", "Horntail Ring (Legendary)",
-                        "Horntail Ring (Unique)", "Ifia's Ring", "Noble Ifia's Ring"]:
-            ring4_sf_level = ring4.slider(f"{rings[3]} SF Level", min_value=0, max_value=5)
-            if ring4_sf_level == 5:
-                ring4_emblem_stat = ring4.radio(f"Choose {rings[3]} Emblem Stat",
-                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                ring4_emblem_level = ring4.slider(f"{rings[3]} Emblem Level", min_value=1, max_value=5)
-        else:
-            ring4.subheader(f"{rings[3]}")
+from equip.ring import ring
+ring = ring()
+with st.sidebar.beta_expander("Rings"):
+    if ring.ring_amount == 4:
+        st.write(f"{ring.ring1}")
+        st.write(f"SF: {ring.ring1_sf}")
+        if ring.ring1_emblem != "None":
+            st.write(f"Emblem: {ring.ring1_emblem}")
+            st.write(f"Emblem Level: {ring.ring1_emblem_level}")
+            st.write(f"Emblem Stat Amount: {ring.ring1_emblem_amount}")
+            st.write("\n")
+        st.write(f"{ring.ring2}")
+        st.write(f"SF: {ring.ring2_sf}")
+        if ring.ring2_emblem != "None":
+            st.write(f"Emblem: {ring.ring2_emblem}")
+            st.write(f"Emblem Level: {ring.ring2_emblem_level}")
+            st.write(f"Emblem Stat Amount: {ring.ring2_emblem_amount}")
+            st.write("\n")
+        st.write(f"{ring.ring3}")
+        st.write(f"SF: {ring.ring3_sf}")
+        if ring.ring3_emblem != "None":
+            st.write(f"Emblem: {ring.ring3_emblem}")
+            st.write(f"Emblem Level: {ring.ring3_emblem_level}")
+            st.write(f"Emblem Stat Amount: {ring.ring3_emblem_amount}")
+            st.write("\n")
+        st.write(f"{ring.ring4}")
+        st.write(f"SF: {ring.ring4_sf}")
+        if ring.ring4_emblem != "None":
+            st.write(f"Emblem: {ring.ring4_emblem}")
+            st.write(f"Emblem Level: {ring.ring4_emblem_level}")
+            st.write(f"Emblem Stat Amount: {ring.ring4_emblem_amount}")
     else:
         st.write("Error: Please Select 4 Rings Only")
+
 ## Earring
-with st.beta_expander("Earring"):
-    _, earring1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    earring = earring1.selectbox("Choose Earring",
-                                 ["Horntail Earring (Unique)", "Horntail Earring (Legendary)", "Ifia's Earring"])
-    earring_sf_level = earring1.slider("Earring SF Level", min_value=0, max_value=5)
-    if earring_sf_level == 5:
-        earring_emblem_stat = earring1.radio("Choose Earring Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-        earring_emblem_level = earring1.slider("Earring Emblem Level", min_value=1, max_value=5)
+from equip.earring import earring
+earrings = earring()
+with st.sidebar.beta_expander("Earrings"):
+    st.write(f"{earrings.type}")
+    st.write(f"SF: {earrings.sf}")
+    if earrings.sf == 5:
+        st.write(f"Emblem: {earrings.emblem}")
+        st.write(f"Emblem Level: {earrings.emblem_level}")
+        st.write(f"Emblem Stat Amount: {earrings.emblem_amount}")
 
 ## Title
-with st.beta_expander("Title"):
-    _, title1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    title = title1.selectbox("Choose Title", ["Holy Pink Beanity"])
+from equip.title import title
+title = title()
+with st.sidebar.beta_expander("Title"):
+    st.write(f"{title.type}")
 
 ## Badge
-with st.beta_expander("Badge"):
-    _, badge1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    badge = badge1.selectbox("Choose Badge", ["Crystal Ventus Badge"])
+from equip.badge import badge
+badge = badge()
+with st.sidebar.beta_expander("Badge"):
+    st.write(f"{badge.type}")
 
 ## Medal
-with st.beta_expander("Medal"):
-    _, medal1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    medal = medal1.selectbox("Choose Medal", ["Holy Pink Beanity"])
+from equip.medal import medal
+medal = medal()
+with st.sidebar.beta_expander("Medal"):
+    st.write(f"{medal.type}")
 
 ## Face Accessory
-with st.beta_expander("Face Accessory"):
-    _, face1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    face = face1.selectbox("Choose Face Accessory", ["Dark Premium Symbol (Legendary)"])
+from equip.face import face
+face = face()
+with st.sidebar.beta_expander("Face Accessory"):
+    st.write(f"{face.type}")
 
 ## Eye Accessory
-with st.beta_expander("Eye Accessory"):
-    _, eye1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    eye = eye1.selectbox("Choose Eye Accessory", ["Chaos Pink Bean Mark (Legendary)"])
+from equip.eye import eye
+eye = eye()
+with st.sidebar.beta_expander("Eye Accessory"):
+    st.write(f"{eye.type}")
 
 ## Common Stats Stuff
-with st.beta_expander("Link Skills"):
-    linkskills = ["HP/MP Rec (Wind Archer)", "Meso (Night Lord)", "Gold Leaf (Bow Master)",
-                  "Fever Duration (Blaze Wizard)", "Drop (Night Walker)", "HP% (Thunder Breaker)",
-                  "Fever Recharge (Aran)",
-                  "Boss ATK (Evan)", "KBK RES (Corsair)", "Crit Rate (Shadower)", "EXP (Mercedes)",
-                  "MP% (Ice Lightning Mage)",
-                  "Phy DEF (Dark Knight)", "Phy ATK (Buccaneer)", "PEN (Paladin)", "Crit DMG (Phantom)",
-                  "Mag ATK (Fire Poison Mage)",
-                  "ACC (Marksman)", "Mag DMG (Luminous)", "Mag DEF (Dawn Warrior)", "Alive Chance (Shade)",
-                  "Boss DEF (Hero)",
-                  "Abnormal Status RES (Battle Mage, Wild Hunter & Mechanic)", "Boss ATK (Demon Slayer)",
-                  "Phy DMG (Demon Avenger)",
-                  "Party EXP (Bishop)"]
+from common.link import link
+link = link(char.character_class,char.type)
 
-    _, links1, _ = st.beta_columns([0.02, 0.96, 0.02])
-    links = links1.multiselect("Choose 12 Link Skills", linkskills)
 
 equip_type_combination = st.radio("Equipment Combination",
                                   ["Full Empress", "Full Necro", "2 Piece Fafnir + Empress", "4 Piece Fafnir + Empress",
@@ -279,56 +271,56 @@ if cash_type_combination == "3+3 Set":
 else:
     cash_type = "2"
 
-commonsum = commonsum(type, character_class)
-equip = equip_selection(equip_type, stat_type, character_class, cash_type)
-necalculations = nonemblemcalculations(commonsum, equip)
+#commonsum = commonsum(type, character_class)
+#equip = equip_selection(equip_type, stat_type, character_class, cash_type)
+#necalculations = nonemblemcalculations(commonsum, equip)
 
-finalcalculations = emblemcalculations(necalculations, char)
+#finalcalculations = emblemcalculations(necalculations, char)
 
-atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg, finalcalculations.batk,
-            finalcalculations.cr, finalcalculations.cd, finalcalculations.fd]
+#atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg, finalcalculations.batk,
+#            finalcalculations.cr, finalcalculations.cd, finalcalculations.fd]
 
-pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
-sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput()]
-firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput()) / finalcalculations.bpoutput() * 100
-secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput()) / finalcalculations.bpoutput() * 100
-firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput()) / finalcalculations.bsoutput() * 100
-secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput()) / finalcalculations.bsoutput() * 100
+#pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
+##sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput()]
+#firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput()) / finalcalculations.bpoutput() * 100
+#secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput()) / finalcalculations.bpoutput() * 100
+#firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput()) / finalcalculations.bsoutput() * 100
+#secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput()) / finalcalculations.bsoutput() * 100
 
-atkflamestats = ['ATK', necalculations.atkflame, necalculations.atkflamebase, necalculations.atklinecount]
-crflamestats = ["CR", necalculations.crflame, necalculations.crflamebase, necalculations.crlinecount]
-cdflamestats = ["CD", necalculations.cdflame, necalculations.cdflamebase, necalculations.cdlinecount]
-flamestatsdf = pd.DataFrame(columns=['Type', 'Amount', 'Base Used', 'Number of Lines'])
-flamestatsdf.loc[0] = atkflamestats
-flamestatsdf.loc[1] = crflamestats
-flamestatsdf.loc[2] = cdflamestats
+#atkflamestats = ['ATK', necalculations.atkflame, necalculations.atkflamebase, necalculations.atklinecount]
+#crflamestats = ["CR", necalculations.crflame, necalculations.crflamebase, necalculations.crlinecount]
+#cdflamestats = ["CD", necalculations.cdflame, necalculations.cdflamebase, necalculations.cdlinecount]
+#flamestatsdf = pd.DataFrame(columns=['Type', 'Amount', 'Base Used', 'Number of Lines'])
+#flamestatsdf.loc[0] = atkflamestats
+#flamestatsdf.loc[1] = crflamestats
+#flamestatsdf.loc[2] = cdflamestats
 
-embstats = [int(finalcalculations.ncdemb), int(finalcalculations.natkpemb), int(finalcalculations.nbatkemb),
-            finalcalculations.bpoutput()
-    , firstppercentage, finalcalculations.bsoutput(), firstspercentage]
-sembstats = [int(finalcalculations.secondncdemb), int(finalcalculations.secondnatkpemb),
-             int(finalcalculations.secondnbatkemb),
-             finalcalculations.sbpoutput(), secondppercentage, finalcalculations.sbsoutput(), secondspercentage]
-atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
-atkstatsdf.loc[0] = atkstats
+#embstats = [int(finalcalculations.ncdemb), int(finalcalculations.natkpemb), int(finalcalculations.nbatkemb),
+#            finalcalculations.bpoutput()
+#    , firstppercentage, finalcalculations.bsoutput(), firstspercentage]
+###sembstats = [int(finalcalculations.secondncdemb), int(finalcalculations.secondnatkpemb),
+#             int(finalcalculations.secondnbatkemb),
+#             finalcalculations.sbpoutput(), secondppercentage, finalcalculations.sbsoutput(), secondspercentage]
+#atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
+#atkstatsdf.loc[0] = atkstats#
+#
+#skillstatsdf = pd.DataFrame(columns=["Skill", "Boss Output", "Non-Boss Output"])
+#skillstatsdf.loc[0] = pskillstats
+#skillstatsdf.loc[1] = sskillstats
 
-skillstatsdf = pd.DataFrame(columns=["Skill", "Boss Output", "Non-Boss Output"])
-skillstatsdf.loc[0] = pskillstats
-skillstatsdf.loc[1] = sskillstats
+#embstatsdf = pd.DataFrame(
+#    columns=["CD Emb", "ATK Emb", "BATK Emb", "Primary DMG", "Primary %", "Secondary DMG", "Secondary %"])
+#embstatsdf.loc[0] = embstats
+#embstatsdf.loc[1] = sembstats
+#skillstatsdf['Boss Output'] = skillstatsdf['Boss Output'].apply(lambda x: "{:,}".format(x))
+#skillstatsdf['Non-Boss Output'] = skillstatsdf['Non-Boss Output'].apply(lambda x: "{:,}".format(x))
 
-embstatsdf = pd.DataFrame(
-    columns=["CD Emb", "ATK Emb", "BATK Emb", "Primary DMG", "Primary %", "Secondary DMG", "Secondary %"])
-embstatsdf.loc[0] = embstats
-embstatsdf.loc[1] = sembstats
-skillstatsdf['Boss Output'] = skillstatsdf['Boss Output'].apply(lambda x: "{:,}".format(x))
-skillstatsdf['Non-Boss Output'] = skillstatsdf['Non-Boss Output'].apply(lambda x: "{:,}".format(x))
+#embstatsdf['Primary DMG'] = embstatsdf['Primary DMG'].apply(lambda x: "{:,}".format(x))
+#embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x: "{:,}".format(x))
+#embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x: "{:.2f}".format(x))
+#embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x: "{:.2f}".format(x))
 
-embstatsdf['Primary DMG'] = embstatsdf['Primary DMG'].apply(lambda x: "{:,}".format(x))
-embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x: "{:,}".format(x))
-embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x: "{:.2f}".format(x))
-embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x: "{:.2f}".format(x))
-
-st.dataframe(skillstatsdf)
-st.dataframe(flamestatsdf)
-st.dataframe(atkstatsdf)
-st.dataframe(embstatsdf)
+##st.dataframe(skillstatsdf)
+#st.dataframe(flamestatsdf)
+#st.dataframe(atkstatsdf)
+#st.dataframe(embstatsdf)

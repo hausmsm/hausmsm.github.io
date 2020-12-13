@@ -19,7 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19" />
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/character_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/character_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/badge.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/earring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/earring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/eye.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/eye.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/medal.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/medal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/necklace.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/necklace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/ring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/title.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/title.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,10 +212,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="0.19" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="526" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1607676704933">
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607878118648">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="526" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.738@0.0.1366.738" timestamp="1607676704933" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1607878118648" />
+    <state x="492" y="291" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607866567014">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="492" y="291" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1607866567014" />
+    <state x="526" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1607869208757">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="526" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.738@0.0.1366.738" timestamp="1607869208757" />
     <state x="47" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607797812216">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

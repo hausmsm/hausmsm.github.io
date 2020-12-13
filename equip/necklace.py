@@ -4,6 +4,7 @@ import streamlit as st
 class necklace:
     def __init__(self):
         # Initialize
+        self.neck_amount = 0
         self.neck1_emblem = "None"
         self.neck1_emblem_amount = 0
 
@@ -118,6 +119,7 @@ class necklace:
                                        ["Horntail Necklace (Unique)", "Horntail Necklace (Legendary)",
                                         "Mu Lung Dojo Pendant (Epic)", "Mu Lung Dojo Pendant (Unique)",
                                         "Ifia's Necklace", "Spigelmann's Necklace of Chaos"])
+            self.neck_amount = len(necklaces)
             if len(necklaces) == 2:
                 _, neck1, _, neck2, _ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
                 if "Horntail Necklace (Unique)" in [necklaces[0],necklaces[1]]:
@@ -139,6 +141,7 @@ class necklace:
                         if neck1_sf_level == 5:
                             neck1_emblem = neck1.radio(f"Choose Horntail Necklace (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             neck1_emblem_level = 1
+                            self.neck1_emblem = neck1_emblem
                             self.neck1_emblem_level = neck1_emblem_level
                             # Emblem
                             if neck1_emblem == "Crit DMG":
@@ -168,6 +171,7 @@ class necklace:
                         if neck2_sf_level == 5:
                             neck2_emblem = neck2.radio(f"Choose Horntail Necklace (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             neck2_emblem_level = 1
+                            self.neck2_emblem = neck2_emblem
                             self.neck2_emblem_level = neck2_emblem_level
                             # Emblem
                             if neck2_emblem == "Crit DMG":
@@ -203,6 +207,7 @@ class necklace:
                         if neck1_sf_level == 5:
                             neck1_emblem = neck1.radio(f"Choose Horntail Necklace (Legendary) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             neck1_emblem_level = neck1.slider(f"Horntail Necklace (Legendary) Emblem Level", min_value=1, max_value=5)
+                            self.neck1_emblem = neck1_emblem
                             self.neck1_emblem_level = neck1_emblem_level
                             # Emblem
                             if neck1_emblem == "Crit DMG":
@@ -232,6 +237,7 @@ class necklace:
                         if neck2_sf_level == 5:
                             neck2_emblem = neck2.radio(f"Choose Horntail Necklace (Legendary) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             neck2_emblem_level = neck2.slider(f"Horntail Necklace (Legendary) Emblem Level", min_value=1, max_value=5)
+                            self.neck2_emblem = neck2_emblem
                             self.neck2_emblem_level = neck2_emblem_level
                             # Emblem
                             if neck2_emblem == "Crit DMG":
@@ -280,6 +286,7 @@ class necklace:
                         if neck1_sf_level == 5:
                             neck1_emblem = neck1.radio(f"Choose Ifia's Necklace Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             neck1_emblem_level = 1
+                            self.neck1_emblem = neck1_emblem
                             self.neck1_emblem_level = neck1_emblem_level
                             # Emblem
                             if neck1_emblem == "Crit DMG":
@@ -305,6 +312,7 @@ class necklace:
                         if neck2_sf_level == 5:
                             neck2_emblem = neck2.radio(f"Choose Ifia's Necklace Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             neck2_emblem_level = 1
+                            self.neck2_emblem = neck2_emblem
                             self.neck2_emblem_level = neck2_emblem_level
                             # Emblem
                             if neck2_emblem == "Crit DMG":
@@ -333,6 +341,10 @@ class necklace:
                     self.batk += 4.5
             else:
                 st.write("Error: Please Select 2 Necklaces Only")
+
+    def neck_amount(self):
+        neck_amount = self.neck_amount
+        return neck_amount
 
     def neck1_emblem(self):
         neck1_emblem = self.neck1_emblem
@@ -367,12 +379,12 @@ class necklace:
         return neck2_emblem_amount
 
     def neck2(self):
-        neck1 = self.neck1
-        return neck1
+        neck2 = self.neck2
+        return neck2
 
     def neck2_sf(self):
-        neck1_sf = self.neck1_sf
-        return neck1_sf
+        neck2_sf = self.neck2_sf
+        return neck2_sf
 
     def stat(self):
         stat = self.stat

@@ -160,3 +160,7 @@ class character_selection:
     def character_type(self):
         character_type = self.character_type
         return character_type
+
+    def type(self):
+        type = self.type
+        return type
