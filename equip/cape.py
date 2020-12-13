@@ -76,6 +76,7 @@ class cape:
         self.necrosetcount = 0
         self.fafsetcount = 0
         self.bosssetcount = 0
+        self.commandersetcount = 0
 
         # Flame Stats
         self.atklinecount = 0
@@ -486,6 +487,10 @@ class cape:
     def bosssetcount(self):
         bosssetcount = self.bosssetcount
         return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
 
     def atklinecount(self):
         atklinecount = self.atklinecount

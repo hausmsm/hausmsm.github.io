@@ -140,26 +140,14 @@ with st.sidebar.beta_expander("Cape"):
 
 st.header("Accessory Selections")
 ## Necklace
-with st.beta_expander("Necklace"):
-    necklaces = st.multiselect("Choose 2 Necklaces", ["Horntail Necklace (Unique)", "Horntail Necklace (Legendary)",
-                                                      "Mu Lung Dojo Pendant (Epic)", "Mu Lung Dojo Pendant (Unique)",
-                                                      "Ifia's Necklace", "Spigelmann's Necklace of Chaos"])
-    if len(necklaces) == 2:
-        _, neck1, _, neck2, _ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
-        if necklaces[0] in ["Horntail Necklace (Unique)", "Horntail Necklace (Legendary)", "Ifia's Necklace"]:
-            neck1_sf_level = neck1.slider(f"{necklaces[0]} SF Level", min_value=0, max_value=5)
-            if neck1_sf_level == 5:
-                neck1_emblem_stat = neck1.radio(f"Choose {necklaces[0]} Emblem Stat",
-                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                neck1_emblem_level = neck1.slider(f"{necklaces[0]} Emblem Level", min_value=1, max_value=5)
-        if necklaces[1] in ["Horntail Necklace (Unique)", "Horntail Necklace (Legendary)", "Ifia's Necklace"]:
-            neck2_sf_level = neck2.slider(f"{necklaces[1]} SF Level", min_value=0, max_value=5)
-            if neck2_sf_level == 5:
-                neck2_emblem_stat = neck2.radio(f"Choose {necklaces[1]} Emblem Stat",
-                                                ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                neck2_emblem_level = neck2.slider(f"{necklaces[1]} Emblem Level", min_value=1, max_value=5)
-    else:
-        st.write("Error: Please Select 2 Necklaces Only")
+from equip.necklace import necklace
+necklace = necklace()
+with st.sidebar.beta_expander("Necklaces"):
+    st.write(f"{necklace.neck1}")
+    st.write(f"SF: {necklace.neck1_sf}")
+    st.write(f"Emblem: {necklace.neck1_emblem}")
+    st.write(f"Emblem Level: {necklace.neck1_emblem_level}")
+    st.write(f"Emblem Stat Amount: {necklace.neck1_emblem_amount}")
 
 ## Ring
 with st.beta_expander("Rings"):
