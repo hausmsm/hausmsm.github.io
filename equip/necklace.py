@@ -184,7 +184,7 @@ class necklace:
                         self.batk += 4.5
                         # Set
                         self.bosssetcount += 1
-                elif "Horntail Necklace (Legendary)" in [necklaces[0],necklaces[1]]:
+                if "Horntail Necklace (Legendary)" in [necklaces[0],necklaces[1]]:
                     # Base
                     self.hp += 230
                     self.mp += 120
@@ -247,7 +247,7 @@ class necklace:
                         self.batk += 4.5
                         # Set
                         self.bosssetcount += 1
-                elif "Mu Lung Dojo Pendant (Epic)" in [necklaces[0],necklaces[1]]:
+                if "Mu Lung Dojo Pendant (Epic)" in [necklaces[0],necklaces[1]]:
                     # Base
                     self.hp += 5
                     self.mp += 5
@@ -257,7 +257,7 @@ class necklace:
                         self.neck1_flag = 1
                     else:
                         self.neck2 = "Mu Lung Dojo Pendant (Epic)"
-                elif "Mu Lung Dojo Pendant (Unique)" in [necklaces[0],necklaces[1]]:
+                if "Mu Lung Dojo Pendant (Unique)" in [necklaces[0],necklaces[1]]:
                     # Base
                     self.hp += 5
                     self.mp += 5
@@ -267,7 +267,7 @@ class necklace:
                         self.neck1_flag = 1
                     else:
                         self.neck2 = "Mu Lung Dojo Pendant (Unique)"
-                elif "Ifia's Necklace" in [necklaces[0],necklaces[1]]:
+                if "Ifia's Necklace" in [necklaces[0],necklaces[1]]:
                     # Base
                     self.atkp += 1
                     if self.neck1_flag == 0:
@@ -319,9 +319,7 @@ class necklace:
                         # Potential
                         self.batk += 4.5
 
-                elif necklaces[0] == "Ifia's Necklace":
-                    self.atkp += 1
-                elif "Spiegelmann's Necklace of Chaos" in [necklaces[0],necklaces[1]]:
+                if "Spiegelmann's Necklace of Chaos" in [necklaces[0],necklaces[1]]:
                     # Base
                     self.hp += 120
                     self.mp += 60
@@ -331,6 +329,8 @@ class necklace:
                         self.neck1_flag = 1
                     else:
                         self.neck2 = "Spiegelmann's Necklace of Chaos"
+                    # Potential
+                    self.batk += 4.5
             else:
                 st.write("Error: Please Select 2 Necklaces Only")
 
