@@ -1,5 +1,21 @@
+import streamlit as st
+import math
+import pandas as pd
+
+
 class buffs:
-    def __init__(self, type, character_class):
+    def __init__(self, character_class, type):
+        # Initialize
+        self.emblem = "None"
+        self.emblem_amount = 0
+        self.character_class = character_class
+        self.type = type
+        self.buffs = list
+
+        # SF Stats
+        self.sf = 0
+
+        # Offensive Stats
         self.atk = 0
         self.atkp = 0
         self.dmg = 0
@@ -11,6 +27,7 @@ class buffs:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 0
         self.pdefdec = 0
@@ -22,6 +39,7 @@ class buffs:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
         self.evd = 0
@@ -30,15 +48,21 @@ class buffs:
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 0
         self.jmp = 0
         self.kbkres = 0
 
+        # Misc Stats
         self.exp = 0
         self.dr = 0
         self.meso = 0
@@ -47,81 +71,125 @@ class buffs:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
-        self.empsetcount = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.bosssetcount = 0
+        self.commandersetcount = 0
 
-        # Bishop
-        if character_class != "BSP":
-            self.atkp += 35
-            self.batk += 15
-            self.exp += 20
+        # Flame Stats
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
-        # Wild Hunter
-        if character_class != "WH":
-            self.atkp += 14.7
+        jobbuff = {
+            # Warrior
+            "Dark Knight": ["Hyper Body ()", "Iron Defence ()"],
+            "Hero": ["Unmanaged Anger (Phy ATK%)"],
+            "Paladin": ["Combat Orders (Phy DMG%, Mag DMG%)", "Parashock Guard ()"],
+            "Dawn Warrior": [],
+            "Aran": ["Maha's Blessing (HP, MP)"],
+            "Demon Slayer": [],
+            "Demon Avenger": [],
+            # Mage
+            "Bishop": ["Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)", "Holy Shell (HP%, MP%, HP, MP)",
+                       "Holy Symbol (EXP, KBK Res)"],
+            "Ice Lightning Mage": ["Meditation (Mag DMG%)"],
+            "Fire Poison Mage": ["Meditation (Mag DMG%)"],
+            "Blaze Wizard": ["Burning Conduit (Phy ATK%, Mag ATK%, Phy DMG%, Mag DMG%)"],
+            "Evan": ["Return Dive (Phy DMG%, Mag DMG%)"],
+            "Luminous": ["Photic Meditation (Mag ATK%)"],
+            "Battle Mage": ["Dark Aura (Phy DMG%, Mag DMG%)"],
+            # Archer
+            "Bow Master": [],
+            "Marksman": [],
+            "Wind Archer": [],
+            "Mercedes": [],
+            "Wild Hunter": ["Call of the Wild (Phy ATK%, Mag ATK%)"],
+            # Thief
+            "Night Lord": [],
+            "Shadower": [],
+            "Night Walker": [],
+            "Phantom": ["Unmanaged Anger (Phy ATK%)", "Combat Orders (Phy DMG%, Mag DMG%)"],
+            # Pirate
+            "Corsair": [],
+            "Buccaneer": ["Speed Infusion (Boss ATK%, Player ATK%)"],
+            "Thunder Breaker": ["Speed Infusion (Boss ATK%, Player ATK%)"],
+            "Shade": [],
+            "Mechanic": ["Support Unit: H-EX (Phy DMG%, Mag DMG%, FD%)"]
+        }
+        buffs_list = ["Hyper Body ()", "Iron Defence ()", "Unmanaged Anger (Phy ATK%)",
+                      "Combat Orders (Phy DMG%, Mag DMG%)", "Parashock Guard ()", "Maha's Blessing (HP, MP)",
+                      "Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)", "Holy Shell (HP%, MP%, HP, MP)",
+                      "Holy Symbol (EXP, KBK Res)", "Meditation (Mag DMG%)",
+                      "Burning Conduit (Phy ATK%, Mag ATK%, Phy DMG%, Mag DMG%)", "Return Dive (Phy DMG%, Mag DMG%)",
+                      "Photic Meditation (Mag ATK%)", "Dark Aura (Phy DMG%, Mag DMG%)",
+                      "Call of the Wild (Phy ATK%, Mag ATK%)", "Speed Infusion (Boss ATK%, Player ATK%)",
+                      "Support Unit: H-EX (Phy DMG%, Mag DMG%, FD%)"
+                      ]
 
-        # Mage
-        if type == "MAGICAL":
-            if character_class != "FPM" and character_class != "ILM":
-                self.dmg += 10
+        character_buff = jobbuff[character_class]
+        for i in character_buff:
+            buffs_list.remove(i)
 
-        # Paladin
-        if character_class != "PALA":
-            if character_class != "PHAN":
-                self.dmg += 15
+        buffdf = pd.DataFrame(columns=["1", "2"])
+        with st.beta_expander("Buffs"):
+            st.write("Note: Character Innate Party Buffs Already Included")
+            buff_list = st.multiselect("Choose Party Buffs To Be Applied", buffs_list)
+            self.buffs = buff_list
+            _, buff1, _ = st.beta_columns([0.02, 0.96, 0.02])
+            length = len(buff_list)
+            if length != 0:
+                for i in range(0, length, 2):
+                    if i+1 == length:
+                        buffrow = [buff_list[i],""]
+                        buffdf.loc[len(buffdf)] = buffrow
+                    else:
+                        buffrow = [buff_list[i], buff_list[i + 1]]
+                        buffdf.loc[len(buffdf)] = buffrow
+                buff1.table(buffdf)
 
-        # Buccaneer
-        if character_class != "BUCC":
-            if character_class != "TB":
-                self.batk += 9.6
+    def buffs(self):
+        buffs = self.buffs
+        return buffs
 
-        # Luminous
-        if type == "MAGICAL":
-            if character_class != "LUMI":
-                self.atkp += 21.6
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
 
-        # Hero
-        if type == "PHYSICAL":
-            if character_class != "HERO" and character_class != "PHAN":
-                self.atkp += 21
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
 
-        # Evan
-        if character_class != "EVAN":
-            self.dmg += 15
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
 
-        # Cash Buffs
-        self.atkp += 30
-        self.dmg += 30
-        self.batk += 30
-        self.cr += 30
-        self.cd += 30
-        self.acc += 30
+    def type(self):
+        type = self.type
+        return type
 
-        # Tangyoon Buffs
-        self.dmg += 20
-        self.batk += 20
-        self.cr += 20
-        if type == "PHYSICAL":
-            self.pdefinc += 20
-        if type == "MAGICAL":
-            self.mdefinc += 20
-        self.bdef += 20
-        self.accp += 20
+    def sf(self):
+        sf = self.sf
+        return sf
 
-        # Fever
-        self.atkp += 10
-        self.cr += 10
-        self.cd += 20
+    def stat(self):
+        stat = self.stat
+        return stat
 
-        self.pdefinc += 10
-        self.mdefinc += 10
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
 
-        self.spd += 10
-        self.jmp += 20
-        self.meso += 20
-        self.exp += 20
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -247,6 +315,14 @@ class buffs:
         mpinc = self.mpinc
         return mpinc
 
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
+
     def spd(self):
         spd = self.spd
         return spd
@@ -290,3 +366,43 @@ class buffs:
     def maxfeverchance(self):
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti
+
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
+
+    def necrosetcount(self):
+        necrosetcount = self.necrosetcount
+        return necrosetcount
+
+    def fafsetcount(self):
+        fafsetcount = self.fafsetcount
+        return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

@@ -20,12 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
-      <change beforePath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,23 +202,5 @@
     <MESSAGE value="0.17" />
     <MESSAGE value="0.19" />
     <option name="LAST_COMMIT_MESSAGE" value="0.19" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607878118648">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1607878118648" />
-    <state x="492" y="291" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607866567014">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="492" y="291" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1607866567014" />
-    <state x="526" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1607869208757">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="526" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.738@0.0.1366.738" timestamp="1607869208757" />
-    <state x="47" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607797812216">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="47" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1607797812216" />
   </component>
 </project>

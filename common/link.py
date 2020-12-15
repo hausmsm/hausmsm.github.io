@@ -2,7 +2,7 @@ import streamlit as st
 
 
 class link:
-    def __init__(self,character_class,type):
+    def __init__(self, character_class, type):
         # Initialize
         self.emblem = "None"
         self.emblem_amount = 0
@@ -117,7 +117,7 @@ class link:
             # Pirate
             "Corsair": "KBK RES (Corsair)",
             "Buccaneer": "Phy ATK (Buccaneer)",
-            "Thunder Breaker":"HP% (Thunder Breaker)",
+            "Thunder Breaker": "HP% (Thunder Breaker)",
             "Shade": "Survival Chance (Shade)",
             "Mechanic": "Abnormal Status RES (Battle Mage, Wild Hunter & Mechanic)"
         }
@@ -206,7 +206,7 @@ class link:
                     self.hpinc += 4
                 if "Survival Chance (Shade)" in link_list:
                     pass
-            elif len(link_list) >12:
+            elif len(link_list) > 12:
                 st.write(f"Above Link Skill Limit. Currently {len(link_list)}/12.")
             else:
                 st.write(f"Only {len(link_list)}/12")
