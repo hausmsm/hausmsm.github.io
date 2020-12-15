@@ -239,7 +239,30 @@ with st.sidebar.beta_expander("Eye Accessory"):
 ## Common Stats Stuff
 from common.link import link
 link = link(char.character_class,char.type)
+with st.sidebar.beta_expander("Link Skills"):
+    if len(link.links) == 12:
+        st.write(f"Link 1:{link.links[0]}")
+        st.write(f"Link 2:{link.links[1]}")
+        st.write(f"Link 3:{link.links[2]}")
+        st.write(f"Link 4:{link.links[3]}")
+        st.write(f"Link 5:{link.links[4]}")
+        st.write(f"Link 6:{link.links[5]}")
+        st.write(f"Link 7:{link.links[6]}")
+        st.write(f"Link 8:{link.links[7]}")
+        st.write(f"Link 9:{link.links[8]}")
+        st.write(f"Link 10:{link.links[9]}")
+        st.write(f"Link 11:{link.links[10]}")
+        st.write(f"Link 12:{link.links[11]}")
+    elif len(link.links) > 12:
+        st.write(f"Above Link Skill Limit. Currently {len(link.links)}/12")
+    else:
+        st.write(f"Only {len(link.links)}/12")
 
+from equip.jewel import jewel
+jewel = jewel(char.type)
+with st.sidebar.beta_expander("Jewels"):
+    st.write(f"Rank: {jewel.rank}")
+    st.write(f"Stat: {jewel.stat}")
 
 equip_type_combination = st.radio("Equipment Combination",
                                   ["Full Empress", "Full Necro", "2 Piece Fafnir + Empress", "4 Piece Fafnir + Empress",

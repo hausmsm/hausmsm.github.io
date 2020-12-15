@@ -8,6 +8,7 @@ class link:
         self.emblem_amount = 0
         self.character_class = character_class
         self.type = type
+        self.links = list
 
         # SF Stats
         self.sf = 0
@@ -133,6 +134,7 @@ class link:
         with st.beta_expander("Link Skills"):
             st.write("Note: Character Innate Link Skill Already Included")
             link_list = st.multiselect("Choose 12 Link Skills", linkskills)
+            self.links = link_list
             _, link1, _, link2, _ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
             if len(link_list) == 12:
                 link1.write(link_list[0])
@@ -208,6 +210,10 @@ class link:
                 st.write(f"Above Link Skill Limit. Currently {len(link_list)}/12.")
             else:
                 st.write(f"Only {len(link_list)}/12")
+
+    def links(self):
+        links = self.links
+        return links
 
     def emblem(self):
         emblem = self.emblem

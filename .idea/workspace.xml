@@ -20,17 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
+      <change beforePath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/character_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/character_selection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/badge.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/earring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/earring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/eye.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/eye.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/medal.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/medal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/necklace.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/necklace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/ring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/title.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/title.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +89,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
