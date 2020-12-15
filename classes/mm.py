@@ -11,6 +11,7 @@ class mm:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 0
         self.pdefdec = 0
@@ -22,6 +23,7 @@ class mm:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
         self.evd = 0
@@ -30,15 +32,21 @@ class mm:
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 0
         self.jmp = 0
         self.kbkres = 0
 
+        # Misc Stats
         self.exp = 0
         self.dr = 0
         self.meso = 0
@@ -47,11 +55,26 @@ class mm:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
+        self.necrosetcount = 0
+        self.fafsetcount = 0
+        self.bosssetcount = 0
+        self.commandersetcount = 0
+
+        # Flame Stats
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Snipe
         self.pname = "Snipe"
-        self.pskilldmg = 187.9
+        self.pskilldmg = 202.7
         self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
@@ -61,9 +84,9 @@ class mm:
         self.phfd = 0
 
         # Arrow Illusion
-        self.sname = "Arrow Illusion"
-        self.sskilldmg = 85
-        self.shitcount = 3
+        self.sname = "Freezer"
+        self.sskilldmg = 95.5
+        self.shitcount = 4
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -77,6 +100,9 @@ class mm:
         # 1st Job
         # Critical Shot
         self.cr += 2
+        # Archer Mastery
+        self.accp += 2
+        self.kbkres += 26
 
         # 2nd Job
         # Soul Arrow: Crossbow
@@ -85,14 +111,36 @@ class mm:
         self.fd += 15
         # Crossbow Mastery
         self.batk += 10
+        self.platk += 8
+        # Physical Training
+        self.hpinc += 20
+        self.mpinc += 10
 
         # 3rd Job
         # Reckless Hunt: Crossbow
         self.dmg += 15
+        self.pdefdec -= 10
+        self.mdefdec -= 10
+        # Dodge
+        self.evdp += 6
+        self.critres += 2
+        self.critdmgres += 10
+        # Reverse Damage
+        self.pdefdec += 30
+        self.mdefdec += 30
+        # Marksmanship
+        self.penrate += 2
+        self.pdefinc += 9
+        self.mdefinc += 9
 
         # 4th Job
         # Sharp Eyes
+        self.hprec += 229
+        self.mprec += 92
+        self.pdefdec += 6
+        self.mdefdec += 6
         self.cd += 20
+        self.spd += 20
         # Bolt Surplus
         self.fd += 15
         # Last Man Standing
@@ -101,6 +149,9 @@ class mm:
         self.cd += 14
         # Crossbow Expert
         self.dmg += 8
+        # Illusion Step
+        self.bdef += 4
+        self.pldef += 4
 
         # Hyper Buff
         # Bullseye Shot
@@ -120,6 +171,38 @@ class mm:
         # Snipe - Boss Rush
         self.phbatk += 20
         # Snipe - Cooldown Cutter
+
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
+
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
+
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
+
+    def type(self):
+        type = self.type
+        return type
+
+    def sf(self):
+        sf = self.sf
+        return sf
+
+    def stat(self):
+        stat = self.stat
+        return stat
+
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
+
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -245,6 +328,14 @@ class mm:
         mpinc = self.mpinc
         return mpinc
 
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
+
     def spd(self):
         spd = self.spd
         return spd
@@ -289,82 +380,42 @@ class mm:
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
 
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def pskilldmg(self):
-        pskilldmg = self.pskilldmg
-        return pskilldmg
-
-    def phitcount(self):
-        phitcount = self.phitcount
-        return phitcount
-
-    def phatkp(self):
-        phatkp = self.phatkp
-        return phatkp
-
-    def phdmg(self):
-        phdmg = self.phdmg
-        return phdmg
-
-    def phbatk(self):
-        phbatk = self.phbatk
-        return phbatk
-
-    def phcr(self):
-        phcr = self.phcr
-        return phcr
-
-    def phcd(self):
-        phcd = self.phcd
-        return phcd
-
-    def phfd(self):
-        phfd = self.phfd
-        return phfd
-
-    def sname(self):
-        sname = self.sname
-        return sname
-
-    def sskilldmg(self):
-        sskilldmg = self.sskilldmg
-        return sskilldmg
-
-    def shitcount(self):
-        shitcount = self.shitcount
-        return shitcount
-
-    def schance(self):
-        schance = self.schance
-        return schance
-
-    def shatkp(self):
-        shatkp = self.shatkp
-        return shatkp
-
-    def shdmg(self):
-        shdmg = self.shdmg
-        return shdmg
-
-    def shbatk(self):
-        shbatk = self.shbatk
-        return shbatk
-
-    def shcr(self):
-        shcr = self.shcr
-        return shcr
-
-    def shcd(self):
-        shcd = self.shcd
-        return shcd
-
-    def shfd(self):
-        shfd = self.shfd
-        return shfd
-
     def spmulti(self):
         spmulti = self.spmulti
         return spmulti
+
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
+
+    def necrosetcount(self):
+        necrosetcount = self.necrosetcount
+        return necrosetcount
+
+    def fafsetcount(self):
+        fafsetcount = self.fafsetcount
+        return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

@@ -1,3 +1,9 @@
+# Equipment + Set
+# Soul + Soul Set
+# Jewel + Jewel Set
+# Style + Style Set
+# Potential Options
+
 class flame:
     def __init__(self,equip):
         self.atk_on_hp = 0.01

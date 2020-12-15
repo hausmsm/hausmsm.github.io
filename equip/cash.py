@@ -1,5 +1,15 @@
-class hero:
+import streamlit as st
+
+
+class cash:
     def __init__(self):
+        # Initialize
+        self.emblem = "None"
+        self.emblem_amount = 0
+
+        # SF Stats
+        self.sf = 0
+
         # Offensive Stats
         self.atk = 0
         self.atkp = 0
@@ -73,91 +83,59 @@ class hero:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Raging Blow
-        self.pname = "Raging Blow"
-        self.pskilldmg = 210
-        self.phitcount = 7
-        self.phatkp = 0
-        self.phdmg = 0
-        self.phbatk = 0
-        self.phcr = 0
-        self.phcd = 0
-        self.phfd = 0
+        emblem_cd_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # Advanced Final Attack
-        self.sname = "Advanced Final Attack"
-        self.sskilldmg = 67.8
-        self.shitcount = 1
-        self.schance = 38
-        self.shatkp = 0
-        self.shdmg = 0
-        self.shbatk = 0
-        self.shcr = 0
-        self.shcd = 0
-        self.shfd = 0
+        emblem_ba_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # Skills
+        emblem_atk_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # 1st Job
-        # Iron Body
-        self.pdefinc += 18
-        self.mdefinc += 18
-        # Warrior Mastery
-        self.atkp += 9
-
-        # 2nd Job
-        # Unmanaged Anger
-        self.atkp += 21
-        # Weapon Mastery
-        self.dmg += 4
-        # Physical Training
-        self.accp += 6
-        self.evdp += 6
-        self.spd += 15
-
-        # 3rd Job
-        # Combo Synergy
-        self.cr += 2
-        # Self Recovery
-        self.hprec += 229
-        self.mprec += 92
-        self.bdef += 4
-        self.pldef += 4
-        # Chance Attack
-        self.cd += 15
-        # Endure
-        self.critdmgres += 10
-
-        # 4th Job
-        # Puncture
-        self.cd += 10
-        # Enrage
-        self.fd += 25
-        # KBK RES
-        self.kbkres += 26
-        # Advanced Combo Attack
-        self.fd += 20
-        # Combat Mastery
-        self.batk += 4
-        self.platk += 4
-
-        # Hyper Buff
-        # Cry Valhalla
-        self.fd += 15
-        self.atkp += 15
-        # Epic Adventure
-        self.cd += 30
-        # Advanced Combo Attack - Reinforce
-        self.fd += 10
-        # Advanced Combo Attack - Boss Rush
-        self.batk += 20
-        # Advanced Final Attack - Opportunity
-        self.schance += 30
-        # Hyper Skill
-        # Raging Blow - Reinforce
-        self.phdmg += 20
-        # Raging Blow - Extra Strike
-        self.phitcount += 1
+        with st.beta_expander("Cash Set"):
+            _, cash1, _ = st.beta_columns([0.02, 0.96, 0.02])
+            cash_type = st.selectbox("Choose a Combination", ["5-Set M Label", "3+3 Set M Label", "Royal Set"])
+            self.type = cash_type
+            if "5-Set M Label" in [cash_type]:
+                # Base
+                self.dmg += 5
+                self.batk += 10
+                self.pdefdec += 5
+                self.mdefdec += 5
+                self.bdef += 10
+                self.platk += 10
+                self.pldef += 10
+                self.cr += 10
+                self.cd += 10
+                self.spd += 25
+                self.jmp += 25
+            elif "3+3 Set M Label" in [cash_type]:
+                self.dmg += 10
+                self.batk += 20
+                self.pdefdec += 10
+                self.mdefdec += 10
+                self.bdef += 20
+            elif "Royal Set" in [cash_type]:
+                self.dmg += 2
+                self.batk += 3
+                self.pdefdec += 2
+                self.mdefdec += 2
+                self.bdef += 3
 
     def emblem(self):
         emblem = self.emblem

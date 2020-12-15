@@ -405,6 +405,7 @@ class weapon:
                         self.atk += 7179
                         # Level
                         self.atk += fafnirdict[weapon_level]
+                        self.dmg += 0.1 * weapon_level
                         # SF
                         self.atk += sfdict[weapon_sf_level]
                         # Stats
@@ -415,8 +416,9 @@ class weapon:
                         self.atk += 11487
                         # Level
                         self.atk += necrodict[weapon_level]
+
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
                             self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
@@ -495,6 +497,7 @@ class weapon:
                     self.atk += 7178
                     # Level
                     self.atk += fafnirdict[weapon_level]
+                    self.dmg += 0.1 * weapon_level
                     # SF
                     self.atk += sfdict[weapon_sf_level]
                     # Stats
@@ -585,6 +588,7 @@ class weapon:
                     self.atk += 7176
                     # Level
                     self.atk += fafnirdict[weapon_level]
+                    self.dmg += 0.1 * weapon_level
                     # SF
                     self.atk += sfdict[weapon_sf_level]
                     # Stats
@@ -675,6 +679,7 @@ class weapon:
                     self.atk += 7173
                     # Level
                     self.atk += fafnirdict[weapon_level]
+                    self.dmg += 0.1 * weapon_level
                     # SF
                     self.atk += sfdict[weapon_sf_level]
                     # Stats
@@ -766,6 +771,7 @@ class weapon:
                         self.atk += 7176
                         # Level
                         self.atk += fafnirdict[weapon_level]
+                        self.dmg += 0.1 * weapon_level
                         # SF
                         self.atk += sfdict[weapon_sf_level]
                         # Stats
@@ -856,6 +862,7 @@ class weapon:
                         self.atk += 7176
                         # Level
                         self.atk += fafnirdict[weapon_level]
+                        self.dmg += 0.1 * weapon_level
                         # SF
                         self.atk += sfdict[weapon_sf_level]
                         # Stats

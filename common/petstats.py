@@ -1,5 +1,15 @@
-class hero:
-    def __init__(self):
+import streamlit as st
+
+
+class pet:
+    def __init__(self,pet_type):
+        # Initialize
+        self.emblem = "None"
+        self.emblem_amount = 0
+
+        # SF Stats
+        self.sf = 0
+
         # Offensive Stats
         self.atk = 0
         self.atkp = 0
@@ -73,91 +83,41 @@ class hero:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Raging Blow
-        self.pname = "Raging Blow"
-        self.pskilldmg = 210
-        self.phitcount = 7
-        self.phatkp = 0
-        self.phdmg = 0
-        self.phbatk = 0
-        self.phcr = 0
-        self.phcd = 0
-        self.phfd = 0
+        emblem_cd_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # Advanced Final Attack
-        self.sname = "Advanced Final Attack"
-        self.sskilldmg = 67.8
-        self.shitcount = 1
-        self.schance = 38
-        self.shatkp = 0
-        self.shdmg = 0
-        self.shbatk = 0
-        self.shcr = 0
-        self.shcd = 0
-        self.shfd = 0
+        emblem_ba_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # Skills
+        emblem_atk_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # 1st Job
-        # Iron Body
-        self.pdefinc += 18
-        self.mdefinc += 18
-        # Warrior Mastery
-        self.atkp += 9
-
-        # 2nd Job
-        # Unmanaged Anger
-        self.atkp += 21
-        # Weapon Mastery
-        self.dmg += 4
-        # Physical Training
-        self.accp += 6
-        self.evdp += 6
-        self.spd += 15
-
-        # 3rd Job
-        # Combo Synergy
-        self.cr += 2
-        # Self Recovery
-        self.hprec += 229
-        self.mprec += 92
-        self.bdef += 4
-        self.pldef += 4
-        # Chance Attack
-        self.cd += 15
-        # Endure
-        self.critdmgres += 10
-
-        # 4th Job
-        # Puncture
-        self.cd += 10
-        # Enrage
-        self.fd += 25
-        # KBK RES
-        self.kbkres += 26
-        # Advanced Combo Attack
-        self.fd += 20
-        # Combat Mastery
-        self.batk += 4
-        self.platk += 4
-
-        # Hyper Buff
-        # Cry Valhalla
-        self.fd += 15
-        self.atkp += 15
-        # Epic Adventure
-        self.cd += 30
-        # Advanced Combo Attack - Reinforce
-        self.fd += 10
-        # Advanced Combo Attack - Boss Rush
-        self.batk += 20
-        # Advanced Final Attack - Opportunity
-        self.schance += 30
-        # Hyper Skill
-        # Raging Blow - Reinforce
-        self.phdmg += 20
-        # Raging Blow - Extra Strike
-        self.phitcount += 1
+        if "Wonder Black" in [pet_type]:
+            self.atk += 193 + 140 + 140
+            self.pdef += 350 + 420 + 350
+            self.hp += 938 + 938 + 1082
+            self.mp += 224 + 224 + 224
+        elif "M Label" in [pet_type]:
+            self.atk += 140 + 140 + 292
+            self.pdef += 350 + 619 + 350
+            self.hp += 1581 + 938 + 938
+            self.mp += 224 + 224 + 224
+            self.maxfeverchance += 6 + 6 + 6
 
     def emblem(self):
         emblem = self.emblem

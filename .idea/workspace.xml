@@ -20,9 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
+      <change afterPath="$PROJECT_DIR$/common/hyperstats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/pet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/petstats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/starforce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equip/cash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2020_10_57_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2020_10_57_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/fpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/fpm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ilm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ilm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/ring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mapletree.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mapletree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/seteffect.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/seteffect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/tbo.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/tbo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flame/flame.py" beforeDir="false" afterPath="$PROJECT_DIR$/flame/flame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,5 +1,15 @@
-class hero:
-    def __init__(self):
+import streamlit as st
+
+
+class pet:
+    def __init__(self,sf_amount):
+        # Initialize
+        self.emblem = "None"
+        self.emblem_amount = 0
+
+        # SF Stats
+        self.sf = 0
+
         # Offensive Stats
         self.atk = 0
         self.atkp = 0
@@ -73,91 +83,125 @@ class hero:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Raging Blow
-        self.pname = "Raging Blow"
-        self.pskilldmg = 210
-        self.phitcount = 7
-        self.phatkp = 0
-        self.phdmg = 0
-        self.phbatk = 0
-        self.phcr = 0
-        self.phcd = 0
-        self.phfd = 0
+        emblem_cd_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # Advanced Final Attack
-        self.sname = "Advanced Final Attack"
-        self.sskilldmg = 67.8
-        self.shitcount = 1
-        self.schance = 38
-        self.shatkp = 0
-        self.shdmg = 0
-        self.shbatk = 0
-        self.shcr = 0
-        self.shcd = 0
-        self.shfd = 0
+        emblem_ba_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # Skills
+        emblem_atk_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
 
-        # 1st Job
-        # Iron Body
-        self.pdefinc += 18
-        self.mdefinc += 18
-        # Warrior Mastery
-        self.atkp += 9
-
-        # 2nd Job
-        # Unmanaged Anger
-        self.atkp += 21
-        # Weapon Mastery
-        self.dmg += 4
-        # Physical Training
-        self.accp += 6
-        self.evdp += 6
-        self.spd += 15
-
-        # 3rd Job
-        # Combo Synergy
-        self.cr += 2
-        # Self Recovery
-        self.hprec += 229
-        self.mprec += 92
-        self.bdef += 4
-        self.pldef += 4
-        # Chance Attack
-        self.cd += 15
-        # Endure
-        self.critdmgres += 10
-
-        # 4th Job
-        # Puncture
-        self.cd += 10
-        # Enrage
-        self.fd += 25
-        # KBK RES
-        self.kbkres += 26
-        # Advanced Combo Attack
-        self.fd += 20
-        # Combat Mastery
-        self.batk += 4
-        self.platk += 4
-
-        # Hyper Buff
-        # Cry Valhalla
-        self.fd += 15
-        self.atkp += 15
-        # Epic Adventure
-        self.cd += 30
-        # Advanced Combo Attack - Reinforce
-        self.fd += 10
-        # Advanced Combo Attack - Boss Rush
-        self.batk += 20
-        # Advanced Final Attack - Opportunity
-        self.schance += 30
-        # Hyper Skill
-        # Raging Blow - Reinforce
-        self.phdmg += 20
-        # Raging Blow - Extra Strike
-        self.phitcount += 1
+        if sf_amount >= 255:
+            self.atk += 1500
+            self.partyexp += 10
+            self.maxfeverchance += 8
+            self.maxdmg += 250000
+        elif sf_amount >= 245:
+            self.atk += 1440
+            self.partyexp += 9.5
+            self.maxfeverchance += 7
+            self.maxdmg += 225000
+        elif sf_amount >= 240:
+            self.atk += 1380
+            self.partyexp += 9
+            self.maxfeverchance += 7
+            self.maxdmg += 200000
+        elif sf_amount >= 235:
+            self.atk += 1320
+            self.partyexp += 8.5
+            self.maxfeverchance += 6
+            self.maxdmg += 175000
+        elif sf_amount >= 230 :
+            self.atk += 1260
+            self.partyexp += 8
+            self.maxfeverchance += 6
+            self.maxdmg += 150000
+        elif sf_amount >= 225 :
+            self.atk += 1200
+            self.partyexp += 7.5
+            self.maxfeverchance += 5
+            self.maxdmg += 125000
+        elif sf_amount >= 219 :
+            self.atk += 1140
+            self.partyexp += 7
+            self.maxfeverchance += 5
+            self.maxdmg += 100000
+        elif sf_amount >= 214:
+            self.atk += 1080
+            self.partyexp += 6.5
+            self.maxfeverchance += 4
+            self.maxdmg += 75000
+        elif sf_amount >= 209:
+            self.atk += 1020
+            self.partyexp += 6
+            self.maxfeverchance += 4
+            self.maxdmg += 50000
+        elif sf_amount >= 204:
+            self.atk += 960
+            self.partyexp += 5.5
+            self.maxfeverchance += 3
+            self.maxdmg += 25000
+        elif sf_amount >= 198:
+            self.atk += 900
+            self.partyexp += 5
+            self.maxfeverchance += 3
+        elif sf_amount >= 192:
+            self.atk += 840
+            self.partyexp += 4.5
+            self.maxfeverchance += 2
+        elif sf_amount >= 186:
+            self.atk += 780
+            self.partyexp += 4
+            self.maxfeverchance += 2
+        elif sf_amount >= 179:
+            self.atk += 720
+            self.partyexp += 3.5
+            self.maxfeverchance += 1
+        elif sf_amount >= 172:
+            self.atk += 660
+            self.partyexp += 3
+            self.maxfeverchance += 1
+        elif sf_amount >= 164:
+            self.atk += 600
+            self.partyexp += 2.5
+        elif sf_amount >= 157:
+            self.atk += 540
+            self.partyexp += 2
+        elif sf_amount >= 149:
+            self.atk += 480
+            self.partyexp += 1.5
+        elif sf_amount >= 140:
+            self.atk += 420
+            self.partyexp += 1
+        elif sf_amount >= 132:
+            self.atk += 360
+            self.partyexp += 0.5
+        elif sf_amount >= 124:
+            self.atk += 300
+        elif sf_amount >= 116:
+            self.atk += 240
+        elif sf_amount >= 108:
+            self.atk += 180
+        elif sf_amount >= 100:
+            self.atk += 120
+        elif sf_amount >= 95:
+            self.atk += 60
 
     def emblem(self):
         emblem = self.emblem

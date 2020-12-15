@@ -1,5 +1,16 @@
+import streamlit as st
+
+
 class mapletree:
     def __init__(self):
+        # Initialize
+        self.emblem = "None"
+        self.emblem_amount = 0
+
+        # SF Stats
+        self.sf = 0
+
+        # Offensive Stats
         self.atk = 0
         self.atkp = 9.5
         self.dmg = 0
@@ -11,6 +22,7 @@ class mapletree:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 8.5
         self.pdefdec = 0
@@ -22,23 +34,30 @@ class mapletree:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
-        self.evd = 6.5
-        self.evdp = 0
+        self.evd = 0
+        self.evdp = 6.5
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 6.5
         self.jmp = 0
         self.kbkres = 15
 
+        # Misc Stats
         self.exp = 7
         self.dr = 0
         self.meso = 0
@@ -47,10 +66,79 @@ class mapletree:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
-        self.empsetcount = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
         self.necrosetcount = 0
         self.fafsetcount = 0
+        self.bosssetcount = 0
+        self.commandersetcount = 0
+
+        # Flame Stats
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
+
+        emblem_cd_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
+
+        emblem_ba_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
+
+        emblem_atk_stats = {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
+
+
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
+
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
+
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
+
+    def type(self):
+        type = self.type
+        return type
+
+    def sf(self):
+        sf = self.sf
+        return sf
+
+    def stat(self):
+        stat = self.stat
+        return stat
+
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
+
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -176,6 +264,14 @@ class mapletree:
         mpinc = self.mpinc
         return mpinc
 
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
+
     def spd(self):
         spd = self.spd
         return spd
@@ -219,3 +315,43 @@ class mapletree:
     def maxfeverchance(self):
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
+
+    def spmulti(self):
+        spmulti = self.spmulti
+        return spmulti
+
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
+
+    def necrosetcount(self):
+        necrosetcount = self.necrosetcount
+        return necrosetcount
+
+    def fafsetcount(self):
+        fafsetcount = self.fafsetcount
+        return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

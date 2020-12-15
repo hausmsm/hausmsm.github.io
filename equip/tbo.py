@@ -324,6 +324,7 @@ class tbo:
                 self.pdef += (top_level - 1) * 29.326
                 self.mdef += (top_level - 1) * 29.326
                 self.hp += ((top_level - 1) * (3092 / 39) + 6475)
+                self.dmg += 0.1*top_level
                 # SF
                 self.pdef += o_sfdefdict[top_sf_level] * (923/1333)
                 self.mdef += o_sfdefdict[top_sf_level] * (923/1333)
@@ -356,6 +357,7 @@ class tbo:
                 self.pdef += (btm_level - 1) * 29.326
                 self.mdef += (btm_level - 1) * 29.326
                 self.hp += ((btm_level - 1) * (3092 / 39) + 6475)
+                self.dmg += 0.1*btm_level
                 # SF
                 self.pdef += o_sfdefdict[btm_sf_level] * (923 / 799)
                 self.mdef += o_sfdefdict[btm_sf_level] * (923 / 799)

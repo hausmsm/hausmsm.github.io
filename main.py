@@ -271,6 +271,11 @@ with st.sidebar.beta_expander("Buffs"):
         for i in buffs.buffs:
             st.write(f"{i}")
 
+from equip.cash import cash
+cash = cash()
+with st.sidebar.beta_expander("Cash Set"):
+    st.write(f"{cash.type}")
+
 equip_type_combination = st.radio("Equipment Combination",
                                   ["Full Empress", "Full Necro", "2 Piece Fafnir + Empress", "4 Piece Fafnir + Empress",
                                    "2 Piece Fafnir + Necro", "4 Piece Fafnir + Necro"])

@@ -11,6 +11,7 @@ class bm:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 0
         self.pdefdec = 0
@@ -22,6 +23,7 @@ class bm:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
         self.evd = 0
@@ -30,15 +32,21 @@ class bm:
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 0
         self.jmp = 0
         self.kbkres = 0
 
+        # Misc Stats
         self.exp = 0
         self.dr = 0
         self.meso = 0
@@ -47,11 +55,26 @@ class bm:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
+        self.necrosetcount = 0
+        self.fafsetcount = 0
+        self.bosssetcount = 0
+        self.commandersetcount = 0
+
+        # Flame Stats
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Hurricane
         self.pname = "Hurricane"
-        self.pskilldmg = 225
+        self.pskilldmg = 246
         self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
@@ -77,24 +100,49 @@ class bm:
         # 1st Job
         # Critical Shot
         self.cr += 4
+        # Archer Mastery
+        self.accp += 10
+        self.kbkres += 26
 
         # 2nd Job
         # Soul Arrow: Bow
         self.atkp += 21
         # Bow Mastery
         self.batk += 10
+        self.platk += 10
+        # Physical Training
+        self.hpinc += 20
+        self.mpinc += 10
 
         # 3rd Job
         # Reckless Hunt: Bow
         self.dmg += 30
+        self.pdefdec -= 5
+        self.mdefdec -= 5
         # Focused Fury
         self.atkp += 20
+        # Dodge
+        self.evdp += 6
+        self.critres += 5
+        self.critdmgres += 10
+        # Marksmanship
+        self.penrate += 2
+        self.pdefinc += 9
+        self.mdefinc += 9
 
         # 4th Job
         # Sharp Eyes
+        self.hprec += 229
+        self.mprec += 92
+        self.pdefdec += 6
+        self.mdefdec += 6
         self.cd += 20
+        self.spd += 20
         # Armor Break
         self.dmg += 10
+        # Illusion Step
+        self.bdef += 6
+        self.pldef += 6
         # Bow Expert
         self.dmg += 4
 
@@ -106,6 +154,8 @@ class bm:
         self.cd += 30
         # Sharp Eyes - Enhance
         self.atkp += 20
+        # Sharp Eyes - Crit DMG
+        self.cd += 15
 
         # Hyper Skill
         # Hurricane - Reinforce
@@ -115,7 +165,38 @@ class bm:
         # Hurricane - Split Attack
         self.phfd -= 40
         self.phitcount += 1
-        # Hurricane - Maintain
+
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
+
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
+
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
+
+    def type(self):
+        type = self.type
+        return type
+
+    def sf(self):
+        sf = self.sf
+        return sf
+
+    def stat(self):
+        stat = self.stat
+        return stat
+
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
+
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -241,6 +322,14 @@ class bm:
         mpinc = self.mpinc
         return mpinc
 
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
+
     def spd(self):
         spd = self.spd
         return spd
@@ -285,82 +374,42 @@ class bm:
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
 
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def pskilldmg(self):
-        pskilldmg = self.pskilldmg
-        return pskilldmg
-
-    def phitcount(self):
-        phitcount = self.phitcount
-        return phitcount
-
-    def phatkp(self):
-        phatkp = self.phatkp
-        return phatkp
-
-    def phdmg(self):
-        phdmg = self.phdmg
-        return phdmg
-
-    def phbatk(self):
-        phbatk = self.phbatk
-        return phbatk
-
-    def phcr(self):
-        phcr = self.phcr
-        return phcr
-
-    def phcd(self):
-        phcd = self.phcd
-        return phcd
-
-    def phfd(self):
-        phfd = self.phfd
-        return phfd
-
-    def sname(self):
-        sname = self.sname
-        return sname
-
-    def sskilldmg(self):
-        sskilldmg = self.sskilldmg
-        return sskilldmg
-
-    def shitcount(self):
-        shitcount = self.shitcount
-        return shitcount
-
-    def schance(self):
-        schance = self.schance
-        return schance
-
-    def shatkp(self):
-        shatkp = self.shatkp
-        return shatkp
-
-    def shdmg(self):
-        shdmg = self.shdmg
-        return shdmg
-
-    def shbatk(self):
-        shbatk = self.shbatk
-        return shbatk
-
-    def shcr(self):
-        shcr = self.shcr
-        return shcr
-
-    def shcd(self):
-        shcd = self.shcd
-        return shcd
-
-    def shfd(self):
-        shfd = self.shfd
-        return shfd
-
     def spmulti(self):
         spmulti = self.spmulti
         return spmulti
+
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
+
+    def necrosetcount(self):
+        necrosetcount = self.necrosetcount
+        return necrosetcount
+
+    def fafsetcount(self):
+        fafsetcount = self.fafsetcount
+        return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount

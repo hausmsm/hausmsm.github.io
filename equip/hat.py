@@ -222,6 +222,7 @@ class hat:
                 self.pdef += ((hat_level - 30) * 22.45 + 651)
                 self.mdef += ((hat_level - 30) * 22.45 + 651)
                 self.hp += ((hat_level - 30) * 107.15 + 8750)
+                self.dmg += 0.1*hat_level
                 # SF
                 self.pdef += sfdefdict[hat_sf_level]
                 self.mdef += sfdefdict[hat_sf_level]

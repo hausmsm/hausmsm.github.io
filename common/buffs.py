@@ -100,7 +100,7 @@ class buffs:
             # Mage
             "Bishop": ["Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)", "Holy Shell (HP%, MP%, HP, MP)",
                        "Holy Symbol (EXP, KBK Res)"],
-            "Ice Lightning Mage": ["Meditation (Mag DMG%)"],
+            "Ice Lightning Mage": ["Meditation (Mag DMG%)", "Absolute Zero Aura (KBK RES, Abnormal Status RES)"],
             "Fire Poison Mage": ["Meditation (Mag DMG%)"],
             "Blaze Wizard": ["Burning Conduit (Phy ATK%, Mag ATK%, Phy DMG%, Mag DMG%)"],
             "Evan": ["Return Dive (Phy DMG%, Mag DMG%)"],
@@ -124,10 +124,12 @@ class buffs:
             "Shade": [],
             "Mechanic": ["Support Unit: H-EX (Phy DMG%, Mag DMG%, FD%)"]
         }
-        buffs_list = ["Hyper Body ()", "Iron Defence ()", "Unmanaged Anger (Phy ATK%)",
-                      "Combat Orders (Phy DMG%, Mag DMG%)", "Parashock Guard ()", "Maha's Blessing (HP, MP)",
+        buffs_list = ["Hyper Body (Phy DMG Reduction, Mag DMG Reduction)", "Iron Will (Boss DEF%, Player DEF%)",
+                      "Unmanaged Anger (Phy ATK%)", "Combat Orders (Phy DMG%, Mag DMG%)",
+                      "Parashock Guard (Phy DMG Reduction, Mag DMG Reduction)", "Maha's Blessing (HP, MP)",
                       "Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)", "Holy Shell (HP%, MP%, HP, MP)",
                       "Holy Symbol (EXP, KBK Res)", "Meditation (Mag DMG%)",
+                      "Absolute Zero Aura (KBK RES, Abnormal Status RES)",
                       "Burning Conduit (Phy ATK%, Mag ATK%, Phy DMG%, Mag DMG%)", "Return Dive (Phy DMG%, Mag DMG%)",
                       "Photic Meditation (Mag ATK%)", "Dark Aura (Phy DMG%, Mag DMG%)",
                       "Call of the Wild (Phy ATK%, Mag ATK%)", "Speed Infusion (Boss ATK%, Player ATK%)",
@@ -166,6 +168,23 @@ class buffs:
                         buffrow = [buff_list[i], buff_list[i + 1]]
                         buffdf.loc[len(buffdf)] = buffrow
                 buff1.table(buffdf)
+            if "Parashock Guard (Phy DMG Reduction, Mag DMG Reduction)" in buff_list:
+                self.pdefdec += 20
+                self.mdefdec += 20
+            if "Combat Orders (Phy DMG%, Mag DMG%)" in buff_list:
+                self.dmg += 15
+            if "Hyper Body (Phy DMG Reduction, Mag DMG Reduction)" in buff_list:
+                self.pdefdec += 9
+                self.mdefdec += 9
+            if "Iron Will (Boss DEF%, Player DEF%)" in buff_list:
+                self.bdef += 12
+                self.pldef += 12
+            if "Unmanaged Anger (Phy ATK%)" in buff_list:
+                if type == "PHYSICAL":
+                    self.atkp += 21
+            if "Absolute Zero Aura (KBK RES, Abnormal Status RES)" in buff_list:
+                self.kbkres += 10
+                self.abnormalstatres += 10
             st.write("Cash Buff Selection")
             buff_choice = st.selectbox("Choose Manual/Automatic Buff Selection", ["Automatic", "Manual"])
             if buff_choice == "Manual":
@@ -272,7 +291,29 @@ class buffs:
                     self.accp += 20
             fever = st.selectbox("Choose Fever Selection", ["None", "Normal", "Max"])
             if fever == "Normal":
-                self.atkp += 
+                self.atkp += 10
+                self.cr += 10
+                self.cd += 20
+                self.pdefinc += 10
+                self.mdefinc += 10
+                self.hprec += 200
+                self.mprec += 200
+                self.spd += 10
+                self.jmp += 20
+                self.exp += 20
+                self.meso += 20
+            elif fever == "Max":
+                self.atkp += 15
+                self.cr += 15
+                self.cd += 30
+                self.pdefinc += 15
+                self.mdefinc += 15
+                self.hprec += 300
+                self.mprec += 300
+                self.spd += 15
+                self.jmp += 30
+                self.exp += 30
+                self.meso += 30
 
     def buffs(self):
         buffs = self.buffs

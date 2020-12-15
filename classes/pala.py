@@ -11,6 +11,7 @@ class pala:
         self.maxdmg = 0
         self.fd = 0
 
+        # Defensive Stats
         self.pdef = 0
         self.pdefinc = 0
         self.pdefdec = 0
@@ -22,6 +23,7 @@ class pala:
         self.critres = 0
         self.critdmgres = 0
 
+        # Hit Miss Stats
         self.acc = 0
         self.accp = 0
         self.evd = 0
@@ -30,15 +32,21 @@ class pala:
         self.block = 0
         self.abnormalstatres = 0
 
+        # HP MP Stats
         self.hp = 0
-        self.hpinc = 0
         self.mp = 0
+        self.hpinc = 0
         self.mpinc = 0
+        self.hprec = 0
+        self.mprec = 0
+        self.buffdurationinc = 0
 
+        # Mobility Stats
         self.spd = 0
         self.jmp = 0
         self.kbkres = 0
 
+        # Misc Stats
         self.exp = 0
         self.dr = 0
         self.meso = 0
@@ -47,7 +55,22 @@ class pala:
         self.feverchargeinc = 0
         self.feverduration = 0
         self.maxfeverchance = 0
+
+        # Shadow Partner Stats
         self.spmulti = 0
+
+        # Set Stats
+        self.mempsetcount = 0
+        self.aempsetcount = 0
+        self.necrosetcount = 0
+        self.fafsetcount = 0
+        self.bosssetcount = 0
+        self.commandersetcount = 0
+
+        # Flame Stats
+        self.atklinecount = 0
+        self.crlinecount = 0
+        self.cdlinecount = 0
 
         # Blast
         self.pname = "Blast"
@@ -67,7 +90,7 @@ class pala:
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
-        self.shbatk = 20
+        self.shbatk = 30
         self.shcr = 0
         self.shcd = 0
         self.shfd = 0
@@ -75,40 +98,59 @@ class pala:
         # Skills
 
         # 1st Job
+        # Iron Body
+        self.pdefinc += 9
+        self.mdefinc += 9
+        self.hpinc += 30
+        self.mpinc += 10
         # Warrior Mastery
         self.atkp += 15
 
         # 2nd Job
         # Elemental Charge
         self.atkp += 20
+        self.pdefinc += 15
+        self.mdefinc += 15
         # Weapon Mastery
         self.dmg += 8
+        # Physical Training
+        self.accp += 2
+        self.evdp += 6
+        self.spd += 15
 
         # 3rd Job
-        # Sheild Mastery
-        self.atkp += 15
-        self.block += 10
-        self.block += 5
+        # Threaten
+        self.cr += 30
+        self.cd += 16
         # Parashock Guard
         self.atkp += 20
+        self.pdefdec -= 10
+        self.mdefdec -= 10
         # Combat Orders
         self.dmg += 15
-        # Threaten
-        self.cd += 16
-        self.cr += 30
+        # Sheild Mastery
+        self.atkp += 10
+        self.block += 10
+        self.block += 5
+        # Achilles
+        self.pdefinc += 20
+        self.mdefinc += 20
+        self.batk += 15
+        self.bdef += 15
+        # Divine Shield
+        self.pdefdec += 30
+        self.mdefdec += 30
 
         # 4th Job
         # Elemental Force
         self.cd += 15
+        # KBK RES
+        self.kbkres += 26
         # High Paladin
         self.cr += 2
         self.cd += 15
         # Advanced Charge
-        # Achilles
-        self.pdef += 20
-        self.mdef += 20
-        self.batk += 15
-        self.bdef += 15
+        self.fd += 15
 
         # Hyper Buff
         # Smite Shield
@@ -118,12 +160,46 @@ class pala:
         # Sacrosanctity
         self.atkp += 25
         self.dmg += 15
+        # Threaten - Enhance
+        self.cr += 30
 
         # Hyper Skill
         # Blast - Reinforce
         self.phdmg += 20
         # Blast - Extra Strike
         self.phitcount += 1
+
+    def emblem(self):
+        emblem = self.emblem
+        return emblem
+
+    def emblem_level(self):
+        emblem_level = self.emblem_level
+        return emblem_level
+
+    def emblem_amount(self):
+        emblem_amount = self.emblem_amount
+        return emblem_amount
+
+    def type(self):
+        type = self.type
+        return type
+
+    def sf(self):
+        sf = self.sf
+        return sf
+
+    def stat(self):
+        stat = self.stat
+        return stat
+
+    def stat_amount(self):
+        stat_amount = self.stat_amount
+        return stat_amount
+
+    def level(self):
+        level = self.level
+        return level
 
     def atk(self):
         atk = self.atk
@@ -249,6 +325,14 @@ class pala:
         mpinc = self.mpinc
         return mpinc
 
+    def hprec(self):
+        hprec = self.hprec
+        return hprec
+
+    def mprec(self):
+        mprec = self.mprec
+        return mprec
+
     def spd(self):
         spd = self.spd
         return spd
@@ -293,82 +377,42 @@ class pala:
         maxfeverchance = self.maxfeverchance
         return maxfeverchance
 
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def pskilldmg(self):
-        pskilldmg = self.pskilldmg
-        return pskilldmg
-
-    def phitcount(self):
-        phitcount = self.phitcount
-        return phitcount
-
-    def phatkp(self):
-        phatkp = self.phatkp
-        return phatkp
-
-    def phdmg(self):
-        phdmg = self.phdmg
-        return phdmg
-
-    def phbatk(self):
-        phbatk = self.phbatk
-        return phbatk
-
-    def phcr(self):
-        phcr = self.phcr
-        return phcr
-
-    def phcd(self):
-        phcd = self.phcd
-        return phcd
-
-    def phfd(self):
-        phfd = self.phfd
-        return phfd
-
-    def sname(self):
-        sname = self.sname
-        return sname
-
-    def sskilldmg(self):
-        sskilldmg = self.sskilldmg
-        return sskilldmg
-
-    def shitcount(self):
-        shitcount = self.shitcount
-        return shitcount
-
-    def schance(self):
-        schance = self.schance
-        return schance
-
-    def shatkp(self):
-        shatkp = self.shatkp
-        return shatkp
-
-    def shdmg(self):
-        shdmg = self.shdmg
-        return shdmg
-
-    def shbatk(self):
-        shbatk = self.shbatk
-        return shbatk
-
-    def shcr(self):
-        shcr = self.shcr
-        return shcr
-
-    def shcd(self):
-        shcd = self.shcd
-        return shcd
-
-    def shfd(self):
-        shfd = self.shfd
-        return shfd
-
     def spmulti(self):
         spmulti = self.spmulti
         return spmulti
+
+    def mempsetcount(self):
+        mempsetcount = self.mempsetcount
+        return mempsetcount
+
+    def aempsetcount(self):
+        aempsetcount = self.aempsetcount
+        return aempsetcount
+
+    def necrosetcount(self):
+        necrosetcount = self.necrosetcount
+        return necrosetcount
+
+    def fafsetcount(self):
+        fafsetcount = self.fafsetcount
+        return fafsetcount
+
+    def bosssetcount(self):
+        bosssetcount = self.bosssetcount
+        return bosssetcount
+
+    def commandersetcount(self):
+        commandersetcount = self.commandersetcount
+        return commandersetcount
+
+    def atklinecount(self):
+        atklinecount = self.atklinecount
+        return atklinecount
+
+    def crlinecount(self):
+        crlinecount = self.crlinecount
+        return crlinecount
+
+    def cdlinecount(self):
+        cdlinecount = self.cdlinecount
+        return cdlinecount
