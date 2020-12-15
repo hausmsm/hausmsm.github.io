@@ -21,6 +21,9 @@ class ring:
         self.ring2_flag = 0
         self.ring3_flag = 0
 
+        self.ring_full_emblem = 0
+        self.ring_partial_emblem = 0
+
         # SF Stats
         self.ring1_sf = 0
         self.ring2_sf = 0
@@ -169,6 +172,7 @@ class ring:
                         # Set
                         self.bosssetcount += 1
                         self.ring1_flag = 1
+                        self.ring_partial_emblem += 1
                     elif self.ring2_flag == 0:
                         self.ring2 = "Cygnus Ring (Unique)"
                         ring2_sf_level = ring2.slider(f"Cygnus Ring (Unique) SF Level", min_value=0, max_value=5)

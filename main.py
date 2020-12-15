@@ -267,8 +267,9 @@ with st.sidebar.beta_expander("Jewels"):
 from common.buffs import buffs
 buffs = buffs(char.character_class,char.type)
 with st.sidebar.beta_expander("Buffs"):
-    for i in buffs.buffs:
-        st.write(f"{i}")
+    if len(buffs.buffs) != 0:
+        for i in buffs.buffs:
+            st.write(f"{i}")
 
 equip_type_combination = st.radio("Equipment Combination",
                                   ["Full Empress", "Full Necro", "2 Piece Fafnir + Empress", "4 Piece Fafnir + Empress",

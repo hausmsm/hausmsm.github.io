@@ -22,7 +22,7 @@
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/ring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

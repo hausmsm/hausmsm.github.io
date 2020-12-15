@@ -134,6 +134,18 @@ class buffs:
                       "Support Unit: H-EX (Phy DMG%, Mag DMG%, FD%)"
                       ]
 
+        cash_buffs_list = ["Fried Shrimp (50% Boss ATK)", "Baby Chick Cookie (30% Boss ATK)",
+                           "Fruity Yoghurt (50% Phy ATK)", "Grape Juice (50% Mag ATK)",
+                           "Buttery Roasted Squid (30% Mag ATK)", "Chestnut (30% Crit DMG)",
+                           "Carrot Juice (30% Crit Rate)","Candy Basket (30% Phy DMG)", "Candy Cane (30% Mag DMG)",
+                           "Buckwheat Paste (30% Phy ATK)", "Fruity Candy (30% ACC)", "Dumpling (30% SPD)",
+                           "Cafe Latte (30% Phy DEF)", "Cake (30% Mag DEF)", "Coconut (300 HP)", "Cookie (300 MP)",
+                           "Electrolyte Drink (300 HP Rec)", "Corn Stick (300 MP Rec)",
+                           "Cotton Candy on a Stick (30% EXP)", "Cronos's Egg (30% Meso)", "Cup of Coffee (30% Drop)",
+                           "Egg (30% JMP)","Berzerker Bon-Bons (30% Boss DEF)", "Halloween Candy (50% Phy DEF)",
+                           "Hamburger (50% Mag DEF)", "Wedding Cake (50% Boss DEF)", "Snake Soup (40% EXP)"
+                           ]
+
         character_buff = jobbuff[character_class]
         for i in character_buff:
             buffs_list.remove(i)
@@ -154,6 +166,113 @@ class buffs:
                         buffrow = [buff_list[i], buff_list[i + 1]]
                         buffdf.loc[len(buffdf)] = buffrow
                 buff1.table(buffdf)
+            st.write("Cash Buff Selection")
+            buff_choice = st.selectbox("Choose Manual/Automatic Buff Selection", ["Automatic", "Manual"])
+            if buff_choice == "Manual":
+                _, buff2, _, buff3, _ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
+                self.atkp += buff2.selectbox("Choose Amount of PHY/MAG ATK Buff", [0, 10, 30, 50])
+                self.dmg += buff3.selectbox("Choose Amount of PHY/MAG DMG Buff", [0, 10, 30])
+                self.batk += buff2.selectbox("Choose Amount of Boss ATK Buff", [0, 10, 30, 50])
+                self.bdef += buff3.selectbox("Choose Amount of Boss DEF Buff", [0, 10, 30, 50])
+                self.cr += buff2.selectbox("Choose Amount of Crit Rate Buff", [0, 10, 30])
+                self.cd += buff3.selectbox("Choose Amount of Crit DMG Buff", [0, 30])
+                self.pdefinc += buff2.selectbox("Choose Amount of Phy DEF Buff", [0, 10, 30, 50])
+                self.mdefinc += buff3.selectbox("Choose Amount of Mag DEF Buff", [0, 10, 30, 50])
+                self.critres += buff2.selectbox("Choose Amount of Crit Res Buff", [0, 10])
+                self.accp += buff3.selectbox("Choose Amount of ACC Buff", [0, 10, 30])
+                self.hp += buff2.selectbox("Choose Amount of HP Buff", [0, 300])
+                self.mp += buff3.selectbox("Choose Amount of MP Buff", [0, 300])
+                self.hprec += buff2.selectbox("Choose Amount of HP Rec Buff", [0, 300])
+                self.mprec += buff3.selectbox("Choose Amount of MP Rec Buff", [0, 300])
+                self.spd += buff2.selectbox("Choose Amount of SPD Buff", [0, 10, 30])
+                self.jmp += buff3.selectbox("Choose Amount of JMP Buff", [0, 10, 30])
+                exp = buff2.multiselect("Choose Amount of EXP Buff", [10, 30, 40, 50])
+                for i in exp:
+                    self.exp += i
+                self.dr += buff3.selectbox("Choose Amount of Drop Buff", [0, 10, 30])
+                self.meso += buff2.selectbox("Choose Amount of Meso Buff", [0, 10, 30])
+            if buff_choice == "Automatic":
+                buff_choice_amount = st.selectbox("Choose Amount of Buff", [0, 10, 30, 50])
+                if buff_choice_amount == 10:
+                    self.atkp += 10
+                    self.dmg += 10
+                    self.batk += 10
+                    self.bdef += 10
+                    self.cr += 10
+                    self.cd += 0
+                    self.pdefinc += 10
+                    self.mdefinc += 10
+                    self.critres += 10
+                    self.accp += 10
+                    self.hp += 0
+                    self.mp += 0
+                    self.hprec += 0
+                    self.mprec += 0
+                    self.spd += 10
+                    self.jmp += 10
+                    self.exp += 70
+                    self.dr += 10
+                    self.meso += 10
+                elif buff_choice_amount == 30:
+                    self.atkp += 30
+                    self.dmg += 30
+                    self.batk += 30
+                    self.bdef += 30
+                    self.cr += 30
+                    self.cd += 30
+                    self.pdefinc += 30
+                    self.mdefinc += 30
+                    self.critres += 10
+                    self.accp += 30
+                    self.hp += 300
+                    self.mp += 300
+                    self.hprec += 300
+                    self.mprec += 300
+                    self.spd += 30
+                    self.jmp += 30
+                    self.exp += 70
+                    self.dr += 30
+                    self.meso += 30
+                elif buff_choice_amount == 50:
+                    self.atkp += 50
+                    self.dmg += 30
+                    self.batk += 50
+                    self.bdef += 50
+                    self.cr += 30
+                    self.cd += 30
+                    self.pdefinc += 50
+                    self.mdefinc += 50
+                    self.critres += 10
+                    self.accp += 30
+                    self.hp += 300
+                    self.mp += 300
+                    self.hprec += 300
+                    self.mprec += 300
+                    self.spd += 30
+                    self.jmp += 30
+                    self.exp += 70
+                    self.dr += 30
+                    self.meso += 30
+            st.write("Tangyoon Selection")
+            tangyoon = st.selectbox("Choose Tangyoon Selection", ["No", "Yes"])
+            if tangyoon == "Yes":
+                if type == "PHYSICAL":
+                    self.dmg += 20
+                    self.pdefinc += 20
+                    self.bdef += 20
+                    self.batk += 20
+                    self.cr += 20
+                    self.accp += 20
+                if type == "MAGICAL":
+                    self.dmg += 20
+                    self.mdefinc += 20
+                    self.bdef += 20
+                    self.batk += 20
+                    self.cr += 20
+                    self.accp += 20
+            fever = st.selectbox("Choose Fever Selection", ["None", "Normal", "Max"])
+            if fever == "Normal":
+                self.atkp += 
 
     def buffs(self):
         buffs = self.buffs
