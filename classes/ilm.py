@@ -165,7 +165,7 @@ class ilm:
 
         # Frozen Orb - Reinforce
         self.shdmg += 20
-        # Frozen Orb - Critical Damge
+        # Frozen Orb - Critical Damage
         self.shcd += 20
 
     def emblem(self):

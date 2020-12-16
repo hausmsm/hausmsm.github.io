@@ -124,7 +124,6 @@ class dk:
         self.evdp += 6
         self.spd += 15
 
-
         # 3rd Job
         # Cross Surge
         self.atkp += 15

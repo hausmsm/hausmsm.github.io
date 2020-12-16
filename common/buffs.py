@@ -90,9 +90,9 @@ class buffs:
 
         jobbuff = {
             # Warrior
-            "Dark Knight": ["Hyper Body ()", "Iron Defence ()"],
+            "Dark Knight": ["Hyper Body (Phy DMG Reduction, Mag DMG Reduction)", "Iron Will (Boss DEF%, Player DEF%)"],
             "Hero": ["Unmanaged Anger (Phy ATK%)"],
-            "Paladin": ["Combat Orders (Phy DMG%, Mag DMG%)", "Parashock Guard ()"],
+            "Paladin": ["Combat Orders (Phy DMG%, Mag DMG%)", "Parashock Guard (Phy DMG Reduction, Mag DMG Reduction)"],
             "Dawn Warrior": [],
             "Aran": ["Maha's Blessing (HP, MP)"],
             "Demon Slayer": [],
@@ -139,12 +139,12 @@ class buffs:
         cash_buffs_list = ["Fried Shrimp (50% Boss ATK)", "Baby Chick Cookie (30% Boss ATK)",
                            "Fruity Yoghurt (50% Phy ATK)", "Grape Juice (50% Mag ATK)",
                            "Buttery Roasted Squid (30% Mag ATK)", "Chestnut (30% Crit DMG)",
-                           "Carrot Juice (30% Crit Rate)","Candy Basket (30% Phy DMG)", "Candy Cane (30% Mag DMG)",
+                           "Carrot Juice (30% Crit Rate)", "Candy Basket (30% Phy DMG)", "Candy Cane (30% Mag DMG)",
                            "Buckwheat Paste (30% Phy ATK)", "Fruity Candy (30% ACC)", "Dumpling (30% SPD)",
                            "Cafe Latte (30% Phy DEF)", "Cake (30% Mag DEF)", "Coconut (300 HP)", "Cookie (300 MP)",
                            "Electrolyte Drink (300 HP Rec)", "Corn Stick (300 MP Rec)",
                            "Cotton Candy on a Stick (30% EXP)", "Cronos's Egg (30% Meso)", "Cup of Coffee (30% Drop)",
-                           "Egg (30% JMP)","Berzerker Bon-Bons (30% Boss DEF)", "Halloween Candy (50% Phy DEF)",
+                           "Egg (30% JMP)", "Berzerker Bon-Bons (30% Boss DEF)", "Halloween Candy (50% Phy DEF)",
                            "Hamburger (50% Mag DEF)", "Wedding Cake (50% Boss DEF)", "Snake Soup (40% EXP)"
                            ]
 
@@ -162,26 +162,47 @@ class buffs:
             if length != 0:
                 for i in range(0, length, 2):
                     if i+1 == length:
-                        buffrow = [buff_list[i],""]
+                        buffrow = [buff_list[i], ""]
                         buffdf.loc[len(buffdf)] = buffrow
                     else:
                         buffrow = [buff_list[i], buff_list[i + 1]]
                         buffdf.loc[len(buffdf)] = buffrow
                 buff1.table(buffdf)
-            if "Parashock Guard (Phy DMG Reduction, Mag DMG Reduction)" in buff_list:
-                self.pdefdec += 20
-                self.mdefdec += 20
-            if "Combat Orders (Phy DMG%, Mag DMG%)" in buff_list:
-                self.dmg += 15
+
+            # Dark Knight
             if "Hyper Body (Phy DMG Reduction, Mag DMG Reduction)" in buff_list:
                 self.pdefdec += 9
                 self.mdefdec += 9
             if "Iron Will (Boss DEF%, Player DEF%)" in buff_list:
                 self.bdef += 12
                 self.pldef += 12
+            # Hero
             if "Unmanaged Anger (Phy ATK%)" in buff_list:
                 if type == "PHYSICAL":
                     self.atkp += 21
+            # Paladin
+            if "Parashock Guard (Phy DMG Reduction, Mag DMG Reduction)" in buff_list:
+                self.pdefdec += 20
+                self.mdefdec += 20
+            if "Combat Orders (Phy DMG%, Mag DMG%)" in buff_list:
+                self.dmg += 15
+            # Bishop
+            if "Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)" in buff_list:
+                self.atkp += 35
+                self.batk += 15
+                self.accp += 10
+                self.evd += 15
+            if "Holy Shell (HP%, MP%, HP, MP)" in buff_list:
+                self.hpinc += 10
+                self.mpinc += 10
+                self.hp += 7808
+                self.mp += 3124
+            if "Holy Symbol (EXP, KBK Res)" in buff_list:
+                self.exp += 20
+                self.kbkres += 13
+            if "Meditation (Mag DMG%)" in buff_list:
+                if type == "MAGICAL":
+                    self.dmg += 10
             if "Absolute Zero Aura (KBK RES, Abnormal Status RES)" in buff_list:
                 self.kbkres += 10
                 self.abnormalstatres += 10

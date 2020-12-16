@@ -5,6 +5,7 @@ from common.emblemcalculations import emblemcalculations
 import pandas as pd
 import streamlit as st
 import warnings
+
 warnings.filterwarnings("ignore")
 st.title("Automatic Emblem Calculator")
 
@@ -13,6 +14,7 @@ st.sidebar.header("Summary")
 # Character Selection
 st.header("Class Selection")
 from classes.character_selection import character_selection
+
 char = character_selection()
 st.sidebar.subheader("Class")
 st.sidebar.write(f"{char.character_class}")
@@ -22,7 +24,8 @@ st.header("Weapon Selections")
 
 ## Weapon
 from equip.weapon import weapon
-wep = weapon(char.character_type,char.character_class)
+
+wep = weapon(char.character_type, char.character_class)
 with st.sidebar.beta_expander("Weapon"):
     st.write(f"{wep.type}")
     st.write(f"Level: {wep.level}")
@@ -35,6 +38,7 @@ with st.sidebar.beta_expander("Weapon"):
 
 ## Secondary Weapon
 from equip.secweapon import secweapon
+
 swep = secweapon()
 with st.sidebar.beta_expander("Secondary Weapon"):
     st.write(f"{swep.rank} {swep.type}")
@@ -45,6 +49,7 @@ with st.sidebar.beta_expander("Secondary Weapon"):
 st.header("Armor Selections")
 ## Hat
 from equip.hat import hat
+
 hat = hat()
 with st.sidebar.beta_expander("Hat"):
     st.write(f"{hat.type}")
@@ -57,6 +62,7 @@ with st.sidebar.beta_expander("Hat"):
 
 ## Glove
 from equip.glove import glove
+
 glove = glove()
 with st.sidebar.beta_expander("Glove"):
     st.write(f"{glove.type}")
@@ -69,6 +75,7 @@ with st.sidebar.beta_expander("Glove"):
 
 ## Top+Bottom/Outfit
 from equip.tbo import tbo
+
 tbo = tbo()
 if tbo.tbo() == "Top+Bottom":
     with st.sidebar.beta_expander("Top+Bottom"):
@@ -92,6 +99,7 @@ else:
 
 ## Shoulders
 from equip.shoulder import shoulder
+
 shoulder = shoulder()
 with st.sidebar.beta_expander("Shoulder"):
     st.write(f"{shoulder.type}")
@@ -104,6 +112,7 @@ with st.sidebar.beta_expander("Shoulder"):
 
 ## Shoes
 from equip.shoe import shoe
+
 shoes = shoe()
 with st.sidebar.beta_expander("Shoes"):
     st.write(f"{shoes.type}")
@@ -116,6 +125,7 @@ with st.sidebar.beta_expander("Shoes"):
 
 ## Belt
 from equip.belt import belt
+
 belt = belt()
 with st.sidebar.beta_expander("Belt"):
     st.write(f"{belt.type}")
@@ -128,6 +138,7 @@ with st.sidebar.beta_expander("Belt"):
 
 ## Cape
 from equip.cape import cape
+
 cape = cape()
 with st.sidebar.beta_expander("Cape"):
     st.write(f"{cape.type}")
@@ -141,6 +152,7 @@ with st.sidebar.beta_expander("Cape"):
 st.header("Accessory Selections")
 ## Necklace
 from equip.necklace import necklace
+
 necklace = necklace()
 with st.sidebar.beta_expander("Necklaces"):
     if necklace.neck_amount == 2:
@@ -162,6 +174,7 @@ with st.sidebar.beta_expander("Necklaces"):
 
 ## Ring
 from equip.ring import ring
+
 ring = ring()
 with st.sidebar.beta_expander("Rings"):
     if ring.ring_amount == 4:
@@ -197,6 +210,7 @@ with st.sidebar.beta_expander("Rings"):
 
 ## Earring
 from equip.earring import earring
+
 earrings = earring()
 with st.sidebar.beta_expander("Earrings"):
     st.write(f"{earrings.type}")
@@ -208,37 +222,43 @@ with st.sidebar.beta_expander("Earrings"):
 
 ## Title
 from equip.title import title
+
 title = title()
 with st.sidebar.beta_expander("Title"):
     st.write(f"{title.type}")
 
 ## Badge
 from equip.badge import badge
+
 badge = badge()
 with st.sidebar.beta_expander("Badge"):
     st.write(f"{badge.type}")
 
 ## Medal
 from equip.medal import medal
+
 medal = medal()
 with st.sidebar.beta_expander("Medal"):
     st.write(f"{medal.type}")
 
 ## Face Accessory
 from equip.face import face
+
 face = face()
 with st.sidebar.beta_expander("Face Accessory"):
     st.write(f"{face.type}")
 
 ## Eye Accessory
 from equip.eye import eye
+
 eye = eye()
 with st.sidebar.beta_expander("Eye Accessory"):
     st.write(f"{eye.type}")
 
 ## Common Stats Stuff
 from common.link import link
-link = link(char.character_class,char.type)
+
+link = link(char.character_class, char.type)
 with st.sidebar.beta_expander("Link Skills"):
     if len(link.links) == 12:
         st.write(f"Link 1:{link.links[0]}")
@@ -259,19 +279,22 @@ with st.sidebar.beta_expander("Link Skills"):
         st.write(f"Only {len(link.links)}/12")
 
 from equip.jewel import jewel
+
 jewel = jewel(char.type)
 with st.sidebar.beta_expander("Jewels"):
     st.write(f"Rank: {jewel.rank}")
     st.write(f"Stat: {jewel.stat}")
 
 from common.buffs import buffs
-buffs = buffs(char.character_class,char.type)
+
+buffs = buffs(char.character_class, char.type)
 with st.sidebar.beta_expander("Buffs"):
     if len(buffs.buffs) != 0:
         for i in buffs.buffs:
             st.write(f"{i}")
 
 from equip.cash import cash
+
 cash = cash()
 with st.sidebar.beta_expander("Cash Set"):
     st.write(f"{cash.type}")
@@ -306,56 +329,56 @@ if cash_type_combination == "3+3 Set":
 else:
     cash_type = "2"
 
-#commonsum = commonsum(type, character_class)
-#equip = equip_selection(equip_type, stat_type, character_class, cash_type)
-#necalculations = nonemblemcalculations(commonsum, equip)
+# commonsum = commonsum(type, character_class)
+# equip = equip_selection(equip_type, stat_type, character_class, cash_type)
+# necalculations = nonemblemcalculations(commonsum, equip)
 
-#finalcalculations = emblemcalculations(necalculations, char)
+# finalcalculations = emblemcalculations(necalculations, char)
 
-#atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg, finalcalculations.batk,
+# atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg, finalcalculations.batk,
 #            finalcalculations.cr, finalcalculations.cd, finalcalculations.fd]
 
-#pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
+# pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
 ##sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput()]
-#firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput()) / finalcalculations.bpoutput() * 100
-#secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput()) / finalcalculations.bpoutput() * 100
-#firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput()) / finalcalculations.bsoutput() * 100
-#secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput()) / finalcalculations.bsoutput() * 100
+# firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput()) / finalcalculations.bpoutput() * 100
+# secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput()) / finalcalculations.bpoutput() * 100
+# firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput()) / finalcalculations.bsoutput() * 100
+# secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput()) / finalcalculations.bsoutput() * 100
 
-#atkflamestats = ['ATK', necalculations.atkflame, necalculations.atkflamebase, necalculations.atklinecount]
-#crflamestats = ["CR", necalculations.crflame, necalculations.crflamebase, necalculations.crlinecount]
-#cdflamestats = ["CD", necalculations.cdflame, necalculations.cdflamebase, necalculations.cdlinecount]
-#flamestatsdf = pd.DataFrame(columns=['Type', 'Amount', 'Base Used', 'Number of Lines'])
-#flamestatsdf.loc[0] = atkflamestats
-#flamestatsdf.loc[1] = crflamestats
-#flamestatsdf.loc[2] = cdflamestats
+# atkflamestats = ['ATK', necalculations.atkflame, necalculations.atkflamebase, necalculations.atklinecount]
+# crflamestats = ["CR", necalculations.crflame, necalculations.crflamebase, necalculations.crlinecount]
+# cdflamestats = ["CD", necalculations.cdflame, necalculations.cdflamebase, necalculations.cdlinecount]
+# flamestatsdf = pd.DataFrame(columns=['Type', 'Amount', 'Base Used', 'Number of Lines'])
+# flamestatsdf.loc[0] = atkflamestats
+# flamestatsdf.loc[1] = crflamestats
+# flamestatsdf.loc[2] = cdflamestats
 
-#embstats = [int(finalcalculations.ncdemb), int(finalcalculations.natkpemb), int(finalcalculations.nbatkemb),
+# embstats = [int(finalcalculations.ncdemb), int(finalcalculations.natkpemb), int(finalcalculations.nbatkemb),
 #            finalcalculations.bpoutput()
 #    , firstppercentage, finalcalculations.bsoutput(), firstspercentage]
 ###sembstats = [int(finalcalculations.secondncdemb), int(finalcalculations.secondnatkpemb),
 #             int(finalcalculations.secondnbatkemb),
 #             finalcalculations.sbpoutput(), secondppercentage, finalcalculations.sbsoutput(), secondspercentage]
-#atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
-#atkstatsdf.loc[0] = atkstats#
+# atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
+# atkstatsdf.loc[0] = atkstats#
 #
-#skillstatsdf = pd.DataFrame(columns=["Skill", "Boss Output", "Non-Boss Output"])
-#skillstatsdf.loc[0] = pskillstats
-#skillstatsdf.loc[1] = sskillstats
+# skillstatsdf = pd.DataFrame(columns=["Skill", "Boss Output", "Non-Boss Output"])
+# skillstatsdf.loc[0] = pskillstats
+# skillstatsdf.loc[1] = sskillstats
 
-#embstatsdf = pd.DataFrame(
+# embstatsdf = pd.DataFrame(
 #    columns=["CD Emb", "ATK Emb", "BATK Emb", "Primary DMG", "Primary %", "Secondary DMG", "Secondary %"])
-#embstatsdf.loc[0] = embstats
-#embstatsdf.loc[1] = sembstats
-#skillstatsdf['Boss Output'] = skillstatsdf['Boss Output'].apply(lambda x: "{:,}".format(x))
-#skillstatsdf['Non-Boss Output'] = skillstatsdf['Non-Boss Output'].apply(lambda x: "{:,}".format(x))
+# embstatsdf.loc[0] = embstats
+# embstatsdf.loc[1] = sembstats
+# skillstatsdf['Boss Output'] = skillstatsdf['Boss Output'].apply(lambda x: "{:,}".format(x))
+# skillstatsdf['Non-Boss Output'] = skillstatsdf['Non-Boss Output'].apply(lambda x: "{:,}".format(x))
 
-#embstatsdf['Primary DMG'] = embstatsdf['Primary DMG'].apply(lambda x: "{:,}".format(x))
-#embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x: "{:,}".format(x))
-#embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x: "{:.2f}".format(x))
-#embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x: "{:.2f}".format(x))
+# embstatsdf['Primary DMG'] = embstatsdf['Primary DMG'].apply(lambda x: "{:,}".format(x))
+# embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x: "{:,}".format(x))
+# embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x: "{:.2f}".format(x))
+# embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x: "{:.2f}".format(x))
 
 ##st.dataframe(skillstatsdf)
-#st.dataframe(flamestatsdf)
-#st.dataframe(atkstatsdf)
-#st.dataframe(embstatsdf)
+# st.dataframe(flamestatsdf)
+# st.dataframe(atkstatsdf)
+# st.dataframe(embstatsdf)

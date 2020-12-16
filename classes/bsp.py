@@ -165,8 +165,8 @@ class bsp:
         # Infinity - Reinforce
         self.batk += 20
         # Holy Magic Shell - Reinforce
-        self.hp +=
-        self.mp +=
+        self.hp += 7808
+        self.mp += 3124
         # Holy Symbol - Experience
         self.exp += 10
 
