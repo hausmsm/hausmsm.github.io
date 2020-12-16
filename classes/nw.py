@@ -1,21 +1,21 @@
 class nw:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1579
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5
         self.cratk = 0
-        self.cd = 0
+        self.cd = 10
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,8 +24,8 @@ class nw:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
-        self.accp = 0
+        self.acc = 2251
+        self.accp = 1125
         self.evd = 0
         self.evdp = 0
         self.penrate = 0
@@ -33,12 +33,12 @@ class nw:
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10272
+        self.mp = 3167
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -98,23 +98,39 @@ class nw:
         # Skills
 
         # 1st Job
+        # Haste
+        self.spd += 20
+        self.jmp += 15
         # Shadow Bat
         self.schance += 18
         self.shitcount += 1
         self.sskilldmg += 50
 
         # 2nd Job
+        # Throwing Mastery
+        self.accp += 6
+        self.penrate += 6
         # Critical Throw
         self.cr += 5
+        # Physical Training
+        self.hpinc += 10
+        self.mpinc += 10
         # Bat Affinity
         self.sskilldmg += 6
         self.schance += 7
 
         # 3rd Job
+        # Dark Servant
         # Spirit Projection
         self.atkp += 25
         self.dmg += 6
         self.batk += 6
+        self.platk += 6
+        # Enveloping Darkness
+        self.pdefinc += 10
+        self.mdefinc += 10
+        self.pdefdec += 5
+        self.mdefdec += 5
         # Bat Affinity II
         self.sskilldmg += 11
         self.schance += 7
@@ -123,8 +139,10 @@ class nw:
         # Throwing Expert
         self.cr += 5
         self.cd += 10
+        self.critdmgres += 10
         # Dark Blessing
         self.batk += 5
+        self.platk += 5
         # Bat Affinity III
         self.schance += 7
         self.sskilldmg += 16
@@ -132,6 +150,7 @@ class nw:
         # Hyper Buff
         # Dominion
         self.atkp += 25
+        self.kbkres += 10
         # Shadow Illusion
         self.spmulti += 75
         # Glory of the Guardians

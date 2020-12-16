@@ -1,21 +1,21 @@
 class csr:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1578
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5
         self.cratk = 0
-        self.cd = 0
+        self.cd = 10
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class csr:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10280
+        self.mp = 3167
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -74,7 +74,7 @@ class csr:
 
         # Rapid Fire
         self.pname = "Rapid Fire"
-        self.pskilldmg = 295
+        self.pskilldmg = 379
         self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
@@ -107,23 +107,22 @@ class csr:
         self.cd += 10
 
         # 2nd Job
-        # Gun Mastery
-        self.accp += 6
-        self.penrate += 4
-
-        # Physical Training
-
         # Bullet Barrage
         self.critres += 5
         self.critdmgres += 20
+        self.mprec += 24
+        # Gun Mastery
+        self.accp += 6
+        self.penrate += 4
+        # Physical Training
+        self.hprec += 100
+        self.mprec += 50
 
         # 3rd Job
         # All Aboard
-
         # Outlaw's Code
         self.hpinc += 10
         self.mpinc += 10
-
         # Fullmetal Jacket
         self.cr += 6
         self.cd += 10
@@ -153,7 +152,7 @@ class csr:
         # Majestic Presence
         self.schance += 50
         self.shitcount += 2
-        self.sskilldmg += 60
+        self.sskilldmg += 72
 
         # Quickdraw
         self.dmg += 15

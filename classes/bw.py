@@ -1,21 +1,21 @@
 class bw:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1580
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5.1
         self.cratk = 0
-        self.cd = 0
+        self.cd = 11.3
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class bw:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10267
+        self.mp = 3173
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -74,7 +74,7 @@ class bw:
 
         # Final Orbital Flame
         self.pname = "Final Orbital Flame"
-        self.pskilldmg = 190
+        self.pskilldmg = 191
         self.phitcount = 2
         self.phatkp = 0
         self.phdmg = 0
@@ -85,7 +85,7 @@ class bw:
 
         # Blazing Extinction
         self.sname = "Blazing Extinction"
-        self.sskilldmg = 433.8
+        self.sskilldmg = 440
         self.shitcount = 2
         self.schance = 100
         self.shatkp = 0
@@ -98,17 +98,28 @@ class bw:
         # Skills
 
         # 1st Job
+        # Flame Elemental
         # Natural Talent
         self.cr += 5
+        self.critres += 5
 
         # 2nd Job
+        # Greater Flame Elemental
+        # Spell Control
+        self.pdefinc += 15
+        self.mdefinc += 15
+        self.pdefdec += 5
+        self.mdefdec += 5
 
         # 3rd Job
         # Liberated Magic
         self.dmg += 30
         # Burning Focus
         self.cd += 10
+        self.critdmgres += 10
         # Brilliant Enlightenment
+        self.accp += 6
+        self.penrate += 6
         self.atkp += 6
 
         # 4th Job
@@ -116,12 +127,21 @@ class bw:
         self.atkp += 15
         self.dmg += 10
         self.batk += 5
+        self.platk += 5
         self.cr += 5
         # Burning Conduit
         self.atkp += 20
         self.dmg += 5
         # Pure Magic
         self.atkp += 10
+        self.hpinc += 10
+        self.mpinc += 10
+        # Fires of Creation
+        self.kbkres += 25
+        self.spd += 15
+        self.jmp += 15
+        # Flame Barrier
+        self.evdp += 6
 
         # Hyper Buff
         # Glory Of The Guardians
@@ -133,7 +153,7 @@ class bw:
         # Orbital Flame - Crit DMG
         self.phcd += 20
         # Orbtial Flame - Split Attack
-        self.phfd -= 10
+        self.phdmg -= 10
         self.phitcount += 2
         # Blazing Extinction - Reinforce
         self.shdmg += 25

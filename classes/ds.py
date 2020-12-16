@@ -1,4 +1,4 @@
-class dk:
+class ds:
     def __init__(self):
         # Offensive Stats
         self.atk = 1577
@@ -73,22 +73,22 @@ class dk:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.7
-        self.phitcount = 10
+        # Demon Impact
+        self.pname = "Demon Impact"
+        self.pskilldmg = 160
+        self.phitcount = 8
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
-        self.phcr = 0
+        self.phcr = 10
         self.phcd = 0
         self.phfd = 0
         self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 335
-        self.shitcount = 18
+        # Cerberus Chomp
+        self.sname = "Cerberus Chomp"
+        self.sskilldmg = 350
+        self.shitcount = 10
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -100,73 +100,73 @@ class dk:
         # Skills
 
         # 1st Job
-        # Iron Body
-        self.pdefinc += 20
-        self.mdefinc += 20
-        self.hpinc += 30
-        self.mpinc += 20
-        # Warrior Mastery
-        self.atkp += 12
+        # Shadow Swiftness
+        self.spd += 15
+        self.jmp += 15
+        # HP Increase
+        self.hpinc += 3
+        # Demonic Blood
+        self.kbkres += 35
+
 
         # 2nd Job
-        # Beholder
-        self.hprec += 5000
-        # Iron Will
-        self.bdef += 12
-        self.pldef += 12
-        # Hyper Body
-        self.pdefdec += 9
-        self.mdefdec += 9
+        # Vengeance
+        self.dmg += 15
         # Weapon Mastery
-        self.dmg += 6
+        self.accp += 3
+        self.dmg += 10
         # Physical Training
-        self.accp += 6
-        self.evdp += 6
-        self.spd += 15
+        self.atkp += 10
+        self.hpinc += 5
+        # Outrage
+        self.cr += 3
+        self.atkp += 10
 
         # 3rd Job
-        # Cross Surge
-        self.atkp += 15
+        # Black-Hearted Strength
+        self.critres += 5
+        self.pdefinc += 10
+        self.mdefinc += 10
+        # Insult to Injury
         self.dmg += 10
-        # Lord of Darkness
-        self.cr += 4
-        self.cd += 10
-        # Beholder's Buff
-        self.mprec += 48
-        # Endure
-        self.critdmgres += 10
+        self.cr += 5
+        self.cd += 15
+        # Focused Fury
+        self.atkp += 15
+        # Possessed Aegis
+        self.block += 10
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.penrate += 2
-        self.batk += 6
-        self.platk += 6
-        # Final Pact
-        self.atkp += 5
-        # KBK RES
-        self.kbkres += 26
+        # Dark Metamorphosis
+        self.dmg += 15
+        self.hpinc += 10
+        # Boundless Rage
+        self.fd += 15
+        # Leech Aura
+        self.batk += 15
+        self.bdef += 15
+        # Barricade Mastery
+        self.dmg += 25
+        self.cd += 15
+        # Obsidian Skin
+        self.pdefdec += 15
+        self.mdefdec += 15
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 25
-        self.dmg += 15
-        # Epic Adventure
+        # Blue Blood
+        self.spmulti = 50
+        # Demonic Fortitude
         self.cd += 30
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
+        # Demon Impact - Reinforce
         self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
-        self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
+        # Demon Impact - Extra Strike
         self.phitcount += 1
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
+        # Demon Impact - Reduce Fury
+        # Dark Metamorphosis - Reinforce
+        self.fd += 20
+        # Demon Lash - Fury
 
     def emblem(self):
         emblem = self.emblem

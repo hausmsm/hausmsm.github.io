@@ -1,21 +1,21 @@
 class bucc:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1578
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5
         self.cratk = 0
-        self.cd = 0
+        self.cd = 10
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class bucc:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10280
+        self.mp = 3167
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -108,9 +108,6 @@ class bucc:
 
         # 2nd Job
         # Energy Charge
-        self.atkp += 10
-        self.pdefinc += 10
-        self.mdefinc += 10
 
         # Dark Clarity
         self.block += 6
@@ -126,14 +123,13 @@ class bucc:
         # Perseverance
 
         # Physical Training
+        self.hprec += 55
+        self.mprec += 22
 
         # Knuckle Booster
 
         # 3rd Job
         # Super Charge
-        self.atkp += 15
-        self.pdefinc += 15
-        self.mdefinc += 15
 
         # Wallow Defense
         self.pdefdec += 4
@@ -152,17 +148,16 @@ class bucc:
 
         # 4th Job
         # Ultra Charge
-        self.atkp += 20
-        self.pdefinc += 15
-        self.mdefinc += 15
+        self.atkp += 10
+        self.pdefinc += 7.5
+        self.mdefinc += 7.5
 
         # Double Down
         self.dmg += 10
         self.cd += 10
 
         # Typhoon Crush
-        self.pdefinc += 10
-        self.mdefinc += 10
+        self.dmg += 10
 
         # Counterattack
         self.dmg += 15
@@ -191,8 +186,8 @@ class bucc:
         # Octopunch - Boss Rush
         self.phbatk += 20
 
-        # Octopunch - Crit DMG
-        self.phcd += 20
+        # Octopunch - Reinforce
+        self.phdmg += 20
 
         # Octopunch - Extra Strike
         self.phitcount += 1

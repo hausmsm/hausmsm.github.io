@@ -1,21 +1,21 @@
 class nl:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1579
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5
         self.cratk = 0
-        self.cd = 0
+        self.cd = 10
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class nl:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10272
+        self.mp = 3167
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -98,21 +98,37 @@ class nl:
         # Skills
 
         # 1st Job
+        # Side Step
+        self.evdp += 10
         # Nimble Body
+        self.accp += 4
+        self.evp += 6
         self.cr += 4
 
         # 2nd Job
+        # Haste
+        self.spd += 20
+        # Claw Mastery
+        self.pdefinc += 9
+        self.mdefinc += 9
+        # Physical Training
+        self.hprec += 55
+        self.mprec += 22
+        self.critres += 10
         # Critical Throw
         self.cr += 4
         self.cd += 10
         # Assassin's Mark
         self.sskilldmg += 35
         self.schance += 30
-        self.shitcount += 1
+        self.shitcount += 2
 
         # 3rd Job
         # Shadow Stars
         self.dmg += 15
+        # Enveloping Darkness
+        self.hpinc += 10
+        self.mpinc += 5
         # Expert Throwing Star Technique
         self.atkp += 13
         # Shadow Partner
@@ -120,24 +136,37 @@ class nl:
 
         # 4th Job
         # Frailty Curse
-        self.dmg += 10
+        self.dmg += 15
+        self.pdefdec += 10
+        self.mdefdec += 10
         # Dark Serenity
-        self.batk += 11
+        self.penrate += 5
+        self.batk += 12
+        self.platk += 12
         # Shadow Shifter
         self.dmg += 6
+        # Claw Expert
+        self.pdefdec += 4
+        self.mdefdec += 4
+        self.bdef += 4
+        self.pldef += 4
+        self.hpinc += 10
+        self.mpinc += 10
         # Night Lord's Mark
         self.schance += 20
         self.sskilldmg += 45
+        self.shitcount += 2
 
         # Hyper Buff
         # Bleed Dart
-        self.atkp += 25
+        self.atkp += 15
+        self.dmg += 15
         # Epic Adventure
         self.cd += 30
         # Frailty Curse - Enhance
         self.dmg += 20
         # Frailty Curse - Crit DMG
-        self.cd += 30
+        self.cd += 20
 
         # Hyper Skill
         # Quad Star - Reinforce

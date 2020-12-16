@@ -1,21 +1,22 @@
 class aran:
     def __init__(self):
-        self.atk = 0
+        # Offensive Stats
+        self.atk = 1579
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 0.1
         self.cratk = 0
         self.cd = 0
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +25,21 @@ class aran:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10276
+        self.mp = 3169
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -74,7 +75,7 @@ class aran:
 
         # Beyond Blade
         self.pname = "Beyond Blade"
-        self.pskilldmg = 283.6
+        self.pskilldmg = 264.3
         self.phitcount = 5
         self.phatkp = 0
         self.phdmg = 0
@@ -99,8 +100,6 @@ class aran:
 
         # 1st Job
         # Combo Ability
-        self.cr += 3
-        self.critres += 3
 
         # Polearm Booster
 
@@ -113,6 +112,8 @@ class aran:
         self.platk += 15
 
         # Physical Training
+        self.hprec += 60
+        self.mprec += 30
         self.hpinc += 10
         self.mpinc += 10
 
@@ -135,8 +136,8 @@ class aran:
 
         # 3rd Job
         # Advanced Combo Ability
-        self.cd += 4
-        self.critdmgres += 4
+        self.cd += 20
+        self.critdmgres += 20
 
         # Cleaving Blows
         self.dmg += 10
@@ -176,9 +177,8 @@ class aran:
         self.sskilldmg += 66.2
 
         # Command Mastery II
-        self.dmg += 14.2
 
-        # Swing Studdies II
+        # Swing Studies II
 
         # Hyper Buff
         # Adrenaline Burst

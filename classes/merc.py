@@ -1,21 +1,21 @@
 class merc:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1578
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5.1
         self.cratk = 0
-        self.cd = 0
+        self.cd = 12.6
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class merc:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10272
+        self.mp = 3171
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -74,7 +74,7 @@ class merc:
 
         # Ishtar's Ring
         self.pname = "Ishtar's Ring"
-        self.pskilldmg = 165
+        self.pskilldmg = 221
         self.phitcount = 2
         self.phatkp = 0
         self.phdmg = 0
@@ -100,26 +100,49 @@ class merc:
         # 1st Job
         # Potential Power
         self.atkp += 15
+        self.pdefinc += 10
+        self.mdefinc += 10
         # Sharp Aim
         self.cr += 4
+        self.critres += 4
 
         # 2nd Job
         # Dual Bowguns Mastery
         self.dmg += 20
+        # Physical Training
+        self.hprec += 50
+        self.mprec += 20
+        self.hpinc += 10
+        self.mpinc += 10
         # Spirit Surge
         self.cd += 18
+        self.critdmgres += 18
 
         # 3rd Job
         # Unicorn Spike
         self.dmg += 10
         # Ignis Roar
-        self.dmg += 50
+        self.dmg += 40
+        # Water Shield
+        self.kbkres += 31
+        self.pdefdec += 9.6
+        self.mdefdec += 9.6
+        self.spd += 20
+        self.jmp += 18
 
         # 4th Job
         # Spikes Royale
-        self.dmg += 15
+        self.dmg += 10
+        # Ancient Warding
+        self.accp += 6
+        self.evdp += 12
+        self.penrate += 6
+        self.hpinc += 5
         # Dual Bowguns Expert
         self.batk += 15
+        self.bdef += 9.6
+        self.platk += 15
+        self.pldef += 9.6
         # Defense Break
         self.atkp += 20
 
@@ -127,8 +150,8 @@ class merc:
         # Heroic Memories
         self.cd += 30
         # Elvish Blessing
-        self.atkp += 30
-        self.dmg += 10
+        self.atkp += 25
+        self.dmg += 15
 
         # Hyper Skill
         # Ishtar's Ring - Reinforce
@@ -138,8 +161,9 @@ class merc:
         # Ishtar's Ring - Crit DMG
         self.phcd += 20
         # Ignis Roar - Reinforce
-
+        self.dmg += 10
         # Spikes Royale - Armorbreak
+        self.dmg += 10
 
     def emblem(self):
         emblem = self.emblem

@@ -2,7 +2,7 @@ import streamlit as st
 
 
 class seteffect:
-    def __init__(self, mempsetcount,aempsetcount, necrosetcount, fafsetcount, bosssetcount,commandersetcount):
+    def __init__(self, mempsetcount, aempsetcount, necrosetcount, fafsetcount, bosssetcount, commandersetcount):
         # Initialize
         self.emblem = "None"
         self.emblem_amount = 0
@@ -123,6 +123,109 @@ class seteffect:
                 self.dmg += 3
                 self.cr += 3
                 self.cd += 3
+            # Boss Set
+            if self.bosssetcount >= 2:
+                self.atk += 50
+                self.accp += 0.1
+                if self.bosssetcount >= 3:
+                    self.atk += 50
+                    self.hp += 500
+                    self.mp += 500
+                    self.accp += 0.4
+                    if self.bosssetcount >= 4:
+                        self.atk += 50
+                        self.pdef += 500
+                        self.mdef += 500
+                        self.hp += 500
+                        self.mp += 500
+                        self.accp += 0.5
+                        if self.bosssetcount >= 5:
+                            self.atk += 50
+                            self.pdef += 500
+                            self.mdef += 500
+                            self.hp += 500
+                            self.mp += 500
+                            self.cr += 3
+                            self.accp += 0.5
+                            self.spd += 0.5
+                            if self.bosssetcount >= 6:
+                                self.atk += 100
+                                self.pdef += 500
+                                self.mdef += 500
+                                self.hp += 1000
+                                self.mp += 1000
+                                self.bdef += 2
+                                self.cr += 1
+                                self.cd += 2
+                                self.accp += 0.5
+                                self.spd += 0.5
+                                if self.bosssetcount >= 7:
+                                    self.atk += 200
+                                    self.pdef += 1000
+                                    self.mdef += 1000
+                                    self.hp += 1000
+                                    self.mp += 1000
+                                    self.batk += 5
+                                    self.bdef += 3
+                                    self.cr += 1
+                                    self.cd += 3
+                                    self.accp += 1
+                                    self.spd += 0.5
+            # Mythic Empress Set
+            if mempsetcount >= 3:
+                self.pdef += 2443
+                self.mdef += 2443
+                self.hp += 189
+                if mempsetcount >= 5:
+                    self.atk += 49
+                    self.evdp += 5
+                    self.pdef += 2443
+                    self.mdef += 2443
+                    self.hp += 189
+                    if mempsetcount >= 7:
+                        self.cr += 2
+                        self.accp += 5
+                        self.atk += 49
+                        self.evdp += 5
+                        self.pdef += 2443
+                        self.mdef += 2443
+                        self.hp += 189
+            # Ancient Empress Set
+            if aempsetcount >= 3:
+                self.pdef += 2500
+                self.mdef += 2500
+                self.hp += 1000
+                if aempsetcount >= 5:
+                    self.atk += 100
+                    self.evdp += 5
+                    self.pdef += 2500
+                    self.mdef += 2500
+                    self.hp += 1000
+                    if aempsetcount >= 7:
+                        self.atk += 1000
+                        self.cr += 3
+                        self.accp += 6
+                        self.atk += 100
+                        self.evdp += 5
+                        self.pdef += 2500
+                        self.mdef += 2500
+                        self.hp += 1000
+            # Fafnir
+            if self.fafsetcount >= 2:
+                self.batk += 2
+                if self.fafsetcount >= 3:
+                    self.cr += 4
+                    if self.fafsetcount >= 4:
+                        self.atk += 950
+            # Necro
+            if self.necrosetcount >= 3:
+                self.hp += 1000
+                self.atkp += 5
+                self.dmg += 5
+                if self.necrosetcount >= 5:
+                    self.batk += 10
+                    if self.necrosetcount >= 7:
+                        self.atk += 1500
 
     def emblem(self):
         emblem = self.emblem
@@ -444,23 +547,9 @@ class seteffect:
                     self.cr += 3
                     self.accp += 6
 
-        # Necro
-        if self.necrosetcount >= 3:
-            self.hp += 1000
-            self.atkp += 5
-            self.dmg += 5
-            if self.necrosetcount >= 5:
-                self.batk += 10
-                if self.necrosetcount >= 7:
-                    self.atk += 1500
 
-        # Fafnir
-        if self.fafsetcount >= 2:
-            self.batk += 2
-            if self.fafsetcount >= 3:
-                self.cr += 4
-                if self.fafsetcount >= 4:
-                    self.atk += 950
+
+
         # Boss Set
         if self.bosssetcount >= 2:
             self.atk += 50
@@ -547,10 +636,7 @@ class seteffect:
         self.cr += 3
         self.cd += 3
 
-        # Soul Effect
-        self.maxdmg += 1500000
-        self.fd += 18
-        self.atk += 200 + 900
+
 
     def atk(self):
         atk = self.atk

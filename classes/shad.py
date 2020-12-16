@@ -1,21 +1,21 @@
 class shad:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1579
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5
         self.cratk = 0
-        self.cd = 0
+        self.cd = 10
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class shad:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10272
+        self.mp = 3167
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -98,24 +98,47 @@ class shad:
         # Skills
 
         # 1st Job
+        # Haste
+        self.spd += 20
         # Nimble Body
+        self.accp += 2
+        self.evdp += 6
         self.cr += 2
 
         # 2nd Job
         # Critical Growth
         self.cd += 17.5
+        # Channel Karma
+        self.pdefinc += 9
+        self.mdefinc += 9
         # Dagger Mastery
         self.atkp += 9
+        # Physical Training
+        self.hprec += 55
+        self.mprec += 22
+        self.critdmgres += 10
+        # Shield Mastery
+        self.pdefdec += 8
+        self.mdefdec += 8
 
         # 3rd Job
         # Shadow Partner
         self.spmulti += 35
+        # Gustav
+        self.mesp += 4
+        # Enveloping Darkness
+        self.hpinc += 20
+        self.mpinc += 10
 
         # 4th Job
+        # Smokescreen
+        self.cd += 15
         # Prime Critical
         self.cr += 2
+        self.critres += 2
         # Dagger Expert
         self.batk += 10
+        self.platk += 4
         self.cd += 10
         # Shadower Instinct
         self.atkp += 20

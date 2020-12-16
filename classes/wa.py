@@ -1,21 +1,21 @@
 class wa:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1578
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5.1
         self.cratk = 0
-        self.cd = 0
+        self.cd = 12.6
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class wa:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10272
+        self.mp = 3171
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -100,31 +100,57 @@ class wa:
         # 1st Job
         # Storm Elemental
         self.atkp += 15
+        # Whispers of the Wind
+        self.kbkres += 30
+        self.spd += 20
+        self.jmp += 15
 
         # 2nd Job
+        # Slyvan Aid
+        self.pdefinc += 15
+        self.mdefinc += 15
         # Trifling Wind I
         self.schance += 15
         self.sskilldmg += 100
         self.shitcount += 1
+        # Bow Mastery
+        self.accp += 6
+        self.penrate += 6
+        # Physical Training
+        self.hprec += 50
+        self.mprec += 20
+        self.hpinc += 10
+        self.mpinc += 10
 
         # 3rd Job
         # Second Wind
+        self.evdp += 6
         self.batk += 8
+        self.platk += 8
         # Trifling Wind II
         self.schance += 5
         self.sskilldmg += 15
+        # Featherweight
+        self.critres += 10
+        self.critdmgres += 15
 
         # 4th Job
         # Emerald Dust
         self.dmg += 20
+        # Touch of the Wind
+        self.bdef += 8
+        self.pldef += 8
         # Sharp Eyes
         self.dmg += 6
+        self.pdefdec += 4
+        self.mdefdec += 4
         # Albatross Max
         self.cr += 5
         self.atkp += 15
         self.cd += 25
         # Bow Expert
         self.batk += 6
+        self.platk += 6
         # Trifling Wind III
         self.schance += 10
         self.sskilldmg += 30
@@ -145,7 +171,7 @@ class wa:
         # Trifling Wind - Enhance
         self.schance += 40
         # Trifling Wind - Double Chance
-        self.shfd -= 40
+        self.shdmg -= 40
         self.shitcount += 1
 
     def emblem(self):

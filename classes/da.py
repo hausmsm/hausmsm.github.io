@@ -1,4 +1,4 @@
-class dk:
+class da:
     def __init__(self):
         # Offensive Stats
         self.atk = 1577
@@ -73,10 +73,10 @@ class dk:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        # Gungnir's Descent
-        self.pname = "Gungnir's Descent"
-        self.pskilldmg = 226.7
-        self.phitcount = 10
+        # Exceed: Execution
+        self.pname = "Exceed: Execution"
+        self.pskilldmg = 162
+        self.phitcount = 11
         self.phatkp = 0
         self.phdmg = 0
         self.phbatk = 0
@@ -85,9 +85,9 @@ class dk:
         self.phfd = 0
         self.spmulti = 0
 
-        # Nightshade Explosion
-        self.sname = "Nightshade Explosion"
-        self.sskilldmg = 335
+        # Thousand Swords
+        self.sname = "Thousand Swords"
+        self.sskilldmg = 320
         self.shitcount = 18
         self.schance = 100
         self.shatkp = 0
@@ -100,73 +100,78 @@ class dk:
         # Skills
 
         # 1st Job
-        # Iron Body
-        self.pdefinc += 20
-        self.mdefinc += 20
-        self.hpinc += 30
-        self.mpinc += 20
-        # Warrior Mastery
-        self.atkp += 12
+        # Life Sap
+        self.dmg += 2.5
+        # Demonic Veracity
+        self.cr += 3
+        self.spd += 15
+        self.jmp += 15
+        # Demonic Blood
+        self.kbkres += 35
+        # Star Force Conversion
+        self.hpinc += 10
+        # Blood Pact
+        self.atkp += 60
 
         # 2nd Job
-        # Beholder
-        self.hprec += 5000
-        # Iron Will
-        self.bdef += 12
-        self.pldef += 12
-        # Hyper Body
-        self.pdefdec += 9
-        self.mdefdec += 9
-        # Weapon Mastery
-        self.dmg += 6
-        # Physical Training
-        self.accp += 6
-        self.evdp += 6
-        self.spd += 15
+        # Abyssal Connection
+        self.atkp += 10
+        self.cd += 10
+        # Solid Wall
+        self.block += 10
+        self.pdefinc += 10
+        self.mdefinc += 10
+        # Desparado Mastery
+        self.accp += 3
+        self.dmg += 5
+        # Rage Within
+        self.atkp += 10
+        self.hpinc += 8
 
         # 3rd Job
-        # Cross Surge
-        self.atkp += 15
-        self.dmg += 10
-        # Lord of Darkness
-        self.cr += 4
-        self.cd += 10
-        # Beholder's Buff
-        self.mprec += 48
-        # Endure
-        self.critdmgres += 10
+        # Ward Evil
+        self.pdefdec += 10
+        self.mdefdec += 10
+        self.abnormalstatres += 10
+        # Diabolic Recovery
+        self.cr += 5
+        self.hpinc += 10
+        # Pain Dampener
+        self.fd += 10
+        # Advanced Life Sap
+        self.dmg += 2.5
 
         # 4th Job
-        # Advanced Weapon Mastery
-        self.penrate += 2
-        self.batk += 6
-        self.platk += 6
-        # Final Pact
-        self.atkp += 5
-        # KBK RES
-        self.kbkres += 26
+        # Nether Slice
+        self.dmg += 10
+        # Overwhelming Power
+        self.cr += 5
+        self.atkp += 10
+        # Defense Expertise
+        self.fd += 10
+        self.cd += 10
+        # Advanced Desperado Mastery
+        self.dmg += 10
+        self.cd += 15
 
         # Hyper Buff
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
-
-        # Dark Thirst
-        self.atkp += 25
-        self.dmg += 15
-        # Epic Adventure
+        # Forbidden Contract
+        self.dmg += 25
+        self.hp += 15000
+        # Demonic Fortitude
         self.cd += 30
 
         # Hyper Skill
-        # Gungnir's Descent - Reinforce
+        # Exceed - Reinforce
         self.phdmg += 20
-        # Gungnir's Descent - Boss Rush
+        # Exceed - Boss Rush
         self.phbatk += 20
-        # Gungnir's Descent - Extra Strike
-        self.phitcount += 1
-        # Beholder - Reinforce
-        self.atkp += 20
-        # Beholder - Sacrifice
+        # Exceed - Deadly Crits
+        self.phcd += 20
+        # Exceed - Additional Reinforce
+        self.fd += 5
+        # Nethed Shield - Reinforce
+        self.shdmg += 20
 
     def emblem(self):
         emblem = self.emblem

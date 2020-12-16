@@ -1,21 +1,21 @@
 class phan:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1579
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5
         self.cratk = 0
-        self.cd = 0
+        self.cd = 10
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class phan:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10272
+        self.mp = 3167
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -74,7 +74,7 @@ class phan:
 
         # Mille Aiguilles
         self.pname = "Mille Aiguilles"
-        self.pskilldmg = 235
+        self.pskilldmg = 240
         self.phitcount = 1
         self.phatkp = 0
         self.phdmg = 0
@@ -98,6 +98,9 @@ class phan:
         # Skills
 
         # 1st Job
+        # Quick Dodge
+        self.block += 5
+        self.evdp += 5
 
         # 2nd Job
         # Impeccable Memory 2 - Unmanaged Anger
@@ -106,15 +109,24 @@ class phan:
         self.cd += 12
         self.schance += 60
         # Carte Blanc
-        self.sskilldmg += 70
+        self.sskilldmg += 80
         # Cane Mastery
         self.atkp += 20
         # Devil's Luck
         self.cr += 5
+        self.critres += 5
 
         # 3rd Job
+        # Bad Luck Ward
+        self.pdefinc += 10
+        self.mdefinc += 10
+        self.hpinc += 15
+        self.mpinc += 10
         # Impeccable Memory 3 - Combat Orders
         self.dmg += 15
+        # Mist Mask
+        self.spd += 18
+        self.jmp += 18
         # Clair de Lune
         self.dmg += 25
         # Piercing Vision
@@ -126,16 +138,19 @@ class phan:
         self.dmg += 15
         self.atkp += 15
         # Carte Noire
-        self.sskilldmg += 145
+        self.sskilldmg += 175
         self.schance += 40
         # Cane Expert
+        self.accp += 4.8
+        self.penrate += 6
         self.atkp += 15
         self.dmg += 15
 
         # Hyper Buff
         # Impeccable Memory H - Cry Valhalla
-        self.atkp += 25
-        self.fd += 10
+        self.kbkres += 32
+        self.atkp += 15
+        self.fd += 15
         # Heroic Memores
         self.cd += 30
         # Bad Luck Ward

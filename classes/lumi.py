@@ -1,21 +1,21 @@
 class lumi:
     def __init__(self):
-        self.atk = 0
+        self.atk = 1580
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5.1
         self.cratk = 0
-        self.cd = 0
+        self.cd = 11.3
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class lumi:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10267
+        self.mp = 3173
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -85,8 +85,8 @@ class lumi:
 
         # Armageddon
         self.sname = "Armageddon"
-        self.sskilldmg = 800.3
-        self.shitcount = 10
+        self.sskilldmg = 500
+        self.shitcount = 18
         self.schance = 100
         self.shatkp = 0
         self.shdmg = 0
@@ -98,12 +98,25 @@ class lumi:
         # Skills
 
         # 1st Job
+        # Ordinary Magic Guard
+        self.pdefdec += 9.6
+        self.mdefdec += 9.6
+        # Light/ Dark Affinity
+        self.fd += 10
+        # Mana Well
+        self.kbkres += 31
 
         # 2nd Job
         # Bless Of Darkness
         self.atkp += 32.4
         # Spell Mastery
         self.cr += 4.8
+        self.hpinc += 10
+        self.mpinc += 20
+        # High Wisdom
+        self.accp += 4.8
+        self.evdp += 14.4
+        self.penrate += 4.8
 
         # 3rd Job
         # Photic Meditation
@@ -117,8 +130,10 @@ class lumi:
         self.atkp += 15
         # Arcane Pitch
         self.batk += 15
+        self.platk += 15
         # Magic Mastery
         self.cd += 18
+        self.critdmgres += 18
 
         # Hyper Buff
         # Heroic Memories

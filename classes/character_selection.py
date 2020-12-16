@@ -7,7 +7,8 @@ class character_selection:
             self.character_type = st.selectbox("Choose Class Type", ["Warrior", "Mage", "Archer", "Thief", "Pirate"])
             if self.character_type == "Warrior":
                 self.character_class = st.selectbox("Choose Class",
-                                               ["Dark Knight", "Hero", "Paladin", "Dawn Warrior", "Aran"])
+                                               ["Dark Knight", "Hero", "Paladin", "Dawn Warrior", "Aran", "Demon Slayer",
+                                                "Demon Avenger"])
                 if self.character_class == "Dark Knight":
                     type = "PHYSICAL"
                     from classes.dk import dk
@@ -32,6 +33,16 @@ class character_selection:
                     type = "PHYSICAL"
                     from classes.aran import aran
                     self.char = aran()
+
+                elif self.character_class == "Demon Slayer":
+                    type = "PHYSICAL"
+                    from classes.ds import ds
+                    self.char = ds()
+
+                elif self.character_class == "Demon Avenger":
+                    type = "PHYSICAL"
+                    from classes.da import da
+                    self.char = da()
 
             elif self.character_type == "Mage":
                 self.character_class = st.selectbox("Choose Class",

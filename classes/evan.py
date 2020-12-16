@@ -1,21 +1,21 @@
 class evan:
     def __init__(self):
-        self.atk = 0
+        self.atk =1580
         self.atkp = 0
         self.dmg = 0
         self.batk = 0
         self.platk = 0
-        self.cr = 0
+        self.cr = 5.1
         self.cratk = 0
-        self.cd = 0
+        self.cd = 11.3
         self.maxdmg = 0
         self.fd = 0
 
         # Defensive Stats
-        self.pdef = 0
+        self.pdef = 10
         self.pdefinc = 0
         self.pdefdec = 0
-        self.mdef = 0
+        self.mdef = 10
         self.mdefinc = 0
         self.mdefdec = 0
         self.bdef = 0
@@ -24,21 +24,21 @@ class evan:
         self.critdmgres = 0
 
         # Hit Miss Stats
-        self.acc = 0
+        self.acc = 2251
         self.accp = 0
-        self.evd = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
 
         # HP MP Stats
-        self.hp = 0
-        self.mp = 0
+        self.hp = 10267
+        self.mp = 3173
         self.hpinc = 0
         self.mpinc = 0
-        self.hprec = 0
-        self.mprec = 0
+        self.hprec = 1
+        self.mprec = 1
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -98,10 +98,20 @@ class evan:
         # Skills
 
         # 1st Job
+        # Dragon Soul
+        self.spd += 18
+        self.jmp += 18
+        # Magic Link
+        self.pdefdec += 9.6
+        self.mdefdec += 9.6
 
         # 2nd Job
         # Return Flash
         self.dmg += 15
+        # High Wisdom
+        self.accp += 4.8
+        self.evp += 14.4
+        self.penrate += 4.8
         # Partners
         self.dmg += 14.4
         # Spell Mastery
@@ -114,18 +124,31 @@ class evan:
         self.dmg += 15
         # Critical Magic
         self.cr += 4.8
+        self.critres += 4.8
+        # Magic Resistance
+        self.bdef += 12
+        self.pldef += 12
         # Magic Amplification
         self.dmg += 20
         # Dragon Potential
         self.atkp += 10.8
 
         # 4th Job
+        # Blessing of the Onyx
+        self.pdefinc += 13
+        self.mdefinc += 13
         # Magic Mastery
-        self.cd += 8
+        self.cd += 18
+        self.critdmgres += 18
+        # Onyx Will
+        self.kbkres += 31
+        self.pdefdec += 9.6
+        self.mdefdec += 9.6
         # Dragon Fury
         self.atkp += 15
         # High Dragon Potential
         self.batk += 9.6
+        self.platk += 9.6
 
         # Hyper Buff
         # Heroic Memories
