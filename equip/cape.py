@@ -6,6 +6,7 @@ class cape:
         # Initialize
         self.stat_amount = 0
         self.emblem_amount = 0
+        self.emblem_cd
 
         # SF Stats
         self.sf = 0
