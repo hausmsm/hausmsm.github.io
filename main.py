@@ -299,6 +299,38 @@ cash = cash()
 with st.sidebar.beta_expander("Cash Set"):
     st.write(f"{cash.type}")
 
+from common.soul import soul
+
+soul = soul(char.character_type)
+with st.sidebar.beta_expander("Soul"):
+    st.write("Weapon")
+    st.write(f"Soul: {soul.weapon_soul}")
+    st.write(f"Soul Stat: {soul.weapon_type}")
+    st.write("\n")
+    st.write("Secondary Weapon")
+    st.write(f"Soul: {soul.swep_soul}")
+    st.write(f"Soul Stat: {soul.swep_type}")
+    st.write("\n")
+    st.write("Shoulder")
+    st.write(f"Soul: {soul.shoulder_soul}")
+    st.write(f"Soul Stat: {soul.shoulder_type}")
+    st.write("\n")
+    st.write("Belt")
+    st.write(f"Soul: {soul.belt_soul}")
+    st.write(f"Soul Stat: {soul.belt_type}")
+    st.write("\n")
+    st.write("Cape")
+    st.write(f"Soul: {soul.cape_soul}")
+    st.write(f"Soul Stat: {soul.cape_type}")
+
+from common.hyperstats import hyperstats
+
+hs = hyperstats(char.character_type)
+with st.sidebar.beta_expander("Hyper Stats"):
+    length = len(hs.hyperstatlist)
+    for i in range(0, length):
+        st.write(f"{hs.hyperstatlist[i]}: {hs.hyperstatamountlist[i]}")
+
 equip_type_combination = st.radio("Equipment Combination",
                                   ["Full Empress", "Full Necro", "2 Piece Fafnir + Empress", "4 Piece Fafnir + Empress",
                                    "2 Piece Fafnir + Necro", "4 Piece Fafnir + Necro"])

@@ -272,7 +272,6 @@ class commonsum:
         self.necrosetcount += 0
         self.fafsetcount += 0
 
-
     def atk(self):
         atk = self.atk
         return atk

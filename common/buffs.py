@@ -169,6 +169,7 @@ class buffs:
                         buffdf.loc[len(buffdf)] = buffrow
                 buff1.table(buffdf)
 
+        # Warriors
             # Dark Knight
             if "Hyper Body (Phy DMG Reduction, Mag DMG Reduction)" in buff_list:
                 self.pdefdec += 9
@@ -186,6 +187,11 @@ class buffs:
                 self.mdefdec += 20
             if "Combat Orders (Phy DMG%, Mag DMG%)" in buff_list:
                 self.dmg += 15
+            # Aran
+            if "Maha's Blessing (HP, MP)" in buff_list:
+                self.hpinc += 10
+                self.mpinc += 10
+        # Mages
             # Bishop
             if "Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)" in buff_list:
                 self.atkp += 35
@@ -200,12 +206,43 @@ class buffs:
             if "Holy Symbol (EXP, KBK Res)" in buff_list:
                 self.exp += 20
                 self.kbkres += 13
+            # FPM + ILM
             if "Meditation (Mag DMG%)" in buff_list:
                 if type == "MAGICAL":
                     self.dmg += 10
+            # ILM
             if "Absolute Zero Aura (KBK RES, Abnormal Status RES)" in buff_list:
                 self.kbkres += 10
                 self.abnormalstatres += 10
+            # Blaze Wizard
+            if "Burning Conduit (Phy ATK%, Mag ATK%, Phy DMG%, Mag DMG%)" in buff_list:
+                self.atkp += 20
+                self.dmg += 5
+            # Evan
+            if "Return Dive (Phy DMG%, Mag DMG%)" in buff_list:
+                self.dmg += 15
+            # Luminous
+            if "Photic Meditation (Mag ATK%)" in buff_list:
+                if type == "MAGICAL":
+                    self.atkp += 21.6
+            # Battle Mage
+            if "Dark Aura (Phy DMG%, Mag DMG%)" in buff_list:
+                self.dmg += 20
+        # Archers
+            # Wild Hunter
+            if "Call of the Wild (Phy ATK%, Mag ATK%)" in buff_list:
+                self.atkp += 14.7
+        # Thieves
+        # Pirates
+            # Buccaneer/ Thunder Breaker
+            if "Speed Infusion (Boss ATK%, Player ATK%)" in buff_list:
+                self.batk += 9.6
+                self.platk += 9.6
+            # Mechanic
+            if "Support Unit: H-EX (Phy DMG%, Mag DMG%, FD%)" in buff_list:
+                self.dmg += 10
+                self.fd += 5
+
             st.write("Cash Buff Selection")
             buff_choice = st.selectbox("Choose Manual/Automatic Buff Selection", ["Automatic", "Manual"])
             if buff_choice == "Manual":

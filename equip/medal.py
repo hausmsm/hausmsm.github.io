@@ -108,7 +108,8 @@ class medal:
         }
 
         with st.beta_expander("Medal"):
-            medal_list = st.selectbox("Choose an Medal", ["Legendary God of Battle Medal","Cursed Guardian Medal"])
+            medal_list = st.selectbox("Choose an Medal", ["Black Swan", "Legendary God of Battle Medal",
+                                                          "Cursed Guardian Medal"])
             self.type = medal_list
             _, medal1, _ = st.beta_columns([0.02, 0.96, 0.02])
             if "Cursed Guardian Medal" in [medal_list]:
@@ -117,6 +118,9 @@ class medal:
             elif "Legendary God of Battle Medal" in [medal_list]:
                 # Base
                 self.exp += 15
+            elif "Black Swan" in [medal_list]:
+                # Base
+                self.atk += 50
 
     def emblem(self):
         emblem = self.emblem

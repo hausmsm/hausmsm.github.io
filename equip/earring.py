@@ -108,7 +108,7 @@ class earring:
         }
 
         with st.beta_expander("Earrings"):
-            earring_list = st.selectbox("Choose an Earring", ["Horntail Earring (Unique)", "Horntail Earring (Legendary)"])
+            earring_list = st.selectbox("Choose an Earring", ["Horntail Earring (Legendary)", "Horntail Earring (Unique)"])
             self.type = earring_list
             _, earring1, _ = st.beta_columns([0.02, 0.96, 0.02])
             if "Horntail Earring (Unique)" in [earring_list]:

@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-class pet:
+class starforce:
     def __init__(self,sf_amount):
         # Initialize
         self.emblem = "None"
