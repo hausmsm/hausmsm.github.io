@@ -8,6 +8,9 @@ class tbo:
         self.emblem_amount = 0
         self.top_emblem_amount = 0
         self.btm_emblem_amount = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atlp = 0
 
         # SF Stats
         self.sf = 0
@@ -215,13 +218,13 @@ class tbo:
                     self.emblem_level = outfit_emblem_level
                     if outfit_emblem == "Crit DMG":
                         self.emblem_amount += o_emblem_cd_stats[outfit_emblem_level]
-                        self.cd += self.emblem_amount
+                        self.emblem_cd += self.emblem_amount
                     elif outfit_emblem == "Boss ATK":
                         self.emblem_amount += o_emblem_ba_stats[outfit_emblem_level]
-                        self.batk += self.emblem_amount
+                        self.emblem_batk += self.emblem_amount
                     else:
                         self.emblem_amount += o_emblem_atk_stats[outfit_emblem_level]
-                        self.atkp += self.emblem_amount
+                        self.emblem_atkp += self.emblem_amount
                     self.mempsetcount += 1
                     self.crlinecount += 2
                     self.atk += 450
@@ -260,13 +263,13 @@ class tbo:
                     self.emblem_level = outfit_emblem_level
                     if outfit_emblem == "Crit DMG":
                         self.emblem_amount += o_emblem_cd_stats[outfit_emblem_level]
-                        self.cd += self.emblem_amount
+                        self.emblem_cd += self.emblem_amount
                     elif outfit_emblem == "Boss ATK":
                         self.emblem_amount += o_emblem_ba_stats[outfit_emblem_level]
-                        self.batk += self.emblem_amount
+                        self.emblem_batk += self.emblem_amount
                     else:
                         self.emblem_amount += o_emblem_atk_stats[outfit_emblem_level]
-                        self.atkp += self.emblem_amount
+                        self.emblem_atkp += self.emblem_amount
                     self.aempsetcount += 1
                     self.crlinecount += 2
                     self.atk += 450
@@ -301,13 +304,13 @@ class tbo:
                     self.emblem_level = outfit_emblem_level
                     if outfit_emblem == "Crit DMG":
                         self.emblem_amount += o_emblem_cd_stats[outfit_emblem_level]
-                        self.cd += self.emblem_amount
+                        self.emblem_cd += self.emblem_amount
                     elif outfit_emblem == "Boss ATK":
                         self.emblem_amount += o_emblem_ba_stats[outfit_emblem_level]
-                        self.batk += self.emblem_amount
+                        self.emblem_batk += self.emblem_amount
                     else:
                         self.emblem_amount += o_emblem_atk_stats[outfit_emblem_level]
-                        self.atkp += self.emblem_amount
+                        self.emblem_atkp += self.emblem_amount
                     self.necrosetcount += 1
                     self.crlinecount += 2
                     self.atk += 450
@@ -335,13 +338,13 @@ class tbo:
                 # Emblem
                 if top_emblem == "Crit DMG":
                     self.top_emblem_amount += tb_emblem_cd_stats[top_emblem_level]
-                    self.cd += self.top_emblem_amount
+                    self.emblem_cd += self.top_emblem_amount
                 elif top_emblem == "Boss ATK":
                     self.top_emblem_amount += tb_emblem_ba_stats[top_emblem_level]
-                    self.batk += self.top_emblem_amount
+                    self.emblem_batk += self.top_emblem_amount
                 else:
                     self.top_emblem_amount += tb_emblem_atk_stats[top_emblem_level]
-                    self.atkp += self.top_emblem_amount
+                    self.emblem_atkp += self.top_emblem_amount
                 self.fafsetcount += 1
                 self.atklinecount += 2
                 self.atk += 450
@@ -368,16 +371,29 @@ class tbo:
                 # Emblem
                 if btm_emblem == "Crit DMG":
                     self.btm_emblem_amount += tb_emblem_cd_stats[btm_emblem_level]
-                    self.cd += self.btm_emblem_amount
+                    self.emblem_cd += self.btm_emblem_amount
                 elif btm_emblem == "Boss ATK":
                     self.btm_emblem_amount += tb_emblem_ba_stats[btm_emblem_level]
-                    self.batk += self.btm_emblem_amount
+                    self.emblem_batk += self.btm_emblem_amount
                 else:
                     self.btm_emblem_amount += tb_emblem_atk_stats[btm_emblem_level]
-                    self.atkp += self.btm_emblem_amount
+                    self.emblem_atkp += self.btm_emblem_amount
                 self.fafsetcount += 1
                 self.atklinecount += 2
                 self.atk += 450
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
+
     def tbo(self):
         tbo = self.tbo_combination
         return tbo

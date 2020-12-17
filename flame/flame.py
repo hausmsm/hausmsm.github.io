@@ -3,6 +3,7 @@
 # Jewel + Jewel Set
 # Style + Style Set
 # Potential Options
+# Pet Set
 
 class flame:
     def __init__(self,equip):

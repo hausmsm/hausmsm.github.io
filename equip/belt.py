@@ -6,6 +6,9 @@ class belt:
         # Initialize
         self.stat_amount = 0
         self.emblem_amount = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
 
         # SF Stats
         self.sf = 0
@@ -234,17 +237,29 @@ class belt:
             # Emblem
             if belt_emblem == "Crit DMG":
                 self.emblem_amount += emblem_cd_stats[belt_emblem_level]
-                self.cd += self.emblem_amount
+                self.emblem_cd += self.emblem_amount
             elif belt_emblem == "Boss ATK":
                 self.emblem_amount += emblem_ba_stats[belt_emblem_level]
-                self.batk += self.emblem_amount
+                self.emblem_batk += self.emblem_amount
             else:
                 self.emblem_amount += emblem_atk_stats[belt_emblem_level]
-                self.atkp += self.emblem_amount
+                self.emblem_atkp += self.emblem_amount
         # Flame
         self.crlinecount += 2
         # Potential
         self.atkp += 9
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

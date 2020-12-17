@@ -71,6 +71,9 @@ class bottom:
             # Potential
             self.atk += 450
 
+
+
+
     def atk(self):
         atk = self.atk
         return atk
