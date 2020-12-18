@@ -8,11 +8,17 @@ class tbo:
         self.emblem_amount = 0
         self.top_emblem_amount = 0
         self.btm_emblem_amount = 0
+        self.normal_emb = 0
+        self.partial_emb = 0
         self.emblem_cd = 0
         self.emblem_batk = 0
-        self.emblem_atlp = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
 
         # SF Stats
+        self.top_sf = 0
+        self.btm_sf = 0
         self.sf = 0
 
         # Offensive Stats
@@ -214,6 +220,7 @@ class tbo:
                     # Emblem
                     outfit_emblem = outfit3.radio("Choose Outfit Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                     outfit_emblem_level = outfit3.slider("Outfit Emblem Level", min_value=1, max_value=5)
+                    self.normal_emb += 1
                     self.emblem = outfit_emblem
                     self.emblem_level = outfit_emblem_level
                     if outfit_emblem == "Crit DMG":
@@ -259,6 +266,7 @@ class tbo:
                     # Emblem
                     outfit_emblem = outfit3.radio("Choose Outfit Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                     outfit_emblem_level = outfit3.slider("Outfit Emblem Level", min_value=1, max_value=5)
+                    self.normal_emb += 1
                     self.emblem = outfit_emblem
                     self.emblem_level = outfit_emblem_level
                     if outfit_emblem == "Crit DMG":
@@ -300,6 +308,7 @@ class tbo:
                     # Emblem
                     outfit_emblem = outfit3.radio("Choose Outfit Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                     outfit_emblem_level = outfit3.slider("Outfit Emblem Level", min_value=1, max_value=5)
+                    self.normal_emb += 1
                     self.emblem = outfit_emblem
                     self.emblem_level = outfit_emblem_level
                     if outfit_emblem == "Crit DMG":
@@ -333,6 +342,7 @@ class tbo:
                 self.mdef += o_sfdefdict[top_sf_level] * (923/1333)
                 top_emblem = tb1.radio("Choose Top Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                 top_emblem_level = tb1.slider("Top Emblem Level", min_value=1, max_value=5)
+                self.partial_emb += 1
                 self.top_emblem = top_emblem
                 self.top_emblem_level = top_emblem_level
                 # Emblem
@@ -366,6 +376,7 @@ class tbo:
                 self.mdef += o_sfdefdict[btm_sf_level] * (923 / 799)
                 btm_emblem = tb2.radio("Choose Bottom Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                 btm_emblem_level = tb2.slider("Bottom Emblem Level", min_value=1, max_value=5)
+                self.partial_emb += 1
                 self.btm_emblem = btm_emblem
                 self.btm_emblem_level = btm_emblem_level
                 # Emblem
@@ -381,6 +392,21 @@ class tbo:
                 self.fafsetcount += 1
                 self.atklinecount += 2
                 self.atk += 450
+                if self.partial_emb == 2:
+                    self.normal_emb += 1
+                self.sf += self.top_sf + self.btm_sf
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
 
     def emblem_cd(self):
         emblem_cd = self.emblem_cd

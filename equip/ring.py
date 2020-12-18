@@ -3,7 +3,7 @@ import streamlit as st
 
 class ring:
     def __init__(self):
-        # Initialize
+        # Unique To Rings
         self.ring_amount = 0
         self.ring1_emblem = "None"
         self.ring1_emblem_amount = 0
@@ -21,14 +21,20 @@ class ring:
         self.ring2_flag = 0
         self.ring3_flag = 0
 
-        self.ring_full_emblem = 0
-        self.ring_partial_emblem = 0
+        # Common
+        self.normal_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
 
         # SF Stats
         self.ring1_sf = 0
         self.ring2_sf = 0
         self.ring3_sf = 0
         self.ring4_sf = 0
+        self.sf = 0
 
         # Offensive Stats
         self.atk = 0
@@ -128,10 +134,10 @@ class ring:
         }
 
         with st.beta_expander("Rings"):
-            ring = st.multiselect("Choose 4 Rings",
-                                       ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)", "Horntail Ring (Legendary)",
-                                        "Horntail Ring (Unique)", "Kerning Tower 50F Ring", "Kerning M Ring",
-                                        "Attendance Ring", "Ifia's Ring", "Noble Ifia's Ring", "Master Soul Ring SS"])
+            ring = st.multiselect("Choose 4 Rings", ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)",
+                                                     "Horntail Ring (Legendary)","Horntail Ring (Unique)",
+                                                     "Kerning Tower 50F Ring", "Kerning M Ring", "Attendance Ring",
+                                                     "Ifia's Ring", "Noble Ifia's Ring", "Master Soul Ring SS"])
             self.ring_amount = len(ring)
             if len(ring) == 4:
                 _, ring1, _, ring2, _, ring3, _, ring4, _ = st.beta_columns([0.02, 0.235, 0.02, 0.235, 0.02, 0.235, 0.02, 0.235, 0.02])
@@ -153,26 +159,27 @@ class ring:
                         self.mdefdec += ring1_sf_level * 0.3
                         # Emblem
                         if ring1_sf_level == 5:
-                            ring1_emblem = ring1.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring1_emblem = ring1.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring1_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
                             # Emblem
                             if ring1_emblem == "Crit DMG":
                                 self.ring1_emblem_amount += emblem_cd_stats[ring1_emblem_level]
-                                self.cd += self.ring1_emblem_amount
+                                self.emblem_cd += self.ring1_emblem_amount
                             elif ring1_emblem == "Boss ATK":
                                 self.ring1_emblem_amount += emblem_ba_stats[ring1_emblem_level]
-                                self.batk += self.ring1_emblem_amount
+                                self.emblem_batk += self.ring1_emblem_amount
                             else:
                                 self.ring1_emblem_amount += emblem_atk_stats[ring1_emblem_level]
-                                self.atkp += self.ring1_emblem_amount
+                                self.emblem_atkp += self.ring1_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
                         self.bosssetcount += 1
                         self.ring1_flag = 1
-                        self.ring_partial_emblem += 1
                     elif self.ring2_flag == 0:
                         self.ring2 = "Cygnus Ring (Unique)"
                         ring2_sf_level = ring2.slider(f"Cygnus Ring (Unique) SF Level", min_value=0, max_value=5)
@@ -184,20 +191,22 @@ class ring:
                         self.mdefdec += ring2_sf_level * 0.3
                         # Emblem
                         if ring2_sf_level == 5:
-                            ring2_emblem = ring2.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring2_emblem = ring2.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring2_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring2_emblem = ring2_emblem
                             self.ring2_emblem_level = ring2_emblem_level
                             # Emblem
                             if ring2_emblem == "Crit DMG":
                                 self.ring2_emblem_amount += emblem_cd_stats[ring2_emblem_level]
-                                self.cd += self.ring2_emblem_amount
+                                self.emblem_cd += self.ring2_emblem_amount
                             elif ring2_emblem == "Boss ATK":
                                 self.ring2_emblem_amount += emblem_ba_stats[ring2_emblem_level]
-                                self.batk += self.ring2_emblem_amount
+                                self.emblem_batk += self.ring2_emblem_amount
                             else:
                                 self.ring2_emblem_amount += emblem_atk_stats[ring2_emblem_level]
-                                self.atkp += self.ring2_emblem_amount
+                                self.emblem_atkp += self.ring2_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -214,20 +223,22 @@ class ring:
                         self.mdefdec += ring3_sf_level * 0.3
                         # Emblem
                         if ring3_sf_level == 5:
-                            ring3_emblem = ring3.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring3_emblem = ring3.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring3_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
                             # Emblem
                             if ring3_emblem == "Crit DMG":
                                 self.ring3_emblem_amount += emblem_cd_stats[ring3_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring3_emblem == "Boss ATK":
                                 self.ring3_emblem_amount += emblem_ba_stats[ring3_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring3_emblem_amount += emblem_atk_stats[ring3_emblem_level]
-                                self.atkp += self.ring3_emblem_amount
+                                self.emblem_atkp += self.ring3_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -247,24 +258,25 @@ class ring:
                             ring4_emblem = ring4.radio(f"Choose Cygnus Ring (Unique) Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring4_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring4_emblem = ring4_emblem
                             self.ring4_emblem_level = ring4_emblem_level
                             # Emblem
                             if ring4_emblem == "Crit DMG":
                                 self.ring4_emblem_amount += emblem_cd_stats[ring4_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring4_emblem == "Boss ATK":
                                 self.ring4_emblem_amount += emblem_ba_stats[ring4_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring4_emblem_amount += emblem_atk_stats[ring4_emblem_level]
-                                self.atkp += self.ring4_emblem_amount
+                                self.emblem_atkp += self.ring4_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
                         self.bosssetcount += 1
 # Cygnus Ring (Legendary)
-                if "Cygnus Ring (Legendary)" in [ring[0],ring[1],ring[2],ring[3]]:
+                if "Cygnus Ring (Legendary)" in [ring[0], ring[1], ring[2], ring[3]]:
                     # Base
                     self.hp += 230
                     self.mp += 120
@@ -281,20 +293,23 @@ class ring:
                         self.mdefdec += ring1_sf_level * 0.4
                         # Emblem
                         if ring1_sf_level == 5:
-                            ring1_emblem = ring1.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring1_emblem_level = ring1.slider("Cygnus Ring (Legendary) Emblem Level",min_value=1,max_value=5)
+                            ring1_emblem = ring1.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring1_emblem_level = ring1.slider("Cygnus Ring (Legendary) Emblem Level",
+                                                              min_value=1,max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
                             # Emblem
                             if ring1_emblem == "Crit DMG":
                                 self.ring1_emblem_amount += emblem_cd_stats[ring1_emblem_level]
-                                self.cd += self.ring1_emblem_amount
+                                self.emblem_cd += self.ring1_emblem_amount
                             elif ring1_emblem == "Boss ATK":
                                 self.ring1_emblem_amount += emblem_ba_stats[ring1_emblem_level]
-                                self.batk += self.ring1_emblem_amount
+                                self.emblem_batk += self.ring1_emblem_amount
                             else:
                                 self.ring1_emblem_amount += emblem_atk_stats[ring1_emblem_level]
-                                self.atkp += self.ring1_emblem_amount
+                                self.emblem_atkp += self.ring1_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -311,20 +326,23 @@ class ring:
                         self.mdefdec += ring2_sf_level * 0.4
                         # Emblem
                         if ring2_sf_level == 5:
-                            ring2_emblem = ring2.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring2_emblem_level = ring2.slider(f"Cygnus Ring (Legendary) Emblem Level",min_value=1, max_value=5)
+                            ring2_emblem = ring2.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring2_emblem_level = ring2.slider(f"Cygnus Ring (Legendary) Emblem Level",
+                                                              min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring2_emblem = ring2_emblem
                             self.ring2_emblem_level = ring2_emblem_level
                             # Emblem
                             if ring2_emblem == "Crit DMG":
                                 self.ring2_emblem_amount += emblem_cd_stats[ring2_emblem_level]
-                                self.cd += self.ring2_emblem_amount
+                                self.emblem_cd += self.ring2_emblem_amount
                             elif ring2_emblem == "Boss ATK":
                                 self.ring2_emblem_amount += emblem_ba_stats[ring2_emblem_level]
-                                self.batk += self.ring2_emblem_amount
+                                self.emblem_batk += self.ring2_emblem_amount
                             else:
                                 self.ring2_emblem_amount += emblem_atk_stats[ring2_emblem_level]
-                                self.atkp += self.ring2_emblem_amount
+                                self.emblem_atkp += self.ring2_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -341,20 +359,23 @@ class ring:
                         self.mdefdec += ring3_sf_level * 0.4
                         # Emblem
                         if ring3_sf_level == 5:
-                            ring3_emblem = ring3.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring3_emblem_level = ring3.slider("Cygnus Ring (Legendary) Emblem Level",min_value=1,max_value=5)
+                            ring3_emblem = ring3.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring3_emblem_level = ring3.slider("Cygnus Ring (Legendary) Emblem Level",
+                                                              min_value=1,max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
                             # Emblem
                             if ring3_emblem == "Crit DMG":
                                 self.ring3_emblem_amount += emblem_cd_stats[ring3_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring3_emblem == "Boss ATK":
                                 self.ring3_emblem_amount += emblem_ba_stats[ring3_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring3_emblem_amount += emblem_atk_stats[ring3_emblem_level]
-                                self.atkp += self.ring3_emblem_amount
+                                self.emblem_atkp += self.ring3_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -373,19 +394,21 @@ class ring:
                         if ring4_sf_level == 5:
                             ring4_emblem = ring4.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring4_emblem_level = ring4.slider("Cygnus Ring (Legendary) Emblem Level",min_value=1, max_value=5)
+                            ring4_emblem_level = ring4.slider("Cygnus Ring (Legendary) Emblem Level",
+                                                              min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring4_emblem = ring4_emblem
                             self.ring4_emblem_level = ring4_emblem_level
                             # Emblem
                             if ring4_emblem == "Crit DMG":
                                 self.ring4_emblem_amount += emblem_cd_stats[ring4_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring4_emblem == "Boss ATK":
                                 self.ring4_emblem_amount += emblem_ba_stats[ring4_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring4_emblem_amount += emblem_atk_stats[ring4_emblem_level]
-                                self.atkp += self.ring4_emblem_amount
+                                self.emblem_atkp += self.ring4_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -399,7 +422,8 @@ class ring:
                     self.mdefdec += 1.2
                     if self.ring1_flag == 0:
                         self.ring1 = "Horntail Ring (Unique)"
-                        ring1_sf_level = ring1.slider(f"Horntail Ring (Unique) SF Level", min_value=0,max_value=5)
+                        ring1_sf_level = ring1.slider(f"Horntail Ring (Unique) SF Level", min_value=0,
+                                                      max_value=5)
                         self.ring1_sf = ring1_sf_level
                         # SF
                         self.hp += ring1_sf_level * 120
@@ -408,20 +432,22 @@ class ring:
                         self.mdefdec += ring1_sf_level * 0.3
                         # Emblem
                         if ring1_sf_level == 5:
-                            ring1_emblem = ring1.radio(f"Choose Horntail Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring1_emblem = ring1.radio(f"Choose Horntail Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring1_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
                             # Emblem
                             if ring1_emblem == "Crit DMG":
                                 self.ring1_emblem_amount += emblem_cd_stats[ring1_emblem_level]
-                                self.cd += self.ring1_emblem_amount
+                                self.emblem_cd += self.ring1_emblem_amount
                             elif ring1_emblem == "Boss ATK":
                                 self.ring1_emblem_amount += emblem_ba_stats[ring1_emblem_level]
-                                self.batk += self.ring1_emblem_amount
+                                self.emblem_batk += self.ring1_emblem_amount
                             else:
                                 self.ring1_emblem_amount += emblem_atk_stats[ring1_emblem_level]
-                                self.atkp += self.ring1_emblem_amount
+                                self.emblem_atkp += self.ring1_emblem_amount
                                 # Potential
                                 self.atk += 69
                                 # Set
@@ -438,20 +464,22 @@ class ring:
                         self.mdefdec += ring2_sf_level * 0.3
                         # Emblem
                         if ring2_sf_level == 5:
-                            ring2_emblem = ring2.radio(f"Choose Horntail Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring2_emblem = ring2.radio(f"Choose Horntail Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring2_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring2_emblem = ring2_emblem
                             self.ring2_emblem_level = ring2_emblem_level
                             # Emblem
                             if ring2_emblem == "Crit DMG":
                                 self.ring2_emblem_amount += emblem_cd_stats[ring2_emblem_level]
-                                self.cd += self.ring2_emblem_amount
+                                self.emblem_cd += self.ring2_emblem_amount
                             elif ring2_emblem == "Boss ATK":
                                 self.ring2_emblem_amount += emblem_ba_stats[ring2_emblem_level]
-                                self.batk += self.ring2_emblem_amount
+                                self.emblem_batk += self.ring2_emblem_amount
                             else:
                                 self.ring2_emblem_amount += emblem_atk_stats[ring2_emblem_level]
-                                self.atkp += self.ring2_emblem_amount
+                                self.emblem_atkp += self.ring2_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -468,20 +496,22 @@ class ring:
                         self.mdefdec += ring3_sf_level * 0.3
                         # Emblem
                         if ring3_sf_level == 5:
-                            ring3_emblem = ring3.radio(f"Choose Horntail Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring3_emblem = ring3.radio(f"Choose Horntail Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring3_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
                             # Emblem
                             if ring3_emblem == "Crit DMG":
                                 self.ring3_emblem_amount += emblem_cd_stats[ring3_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring3_emblem == "Boss ATK":
                                 self.ring3_emblem_amount += emblem_ba_stats[ring3_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring3_emblem_amount += emblem_atk_stats[ring3_emblem_level]
-                                self.atkp += self.ring3_emblem_amount
+                                self.emblem_atkp += self.ring3_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -498,20 +528,22 @@ class ring:
                         self.mdefdec += ring4_sf_level * 0.3
                         # Emblem
                         if ring4_sf_level == 5:
-                            ring4_emblem = ring4.radio(f"Choose Horntail Ring (Unique) Emblem Stat",["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+                            ring4_emblem = ring4.radio(f"Choose Horntail Ring (Unique) Emblem Stat",
+                                                       ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring4_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring4_emblem = ring4_emblem
                             self.ring4_emblem_level = ring4_emblem_level
                             # Emblem
                             if ring4_emblem == "Crit DMG":
                                 self.ring4_emblem_amount += emblem_cd_stats[ring4_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring4_emblem == "Boss ATK":
                                 self.ring4_emblem_amount += emblem_ba_stats[ring4_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring4_emblem_amount += emblem_atk_stats[ring4_emblem_level]
-                                self.atkp += self.ring4_emblem_amount
+                                self.emblem_atkp += self.ring4_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -538,18 +570,19 @@ class ring:
                             ring1_emblem = ring1.radio(f"Choose Horntail Ring (Legendary) Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring1_emblem_level = ring1.slider("Horntail Ring (Legendary) Emblem Level",min_value=1,max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
                             # Emblem
                             if ring1_emblem == "Crit DMG":
                                 self.ring1_emblem_amount += emblem_cd_stats[ring1_emblem_level]
-                                self.cd += self.ring1_emblem_amount
+                                self.emblem_cd += self.ring1_emblem_amount
                             elif ring1_emblem == "Boss ATK":
                                 self.ring1_emblem_amount += emblem_ba_stats[ring1_emblem_level]
-                                self.batk += self.ring1_emblem_amount
+                                self.emblem_batk += self.ring1_emblem_amount
                             else:
                                 self.ring1_emblem_amount += emblem_atk_stats[ring1_emblem_level]
-                                self.atkp += self.ring1_emblem_amount
+                                self.emblem_atkp += self.ring1_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -571,18 +604,19 @@ class ring:
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring2_emblem_level = ring2.slider(f"Horntail Ring (Legendary) Emblem Level",
                                                               min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring2_emblem = ring2_emblem
                             self.ring2_emblem_level = ring2_emblem_level
                             # Emblem
                             if ring2_emblem == "Crit DMG":
                                 self.ring2_emblem_amount += emblem_cd_stats[ring2_emblem_level]
-                                self.cd += self.ring2_emblem_amount
+                                self.emblem_cd += self.ring2_emblem_amount
                             elif ring2_emblem == "Boss ATK":
                                 self.ring2_emblem_amount += emblem_ba_stats[ring2_emblem_level]
-                                self.batk += self.ring2_emblem_amount
+                                self.emblem_batk += self.ring2_emblem_amount
                             else:
                                 self.ring2_emblem_amount += emblem_atk_stats[ring2_emblem_level]
-                                self.atkp += self.ring2_emblem_amount
+                                self.emblem_atkp += self.ring2_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -604,18 +638,19 @@ class ring:
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring3_emblem_level = ring3.slider("Cygnus Ring (Legendary) Emblem Level",
                                                               min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
                             # Emblem
                             if ring3_emblem == "Crit DMG":
                                 self.ring3_emblem_amount += emblem_cd_stats[ring3_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring3_emblem == "Boss ATK":
                                 self.ring3_emblem_amount += emblem_ba_stats[ring3_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring3_emblem_amount += emblem_atk_stats[ring3_emblem_level]
-                                self.atkp += self.ring3_emblem_amount
+                                self.emblem_atkp += self.ring3_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -637,18 +672,19 @@ class ring:
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring4_emblem_level = ring4.slider("Horntail Ring (Legendary) Emblem Level",
                                                               min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring4_emblem = ring4_emblem
                             self.ring4_emblem_level = ring4_emblem_level
                             # Emblem
                             if ring4_emblem == "Crit DMG":
                                 self.ring4_emblem_amount += emblem_cd_stats[ring4_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring4_emblem == "Boss ATK":
                                 self.ring4_emblem_amount += emblem_ba_stats[ring4_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring4_emblem_amount += emblem_atk_stats[ring4_emblem_level]
-                                self.atkp += self.ring4_emblem_amount
+                                self.emblem_atkp += self.ring4_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -753,18 +789,19 @@ class ring:
                             ring1_emblem = ring1.radio(f"Choose Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring1_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
                             # Emblem
                             if ring1_emblem == "Crit DMG":
                                 self.ring1_emblem_amount += emblem_cd_stats[ring1_emblem_level]
-                                self.cd += self.ring1_emblem_amount
+                                self.emblem_cd += self.ring1_emblem_amount
                             elif ring1_emblem == "Boss ATK":
                                 self.ring1_emblem_amount += emblem_ba_stats[ring1_emblem_level]
-                                self.batk += self.ring1_emblem_amount
+                                self.emblem_batk += self.ring1_emblem_amount
                             else:
                                 self.ring1_emblem_amount += emblem_atk_stats[ring1_emblem_level]
-                                self.atkp += self.ring1_emblem_amount
+                                self.emblem_atkp += self.ring1_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -781,18 +818,19 @@ class ring:
                             ring2_emblem = ring2.radio(f"Choose Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring2_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring2_emblem = ring2_emblem
                             self.ring2_emblem_level = ring2_emblem_level
                             # Emblem
                             if ring2_emblem == "Crit DMG":
                                 self.ring2_emblem_amount += emblem_cd_stats[ring2_emblem_level]
-                                self.cd += self.ring2_emblem_amount
+                                self.emblem_cd += self.ring2_emblem_amount
                             elif ring2_emblem == "Boss ATK":
                                 self.ring2_emblem_amount += emblem_ba_stats[ring2_emblem_level]
-                                self.batk += self.ring2_emblem_amount
+                                self.emblem_batk += self.ring2_emblem_amount
                             else:
                                 self.ring2_emblem_amount += emblem_atk_stats[ring2_emblem_level]
-                                self.atkp += self.ring2_emblem_amount
+                                self.emblem_atkp += self.ring2_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -809,18 +847,19 @@ class ring:
                             ring3_emblem = ring3.radio(f"Choose Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring3_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
                             # Emblem
                             if ring3_emblem == "Crit DMG":
                                 self.ring3_emblem_amount += emblem_cd_stats[ring3_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring3_emblem == "Boss ATK":
                                 self.ring3_emblem_amount += emblem_ba_stats[ring3_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring3_emblem_amount += emblem_atk_stats[ring3_emblem_level]
-                                self.atkp += self.ring3_emblem_amount
+                                self.emblem_atkp += self.ring3_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -837,18 +876,19 @@ class ring:
                             ring4_emblem = ring4.radio(f"Choose Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring4_emblem_level = 1
+                            self.unique_acc_emb += 1
                             self.ring4_emblem = ring4_emblem
                             self.ring4_emblem_level = ring4_emblem_level
                             # Emblem
                             if ring4_emblem == "Crit DMG":
                                 self.ring4_emblem_amount += emblem_cd_stats[ring4_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring4_emblem == "Boss ATK":
                                 self.ring4_emblem_amount += emblem_ba_stats[ring4_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring4_emblem_amount += emblem_atk_stats[ring4_emblem_level]
-                                self.atkp += self.ring4_emblem_amount
+                                self.emblem_atkp += self.ring4_emblem_amount
                         # Potential
                         self.atk += 69
 # Noble Ifia's Ring
@@ -866,19 +906,20 @@ class ring:
                         if ring1_sf_level == 5:
                             ring1_emblem = ring1.radio(f"Choose Noble Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring1_emblem_level = ring1.slider("Noble Ifia's Ring Emblem Level",min_value=1,max_value=5)
+                            ring1_emblem_level = ring1.slider("Noble Ifia's Ring Emblem Level", min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
                             # Emblem
                             if ring1_emblem == "Crit DMG":
                                 self.ring1_emblem_amount += emblem_cd_stats[ring1_emblem_level]
-                                self.cd += self.ring1_emblem_amount
+                                self.emblem_cd += self.ring1_emblem_amount
                             elif ring1_emblem == "Boss ATK":
                                 self.ring1_emblem_amount += emblem_ba_stats[ring1_emblem_level]
-                                self.batk += self.ring1_emblem_amount
+                                self.emblem_batk += self.ring1_emblem_amount
                             else:
                                 self.ring1_emblem_amount += emblem_atk_stats[ring1_emblem_level]
-                                self.atkp += self.ring1_emblem_amount
+                                self.emblem_atkp += self.ring1_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -895,19 +936,20 @@ class ring:
                         if ring2_sf_level == 5:
                             ring2_emblem = ring2.radio(f"Choose Noble Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring2_emblem_level = ring2.slider("Noble Ifia's Ring Emblem Level",min_value=1,max_value=5)
+                            ring2_emblem_level = ring2.slider("Noble Ifia's Ring Emblem Level", min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring2_emblem = ring2_emblem
                             self.ring2_emblem_level = ring2_emblem_level
                             # Emblem
                             if ring2_emblem == "Crit DMG":
                                 self.ring2_emblem_amount += emblem_cd_stats[ring2_emblem_level]
-                                self.cd += self.ring2_emblem_amount
+                                self.emblem_cd += self.ring2_emblem_amount
                             elif ring2_emblem == "Boss ATK":
                                 self.ring2_emblem_amount += emblem_ba_stats[ring2_emblem_level]
-                                self.batk += self.ring2_emblem_amount
+                                self.emblem_batk += self.ring2_emblem_amount
                             else:
                                 self.ring2_emblem_amount += emblem_atk_stats[ring2_emblem_level]
-                                self.atkp += self.ring2_emblem_amount
+                                self.emblem_atkp += self.ring2_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -924,19 +966,20 @@ class ring:
                         if ring3_sf_level == 5:
                             ring3_emblem = ring3.radio(f"Choose Noble Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring3_emblem_level = ring3.slider("Noble Ifia's Ring Emblem Level",min_value=1,max_value=5)
+                            ring3_emblem_level = ring3.slider("Noble Ifia's Ring Emblem Level", min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
                             # Emblem
                             if ring3_emblem == "Crit DMG":
                                 self.ring3_emblem_amount += emblem_cd_stats[ring3_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring3_emblem == "Boss ATK":
                                 self.ring3_emblem_amount += emblem_ba_stats[ring3_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring3_emblem_amount += emblem_atk_stats[ring3_emblem_level]
-                                self.atkp += self.ring3_emblem_amount
+                                self.emblem_atkp += self.ring3_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
@@ -953,25 +996,51 @@ class ring:
                         if ring4_sf_level == 5:
                             ring4_emblem = ring4.radio(f"Choose Noble Ifia's Ring Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring4_emblem_level = ring4.slider("Noble Ifia's Ring Emblem Level",min_value=1,max_value=5)
+                            ring4_emblem_level = ring4.slider("Noble Ifia's Ring Emblem Level", min_value=1, max_value=5)
+                            self.legendary_acc_emb += 1
                             self.ring4_emblem = ring4_emblem
                             self.ring4_emblem_level = ring4_emblem_level
                             # Emblem
                             if ring4_emblem == "Crit DMG":
                                 self.ring4_emblem_amount += emblem_cd_stats[ring4_emblem_level]
-                                self.cd += self.ring3_emblem_amount
+                                self.emblem_cd += self.ring3_emblem_amount
                             elif ring4_emblem == "Boss ATK":
                                 self.ring4_emblem_amount += emblem_ba_stats[ring4_emblem_level]
-                                self.batk += self.ring3_emblem_amount
+                                self.emblem_batk += self.ring3_emblem_amount
                             else:
                                 self.ring4_emblem_amount += emblem_atk_stats[ring4_emblem_level]
-                                self.atkp += self.ring4_emblem_amount
+                                self.emblem_atkp += self.ring4_emblem_amount
                         # Potential
                         self.atk += 69
                         # Set
                         self.commandersetcount += 1
+                self.sf = self.ring1_sf + self.ring2_sf + self.ring3_sf + self.ring4_sf
             else:
                 st.write("Error: Please Select 4 Rings Only")
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def ring_amount(self):
         ring_amount = self.ring_amount
@@ -1056,6 +1125,10 @@ class ring:
     def ring4_sf(self):
         ring4_sf = self.ring4_sf
         return ring4_sf
+
+    def sf(self):
+        sf = self.sf
+        return sf
 
     def stat(self):
         stat = self.stat

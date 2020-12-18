@@ -8,6 +8,12 @@ class weapon:
         self.character_class = character_class
         self.stat_amount = 0
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
 
         # SF Stats
         self.sf = 0
@@ -250,6 +256,7 @@ class weapon:
                 weapon_stat = "Final DMG"
             self.stat = weapon_stat
             weapon_emblem = wep3.radio("Choose Weapon Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
+            self.normal_emb += 1
             self.emblem = weapon_emblem
             weapon_emblem_level = wep3.slider("Weapon Emblem Level", min_value=1, max_value=5)
             self.emblem_level = weapon_emblem_level
@@ -895,13 +902,13 @@ class weapon:
             # Emblem
             if weapon_emblem == "Crit DMG":
                 self.emblem_amount += emblem_cd_stats[weapon_emblem_level]
-                self.cd += self.emblem_amount
+                self.emblem_cd += self.emblem_amount
             elif weapon_emblem == "Boss ATK":
                 self.emblem_amount += emblem_ba_stats[weapon_emblem_level]
-                self.batk += self.emblem_amount
+                self.emblem_batk += self.emblem_amount
             else:
                 self.emblem_amount += emblem_atk_stats[weapon_emblem_level]
-                self.atkp += self.emblem_amount
+                self.emblem_atkp += self.emblem_amount
 
             # Potential
             self.cd += 18
@@ -916,6 +923,30 @@ class weapon:
                 self.aempsetcount += 1
             elif weapon_type == "Fafnir":
                 self.fafsetcount += 1
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

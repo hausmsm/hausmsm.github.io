@@ -6,6 +6,12 @@ class shoulder:
         # Initialize
         self.stat_amount = 0
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
 
         # SF Stats
         self.sf = 0
@@ -239,22 +245,47 @@ class shoulder:
                 self.necrosetcount += 1
             shoulder_emblem = shoulder3.radio("Choose Shoulder Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
             shoulder_emblem_level = shoulder3.slider("Shoulder Emblem Level", min_value=1, max_value=5)
+            self.normal_emb += 1
             self.emblem = shoulder_emblem
             self.emblem_level = shoulder_emblem_level
             # Emblem
             if shoulder_emblem == "Crit DMG":
                 self.emblem_amount += emblem_cd_stats[shoulder_emblem_level]
-                self.cd += self.emblem_amount
+                self.emblem_cd += self.emblem_amount
             elif shoulder_emblem == "Boss ATK":
                 self.emblem_amount += emblem_ba_stats[shoulder_emblem_level]
-                self.batk += self.emblem_amount
+                self.emblem_batk += self.emblem_amount
             else:
                 self.emblem_amount += emblem_atk_stats[shoulder_emblem_level]
-                self.atkp += self.emblem_amount
+                self.emblem_atkp += self.emblem_amount
         # Flame
         self.atklinecount += 2
         # Potential
         self.dmg += 6
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

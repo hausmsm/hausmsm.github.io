@@ -6,6 +6,12 @@ class title:
         # Initialize
         self.emblem = "None"
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
 
         # SF Stats
         self.sf = 0
@@ -115,6 +121,18 @@ class title:
                 # Base
                 self.atk += 50
                 self.batk += 5
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
 
     def emblem(self):
         emblem = self.emblem

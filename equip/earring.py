@@ -6,6 +6,12 @@ class earring:
         # Initialize
         self.emblem = "None"
         self.emblem_amount = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+        self.normal_emb = 0
 
         # SF Stats
         self.sf = 0
@@ -130,16 +136,17 @@ class earring:
                     earring_emblem_level = 1
                     self.emblem = earring_emblem
                     self.emblem_level = earring_emblem_level
+                    self.unique_emblem += 1
                     # Emblem
                     if earring_emblem == "Crit DMG":
                         self.emblem_amount += emblem_cd_stats[earring_emblem_level]
-                        self.cd += self.emblem_amount
+                        self.emblem_cd += self.emblem_amount
                     elif earring_emblem == "Boss ATK":
                         self.emblem_amount += emblem_ba_stats[earring_emblem_level]
-                        self.batk += self.emblem_amount
+                        self.emblem_batk += self.emblem_amount
                     else:
                         self.emblem_amount += emblem_atk_stats[earring_emblem_level]
-                        self.atkp += self.emblem_amount
+                        self.emblem_atkp += self.emblem_amount
                 # Potential
                 self.batk += 4.5
                 # Set
@@ -167,17 +174,41 @@ class earring:
                     # Emblem
                     if earring_emblem == "Crit DMG":
                         self.emblem_amount += emblem_cd_stats[earring_emblem_level]
-                        self.cd += self.emblem_amount
+                        self.emblem_cd += self.emblem_amount
                     elif earring_emblem == "Boss ATK":
                         self.emblem_amount += emblem_ba_stats[earring_emblem_level]
-                        self.batk += self.emblem_amount
+                        self.emblem_batk += self.emblem_amount
                     else:
                         self.emblem_amount += emblem_atk_stats[earring_emblem_level]
-                        self.atkp += self.emblem_amount
+                        self.emblem_atkp += self.emblem_amount
                 # Potential
                 self.batk += 4.5
                 # Set
                 self.bosssetcount += 1
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

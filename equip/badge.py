@@ -6,6 +6,12 @@ class badge:
         # Initialize
         self.emblem = "None"
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
 
         # SF Stats
         self.sf = 0
@@ -116,6 +122,22 @@ class badge:
                 self.atk += 55
                 self.cd += 5
                 self.bosssetcount += 1
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

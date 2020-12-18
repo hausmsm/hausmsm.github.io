@@ -6,6 +6,12 @@ class hat:
         # Initialize
         self.stat_amount = 0
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
 
         # SF Stats
         self.sf = 0
@@ -227,7 +233,7 @@ class hat:
                 self.pdef += sfdefdict[hat_sf_level]
                 self.mdef += sfdefdict[hat_sf_level]
                 self.fafsetcount += 1
-            else:
+            elif hat_type == "Necro":
                 # Base
                 self.pdef += 2969
                 self.mdef += 2969
@@ -255,24 +261,49 @@ class hat:
 
             hat_emblem = hat3.radio("Choose Hat Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
             hat_emblem_level = hat3.slider("Hat Emblem Level", min_value=1, max_value=5)
+            self.normal_emb += 1
             self.emblem = hat_emblem
             self.emblem_level = hat_emblem_level
             # Emblem
             if hat_emblem == "Crit DMG":
                 self.emblem_amount += emblem_cd_stats[hat_emblem_level]
-                self.cd += self.emblem_amount
+                self.emblem_cd += self.emblem_amount
             elif hat_emblem == "Boss ATK":
                 self.emblem_amount += emblem_ba_stats[hat_emblem_level]
-                self.batk += self.emblem_amount
+                self.emblem_batk += self.emblem_amount
             else:
                 self.emblem_amount += emblem_atk_stats[hat_emblem_level]
-                self.atkp += self.emblem_amount
+                self.emblem_atkp += self.emblem_amount
 
         # Flame Stat
         self.cdlinecount += 2
 
         # Potential
         self.atkp += 6
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

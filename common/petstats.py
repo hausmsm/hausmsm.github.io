@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-class pet:
+class petstats:
     def __init__(self,pet_type):
         # Initialize
         self.emblem = "None"

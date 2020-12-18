@@ -6,6 +6,12 @@ class eye:
         # Initialize
         self.emblem = "None"
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
 
         # SF Stats
         self.sf = 0
@@ -126,6 +132,18 @@ class eye:
                 self.hp += 6000
                 self.cd += 6
                 self.bosssetcount += 1
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
 
     def emblem(self):
         emblem = self.emblem

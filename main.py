@@ -1,8 +1,3 @@
-from common.commonsum import commonsum
-from equip.equip_selection import equip_selection
-from common.nonemblemcalculations import nonemblemcalculations
-from common.emblemcalculations import emblemcalculations
-import pandas as pd
 import streamlit as st
 import warnings
 
@@ -322,6 +317,37 @@ with st.sidebar.beta_expander("Soul"):
     st.write("Cape")
     st.write(f"Soul: {soul.cape_soul}")
     st.write(f"Soul Stat: {soul.cape_type}")
+
+from common.pet import pet
+pet = pet()
+with st.sidebar.beta_expander("Pets"):
+    st.write(f"Pet Type: {pet.type}")
+
+from common.petstats import petstats
+petstats = petstats(pet.type)
+
+from equip.seteffect import seteffect
+seteffect = seteffect(badge,belt,cash,cape,earrings,eye,face,glove,hat,necklace,ring,shoes,shoulder,tbo,wep,pet)
+with st.sidebar.beta_expander("Set Effect"):
+    st.write(f"Mythic Empress Set Count: {seteffect.mempsetcount}")
+    st.write(f"Ancient Empress Set Count: {seteffect.aempsetcount}")
+    st.write(f"Necro Set Count: {seteffect.necrosetcount}")
+    st.write(f"Fafnir Set Count: {seteffect.fafsetcount}")
+    st.write(f"Boss Accessory Set Count: {seteffect.bosssetcount}")
+    st.write(f"Commander Accessory Set Count: {seteffect.commandersetcount}")
+
+from common.flamestats import flamestats
+flamestats = flamestats(badge,belt,cape,earrings,eye,face,glove,hat,jewel,medal,necklace,ring,seteffect,shoes,shoulder,
+                 tbo,title,wep)
+with st.sidebar.beta_expander("Flame Stats"):
+    st.write(f"ATK: {flamestats.atk}")
+    st.write(f"ATK%: {flamestats.atkp}")
+    st.write(f"DMG%: {flamestats.dmg}")
+    st.write(f"Boss ATK%: {flamestats.batk}")
+    st.write(f"Crit Rate%: {flamestats.cr}")
+    st.write(f"Crit DMG%: {flamestats.cd}")
+    st.write(f"Final DMG%: {flamestats.fd}")
+    st.write(f"Max DMG Inc: {flamestats.maxdmg}")
 
 from common.hyperstats import hyperstats
 
