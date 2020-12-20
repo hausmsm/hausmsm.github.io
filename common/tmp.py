@@ -1,83 +1,82 @@
-pet = badge
-self.normal_emb += pet.normal_emb
-self.unique_acc_emb += pet.unique_acc_emb
-self.legendary_acc_emb += pet.legendary_acc_emb
-self.emblem_cd += pet.emblem_cd
-self.emblem_batk += pet.emblem_batk
-self.emblem_atkp += pet.emblem_atkp
+self.normal_emb += char.normal_emb
+self.unique_acc_emb += char.unique_acc_emb
+self.legendary_acc_emb += char.legendary_acc_emb
+self.emblem_cd += char.emblem_cd
+self.emblem_batk += char.emblem_batk
+self.emblem_atkp += char.emblem_atkp
 
 # SF Stats
-self.sf += pet.sf
+self.sf += char.sf
 
 # Offensive Stats
-self.atk += pet.atk
-self.atkp += pet.atkp
-self.dmg += pet.dmg
-self.batk += pet.batk
-self.platk += pet.platk
-self.cr += pet.cr
-self.cratk += pet.cratk
-self.cd += pet.cd
-self.maxdmg += pet.maxdmg
-self.fd += pet.fd
+self.atk += char.atk
+self.atkp += char.atkp
+self.dmg += char.dmg
+self.batk += char.batk
+self.platk += char.platk
+self.cr += char.cr
+self.cratk += char.cratk
+self.cd += char.cd
+self.maxdmg += char.maxdmg
+self.fd += char.fd
 
 # Defensive Stats
-self.pdef += pet.pdef
-self.pdefinc += pet.pdefinc
-self.pdefdec += pet.pdefdec
-self.mdef += pet.mdef
-self.mdefinc += pet.mdefinc
-self.mdefdec += pet.mdefdec
-self.bdef += pet.bdef
-self.pldef += pet.pldef
-self.critres += pet.critres
-self.critdmgres += pet.critdmgres
+self.pdef += char.pdef
+self.pdefinc += char.pdefinc
+self.pdefdec += char.pdefdec
+self.mdef += char.mdef
+self.mdefinc += char.mdefinc
+self.mdefdec += char.mdefdec
+self.bdef += char.bdef
+self.pldef += char.pldef
+self.critres += char.critres
+self.critdmgres += char.critdmgres
 
 # Hit Miss Stats
-self.acc += pet.acc
-self.accp += pet.accp
-self.evd += pet.evd
-self.evdp += pet.evdp
-self.penrate += pet.penrate
-self.block += pet.block
-self.abnormalstatres += pet.abnormalstatres
+self.acc += char.acc
+self.accp += char.accp
+self.evd += char.evd
+self.evdp += char.evdp
+self.penrate += char.penrate
+self.block += char.block
+self.abnormalstatres += char.abnormalstatres
 
 # HP MP Stats
-self.hp += pet.hp
-self.mp += pet.mp
-self.hpinc += pet.hpinc
-self.mpinc += pet.mpinc
-self.hprec += pet.hprec
-self.mprec += pet.mprec
-self.buffdurationinc += pet.buffdurationinc
+self.hp += char.hp
+self.mp += char.mp
+self.hpinc += char.hpinc
+self.mpinc += char.mpinc
+self.hprec += char.hprec
+self.mprec += char.mprec
+self.buffdurationinc += char.buffdurationinc
 
 # Mobility Stats
-self.spd += pet.spd
-self.jmp += pet.jmp
-self.kbkres += pet.kbkres
+self.spd += char.spd
+self.jmp += char.jmp
+self.kbkres += char.kbkres
 
 # Misc Stats
-self.exp += pet.exp
-self.dr += pet.dr
-self.meso += pet.meso
-self.glincrease += pet.glincrease
-self.partyexp += pet.partyexp
-self.feverchargeinc += pet.feverchargeinc
-self.feverduration += pet.feverduration
-self.maxfeverchance += pet.maxfeverchance
+self.exp += char.exp
+self.dr += char.dr
+self.meso += char.meso
+self.glincrease += char.glincrease
+self.partyexp += char.partyexp
+self.feverchargeinc += char.feverchargeinc
+self.feverduration += char.feverduration
+self.maxfeverchance += char.maxfeverchance
 
 # Shadow Partner Stats
-self.spmulti += pet.spmulti
+self.spmulti += char.spmulti
 
 # Set Stats
-self.mempsetcount += pet.mempsetcount
-self.aempsetcount += pet.aempsetcount
-self.necrosetcount += pet.necrosetcount
-self.fafsetcount += pet.fafsetcount
-self.bosssetcount += pet.bosssetcount
-self.commandersetcount += pet.commandersetcount
+self.mempsetcount += char.mempsetcount
+self.aempsetcount += char.aempsetcount
+self.necrosetcount += char.necrosetcount
+self.fafsetcount += char.fafsetcount
+self.bosssetcount += char.bosssetcount
+self.commandersetcount += char.commandersetcount
 
 # Flame Stats
-self.atklinecount += pet.atklinecount
-self.crlinecount += pet.crlinecount
-self.cdlinecount += pet.cdlinecount
+self.atklinecount += char.atklinecount
+self.crlinecount += char.crlinecount
+self.cdlinecount += char.cdlinecount

@@ -338,7 +338,7 @@ with st.sidebar.beta_expander("Set Effect"):
 
 from common.flamestats import flamestats
 flamestats = flamestats(badge,belt,cape,earrings,eye,face,glove,hat,jewel,medal,necklace,ring,seteffect,shoes,shoulder,
-                 tbo,title,wep)
+                 tbo,title,wep,swep,soul)
 with st.sidebar.beta_expander("Flame Stats"):
     st.write(f"ATK: {flamestats.atk}")
     st.write(f"ATK%: {flamestats.atkp}")
@@ -349,6 +349,20 @@ with st.sidebar.beta_expander("Flame Stats"):
     st.write(f"Final DMG%: {flamestats.fd}")
     st.write(f"Max DMG Inc: {flamestats.maxdmg}")
 
+from flame.flame import flame
+flames = flame(flamestats)
+with st.sidebar.beta_expander("Flame"):
+    st.write(f"ATK: {flames.f_atkflame}")
+    st.write(f"CR%: {flames.f_crflame}")
+    st.write(f"CD%: {flames.f_cdflame}")
+    st.write(f"ATK Base: {flames.f_atkflamebase}")
+    st.write(f"Crit Rate Base: {flames.f_crflamebase}")
+    st.write(f"Crit DMG Base: {flames.f_cdflamebase}")
+    st.write(f"Number of ATK Lines: {flames.fatklinecount}")
+    st.write(f"Number of CR Lines: {flames.fcrlinecount}")
+    st.write(f"Number of CD Lines: {flames.fcdlinecount}")
+
+
 from common.hyperstats import hyperstats
 
 hs = hyperstats(char.character_type)
@@ -357,86 +371,58 @@ with st.sidebar.beta_expander("Hyper Stats"):
     for i in range(0, length):
         st.write(f"{hs.hyperstatlist[i]}: {hs.hyperstatamountlist[i]}")
 
-equip_type_combination = st.radio("Equipment Combination",
-                                  ["Full Empress", "Full Necro", "2 Piece Fafnir + Empress", "4 Piece Fafnir + Empress",
-                                   "2 Piece Fafnir + Necro", "4 Piece Fafnir + Necro"])
-if equip_type_combination == "Full Empress":
-    equip_type = "1"
-elif equip_type_combination == "Full Necro":
-    equip_type = "2"
-elif equip_type_combination == "2 Piece Fafnir + Empress":
-    equip_type = "3"
-elif equip_type_combination == "4 Piece Fafnir + Empress":
-    equip_type = "4"
-elif equip_type_combination == "2 Piece Fafnir + Necro":
-    equip_type = "5"
-else:
-    equip_type = "6"
+from common.starforce import starforce
 
-stat_type_combination = st.radio("Exp Set", ["Normal", "Partial Exp", "Full Exp"])
-if stat_type_combination == "Normal":
-    stat_type = "1"
-elif stat_type_combination == "Partial Exp":
-    stat_type = "2"
-else:
-    stat_type = "3"
+sf = starforce(flamestats.sf)
+with st.sidebar.beta_expander("SF Stats"):
+    st.write(f"SF: {sf.sf}")
+    st.write(f"ATK: {sf.atk}")
+    st.write(f"Party EXP: {sf.partyexp}")
+    st.write(f"Max Fever Chance: {sf.maxfeverchance}")
+    st.write(f"Max DMG Inc: {sf.maxdmg}")
 
-cash_type_combination = st.radio("Cash Set Combination", ["3+3 Set", "5 Set"])
-if cash_type_combination == "3+3 Set":
-    cash_type = "1"
-else:
-    cash_type = "2"
+from common.mapletree import mapletree
+mapletree = mapletree()
 
-# commonsum = commonsum(type, character_class)
-# equip = equip_selection(equip_type, stat_type, character_class, cash_type)
-# necalculations = nonemblemcalculations(commonsum, equip)
+from common.nonemblemcalculations import nonemblemcalculations
 
-# finalcalculations = emblemcalculations(necalculations, char)
+nec = nonemblemcalculations(buffs, flamestats, flames, petstats, sf, hs, link, mapletree,char.char)
+with st.sidebar.beta_expander("Non Emblem Calculations"):
+    st.write(f"ATK: {nec.atk}")
+    st.write(f"Crit Rate: {nec.cr}")
+    st.write(f"Max Fever Chance: {nec.maxfeverchance}")
+    st.write(f"Max DMG Inc: {nec.maxdmg}")
 
-# atkstats = [finalcalculations.atk, finalcalculations.atkp, finalcalculations.dmg, finalcalculations.batk,
-#            finalcalculations.cr, finalcalculations.cd, finalcalculations.fd]
+from common.emblemcalculations import emblemcalculations
 
-# pskillstats = [finalcalculations.pname, finalcalculations.bpoutput(), finalcalculations.nbpoutput()]
-##sskillstats = [finalcalculations.sname, finalcalculations.bsoutput(), finalcalculations.nbsoutput()]
-# firstppercentage = -(finalcalculations.bpoutput() - finalcalculations.bpoutput()) / finalcalculations.bpoutput() * 100
-# secondppercentage = -(finalcalculations.bpoutput() - finalcalculations.sbpoutput()) / finalcalculations.bpoutput() * 100
-# firstspercentage = -(finalcalculations.bsoutput() - finalcalculations.bsoutput()) / finalcalculations.bsoutput() * 100
-# secondspercentage = -(finalcalculations.bsoutput() - finalcalculations.sbsoutput()) / finalcalculations.bsoutput() * 100
+ec = emblemcalculations(nec,char)
+with st.sidebar.beta_expander("Emblem Calculations"):
+    st.write("Normal Emblems")
+    st.write(f"CD EMB: {ec.ncdnormalemb}")
+    st.write(f"BATK EMB: {ec.nbatknormalemb}")
+    st.write(f"ATKP EMB: {ec.natkpnormalemb}")
+    st.write(" ")
+    st.write("Unique Accessory Emblems")
+    st.write(f"CD EMB: {ec.ncduniqueemb}")
+    st.write(f"BATK EMB: {ec.nbatkuniqueemb}")
+    st.write(f"ATKP EMB: {ec.natkpuniqueemb}")
+    st.write(" ")
+    st.write("Legendary Accessory Emblems")
+    st.write(f"CD EMB: {ec.ncdlegendaryemb}")
+    st.write(f"BATK EMB: {ec.nbatklegendaryemb}")
+    st.write(f"ATKP EMB: {ec.natkplegendaryemb}")
 
-# atkflamestats = ['ATK', necalculations.atkflame, necalculations.atkflamebase, necalculations.atklinecount]
-# crflamestats = ["CR", necalculations.crflame, necalculations.crflamebase, necalculations.crlinecount]
-# cdflamestats = ["CD", necalculations.cdflame, necalculations.cdflamebase, necalculations.cdlinecount]
-# flamestatsdf = pd.DataFrame(columns=['Type', 'Amount', 'Base Used', 'Number of Lines'])
-# flamestatsdf.loc[0] = atkflamestats
-# flamestatsdf.loc[1] = crflamestats
-# flamestatsdf.loc[2] = cdflamestats
+with st.sidebar.beta_expander("Damage Comparisons"):
+    st.write("Current Emblem Combination")
+    st.write(" ")
+    st.write("Optimal Emblem Combination")
+    st.write(f"Primary Skill: {ec.pname}")
+    st.write(f"Boss DMG: {ec.b_poutput}")
+    st.write(f"Non-Boss DMG {ec.nb_poutput}")
+    st.write(" ")
+    st.write(f"Secondary Skill: {ec.sname}")
+    st.write(f"Boss DMG: {ec.b_soutput}")
+    st.write(f"Non-Boss DMG {ec.nb_soutput}")
 
-# embstats = [int(finalcalculations.ncdemb), int(finalcalculations.natkpemb), int(finalcalculations.nbatkemb),
-#            finalcalculations.bpoutput()
-#    , firstppercentage, finalcalculations.bsoutput(), firstspercentage]
-###sembstats = [int(finalcalculations.secondncdemb), int(finalcalculations.secondnatkpemb),
-#             int(finalcalculations.secondnbatkemb),
-#             finalcalculations.sbpoutput(), secondppercentage, finalcalculations.sbsoutput(), secondspercentage]
-# atkstatsdf = pd.DataFrame(columns=["ATK", "ATK%", "DMG%", "BATK%", "CR%", "CD%", "FD%"])
-# atkstatsdf.loc[0] = atkstats#
-#
-# skillstatsdf = pd.DataFrame(columns=["Skill", "Boss Output", "Non-Boss Output"])
-# skillstatsdf.loc[0] = pskillstats
-# skillstatsdf.loc[1] = sskillstats
 
-# embstatsdf = pd.DataFrame(
-#    columns=["CD Emb", "ATK Emb", "BATK Emb", "Primary DMG", "Primary %", "Secondary DMG", "Secondary %"])
-# embstatsdf.loc[0] = embstats
-# embstatsdf.loc[1] = sembstats
-# skillstatsdf['Boss Output'] = skillstatsdf['Boss Output'].apply(lambda x: "{:,}".format(x))
-# skillstatsdf['Non-Boss Output'] = skillstatsdf['Non-Boss Output'].apply(lambda x: "{:,}".format(x))
 
-# embstatsdf['Primary DMG'] = embstatsdf['Primary DMG'].apply(lambda x: "{:,}".format(x))
-# embstatsdf['Secondary DMG'] = embstatsdf['Secondary DMG'].apply(lambda x: "{:,}".format(x))
-# embstatsdf['Primary %'] = embstatsdf['Primary %'].apply(lambda x: "{:.2f}".format(x))
-# embstatsdf['Secondary %'] = embstatsdf['Secondary %'].apply(lambda x: "{:.2f}".format(x))
-
-##st.dataframe(skillstatsdf)
-# st.dataframe(flamestatsdf)
-# st.dataframe(atkstatsdf)
-# st.dataframe(embstatsdf)

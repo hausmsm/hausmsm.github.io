@@ -294,7 +294,7 @@ class weapon:
                         # Level
                         self.atk += ancientdict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Refinement
                         if weapon_refine_level in [1, 2, 3, 4]:
                             self.atk += ((weapon_refine_level - 1) * 50 + 250)
@@ -333,7 +333,7 @@ class weapon:
                         # Level
                         self.atk += necrodict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
                             self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
@@ -384,7 +384,7 @@ class weapon:
                         # Level
                         self.atk += ancientdict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Refinement
                         if weapon_refine_level in [1, 2, 3, 4]:
                             self.atk += ((weapon_refine_level - 1) * 50 + 250)
@@ -567,7 +567,7 @@ class weapon:
                     # Level
                     self.atk += ancientdict[weapon_level]
                     # SF
-                    self.atk += sfdict[weapon_level]
+                    self.atk += sfdict[weapon_sf_level]
                     # Refinement
                     if weapon_refine_level in [1, 2, 3, 4]:
                         self.atk += ((weapon_refine_level - 1) * 50 + 250)
@@ -607,7 +607,7 @@ class weapon:
                     # Level
                     self.atk += necrodict[weapon_level]
                     # SF
-                    self.atk += sfdict[weapon_level]
+                    self.atk += sfdict[weapon_sf_level]
                     # Stats
                     if weapon_stat == "Boss ATK":
                         self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
@@ -658,7 +658,7 @@ class weapon:
                     # Level
                     self.atk += ancientdict[weapon_level]
                     # SF
-                    self.atk += sfdict[weapon_level]
+                    self.atk += sfdict[weapon_sf_level]
                     # Refinement
                     if weapon_refine_level in [1, 2, 3, 4]:
                         self.atk += ((weapon_refine_level - 1) * 50 + 250)
@@ -698,7 +698,7 @@ class weapon:
                     # Level
                     self.atk += necrodict[weapon_level]
                     # SF
-                    self.atk += sfdict[weapon_level]
+                    self.atk += sfdict[weapon_sf_level]
                     # Stats
                     if weapon_stat == "Boss ATK":
                         self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
@@ -750,7 +750,7 @@ class weapon:
                         # Level
                         self.atk += ancientdict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Refinement
                         if weapon_refine_level in [1, 2, 3, 4]:
                             self.atk += ((weapon_refine_level - 1) * 50 + 250)
@@ -790,7 +790,7 @@ class weapon:
                         # Level
                         self.atk += necrodict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
                             self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
@@ -841,7 +841,7 @@ class weapon:
                         # Level
                         self.atk += ancientdict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Refinement
                         if weapon_refine_level in [1, 2, 3, 4]:
                             self.atk += ((weapon_refine_level - 1) * 50 + 250)
@@ -881,7 +881,7 @@ class weapon:
                         # Level
                         self.atk += necrodict[weapon_level]
                         # SF
-                        self.atk += sfdict[weapon_level]
+                        self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
                             self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)

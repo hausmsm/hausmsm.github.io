@@ -1,5 +1,18 @@
 class bsp:
     def __init__(self):
+        # Initialize
+        self.stat_amount = 0
+        self.emblem_amount = 0
+        self.normal_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+
+        self.sf = 0
+
+        # Offensive Stats
         self.atk = 1580
         self.atkp = 0
         self.dmg = 0
@@ -169,6 +182,106 @@ class bsp:
         self.mp += 3124
         # Holy Symbol - Experience
         self.exp += 10
+
+    def pname(self):
+        pname = self.pname
+        return pname
+
+    def pskilldmg(self):
+        pskilldmg = self.sskilldmg
+        return pskilldmg
+
+    def phitcount(self):
+        phitcount = self.phitcount
+        return phitcount
+
+    def phatkp(self):
+        phatkp = self.phatkp
+        return phatkp
+
+    def phdmg(self):
+        phdmg = self.phdmg
+        return phdmg
+
+    def phbatk(self):
+        phbatk = self.phbatk
+        return phbatk
+
+    def phcr(self):
+        phcr = self.phcr
+        return phcr
+
+    def phcd(self):
+        phcd = self.phcd
+        return phcd
+
+    def phfd(self):
+        phfd = self.phfd
+        return phfd
+
+    def sname(self):
+        sname = self.sname
+        return sname
+
+    def sskilldmg(self):
+        sskilldmg = self.sskilldmg
+        return sskilldmg
+
+    def shitcount(self):
+        shitcount = self.shitcount
+        return shitcount
+
+    def schance(self):
+        schance = self.schance
+        return schance
+
+    def shatkp(self):
+        shatkp = self.shatkp
+        return shatkp
+
+    def shdmg(self):
+        shdmg = self.shdmg
+        return shdmg
+
+    def shbatk(self):
+        shbatk = self.shbatk
+        return shbatk
+
+    def shcr(self):
+        shcr = self.shcr
+        return shcr
+
+    def shcd(self):
+        shcd = self.shcd
+        return shcd
+
+    def shfd(self):
+        shfd = self.shfd
+        return shfd
+
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
 
     def emblem(self):
         emblem = self.emblem

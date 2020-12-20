@@ -4,8 +4,14 @@ import streamlit as st
 class hyperstats:
     def __init__(self,type):
         # Initialize
-        self.emblem = "None"
+        self.stat_amount = 0
         self.emblem_amount = 0
+        self.normal_emb = 0
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
 
         # SF Stats
         self.sf = 0
@@ -21,8 +27,6 @@ class hyperstats:
         self.cd = 0
         self.maxdmg = 0
         self.fd = 0
-        self.adddmgchance = 0
-        self.adddmgskilldmg = 0
 
         # Defensive Stats
         self.pdef = 0
@@ -44,7 +48,6 @@ class hyperstats:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
-        self.ignore = 0
 
         # HP MP Stats
         self.hp = 0
@@ -85,7 +88,6 @@ class hyperstats:
         self.atklinecount = 0
         self.crlinecount = 0
         self.cdlinecount = 0
-
         fddict = {
             0: 0,
             1: 0.3,
@@ -549,6 +551,30 @@ class hyperstats:
         adddmgskilldmg = self.adddmgskilldmg
         return adddmgskilldmg
 
+    def normal_emb(self):
+        normal_emb = self.normal_emb
+        return normal_emb
+
+    def unique_acc_emb(self):
+        unique_acc_emb = self.unique_acc_emb
+        return unique_acc_emb
+
+    def legendary_acc_emb(self):
+        legendary_acc_emb = self.legendary_acc_emb
+        return legendary_acc_emb
+
+    def emblem_cd(self):
+        emblem_cd = self.emblem_cd
+        return emblem_cd
+
+    def emblem_batk(self):
+        emblem_batk = self.emblem_batk
+        return emblem_batk
+
+    def emblem_atkp(self):
+        emblem_atkp = self.emblem_atkp
+        return emblem_atkp
+
     def emblem(self):
         emblem = self.emblem
         return emblem
@@ -713,9 +739,6 @@ class hyperstats:
         mprec = self.mprec
         return mprec
 
-    def buffdurationinc(self):
-        buffdurationinc = self.buffdurationinc
-
     def spd(self):
         spd = self.spd
         return spd
@@ -799,4 +822,3 @@ class hyperstats:
     def cdlinecount(self):
         cdlinecount = self.cdlinecount
         return cdlinecount
-

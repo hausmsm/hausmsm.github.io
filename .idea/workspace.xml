@@ -20,39 +20,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
-      <change beforePath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15-Dec-20_22_34__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15-Dec-20_22_34__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2020_10_03_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2020_10_03_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/aran.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/aran.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bam.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bucc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/bw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/csr.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/da.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/da.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/dw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/evan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/evan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/fpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/fpm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ilm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ilm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/lumi.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/lumi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/mech.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mech.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/merc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/merc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/nl.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/nw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/phan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/shad.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/shade.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/wa.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/wh.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/commonsum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/emblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/emblemcalculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/flamestats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/flamestats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pet.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/pet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/hyperstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/hyperstats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mapletree.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mapletree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/nonemblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/nonemblemcalculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/petstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/petstats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/badge.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/bottom.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/earring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/earring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/equip_selection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/eye.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/eye.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/medal.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/medal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/necklace.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/necklace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/outfit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/ring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/seteffect.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/seteffect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/shoulder.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/tbo.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/tbo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/title.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/title.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/top.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/soul.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/soul.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/starforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/starforce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/tmp.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/tmp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flame/flame.py" beforeDir="false" afterPath="$PROJECT_DIR$/flame/flame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

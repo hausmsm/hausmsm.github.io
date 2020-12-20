@@ -3,7 +3,7 @@ import streamlit as st
 
 class flamestats:
     def __init__(self,badge,belt,cape,earring,eye,face,glove,hat,jewel,medal,necklace,ring,seteffect,shoe,shoulder,
-                 tbo,title,weapon):
+                 tbo,title,weapon,swep,soul):
         # Initialize
         self.normal_emb = 0
         self.unique_acc_emb = 0
@@ -1583,6 +1583,171 @@ class flamestats:
         self.crlinecount += weapon.crlinecount
         self.cdlinecount += weapon.cdlinecount
 
+        self.normal_emb += swep.normal_emb
+        self.unique_acc_emb += swep.unique_acc_emb
+        self.legendary_acc_emb += swep.legendary_acc_emb
+        self.emblem_cd += swep.emblem_cd
+        self.emblem_batk += swep.emblem_batk
+        self.emblem_atkp += swep.emblem_atkp
+
+        # SF Stats
+        self.sf += swep.sf
+
+        # Offensive Stats
+        self.atk += swep.atk
+        self.atkp += swep.atkp
+        self.dmg += swep.dmg
+        self.batk += swep.batk
+        self.platk += swep.platk
+        self.cr += swep.cr
+        self.cratk += swep.cratk
+        self.cd += swep.cd
+        self.maxdmg += swep.maxdmg
+        self.fd += swep.fd
+
+        # Defensive Stats
+        self.pdef += swep.pdef
+        self.pdefinc += swep.pdefinc
+        self.pdefdec += swep.pdefdec
+        self.mdef += swep.mdef
+        self.mdefinc += swep.mdefinc
+        self.mdefdec += swep.mdefdec
+        self.bdef += swep.bdef
+        self.pldef += swep.pldef
+        self.critres += swep.critres
+        self.critdmgres += swep.critdmgres
+
+        # Hit Miss Stats
+        self.acc += swep.acc
+        self.accp += swep.accp
+        self.evd += swep.evd
+        self.evdp += swep.evdp
+        self.penrate += swep.penrate
+        self.block += swep.block
+        self.abnormalstatres += swep.abnormalstatres
+
+        # HP MP Stats
+        self.hp += swep.hp
+        self.mp += swep.mp
+        self.hpinc += swep.hpinc
+        self.mpinc += swep.mpinc
+        self.hprec += swep.hprec
+        self.mprec += swep.mprec
+        self.buffdurationinc += swep.buffdurationinc
+
+        # Mobility Stats
+        self.spd += swep.spd
+        self.jmp += swep.jmp
+        self.kbkres += swep.kbkres
+
+        # Misc Stats
+        self.exp += swep.exp
+        self.dr += swep.dr
+        self.meso += swep.meso
+        self.glincrease += swep.glincrease
+        self.partyexp += swep.partyexp
+        self.feverchargeinc += swep.feverchargeinc
+        self.feverduration += swep.feverduration
+        self.maxfeverchance += swep.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += swep.spmulti
+
+        # Set Stats
+        self.mempsetcount += swep.mempsetcount
+        self.aempsetcount += swep.aempsetcount
+        self.necrosetcount += swep.necrosetcount
+        self.fafsetcount += swep.fafsetcount
+        self.bosssetcount += swep.bosssetcount
+        self.commandersetcount += swep.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += swep.atklinecount
+        self.crlinecount += swep.crlinecount
+        self.cdlinecount += swep.cdlinecount
+
+        self.normal_emb += soul.normal_emb
+        self.unique_acc_emb += soul.unique_acc_emb
+        self.legendary_acc_emb += soul.legendary_acc_emb
+        self.emblem_cd += soul.emblem_cd
+        self.emblem_batk += soul.emblem_batk
+        self.emblem_atkp += soul.emblem_atkp
+
+        # SF Stats
+        self.sf += soul.sf
+
+        # Offensive Stats
+        self.atk += soul.atk
+        self.atkp += soul.atkp
+        self.dmg += soul.dmg
+        self.batk += soul.batk
+        self.platk += soul.platk
+        self.cr += soul.cr
+        self.cratk += soul.cratk
+        self.cd += soul.cd
+        self.maxdmg += soul.maxdmg
+        self.fd += soul.fd
+
+        # Defensive Stats
+        self.pdef += soul.pdef
+        self.pdefinc += soul.pdefinc
+        self.pdefdec += soul.pdefdec
+        self.mdef += soul.mdef
+        self.mdefinc += soul.mdefinc
+        self.mdefdec += soul.mdefdec
+        self.bdef += soul.bdef
+        self.pldef += soul.pldef
+        self.critres += soul.critres
+        self.critdmgres += soul.critdmgres
+
+        # Hit Miss Stats
+        self.acc += soul.acc
+        self.accp += soul.accp
+        self.evd += soul.evd
+        self.evdp += soul.evdp
+        self.penrate += soul.penrate
+        self.block += soul.block
+        self.abnormalstatres += soul.abnormalstatres
+
+        # HP MP Stats
+        self.hp += soul.hp
+        self.mp += soul.mp
+        self.hpinc += soul.hpinc
+        self.mpinc += soul.mpinc
+        self.hprec += soul.hprec
+        self.mprec += soul.mprec
+        self.buffdurationinc += soul.buffdurationinc
+
+        # Mobility Stats
+        self.spd += soul.spd
+        self.jmp += soul.jmp
+        self.kbkres += soul.kbkres
+
+        # Misc Stats
+        self.exp += soul.exp
+        self.dr += soul.dr
+        self.meso += soul.meso
+        self.glincrease += soul.glincrease
+        self.partyexp += soul.partyexp
+        self.feverchargeinc += soul.feverchargeinc
+        self.feverduration += soul.feverduration
+        self.maxfeverchance += soul.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += soul.spmulti
+
+        # Set Stats
+        self.mempsetcount += soul.mempsetcount
+        self.aempsetcount += soul.aempsetcount
+        self.necrosetcount += soul.necrosetcount
+        self.fafsetcount += soul.fafsetcount
+        self.bosssetcount += soul.bosssetcount
+        self.commandersetcount += soul.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += soul.atklinecount
+        self.crlinecount += soul.crlinecount
+        self.cdlinecount += soul.cdlinecount
 
     def normal_emb(self):
         normal_emb = self.normal_emb
