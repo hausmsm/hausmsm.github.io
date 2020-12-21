@@ -19,52 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="0.19">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/aran.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/aran.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bam.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bucc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/csr.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/da.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/da.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/dw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/evan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/evan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/fpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/fpm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ilm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ilm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/lumi.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/lumi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/mech.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mech.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/merc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/merc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/nl.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/nw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/phan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/shad.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/shade.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/wa.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/wh.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/commonsum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/emblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/emblemcalculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/flamestats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/flamestats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/hyperstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/hyperstats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mapletree.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mapletree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/nonemblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/nonemblemcalculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/petstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/petstats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/soul.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/soul.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/starforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/starforce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tmp.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/tmp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flame/flame.py" beforeDir="false" afterPath="$PROJECT_DIR$/flame/flame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="1.0.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +81,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -222,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608059571959</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1.0.0">
+      <created>1608490720220</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608490720220</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,7 +211,8 @@
     <MESSAGE value="0.17" />
     <MESSAGE value="0.19" />
     <MESSAGE value="0.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.3" />
+    <MESSAGE value="1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.0" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608289745712">
