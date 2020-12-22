@@ -1,0 +1,16 @@
+Breakdown:
+
+1) Character
+  a) Character Type Input (Warrior, Mage, Archer, Thief, Pirate)
+   i) Character Class Input (Etc.)
+  b) Each individual class has innate stats (without any equipment) must be initialized from the start. ATK stats set to level 200 for ease.
+  c) Each class should have a primary, secondary and tertiary skill. (Inclusive of skill names, skill dmg% & chance)
+  
+2) Equipment
+  a) Main Equipment (Weapon + Armor)
+    i) All main equipment should include (Mythic Empress, Ancient Empress, Necro (& Fafnir) stats.
+    ii) All main equipment should include SF stats.
+    iii) Include Potentials
+    iv) Include set effect count for future counting within seteffect class
+    v) Include flame stat line count
+    
