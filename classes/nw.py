@@ -1,17 +1,5 @@
-class nw:
+class Nw:
     def __init__(self):
-        # Initialize
-        self.stat_amount = 0
-        self.emblem_amount = 0
-        self.normal_emb = 0
-        self.emblem_cd = 0
-        self.emblem_batk = 0
-        self.emblem_atkp = 0
-        self.unique_acc_emb = 0
-        self.legendary_acc_emb = 0
-
-        self.sf = 0
-
         # Offensive Stats
         self.atk = 1579
         self.atkp = 0
@@ -21,7 +9,7 @@ class nw:
         self.cr = 5
         self.cratk = 0
         self.cd = 10
-        self.maxdmg = 0
+        self.maxdmg = 3999999
         self.fd = 0
 
         # Defensive Stats
@@ -38,12 +26,13 @@ class nw:
 
         # Hit Miss Stats
         self.acc = 2251
-        self.accp = 1125
-        self.evd = 0
+        self.accp = 0
+        self.evd = 1125
         self.evdp = 0
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 10272
@@ -52,6 +41,10 @@ class nw:
         self.mpinc = 0
         self.hprec = 1
         self.mprec = 1
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -72,54 +65,69 @@ class nw:
         # Shadow Partner Stats
         self.spmulti = 0
 
-        # Set Stats
-        self.mempsetcount = 0
-        self.aempsetcount = 0
-        self.necrosetcount = 0
-        self.fafsetcount = 0
-        self.bosssetcount = 0
-        self.commandersetcount = 0
+        # Quintuple Star - Normal Strike
+        self.pname = "Quintuple Star - Normal Strike"
+        self.pskilldmg = 309.4
+        self.phitcount = 4
+        self.pchance = 100
+        self.patkp = 0
+        self.pdmg = 0
+        self.pbatk = 0
+        self.pplatk = 0
+        self.pcr = 0
+        self.pcratk = 0
+        self.pcd = 0
+        self.pmaxdmg = 0
+        self.pfd = 0
 
-        # Flame Stats
-        self.atklinecount = 0
-        self.crlinecount = 0
-        self.cdlinecount = 0
-
-        # Quintuple Star
-        self.pname = "Quintuple Star"
-        self.pskilldmg = 371.8
-        self.phitcount = 5
-        self.phatkp = 0
-        self.phdmg = 0
-        self.phbatk = 0
-        self.phcr = 0
-        self.phcd = 0
-        self.phfd = 0
+        # Quintuple Star - Last Strike
+        self.sname = "Quintuple Star - Last Strike"
+        self.sskilldmg = 371.1
+        self.shitcount = 1
+        self.schance = 100
+        self.satkp = 0
+        self.sdmg = 0
+        self.sbatk = 0
+        self.splatk = 0
+        self.scr = 0
+        self.scratk = 0
+        self.scd = 0
+        self.smaxdmg = 0
+        self.sfd = 0
 
         # Shadow Bat
-        self.sname = "Shadow Bat"
-        self.sskilldmg = 0
-        self.shitcount = 0
-        self.schance = 0
-        self.shatkp = 0
-        self.shdmg = 0
-        self.shbatk = 0
-        self.shcr = 0
-        self.shcd = 0
-        self.shfd = 0
+        self.tname = "Shadow Bat"
+        self.tskilldmg = 0
+        self.thitcount = 0
+        self.tchance = 0
+        self.tatkp = 0
+        self.tdmg = 0
+        self.tbatk = 0
+        self.tplatk = 0
+        self.tcr = 0
+        self.tcratk = 0
+        self.tcd = 0
+        self.tmaxdmg = 0
+        self.tfd = 0
 
-        # Skills
+# Skills
 
-        # 1st Job
+    # 1st Job
+        # Dark Elemental
         # Haste
         self.spd += 20
         self.jmp += 15
-        # Shadow Bat
-        self.schance += 18
-        self.shitcount += 1
-        self.sskilldmg += 50
+        # Dark Sight
 
-        # 2nd Job
+        # Shadow Jump
+        # Shadow Bat
+        self.tchance += 18
+        self.thitcount += 1
+        self.tskilldmg += 50
+
+    # 2nd Job
+        # Throwing Booster
+
         # Throwing Mastery
         self.accp += 6
         self.penrate += 6
@@ -128,27 +136,37 @@ class nw:
         # Physical Training
         self.hpinc += 10
         self.mpinc += 10
+        # Adoptive Darkness
         # Bat Affinity
-        self.sskilldmg += 6
-        self.schance += 7
+        self.tchance += 7
+        self.thitcount += 1
+        self.tskilldmg += 6
 
-        # 3rd Job
+    # 3rd Job
         # Dark Servant
+        # Use Hyper Skill Instead
         # Spirit Projection
         self.atkp += 25
         self.dmg += 6
         self.batk += 6
         self.platk += 6
+        # Darkness Ascending
+
         # Enveloping Darkness
         self.pdefinc += 10
         self.mdefinc += 10
         self.pdefdec += 5
         self.mdefdec += 5
+        # Alchemic Adrenaline
+        self.hppotionrecp += 10
+        self.mppotionrecp += 10
+        # Adaptive Darkness II
         # Bat Affinity II
-        self.sskilldmg += 11
-        self.schance += 7
+        self.tchance += 7
+        self.thitcount += 1
+        self.tskilldmg += 11
 
-        # 4th Job
+    # 4th Job
         # Throwing Expert
         self.cr += 5
         self.cd += 10
@@ -156,375 +174,40 @@ class nw:
         # Dark Blessing
         self.batk += 5
         self.platk += 5
+        # Adaptive Darkness III
         # Bat Affinity III
-        self.schance += 7
-        self.sskilldmg += 16
+        self.tchance += 7
+        self.thitcount += 1
+        self.tskilldmg += 16
+        # Vitality Siphon
+        self.hpinc += 50
+        # Shadow Slip
+        self.evdp += 6
+        self.bdef += 4
+        self.pldef += 4
 
-        # Hyper Buff
+    # Hyper Buff
         # Dominion
         self.atkp += 25
         self.kbkres += 10
+
         # Shadow Illusion
         self.spmulti += 75
         # Glory of the Guardians
         self.cd += 30
+
         # Darkness Ascending - Enhance
         self.atkp += 30
         # Darkness Ascending - Crit DMG
         self.cd += 20
 
-        # Hyper Skill
+    # Hyper Skill
         # Quintuple Star - Reinforce
-        self.phdmg += 20
+        self.pfd += 20
+        self.sfd += 20
         # Quintuple Star - Boss Rush
-        self.phbatk += 20
+        self.pbatk += 20
+        self.sbatk += 20
         # Quintuple Star - Crit DMG
-        self.phcd += 20
-
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def pskilldmg(self):
-        pskilldmg = self.sskilldmg
-        return pskilldmg
-
-    def phitcount(self):
-        phitcount = self.phitcount
-        return phitcount
-
-    def phatkp(self):
-        phatkp = self.phatkp
-        return phatkp
-
-    def phdmg(self):
-        phdmg = self.phdmg
-        return phdmg
-
-    def phbatk(self):
-        phbatk = self.phbatk
-        return phbatk
-
-    def phcr(self):
-        phcr = self.phcr
-        return phcr
-
-    def phcd(self):
-        phcd = self.phcd
-        return phcd
-
-    def phfd(self):
-        phfd = self.phfd
-        return phfd
-
-    def sname(self):
-        sname = self.sname
-        return sname
-
-    def sskilldmg(self):
-        sskilldmg = self.sskilldmg
-        return sskilldmg
-
-    def shitcount(self):
-        shitcount = self.shitcount
-        return shitcount
-
-    def schance(self):
-        schance = self.schance
-        return schance
-
-    def shatkp(self):
-        shatkp = self.shatkp
-        return shatkp
-
-    def shdmg(self):
-        shdmg = self.shdmg
-        return shdmg
-
-    def shbatk(self):
-        shbatk = self.shbatk
-        return shbatk
-
-    def shcr(self):
-        shcr = self.shcr
-        return shcr
-
-    def shcd(self):
-        shcd = self.shcd
-        return shcd
-
-    def shfd(self):
-        shfd = self.shfd
-        return shfd
-
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem_cd(self):
-        emblem_cd = self.emblem_cd
-        return emblem_cd
-
-    def emblem_batk(self):
-        emblem_batk = self.emblem_batk
-        return emblem_batk
-
-    def emblem_atkp(self):
-        emblem_atkp = self.emblem_atkp
-        return emblem_atkp
-
-    def emblem(self):
-        emblem = self.emblem
-        return emblem
-
-    def emblem_level(self):
-        emblem_level = self.emblem_level
-        return emblem_level
-
-    def emblem_amount(self):
-        emblem_amount = self.emblem_amount
-        return emblem_amount
-
-    def type(self):
-        type = self.type
-        return type
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount
+        self.pcd += 20
+        self.scd += 20
