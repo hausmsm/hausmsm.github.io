@@ -8,9 +8,9 @@ st.sidebar.header("Summary")
 
 # Character Selection
 st.header("Class Selection")
-from classes.character_selection import character_selection
+from classes.character_selection import Character_selection
 
-char = character_selection()
+char = Character_selection()
 st.sidebar.subheader("Class")
 st.sidebar.write(f"{char.character_class}")
 
@@ -18,9 +18,9 @@ st.sidebar.write(f"{char.character_class}")
 st.header("Weapon Selections")
 
 ## Weapon
-from equip.weapon import weapon
+from equip.weapon import Weapon
 
-wep = weapon(char.character_type, char.character_class)
+wep = Weapon(char.character_type, char.character_class)
 with st.sidebar.beta_expander("Weapon"):
     st.write(f"{wep.type}")
     st.write(f"Level: {wep.level}")
@@ -32,20 +32,20 @@ with st.sidebar.beta_expander("Weapon"):
     st.write(f"Emblem Stat Amount: {wep.emblem_amount}")
 
 ## Secondary Weapon
-from equip.secweapon import secweapon
+from equip.secweapon import Secweapon
 
-swep = secweapon()
+swep = Secweapon()
 with st.sidebar.beta_expander("Secondary Weapon"):
     st.write(f"{swep.rank} {swep.type}")
     st.write(f"SF: {swep.sf}")
     if swep.type == "Longinus Spear":
-        st.write(f"Refinement Level: {swep.level()}")
+        st.write(f"Refinement Level: {swep.swep_level}")
 
 st.header("Armor Selections")
 ## Hat
-from equip.hat import hat
+from equip.hat import Hat
 
-hat = hat()
+hat = Hat()
 with st.sidebar.beta_expander("Hat"):
     st.write(f"{hat.type}")
     st.write(f"Level: {hat.level}")
@@ -56,9 +56,9 @@ with st.sidebar.beta_expander("Hat"):
     st.write(f"Emblem Stat Amount: {hat.emblem_amount}")
 
 ## Glove
-from equip.glove import glove
+from equip.glove import Glove
 
-glove = glove()
+glove = Glove()
 with st.sidebar.beta_expander("Glove"):
     st.write(f"{glove.type}")
     st.write(f"Level: {glove.level}")
@@ -69,10 +69,10 @@ with st.sidebar.beta_expander("Glove"):
     st.write(f"Emblem Stat Amount: {glove.emblem_amount}")
 
 ## Top+Bottom/Outfit
-from equip.tbo import tbo
+from equip.tbo import Tbo
 
-tbo = tbo()
-if tbo.tbo() == "Top+Bottom":
+tbo = Tbo()
+if tbo.tbo_type == "Top+Bottom":
     with st.sidebar.beta_expander("Top+Bottom"):
         st.write(f"Top Level: {tbo.top_level}, Bottom Level: {tbo.btm_level}")
         st.write(f"Top SF: {tbo.top_sf}, Bottom SF: {tbo.btm_sf}")
@@ -93,9 +93,9 @@ else:
         st.write(f"Emblem Stat Amount: {tbo.emblem_amount}")
 
 ## Shoulders
-from equip.shoulder import shoulder
+from equip.shoulder import Shoulder
 
-shoulder = shoulder()
+shoulder = Shoulder()
 with st.sidebar.beta_expander("Shoulder"):
     st.write(f"{shoulder.type}")
     st.write(f"Level: {shoulder.level}")
@@ -106,9 +106,9 @@ with st.sidebar.beta_expander("Shoulder"):
     st.write(f"Emblem Stat Amount: {shoulder.emblem_amount}")
 
 ## Shoes
-from equip.shoe import shoe
+from equip.shoe import Shoe
 
-shoes = shoe()
+shoes = Shoe()
 with st.sidebar.beta_expander("Shoes"):
     st.write(f"{shoes.type}")
     st.write(f"Level: {shoes.level}")
@@ -119,9 +119,9 @@ with st.sidebar.beta_expander("Shoes"):
     st.write(f"Emblem Stat Amount: {shoes.emblem_amount}")
 
 ## Belt
-from equip.belt import belt
+from equip.belt import Belt
 
-belt = belt()
+belt = Belt()
 with st.sidebar.beta_expander("Belt"):
     st.write(f"{belt.type}")
     st.write(f"Level: {belt.level}")
@@ -132,9 +132,9 @@ with st.sidebar.beta_expander("Belt"):
     st.write(f"Emblem Stat Amount: {belt.emblem_amount}")
 
 ## Cape
-from equip.cape import cape
+from equip.cape import Cape
 
-cape = cape()
+cape = Cape()
 with st.sidebar.beta_expander("Cape"):
     st.write(f"{cape.type}")
     st.write(f"Level: {cape.level}")
@@ -146,9 +146,9 @@ with st.sidebar.beta_expander("Cape"):
 
 st.header("Accessory Selections")
 ## Necklace
-from equip.necklace import necklace
+from equip.necklace import Necklace
 
-necklace = necklace()
+necklace = Necklace()
 with st.sidebar.beta_expander("Necklaces"):
     if necklace.neck_amount == 2:
         st.write(f"{necklace.neck1}")
@@ -168,9 +168,9 @@ with st.sidebar.beta_expander("Necklaces"):
         st.write("Error: Please Select 2 Necklaces Only")
 
 ## Ring
-from equip.ring import ring
+from equip.ring import Ring
 
-ring = ring()
+ring = Ring()
 with st.sidebar.beta_expander("Rings"):
     if ring.ring_amount == 4:
         st.write(f"{ring.ring1}")
@@ -204,9 +204,9 @@ with st.sidebar.beta_expander("Rings"):
         st.write("Error: Please Select 4 Rings Only")
 
 ## Earring
-from equip.earring import earring
+from equip.earring import Earring
 
-earrings = earring()
+earrings = Earring()
 with st.sidebar.beta_expander("Earrings"):
     st.write(f"{earrings.type}")
     st.write(f"SF: {earrings.sf}")
@@ -216,44 +216,44 @@ with st.sidebar.beta_expander("Earrings"):
         st.write(f"Emblem Stat Amount: {earrings.emblem_amount}")
 
 ## Title
-from equip.title import title
+from equip.title import Title
 
-title = title()
+title = Title()
 with st.sidebar.beta_expander("Title"):
     st.write(f"{title.type}")
 
 ## Badge
-from equip.badge import badge
+from equip.badge import Badge
 
-badge = badge()
+badge = Badge()
 with st.sidebar.beta_expander("Badge"):
     st.write(f"{badge.type}")
 
 ## Medal
-from equip.medal import medal
+from equip.medal import Medal
 
-medal = medal()
+medal = Medal()
 with st.sidebar.beta_expander("Medal"):
     st.write(f"{medal.type}")
 
 ## Face Accessory
-from equip.face import face
+from equip.face import Face
 
-face = face()
+face = Face()
 with st.sidebar.beta_expander("Face Accessory"):
     st.write(f"{face.type}")
 
 ## Eye Accessory
-from equip.eye import eye
+from equip.eye import Eye
 
-eye = eye()
+eye = Eye()
 with st.sidebar.beta_expander("Eye Accessory"):
     st.write(f"{eye.type}")
 
 ## Common Stats Stuff
-from common.link import link
+from common.link import Link
 
-link = link(char.character_class, char.type)
+link = Link(char.character_class, char.type)
 with st.sidebar.beta_expander("Link Skills"):
     if len(link.links) == 12:
         st.write(f"Link 1:{link.links[0]}")
@@ -273,30 +273,30 @@ with st.sidebar.beta_expander("Link Skills"):
     else:
         st.write(f"Only {len(link.links)}/12")
 
-from equip.jewel import jewel
+from equip.jewel import Jewel
 
-jewel = jewel(char.type)
+jewel = Jewel(char.type)
 with st.sidebar.beta_expander("Jewels"):
     st.write(f"Rank: {jewel.rank}")
     st.write(f"Stat: {jewel.stat}")
 
-from common.buffs import buffs
+from common.buffs import Buffs
 
-buffs = buffs(char.character_class, char.type)
+buffs = Buffs(char.character_class, char.type)
 with st.sidebar.beta_expander("Buffs"):
     if len(buffs.buffs) != 0:
         for i in buffs.buffs:
             st.write(f"{i}")
 
-from equip.cash import cash
+from equip.cash import Cash
 
-cash = cash()
+cash = Cash()
 with st.sidebar.beta_expander("Cash Set"):
     st.write(f"{cash.type}")
 
-from common.soul import soul
+from equip.soul import Soul
 
-soul = soul(char.character_type)
+soul = Soul(char.character_type)
 with st.sidebar.beta_expander("Soul"):
     st.write("Weapon")
     st.write(f"Soul: {soul.weapon_soul}")
@@ -318,16 +318,20 @@ with st.sidebar.beta_expander("Soul"):
     st.write(f"Soul: {soul.cape_soul}")
     st.write(f"Soul Stat: {soul.cape_type}")
 
-from common.pet import pet
-pet = pet()
+from equip.pet import Pet
+
+pet = Pet()
 with st.sidebar.beta_expander("Pets"):
     st.write(f"Pet Type: {pet.type}")
 
-from common.petstats import petstats
-petstats = petstats(pet.type)
+from common.petstats import Petstats
 
-from equip.seteffect import seteffect
-seteffect = seteffect(badge,belt,cash,cape,earrings,eye,face,glove,hat,necklace,ring,shoes,shoulder,tbo,wep,pet)
+petstats = Petstats(pet.type)
+
+from equip.seteffect import Seteffect
+
+seteffect = Seteffect(badge, belt, cape, earrings, eye, face, glove, hat, medal, necklace, ring, swep, shoes, shoulder, tbo, title,
+                      wep)
 with st.sidebar.beta_expander("Set Effect"):
     st.write(f"Mythic Empress Set Count: {seteffect.mempsetcount}")
     st.write(f"Ancient Empress Set Count: {seteffect.aempsetcount}")
@@ -336,9 +340,10 @@ with st.sidebar.beta_expander("Set Effect"):
     st.write(f"Boss Accessory Set Count: {seteffect.bosssetcount}")
     st.write(f"Commander Accessory Set Count: {seteffect.commandersetcount}")
 
-from common.flamestats import flamestats
-flamestats = flamestats(badge,belt,cape,earrings,eye,face,glove,hat,jewel,medal,necklace,ring,seteffect,shoes,shoulder,
-                 tbo,title,wep,swep,soul)
+from common.flamestats import Flamestats
+
+flamestats = Flamestats(badge, belt, cape, cash, earrings, eye, face, glove, hat, jewel, medal, necklace, pet, ring, swep, seteffect,
+                        shoes, shoulder, soul, tbo, title, wep)
 with st.sidebar.beta_expander("Flame Stats"):
     st.write(f"ATK: {flamestats.atk}")
     st.write(f"ATK%: {flamestats.atkp}")
@@ -349,8 +354,9 @@ with st.sidebar.beta_expander("Flame Stats"):
     st.write(f"Final DMG%: {flamestats.fd}")
     st.write(f"Max DMG Inc: {flamestats.maxdmg}")
 
-from flame.flame import flame
-flames = flame(flamestats)
+from flame.flame import Flame
+
+flames = Flame(flamestats)
 with st.sidebar.beta_expander("Flame"):
     st.write(f"ATK: {flames.f_atkflame}")
     st.write(f"CR%: {flames.f_crflame}")
@@ -362,18 +368,17 @@ with st.sidebar.beta_expander("Flame"):
     st.write(f"Number of CR Lines: {flames.fcrlinecount}")
     st.write(f"Number of CD Lines: {flames.fcdlinecount}")
 
+from common.hyperstats import Hyperstats
 
-from common.hyperstats import hyperstats
-
-hs = hyperstats(char.character_type)
+hs = Hyperstats()
 with st.sidebar.beta_expander("Hyper Stats"):
     length = len(hs.hyperstatlist)
     for i in range(0, length):
         st.write(f"{hs.hyperstatlist[i]}: {hs.hyperstatamountlist[i]}")
 
-from common.starforce import starforce
+from common.starforce import Starforce
 
-sf = starforce(flamestats.sf)
+sf = Starforce(flamestats.sf)
 with st.sidebar.beta_expander("SF Stats"):
     st.write(f"SF: {sf.sf}")
     st.write(f"ATK: {sf.atk}")
@@ -381,26 +386,32 @@ with st.sidebar.beta_expander("SF Stats"):
     st.write(f"Max Fever Chance: {sf.maxfeverchance}")
     st.write(f"Max DMG Inc: {sf.maxdmg}")
 
-from common.mapletree import mapletree
-mapletree = mapletree()
+from common.mapletree import Mapletree
 
-from common.nonemblemcalculations import nonemblemcalculations
+mapletree = Mapletree()
 
-nec = nonemblemcalculations(buffs, flamestats, flames, petstats, sf, hs, link, mapletree,char.char)
+from common.nonemblemcalculations import Nonemblemcalculations
+
+nec = Nonemblemcalculations(buffs, flamestats, flames, petstats, sf, hs, link, mapletree, char.char)
 with st.sidebar.beta_expander("Non Emblem Calculations"):
     st.write(f"ATK: {nec.atk}")
     st.write(f"Crit Rate: {nec.cr}")
     st.write(f"Max Fever Chance: {nec.maxfeverchance}")
     st.write(f"Max DMG Inc: {nec.maxdmg}")
 
-from common.emblemcalculations import emblemcalculations
+from common.emblemcalculations import Emblemcalculations
 
-ec = emblemcalculations(nec,char)
+ec = Emblemcalculations(nec, char)
 with st.sidebar.beta_expander("Emblem Calculations"):
     st.write("Normal Emblems")
     st.write(f"CD EMB: {ec.ncdnormalemb}")
     st.write(f"BATK EMB: {ec.nbatknormalemb}")
     st.write(f"ATKP EMB: {ec.natkpnormalemb}")
+    st.write(" ")
+    st.write("Partial Emblems")
+    st.write(f"CD EMB: {ec.ncdpartialemb}")
+    st.write(f"BATK EMB: {ec.nbatkpartialemb}")
+    st.write(f"ATKP EMB: {ec.natkppartialemb}")
     st.write(" ")
     st.write("Unique Accessory Emblems")
     st.write(f"CD EMB: {ec.ncduniqueemb}")
@@ -413,8 +424,16 @@ with st.sidebar.beta_expander("Emblem Calculations"):
     st.write(f"ATKP EMB: {ec.natkplegendaryemb}")
 
 with st.sidebar.beta_expander("Damage Comparisons"):
-    st.write("Current Emblem Combination")
-    st.write(" ")
+    st.write(f"ATK: {ec.atk}")
+    st.write(f"ATK%: {ec.atkp}")
+    st.write(f"DMG%: {ec.dmg}")
+    st.write(f"Boss ATK%: {ec.batk}")
+    st.write(f"Player ATK%: {ec.platk}")
+    st.write(f"Crit Rate: {ec.cr}")
+    st.write(f"Crit ATK: {ec.cratk}")
+    st.write(f"Crit DMG: {ec.cd}")
+    st.write(f"Max DMG: {ec.maxdmg}")
+    st.write(f"Final DMG%: {ec.fd}")
     st.write("Optimal Emblem Combination")
     st.write(f"Primary Skill: {ec.pname}")
     st.write(f"Boss DMG: {ec.b_poutput}")
@@ -423,6 +442,7 @@ with st.sidebar.beta_expander("Damage Comparisons"):
     st.write(f"Secondary Skill: {ec.sname}")
     st.write(f"Boss DMG: {ec.b_soutput}")
     st.write(f"Non-Boss DMG {ec.nb_soutput}")
-
-
-
+    st.write(" ")
+    st.write(f"Tertiary Skill: {ec.tname}")
+    st.write(f"Boss DMG: {ec.b_toutput}")
+    st.write(f"Non-Boss DMG {ec.nb_toutput}")

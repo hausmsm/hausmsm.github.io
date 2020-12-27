@@ -1,17 +1,5 @@
-class phan:
+class Phan:
     def __init__(self):
-        # Initialize
-        self.stat_amount = 0
-        self.emblem_amount = 0
-        self.normal_emb = 0
-        self.emblem_cd = 0
-        self.emblem_batk = 0
-        self.emblem_atkp = 0
-        self.unique_acc_emb = 0
-        self.legendary_acc_emb = 0
-
-        self.sf = 0
-
         # Offensive Stats
         self.atk = 1579
         self.atkp = 0
@@ -21,7 +9,7 @@ class phan:
         self.cr = 5
         self.cratk = 0
         self.cd = 10
-        self.maxdmg = 0
+        self.maxdmg = 3999999
         self.fd = 0
 
         # Defensive Stats
@@ -44,6 +32,7 @@ class phan:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 10272
@@ -52,6 +41,10 @@ class phan:
         self.mpinc = 0
         self.hprec = 1
         self.mprec = 1
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -72,72 +65,88 @@ class phan:
         # Shadow Partner Stats
         self.spmulti = 0
 
-        # Set Stats
-        self.mempsetcount = 0
-        self.aempsetcount = 0
-        self.necrosetcount = 0
-        self.fafsetcount = 0
-        self.bosssetcount = 0
-        self.commandersetcount = 0
-
-        # Flame Stats
-        self.atklinecount = 0
-        self.crlinecount = 0
-        self.cdlinecount = 0
-
         # Mille Aiguilles
         self.pname = "Mille Aiguilles"
         self.pskilldmg = 240
         self.phitcount = 1
-        self.phatkp = 0
-        self.phdmg = 0
-        self.phbatk = 0
-        self.phcr = 0
-        self.phcd = 0
-        self.phfd = 0
+        self.pchance = 100
+        self.patkp = 0
+        self.pdmg = 0
+        self.pbatk = 0
+        self.pplatk = 0
+        self.pcr = 0
+        self.pcratk = 0
+        self.pcd = 0
+        self.pmaxdmg = 0
+        self.pfd = 0
+
+        # Tempest
+        self.sname = "Tempest"
+        self.sskilldmg = 290
+        self.shitcount = 1
+        self.schance = 100
+        self.satkp = 0
+        self.sdmg = 0
+        self.sbatk = 0
+        self.splatk = 0
+        self.scr = 0
+        self.scratk = 0
+        self.scd = 0
+        self.smaxdmg = 0
+        self.sfd = 0
 
         # Carte Noire
-        self.sname = "Carte Noire"
-        self.sskilldmg = 0
-        self.shitcount = 1
-        self.schance = 0
-        self.shatkp = 0
-        self.shdmg = 0
-        self.shbatk = 0
-        self.shcr = 0
-        self.shcd = 0
-        self.shfd = 0
+        self.tname = "Carte Noire"
+        self.tskilldmg = 0
+        self.thitcount = 1
+        self.tchance = 0
+        self.tatkp = 0
+        self.tdmg = 0
+        self.tbatk = 0
+        self.tplatk = 0
+        self.tcr = 0
+        self.tcratk = 0
+        self.tcd = 0
+        self.tmaxdmg = 0
+        self.tfd = 0
 
-        # Skills
-
-        # 1st Job
+# Skills
+    # 1st Job
+        # Phantom Swiftness
         # Quick Dodge
         self.block += 5
         self.evdp += 5
 
-        # 2nd Job
+    # 2nd Job
         # Impeccable Memory 2 - Unmanaged Anger
         self.atkp += 21
+
+        # Cane Booster
+
         # Judgement Draw
         self.cd += 12
-        self.schance += 60
+        self.tchance += 60
         # Carte Blanc
-        self.sskilldmg += 80
+        self.tskilldmg += 80
         # Cane Mastery
         self.atkp += 20
         # Devil's Luck
         self.cr += 5
         self.critres += 5
 
-        # 3rd Job
+     # 3rd Job
+        # Impeccable Memory 3 - Combat Orders
+        self.dmg += 15
+
+        # Final Feint
         # Bad Luck Ward
         self.pdefinc += 10
         self.mdefinc += 10
         self.hpinc += 15
         self.mpinc += 10
-        # Impeccable Memory 3 - Combat Orders
-        self.dmg += 15
+
         # Mist Mask
+        self.ignore += 5
         self.spd += 18
         self.jmp += 18
         # Clair de Lune
@@ -146,382 +155,36 @@ class phan:
         self.cr += 3
         self.cd += 15
 
-        # 4th Job
+    # 4th Job
         # Aria Armour
-        self.dmg += 15
         self.atkp += 15
+        self.dmg += 15
+
         # Carte Noire
-        self.sskilldmg += 175
-        self.schance += 40
+        self.tskilldmg += 175
+        self.tchance += 40
         # Cane Expert
         self.accp += 4.8
         self.penrate += 6
         self.atkp += 15
         self.dmg += 15
 
-        # Hyper Buff
+    # Hyper Buff
         # Impeccable Memory H - Cry Valhalla
         self.kbkres += 32
         self.atkp += 15
         self.fd += 15
+
         # Heroic Memores
         self.cd += 30
+
+    # Hyper Skill
         # Bad Luck Ward
         self.atkp += 20
-
-        # Hyper Skill
         # Mille Aiguilles - Reinforce
-        self.phdmg += 20
+        self.pfd += 20
         # Mille Aiguilles - Crit DMG
-        self.phcd += 15
+        self.pcd += 15
         # Tempest - Reinforce
-
+        self.sfd += 20
         # Tempest - Cooldown Cutter
-
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def pskilldmg(self):
-        pskilldmg = self.sskilldmg
-        return pskilldmg
-
-    def phitcount(self):
-        phitcount = self.phitcount
-        return phitcount
-
-    def phatkp(self):
-        phatkp = self.phatkp
-        return phatkp
-
-    def phdmg(self):
-        phdmg = self.phdmg
-        return phdmg
-
-    def phbatk(self):
-        phbatk = self.phbatk
-        return phbatk
-
-    def phcr(self):
-        phcr = self.phcr
-        return phcr
-
-    def phcd(self):
-        phcd = self.phcd
-        return phcd
-
-    def phfd(self):
-        phfd = self.phfd
-        return phfd
-
-    def sname(self):
-        sname = self.sname
-        return sname
-
-    def sskilldmg(self):
-        sskilldmg = self.sskilldmg
-        return sskilldmg
-
-    def shitcount(self):
-        shitcount = self.shitcount
-        return shitcount
-
-    def schance(self):
-        schance = self.schance
-        return schance
-
-    def shatkp(self):
-        shatkp = self.shatkp
-        return shatkp
-
-    def shdmg(self):
-        shdmg = self.shdmg
-        return shdmg
-
-    def shbatk(self):
-        shbatk = self.shbatk
-        return shbatk
-
-    def shcr(self):
-        shcr = self.shcr
-        return shcr
-
-    def shcd(self):
-        shcd = self.shcd
-        return shcd
-
-    def shfd(self):
-        shfd = self.shfd
-        return shfd
-
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem_cd(self):
-        emblem_cd = self.emblem_cd
-        return emblem_cd
-
-    def emblem_batk(self):
-        emblem_batk = self.emblem_batk
-        return emblem_batk
-
-    def emblem_atkp(self):
-        emblem_atkp = self.emblem_atkp
-        return emblem_atkp
-
-    def emblem(self):
-        emblem = self.emblem
-        return emblem
-
-    def emblem_level(self):
-        emblem_level = self.emblem_level
-        return emblem_level
-
-    def emblem_amount(self):
-        emblem_amount = self.emblem_amount
-        return emblem_amount
-
-    def type(self):
-        type = self.type
-        return type
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount

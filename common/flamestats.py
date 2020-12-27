@@ -1,19 +1,36 @@
-import streamlit as st
+class Flamestats:
+    # Equipment + Set
+    # Soul + Soul Set
+    # Jewel + Jewel Set
+    # Style + Style Set
+    # Potential Options
+    # Pet Set
+    def __init__(self, badge, belt, cape, cash, earring, eye, face, glove, hat, jewel, medal, necklace, pet, ring, swep,
+                 seteffect, shoe, shoulder, soul, tbo, title, weapon):
+        # Emblem Visualization
+        self.emblem = "None"
+        self.emblem_amount = 0
+        self.emblem_level = 0
 
-
-class flamestats:
-    def __init__(self,badge,belt,cape,earring,eye,face,glove,hat,jewel,medal,necklace,ring,seteffect,shoe,shoulder,
-                 tbo,title,weapon,swep,soul):
-        # Initialize
+        # Type of Emblem
         self.normal_emb = 0
+        self.partial_emb = 0
         self.unique_acc_emb = 0
         self.legendary_acc_emb = 0
+
+        # Emblem Stats
         self.emblem_cd = 0
         self.emblem_batk = 0
         self.emblem_atkp = 0
 
         # SF Stats
         self.sf = 0
+
+        # Equipment Type, Stat & Rank
+        self.type = "None"
+        self.stat = "None"
+        self.stat_amount = 0
+        self.rank = "None"
 
         # Offensive Stats
         self.atk = 0
@@ -47,6 +64,7 @@ class flamestats:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 0
@@ -55,6 +73,10 @@ class flamestats:
         self.mpinc = 0
         self.hprec = 0
         self.mprec = 0
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -98,6 +120,21 @@ class flamestats:
         # SF Stats
         self.sf += badge.sf
 
+        # Badge
+        # Type of Emblem
+        self.normal_emb += badge.normal_emb
+        self.partial_emb += badge.partial_emb
+        self.unique_acc_emb += badge.unique_acc_emb
+        self.legendary_acc_emb += badge.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += badge.emblem_cd
+        self.emblem_batk += badge.emblem_batk
+        self.emblem_atkp += badge.emblem_atkp
+
+        # SF Stats
+        self.sf += badge.sf
+
         # Offensive Stats
         self.atk += badge.atk
         self.atkp += badge.atkp
@@ -130,6 +167,7 @@ class flamestats:
         self.penrate += badge.penrate
         self.block += badge.block
         self.abnormalstatres += badge.abnormalstatres
+        self.ignore += badge.ignore
 
         # HP MP Stats
         self.hp += badge.hp
@@ -138,6 +176,10 @@ class flamestats:
         self.mpinc += badge.mpinc
         self.hprec += badge.hprec
         self.mprec += badge.mprec
+        self.hprecp += badge.hprecp
+        self.mprecp += badge.mprecp
+        self.hppotionrecp += badge.hppotionrecp
+        self.mppotionrecp += badge.mppotionrecp
         self.buffdurationinc += badge.buffdurationinc
 
         # Mobility Stats
@@ -171,9 +213,13 @@ class flamestats:
         self.crlinecount += badge.crlinecount
         self.cdlinecount += badge.cdlinecount
 
+        # Belt
         self.normal_emb += belt.normal_emb
+        self.partial_emb += belt.partial_emb
         self.unique_acc_emb += belt.unique_acc_emb
         self.legendary_acc_emb += belt.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += belt.emblem_cd
         self.emblem_batk += belt.emblem_batk
         self.emblem_atkp += belt.emblem_atkp
@@ -213,6 +259,7 @@ class flamestats:
         self.penrate += belt.penrate
         self.block += belt.block
         self.abnormalstatres += belt.abnormalstatres
+        self.ignore += belt.ignore
 
         # HP MP Stats
         self.hp += belt.hp
@@ -221,6 +268,10 @@ class flamestats:
         self.mpinc += belt.mpinc
         self.hprec += belt.hprec
         self.mprec += belt.mprec
+        self.hprecp += belt.hprecp
+        self.mprecp += belt.mprecp
+        self.hppotionrecp += belt.hppotionrecp
+        self.mppotionrecp += belt.mppotionrecp
         self.buffdurationinc += belt.buffdurationinc
 
         # Mobility Stats
@@ -254,9 +305,13 @@ class flamestats:
         self.crlinecount += belt.crlinecount
         self.cdlinecount += belt.cdlinecount
 
+        # Cape
         self.normal_emb += cape.normal_emb
+        self.partial_emb += cape.partial_emb
         self.unique_acc_emb += cape.unique_acc_emb
         self.legendary_acc_emb += cape.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += cape.emblem_cd
         self.emblem_batk += cape.emblem_batk
         self.emblem_atkp += cape.emblem_atkp
@@ -296,6 +351,7 @@ class flamestats:
         self.penrate += cape.penrate
         self.block += cape.block
         self.abnormalstatres += cape.abnormalstatres
+        self.ignore += cape.ignore
 
         # HP MP Stats
         self.hp += cape.hp
@@ -304,6 +360,10 @@ class flamestats:
         self.mpinc += cape.mpinc
         self.hprec += cape.hprec
         self.mprec += cape.mprec
+        self.hprecp += cape.hprecp
+        self.mprecp += cape.mprecp
+        self.hppotionrecp += cape.hppotionrecp
+        self.mppotionrecp += cape.mppotionrecp
         self.buffdurationinc += cape.buffdurationinc
 
         # Mobility Stats
@@ -337,10 +397,105 @@ class flamestats:
         self.crlinecount += cape.crlinecount
         self.cdlinecount += cape.cdlinecount
 
+        # Cash
+        self.normal_emb += cash.normal_emb
+        self.partial_emb += cash.partial_emb
+        self.unique_acc_emb += cash.unique_acc_emb
+        self.legendary_acc_emb += cash.legendary_acc_emb
 
+        # Emblem Stats
+        self.emblem_cd += cash.emblem_cd
+        self.emblem_batk += cash.emblem_batk
+        self.emblem_atkp += cash.emblem_atkp
+
+        # SF Stats
+        self.sf += cash.sf
+
+        # Offensive Stats
+        self.atk += cash.atk
+        self.atkp += cash.atkp
+        self.dmg += cash.dmg
+        self.batk += cash.batk
+        self.platk += cash.platk
+        self.cr += cash.cr
+        self.cratk += cash.cratk
+        self.cd += cash.cd
+        self.maxdmg += cash.maxdmg
+        self.fd += cash.fd
+
+        # Defensive Stats
+        self.pdef += cash.pdef
+        self.pdefinc += cash.pdefinc
+        self.pdefdec += cash.pdefdec
+        self.mdef += cash.mdef
+        self.mdefinc += cash.mdefinc
+        self.mdefdec += cash.mdefdec
+        self.bdef += cash.bdef
+        self.pldef += cash.pldef
+        self.critres += cash.critres
+        self.critdmgres += cash.critdmgres
+
+        # Hit Miss Stats
+        self.acc += cash.acc
+        self.accp += cash.accp
+        self.evd += cash.evd
+        self.evdp += cash.evdp
+        self.penrate += cash.penrate
+        self.block += cash.block
+        self.abnormalstatres += cash.abnormalstatres
+        self.ignore += cash.ignore
+
+        # HP MP Stats
+        self.hp += cash.hp
+        self.mp += cash.mp
+        self.hpinc += cash.hpinc
+        self.mpinc += cash.mpinc
+        self.hprec += cash.hprec
+        self.mprec += cash.mprec
+        self.hprecp += cash.hprecp
+        self.mprecp += cash.mprecp
+        self.hppotionrecp += cash.hppotionrecp
+        self.mppotionrecp += cash.mppotionrecp
+        self.buffdurationinc += cash.buffdurationinc
+
+        # Mobility Stats
+        self.spd += cash.spd
+        self.jmp += cash.jmp
+        self.kbkres += cash.kbkres
+
+        # Misc Stats
+        self.exp += cash.exp
+        self.dr += cash.dr
+        self.meso += cash.meso
+        self.glincrease += cash.glincrease
+        self.partyexp += cash.partyexp
+        self.feverchargeinc += cash.feverchargeinc
+        self.feverduration += cash.feverduration
+        self.maxfeverchance += cash.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += cash.spmulti
+
+        # Set Stats
+        self.mempsetcount += cash.mempsetcount
+        self.aempsetcount += cash.aempsetcount
+        self.necrosetcount += cash.necrosetcount
+        self.fafsetcount += cash.fafsetcount
+        self.bosssetcount += cash.bosssetcount
+        self.commandersetcount += cash.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += cash.atklinecount
+        self.crlinecount += cash.crlinecount
+        self.cdlinecount += cash.cdlinecount
+
+        # Earring
         self.normal_emb += earring.normal_emb
+        self.partial_emb += earring.partial_emb
         self.unique_acc_emb += earring.unique_acc_emb
         self.legendary_acc_emb += earring.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += earring.emblem_cd
         self.emblem_batk += earring.emblem_batk
         self.emblem_atkp += earring.emblem_atkp
@@ -380,6 +535,7 @@ class flamestats:
         self.penrate += earring.penrate
         self.block += earring.block
         self.abnormalstatres += earring.abnormalstatres
+        self.ignore += earring.ignore
 
         # HP MP Stats
         self.hp += earring.hp
@@ -388,6 +544,10 @@ class flamestats:
         self.mpinc += earring.mpinc
         self.hprec += earring.hprec
         self.mprec += earring.mprec
+        self.hprecp += earring.hprecp
+        self.mprecp += earring.mprecp
+        self.hppotionrecp += earring.hppotionrecp
+        self.mppotionrecp += earring.mppotionrecp
         self.buffdurationinc += earring.buffdurationinc
 
         # Mobility Stats
@@ -421,9 +581,13 @@ class flamestats:
         self.crlinecount += earring.crlinecount
         self.cdlinecount += earring.cdlinecount
 
+        # Eye
         self.normal_emb += eye.normal_emb
+        self.partial_emb += eye.partial_emb
         self.unique_acc_emb += eye.unique_acc_emb
         self.legendary_acc_emb += eye.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += eye.emblem_cd
         self.emblem_batk += eye.emblem_batk
         self.emblem_atkp += eye.emblem_atkp
@@ -463,6 +627,7 @@ class flamestats:
         self.penrate += eye.penrate
         self.block += eye.block
         self.abnormalstatres += eye.abnormalstatres
+        self.ignore += eye.ignore
 
         # HP MP Stats
         self.hp += eye.hp
@@ -471,6 +636,10 @@ class flamestats:
         self.mpinc += eye.mpinc
         self.hprec += eye.hprec
         self.mprec += eye.mprec
+        self.hprecp += eye.hprecp
+        self.mprecp += eye.mprecp
+        self.hppotionrecp += eye.hppotionrecp
+        self.mppotionrecp += eye.mppotionrecp
         self.buffdurationinc += eye.buffdurationinc
 
         # Mobility Stats
@@ -504,9 +673,13 @@ class flamestats:
         self.crlinecount += eye.crlinecount
         self.cdlinecount += eye.cdlinecount
 
+        # Face
         self.normal_emb += face.normal_emb
+        self.partial_emb += face.partial_emb
         self.unique_acc_emb += face.unique_acc_emb
         self.legendary_acc_emb += face.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += face.emblem_cd
         self.emblem_batk += face.emblem_batk
         self.emblem_atkp += face.emblem_atkp
@@ -546,6 +719,7 @@ class flamestats:
         self.penrate += face.penrate
         self.block += face.block
         self.abnormalstatres += face.abnormalstatres
+        self.ignore += face.ignore
 
         # HP MP Stats
         self.hp += face.hp
@@ -554,6 +728,10 @@ class flamestats:
         self.mpinc += face.mpinc
         self.hprec += face.hprec
         self.mprec += face.mprec
+        self.hprecp += face.hprecp
+        self.mprecp += face.mprecp
+        self.hppotionrecp += face.hppotionrecp
+        self.mppotionrecp += face.mppotionrecp
         self.buffdurationinc += face.buffdurationinc
 
         # Mobility Stats
@@ -587,9 +765,13 @@ class flamestats:
         self.crlinecount += face.crlinecount
         self.cdlinecount += face.cdlinecount
 
+        # Glove
         self.normal_emb += glove.normal_emb
+        self.partial_emb += glove.partial_emb
         self.unique_acc_emb += glove.unique_acc_emb
         self.legendary_acc_emb += glove.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += glove.emblem_cd
         self.emblem_batk += glove.emblem_batk
         self.emblem_atkp += glove.emblem_atkp
@@ -629,6 +811,7 @@ class flamestats:
         self.penrate += glove.penrate
         self.block += glove.block
         self.abnormalstatres += glove.abnormalstatres
+        self.ignore += glove.ignore
 
         # HP MP Stats
         self.hp += glove.hp
@@ -637,6 +820,10 @@ class flamestats:
         self.mpinc += glove.mpinc
         self.hprec += glove.hprec
         self.mprec += glove.mprec
+        self.hprecp += glove.hprecp
+        self.mprecp += glove.mprecp
+        self.hppotionrecp += glove.hppotionrecp
+        self.mppotionrecp += glove.mppotionrecp
         self.buffdurationinc += glove.buffdurationinc
 
         # Mobility Stats
@@ -670,9 +857,13 @@ class flamestats:
         self.crlinecount += glove.crlinecount
         self.cdlinecount += glove.cdlinecount
 
+        # Hat
         self.normal_emb += hat.normal_emb
+        self.partial_emb += hat.partial_emb
         self.unique_acc_emb += hat.unique_acc_emb
         self.legendary_acc_emb += hat.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += hat.emblem_cd
         self.emblem_batk += hat.emblem_batk
         self.emblem_atkp += hat.emblem_atkp
@@ -712,6 +903,7 @@ class flamestats:
         self.penrate += hat.penrate
         self.block += hat.block
         self.abnormalstatres += hat.abnormalstatres
+        self.ignore += hat.ignore
 
         # HP MP Stats
         self.hp += hat.hp
@@ -720,6 +912,10 @@ class flamestats:
         self.mpinc += hat.mpinc
         self.hprec += hat.hprec
         self.mprec += hat.mprec
+        self.hprecp += hat.hprecp
+        self.mprecp += hat.mprecp
+        self.hppotionrecp += hat.hppotionrecp
+        self.mppotionrecp += hat.mppotionrecp
         self.buffdurationinc += hat.buffdurationinc
 
         # Mobility Stats
@@ -753,9 +949,13 @@ class flamestats:
         self.crlinecount += hat.crlinecount
         self.cdlinecount += hat.cdlinecount
 
+        # Jewel
         self.normal_emb += jewel.normal_emb
+        self.partial_emb += jewel.partial_emb
         self.unique_acc_emb += jewel.unique_acc_emb
         self.legendary_acc_emb += jewel.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += jewel.emblem_cd
         self.emblem_batk += jewel.emblem_batk
         self.emblem_atkp += jewel.emblem_atkp
@@ -795,6 +995,7 @@ class flamestats:
         self.penrate += jewel.penrate
         self.block += jewel.block
         self.abnormalstatres += jewel.abnormalstatres
+        self.ignore += jewel.ignore
 
         # HP MP Stats
         self.hp += jewel.hp
@@ -803,6 +1004,10 @@ class flamestats:
         self.mpinc += jewel.mpinc
         self.hprec += jewel.hprec
         self.mprec += jewel.mprec
+        self.hprecp += jewel.hprecp
+        self.mprecp += jewel.mprecp
+        self.hppotionrecp += jewel.hppotionrecp
+        self.mppotionrecp += jewel.mppotionrecp
         self.buffdurationinc += jewel.buffdurationinc
 
         # Mobility Stats
@@ -836,9 +1041,13 @@ class flamestats:
         self.crlinecount += jewel.crlinecount
         self.cdlinecount += jewel.cdlinecount
 
+        # Medal
         self.normal_emb += medal.normal_emb
+        self.partial_emb += medal.partial_emb
         self.unique_acc_emb += medal.unique_acc_emb
         self.legendary_acc_emb += medal.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += medal.emblem_cd
         self.emblem_batk += medal.emblem_batk
         self.emblem_atkp += medal.emblem_atkp
@@ -878,6 +1087,7 @@ class flamestats:
         self.penrate += medal.penrate
         self.block += medal.block
         self.abnormalstatres += medal.abnormalstatres
+        self.ignore += medal.ignore
 
         # HP MP Stats
         self.hp += medal.hp
@@ -886,6 +1096,10 @@ class flamestats:
         self.mpinc += medal.mpinc
         self.hprec += medal.hprec
         self.mprec += medal.mprec
+        self.hprecp += medal.hprecp
+        self.mprecp += medal.mprecp
+        self.hppotionrecp += medal.hppotionrecp
+        self.mppotionrecp += medal.mppotionrecp
         self.buffdurationinc += medal.buffdurationinc
 
         # Mobility Stats
@@ -919,9 +1133,13 @@ class flamestats:
         self.crlinecount += medal.crlinecount
         self.cdlinecount += medal.cdlinecount
 
+        # Necklace
         self.normal_emb += necklace.normal_emb
+        self.partial_emb += necklace.partial_emb
         self.unique_acc_emb += necklace.unique_acc_emb
         self.legendary_acc_emb += necklace.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += necklace.emblem_cd
         self.emblem_batk += necklace.emblem_batk
         self.emblem_atkp += necklace.emblem_atkp
@@ -961,6 +1179,7 @@ class flamestats:
         self.penrate += necklace.penrate
         self.block += necklace.block
         self.abnormalstatres += necklace.abnormalstatres
+        self.ignore += necklace.ignore
 
         # HP MP Stats
         self.hp += necklace.hp
@@ -969,6 +1188,10 @@ class flamestats:
         self.mpinc += necklace.mpinc
         self.hprec += necklace.hprec
         self.mprec += necklace.mprec
+        self.hprecp += necklace.hprecp
+        self.mprecp += necklace.mprecp
+        self.hppotionrecp += necklace.hppotionrecp
+        self.mppotionrecp += necklace.mppotionrecp
         self.buffdurationinc += necklace.buffdurationinc
 
         # Mobility Stats
@@ -1002,9 +1225,105 @@ class flamestats:
         self.crlinecount += necklace.crlinecount
         self.cdlinecount += necklace.cdlinecount
 
+        # Pet
+        self.normal_emb += pet.normal_emb
+        self.partial_emb += pet.partial_emb
+        self.unique_acc_emb += pet.unique_acc_emb
+        self.legendary_acc_emb += pet.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += pet.emblem_cd
+        self.emblem_batk += pet.emblem_batk
+        self.emblem_atkp += pet.emblem_atkp
+
+        # SF Stats
+        self.sf += pet.sf
+
+        # Offensive Stats
+        self.atk += pet.atk
+        self.atkp += pet.atkp
+        self.dmg += pet.dmg
+        self.batk += pet.batk
+        self.platk += pet.platk
+        self.cr += pet.cr
+        self.cratk += pet.cratk
+        self.cd += pet.cd
+        self.maxdmg += pet.maxdmg
+        self.fd += pet.fd
+
+        # Defensive Stats
+        self.pdef += pet.pdef
+        self.pdefinc += pet.pdefinc
+        self.pdefdec += pet.pdefdec
+        self.mdef += pet.mdef
+        self.mdefinc += pet.mdefinc
+        self.mdefdec += pet.mdefdec
+        self.bdef += pet.bdef
+        self.pldef += pet.pldef
+        self.critres += pet.critres
+        self.critdmgres += pet.critdmgres
+
+        # Hit Miss Stats
+        self.acc += pet.acc
+        self.accp += pet.accp
+        self.evd += pet.evd
+        self.evdp += pet.evdp
+        self.penrate += pet.penrate
+        self.block += pet.block
+        self.abnormalstatres += pet.abnormalstatres
+        self.ignore += pet.ignore
+
+        # HP MP Stats
+        self.hp += pet.hp
+        self.mp += pet.mp
+        self.hpinc += pet.hpinc
+        self.mpinc += pet.mpinc
+        self.hprec += pet.hprec
+        self.mprec += pet.mprec
+        self.hprecp += pet.hprecp
+        self.mprecp += pet.mprecp
+        self.hppotionrecp += pet.hppotionrecp
+        self.mppotionrecp += pet.mppotionrecp
+        self.buffdurationinc += pet.buffdurationinc
+
+        # Mobility Stats
+        self.spd += pet.spd
+        self.jmp += pet.jmp
+        self.kbkres += pet.kbkres
+
+        # Misc Stats
+        self.exp += pet.exp
+        self.dr += pet.dr
+        self.meso += pet.meso
+        self.glincrease += pet.glincrease
+        self.partyexp += pet.partyexp
+        self.feverchargeinc += pet.feverchargeinc
+        self.feverduration += pet.feverduration
+        self.maxfeverchance += pet.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += pet.spmulti
+
+        # Set Stats
+        self.mempsetcount += pet.mempsetcount
+        self.aempsetcount += pet.aempsetcount
+        self.necrosetcount += pet.necrosetcount
+        self.fafsetcount += pet.fafsetcount
+        self.bosssetcount += pet.bosssetcount
+        self.commandersetcount += pet.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += pet.atklinecount
+        self.crlinecount += pet.crlinecount
+        self.cdlinecount += pet.cdlinecount
+
+        # Ring
         self.normal_emb += ring.normal_emb
+        self.partial_emb += ring.partial_emb
         self.unique_acc_emb += ring.unique_acc_emb
         self.legendary_acc_emb += ring.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += ring.emblem_cd
         self.emblem_batk += ring.emblem_batk
         self.emblem_atkp += ring.emblem_atkp
@@ -1044,6 +1363,7 @@ class flamestats:
         self.penrate += ring.penrate
         self.block += ring.block
         self.abnormalstatres += ring.abnormalstatres
+        self.ignore += ring.ignore
 
         # HP MP Stats
         self.hp += ring.hp
@@ -1052,6 +1372,10 @@ class flamestats:
         self.mpinc += ring.mpinc
         self.hprec += ring.hprec
         self.mprec += ring.mprec
+        self.hprecp += ring.hprecp
+        self.mprecp += ring.mprecp
+        self.hppotionrecp += ring.hppotionrecp
+        self.mppotionrecp += ring.mppotionrecp
         self.buffdurationinc += ring.buffdurationinc
 
         # Mobility Stats
@@ -1085,507 +1409,13 @@ class flamestats:
         self.crlinecount += ring.crlinecount
         self.cdlinecount += ring.cdlinecount
 
-        self.normal_emb += seteffect.normal_emb
-        self.unique_acc_emb += seteffect.unique_acc_emb
-        self.legendary_acc_emb += seteffect.legendary_acc_emb
-        self.emblem_cd += seteffect.emblem_cd
-        self.emblem_batk += seteffect.emblem_batk
-        self.emblem_atkp += seteffect.emblem_atkp
-
-        # SF Stats
-        self.sf += seteffect.sf
-
-        # Offensive Stats
-        self.atk += seteffect.atk
-        self.atkp += seteffect.atkp
-        self.dmg += seteffect.dmg
-        self.batk += seteffect.batk
-        self.platk += seteffect.platk
-        self.cr += seteffect.cr
-        self.cratk += seteffect.cratk
-        self.cd += seteffect.cd
-        self.maxdmg += seteffect.maxdmg
-        self.fd += seteffect.fd
-
-        # Defensive Stats
-        self.pdef += seteffect.pdef
-        self.pdefinc += seteffect.pdefinc
-        self.pdefdec += seteffect.pdefdec
-        self.mdef += seteffect.mdef
-        self.mdefinc += seteffect.mdefinc
-        self.mdefdec += seteffect.mdefdec
-        self.bdef += seteffect.bdef
-        self.pldef += seteffect.pldef
-        self.critres += seteffect.critres
-        self.critdmgres += seteffect.critdmgres
-
-        # Hit Miss Stats
-        self.acc += seteffect.acc
-        self.accp += seteffect.accp
-        self.evd += seteffect.evd
-        self.evdp += seteffect.evdp
-        self.penrate += seteffect.penrate
-        self.block += seteffect.block
-        self.abnormalstatres += seteffect.abnormalstatres
-
-        # HP MP Stats
-        self.hp += seteffect.hp
-        self.mp += seteffect.mp
-        self.hpinc += seteffect.hpinc
-        self.mpinc += seteffect.mpinc
-        self.hprec += seteffect.hprec
-        self.mprec += seteffect.mprec
-        self.buffdurationinc += seteffect.buffdurationinc
-
-        # Mobility Stats
-        self.spd += seteffect.spd
-        self.jmp += seteffect.jmp
-        self.kbkres += seteffect.kbkres
-
-        # Misc Stats
-        self.exp += seteffect.exp
-        self.dr += seteffect.dr
-        self.meso += seteffect.meso
-        self.glincrease += seteffect.glincrease
-        self.partyexp += seteffect.partyexp
-        self.feverchargeinc += seteffect.feverchargeinc
-        self.feverduration += seteffect.feverduration
-        self.maxfeverchance += seteffect.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += seteffect.spmulti
-
-        # Set Stats
-        self.mempsetcount += seteffect.mempsetcount
-        self.aempsetcount += seteffect.aempsetcount
-        self.necrosetcount += seteffect.necrosetcount
-        self.fafsetcount += seteffect.fafsetcount
-        self.bosssetcount += seteffect.bosssetcount
-        self.commandersetcount += seteffect.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += seteffect.atklinecount
-        self.crlinecount += seteffect.crlinecount
-        self.cdlinecount += seteffect.cdlinecount
-
-        self.normal_emb += shoe.normal_emb
-        self.unique_acc_emb += shoe.unique_acc_emb
-        self.legendary_acc_emb += shoe.legendary_acc_emb
-        self.emblem_cd += shoe.emblem_cd
-        self.emblem_batk += shoe.emblem_batk
-        self.emblem_atkp += shoe.emblem_atkp
-
-        # SF Stats
-        self.sf += shoe.sf
-
-        # Offensive Stats
-        self.atk += shoe.atk
-        self.atkp += shoe.atkp
-        self.dmg += shoe.dmg
-        self.batk += shoe.batk
-        self.platk += shoe.platk
-        self.cr += shoe.cr
-        self.cratk += shoe.cratk
-        self.cd += shoe.cd
-        self.maxdmg += shoe.maxdmg
-        self.fd += shoe.fd
-
-        # Defensive Stats
-        self.pdef += shoe.pdef
-        self.pdefinc += shoe.pdefinc
-        self.pdefdec += shoe.pdefdec
-        self.mdef += shoe.mdef
-        self.mdefinc += shoe.mdefinc
-        self.mdefdec += shoe.mdefdec
-        self.bdef += shoe.bdef
-        self.pldef += shoe.pldef
-        self.critres += shoe.critres
-        self.critdmgres += shoe.critdmgres
-
-        # Hit Miss Stats
-        self.acc += shoe.acc
-        self.accp += shoe.accp
-        self.evd += shoe.evd
-        self.evdp += shoe.evdp
-        self.penrate += shoe.penrate
-        self.block += shoe.block
-        self.abnormalstatres += shoe.abnormalstatres
-
-        # HP MP Stats
-        self.hp += shoe.hp
-        self.mp += shoe.mp
-        self.hpinc += shoe.hpinc
-        self.mpinc += shoe.mpinc
-        self.hprec += shoe.hprec
-        self.mprec += shoe.mprec
-        self.buffdurationinc += shoe.buffdurationinc
-
-        # Mobility Stats
-        self.spd += shoe.spd
-        self.jmp += shoe.jmp
-        self.kbkres += shoe.kbkres
-
-        # Misc Stats
-        self.exp += shoe.exp
-        self.dr += shoe.dr
-        self.meso += shoe.meso
-        self.glincrease += shoe.glincrease
-        self.partyexp += shoe.partyexp
-        self.feverchargeinc += shoe.feverchargeinc
-        self.feverduration += shoe.feverduration
-        self.maxfeverchance += shoe.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += shoe.spmulti
-
-        # Set Stats
-        self.mempsetcount += shoe.mempsetcount
-        self.aempsetcount += shoe.aempsetcount
-        self.necrosetcount += shoe.necrosetcount
-        self.fafsetcount += shoe.fafsetcount
-        self.bosssetcount += shoe.bosssetcount
-        self.commandersetcount += shoe.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += shoe.atklinecount
-        self.crlinecount += shoe.crlinecount
-        self.cdlinecount += shoe.cdlinecount
-
-        self.normal_emb += shoulder.normal_emb
-        self.unique_acc_emb += shoulder.unique_acc_emb
-        self.legendary_acc_emb += shoulder.legendary_acc_emb
-        self.emblem_cd += shoulder.emblem_cd
-        self.emblem_batk += shoulder.emblem_batk
-        self.emblem_atkp += shoulder.emblem_atkp
-
-        # SF Stats
-        self.sf += shoulder.sf
-
-        # Offensive Stats
-        self.atk += shoulder.atk
-        self.atkp += shoulder.atkp
-        self.dmg += shoulder.dmg
-        self.batk += shoulder.batk
-        self.platk += shoulder.platk
-        self.cr += shoulder.cr
-        self.cratk += shoulder.cratk
-        self.cd += shoulder.cd
-        self.maxdmg += shoulder.maxdmg
-        self.fd += shoulder.fd
-
-        # Defensive Stats
-        self.pdef += shoulder.pdef
-        self.pdefinc += shoulder.pdefinc
-        self.pdefdec += shoulder.pdefdec
-        self.mdef += shoulder.mdef
-        self.mdefinc += shoulder.mdefinc
-        self.mdefdec += shoulder.mdefdec
-        self.bdef += shoulder.bdef
-        self.pldef += shoulder.pldef
-        self.critres += shoulder.critres
-        self.critdmgres += shoulder.critdmgres
-
-        # Hit Miss Stats
-        self.acc += shoulder.acc
-        self.accp += shoulder.accp
-        self.evd += shoulder.evd
-        self.evdp += shoulder.evdp
-        self.penrate += shoulder.penrate
-        self.block += shoulder.block
-        self.abnormalstatres += shoulder.abnormalstatres
-
-        # HP MP Stats
-        self.hp += shoulder.hp
-        self.mp += shoulder.mp
-        self.hpinc += shoulder.hpinc
-        self.mpinc += shoulder.mpinc
-        self.hprec += shoulder.hprec
-        self.mprec += shoulder.mprec
-        self.buffdurationinc += shoulder.buffdurationinc
-
-        # Mobility Stats
-        self.spd += shoulder.spd
-        self.jmp += shoulder.jmp
-        self.kbkres += shoulder.kbkres
-
-        # Misc Stats
-        self.exp += shoulder.exp
-        self.dr += shoulder.dr
-        self.meso += shoulder.meso
-        self.glincrease += shoulder.glincrease
-        self.partyexp += shoulder.partyexp
-        self.feverchargeinc += shoulder.feverchargeinc
-        self.feverduration += shoulder.feverduration
-        self.maxfeverchance += shoulder.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += shoulder.spmulti
-
-        # Set Stats
-        self.mempsetcount += shoulder.mempsetcount
-        self.aempsetcount += shoulder.aempsetcount
-        self.necrosetcount += shoulder.necrosetcount
-        self.fafsetcount += shoulder.fafsetcount
-        self.bosssetcount += shoulder.bosssetcount
-        self.commandersetcount += shoulder.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += shoulder.atklinecount
-        self.crlinecount += shoulder.crlinecount
-        self.cdlinecount += shoulder.cdlinecount
-
-        self.normal_emb += tbo.normal_emb
-        self.unique_acc_emb += tbo.unique_acc_emb
-        self.legendary_acc_emb += tbo.legendary_acc_emb
-        self.emblem_cd += tbo.emblem_cd
-        self.emblem_batk += tbo.emblem_batk
-        self.emblem_atkp += tbo.emblem_atkp
-
-        # SF Stats
-        self.sf += tbo.sf
-
-        # Offensive Stats
-        self.atk += tbo.atk
-        self.atkp += tbo.atkp
-        self.dmg += tbo.dmg
-        self.batk += tbo.batk
-        self.platk += tbo.platk
-        self.cr += tbo.cr
-        self.cratk += tbo.cratk
-        self.cd += tbo.cd
-        self.maxdmg += tbo.maxdmg
-        self.fd += tbo.fd
-
-        # Defensive Stats
-        self.pdef += tbo.pdef
-        self.pdefinc += tbo.pdefinc
-        self.pdefdec += tbo.pdefdec
-        self.mdef += tbo.mdef
-        self.mdefinc += tbo.mdefinc
-        self.mdefdec += tbo.mdefdec
-        self.bdef += tbo.bdef
-        self.pldef += tbo.pldef
-        self.critres += tbo.critres
-        self.critdmgres += tbo.critdmgres
-
-        # Hit Miss Stats
-        self.acc += tbo.acc
-        self.accp += tbo.accp
-        self.evd += tbo.evd
-        self.evdp += tbo.evdp
-        self.penrate += tbo.penrate
-        self.block += tbo.block
-        self.abnormalstatres += tbo.abnormalstatres
-
-        # HP MP Stats
-        self.hp += tbo.hp
-        self.mp += tbo.mp
-        self.hpinc += tbo.hpinc
-        self.mpinc += tbo.mpinc
-        self.hprec += tbo.hprec
-        self.mprec += tbo.mprec
-        self.buffdurationinc += tbo.buffdurationinc
-
-        # Mobility Stats
-        self.spd += tbo.spd
-        self.jmp += tbo.jmp
-        self.kbkres += tbo.kbkres
-
-        # Misc Stats
-        self.exp += tbo.exp
-        self.dr += tbo.dr
-        self.meso += tbo.meso
-        self.glincrease += tbo.glincrease
-        self.partyexp += tbo.partyexp
-        self.feverchargeinc += tbo.feverchargeinc
-        self.feverduration += tbo.feverduration
-        self.maxfeverchance += tbo.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += tbo.spmulti
-
-        # Set Stats
-        self.mempsetcount += tbo.mempsetcount
-        self.aempsetcount += tbo.aempsetcount
-        self.necrosetcount += tbo.necrosetcount
-        self.fafsetcount += tbo.fafsetcount
-        self.bosssetcount += tbo.bosssetcount
-        self.commandersetcount += tbo.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += tbo.atklinecount
-        self.crlinecount += tbo.crlinecount
-        self.cdlinecount += tbo.cdlinecount
-
-        self.normal_emb += title.normal_emb
-        self.unique_acc_emb += title.unique_acc_emb
-        self.legendary_acc_emb += title.legendary_acc_emb
-        self.emblem_cd += title.emblem_cd
-        self.emblem_batk += title.emblem_batk
-        self.emblem_atkp += title.emblem_atkp
-
-        # SF Stats
-        self.sf += title.sf
-
-        # Offensive Stats
-        self.atk += title.atk
-        self.atkp += title.atkp
-        self.dmg += title.dmg
-        self.batk += title.batk
-        self.platk += title.platk
-        self.cr += title.cr
-        self.cratk += title.cratk
-        self.cd += title.cd
-        self.maxdmg += title.maxdmg
-        self.fd += title.fd
-
-        # Defensive Stats
-        self.pdef += title.pdef
-        self.pdefinc += title.pdefinc
-        self.pdefdec += title.pdefdec
-        self.mdef += title.mdef
-        self.mdefinc += title.mdefinc
-        self.mdefdec += title.mdefdec
-        self.bdef += title.bdef
-        self.pldef += title.pldef
-        self.critres += title.critres
-        self.critdmgres += title.critdmgres
-
-        # Hit Miss Stats
-        self.acc += title.acc
-        self.accp += title.accp
-        self.evd += title.evd
-        self.evdp += title.evdp
-        self.penrate += title.penrate
-        self.block += title.block
-        self.abnormalstatres += title.abnormalstatres
-
-        # HP MP Stats
-        self.hp += title.hp
-        self.mp += title.mp
-        self.hpinc += title.hpinc
-        self.mpinc += title.mpinc
-        self.hprec += title.hprec
-        self.mprec += title.mprec
-        self.buffdurationinc += title.buffdurationinc
-
-        # Mobility Stats
-        self.spd += title.spd
-        self.jmp += title.jmp
-        self.kbkres += title.kbkres
-
-        # Misc Stats
-        self.exp += title.exp
-        self.dr += title.dr
-        self.meso += title.meso
-        self.glincrease += title.glincrease
-        self.partyexp += title.partyexp
-        self.feverchargeinc += title.feverchargeinc
-        self.feverduration += title.feverduration
-        self.maxfeverchance += title.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += title.spmulti
-
-        # Set Stats
-        self.mempsetcount += title.mempsetcount
-        self.aempsetcount += title.aempsetcount
-        self.necrosetcount += title.necrosetcount
-        self.fafsetcount += title.fafsetcount
-        self.bosssetcount += title.bosssetcount
-        self.commandersetcount += title.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += title.atklinecount
-        self.crlinecount += title.crlinecount
-        self.cdlinecount += title.cdlinecount
-
-        self.normal_emb += weapon.normal_emb
-        self.unique_acc_emb += weapon.unique_acc_emb
-        self.legendary_acc_emb += weapon.legendary_acc_emb
-        self.emblem_cd += weapon.emblem_cd
-        self.emblem_batk += weapon.emblem_batk
-        self.emblem_atkp += weapon.emblem_atkp
-
-        # SF Stats
-        self.sf += weapon.sf
-
-        # Offensive Stats
-        self.atk += weapon.atk
-        self.atkp += weapon.atkp
-        self.dmg += weapon.dmg
-        self.batk += weapon.batk
-        self.platk += weapon.platk
-        self.cr += weapon.cr
-        self.cratk += weapon.cratk
-        self.cd += weapon.cd
-        self.maxdmg += weapon.maxdmg
-        self.fd += weapon.fd
-
-        # Defensive Stats
-        self.pdef += weapon.pdef
-        self.pdefinc += weapon.pdefinc
-        self.pdefdec += weapon.pdefdec
-        self.mdef += weapon.mdef
-        self.mdefinc += weapon.mdefinc
-        self.mdefdec += weapon.mdefdec
-        self.bdef += weapon.bdef
-        self.pldef += weapon.pldef
-        self.critres += weapon.critres
-        self.critdmgres += weapon.critdmgres
-
-        # Hit Miss Stats
-        self.acc += weapon.acc
-        self.accp += weapon.accp
-        self.evd += weapon.evd
-        self.evdp += weapon.evdp
-        self.penrate += weapon.penrate
-        self.block += weapon.block
-        self.abnormalstatres += weapon.abnormalstatres
-
-        # HP MP Stats
-        self.hp += weapon.hp
-        self.mp += weapon.mp
-        self.hpinc += weapon.hpinc
-        self.mpinc += weapon.mpinc
-        self.hprec += weapon.hprec
-        self.mprec += weapon.mprec
-        self.buffdurationinc += weapon.buffdurationinc
-
-        # Mobility Stats
-        self.spd += weapon.spd
-        self.jmp += weapon.jmp
-        self.kbkres += weapon.kbkres
-
-        # Misc Stats
-        self.exp += weapon.exp
-        self.dr += weapon.dr
-        self.meso += weapon.meso
-        self.glincrease += weapon.glincrease
-        self.partyexp += weapon.partyexp
-        self.feverchargeinc += weapon.feverchargeinc
-        self.feverduration += weapon.feverduration
-        self.maxfeverchance += weapon.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += weapon.spmulti
-
-        # Set Stats
-        self.mempsetcount += weapon.mempsetcount
-        self.aempsetcount += weapon.aempsetcount
-        self.necrosetcount += weapon.necrosetcount
-        self.fafsetcount += weapon.fafsetcount
-        self.bosssetcount += weapon.bosssetcount
-        self.commandersetcount += weapon.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += weapon.atklinecount
-        self.crlinecount += weapon.crlinecount
-        self.cdlinecount += weapon.cdlinecount
-
+        # Swep
         self.normal_emb += swep.normal_emb
+        self.partial_emb += swep.partial_emb
         self.unique_acc_emb += swep.unique_acc_emb
         self.legendary_acc_emb += swep.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += swep.emblem_cd
         self.emblem_batk += swep.emblem_batk
         self.emblem_atkp += swep.emblem_atkp
@@ -1625,6 +1455,7 @@ class flamestats:
         self.penrate += swep.penrate
         self.block += swep.block
         self.abnormalstatres += swep.abnormalstatres
+        self.ignore += swep.ignore
 
         # HP MP Stats
         self.hp += swep.hp
@@ -1633,6 +1464,10 @@ class flamestats:
         self.mpinc += swep.mpinc
         self.hprec += swep.hprec
         self.mprec += swep.mprec
+        self.hprecp += swep.hprecp
+        self.mprecp += swep.mprecp
+        self.hppotionrecp += swep.hppotionrecp
+        self.mppotionrecp += swep.mppotionrecp
         self.buffdurationinc += swep.buffdurationinc
 
         # Mobility Stats
@@ -1666,9 +1501,289 @@ class flamestats:
         self.crlinecount += swep.crlinecount
         self.cdlinecount += swep.cdlinecount
 
+        # Set Effect
+        self.normal_emb += seteffect.normal_emb
+        self.partial_emb += seteffect.partial_emb
+        self.unique_acc_emb += seteffect.unique_acc_emb
+        self.legendary_acc_emb += seteffect.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += seteffect.emblem_cd
+        self.emblem_batk += seteffect.emblem_batk
+        self.emblem_atkp += seteffect.emblem_atkp
+
+        # SF Stats
+        self.sf += seteffect.sf
+
+        # Offensive Stats
+        self.atk += seteffect.atk
+        self.atkp += seteffect.atkp
+        self.dmg += seteffect.dmg
+        self.batk += seteffect.batk
+        self.platk += seteffect.platk
+        self.cr += seteffect.cr
+        self.cratk += seteffect.cratk
+        self.cd += seteffect.cd
+        self.maxdmg += seteffect.maxdmg
+        self.fd += seteffect.fd
+
+        # Defensive Stats
+        self.pdef += seteffect.pdef
+        self.pdefinc += seteffect.pdefinc
+        self.pdefdec += seteffect.pdefdec
+        self.mdef += seteffect.mdef
+        self.mdefinc += seteffect.mdefinc
+        self.mdefdec += seteffect.mdefdec
+        self.bdef += seteffect.bdef
+        self.pldef += seteffect.pldef
+        self.critres += seteffect.critres
+        self.critdmgres += seteffect.critdmgres
+
+        # Hit Miss Stats
+        self.acc += seteffect.acc
+        self.accp += seteffect.accp
+        self.evd += seteffect.evd
+        self.evdp += seteffect.evdp
+        self.penrate += seteffect.penrate
+        self.block += seteffect.block
+        self.abnormalstatres += seteffect.abnormalstatres
+        self.ignore += seteffect.ignore
+
+        # HP MP Stats
+        self.hp += seteffect.hp
+        self.mp += seteffect.mp
+        self.hpinc += seteffect.hpinc
+        self.mpinc += seteffect.mpinc
+        self.hprec += seteffect.hprec
+        self.mprec += seteffect.mprec
+        self.hprecp += seteffect.hprecp
+        self.mprecp += seteffect.mprecp
+        self.hppotionrecp += seteffect.hppotionrecp
+        self.mppotionrecp += seteffect.mppotionrecp
+        self.buffdurationinc += seteffect.buffdurationinc
+
+        # Mobility Stats
+        self.spd += seteffect.spd
+        self.jmp += seteffect.jmp
+        self.kbkres += seteffect.kbkres
+
+        # Misc Stats
+        self.exp += seteffect.exp
+        self.dr += seteffect.dr
+        self.meso += seteffect.meso
+        self.glincrease += seteffect.glincrease
+        self.partyexp += seteffect.partyexp
+        self.feverchargeinc += seteffect.feverchargeinc
+        self.feverduration += seteffect.feverduration
+        self.maxfeverchance += seteffect.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += seteffect.spmulti
+
+        # Set Stats
+        self.mempsetcount += seteffect.mempsetcount
+        self.aempsetcount += seteffect.aempsetcount
+        self.necrosetcount += seteffect.necrosetcount
+        self.fafsetcount += seteffect.fafsetcount
+        self.bosssetcount += seteffect.bosssetcount
+        self.commandersetcount += seteffect.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += seteffect.atklinecount
+        self.crlinecount += seteffect.crlinecount
+        self.cdlinecount += seteffect.cdlinecount
+
+        # Shoe
+        self.normal_emb += shoe.normal_emb
+        self.partial_emb += shoe.partial_emb
+        self.unique_acc_emb += shoe.unique_acc_emb
+        self.legendary_acc_emb += shoe.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += shoe.emblem_cd
+        self.emblem_batk += shoe.emblem_batk
+        self.emblem_atkp += shoe.emblem_atkp
+
+        # SF Stats
+        self.sf += shoe.sf
+
+        # Offensive Stats
+        self.atk += shoe.atk
+        self.atkp += shoe.atkp
+        self.dmg += shoe.dmg
+        self.batk += shoe.batk
+        self.platk += shoe.platk
+        self.cr += shoe.cr
+        self.cratk += shoe.cratk
+        self.cd += shoe.cd
+        self.maxdmg += shoe.maxdmg
+        self.fd += shoe.fd
+
+        # Defensive Stats
+        self.pdef += shoe.pdef
+        self.pdefinc += shoe.pdefinc
+        self.pdefdec += shoe.pdefdec
+        self.mdef += shoe.mdef
+        self.mdefinc += shoe.mdefinc
+        self.mdefdec += shoe.mdefdec
+        self.bdef += shoe.bdef
+        self.pldef += shoe.pldef
+        self.critres += shoe.critres
+        self.critdmgres += shoe.critdmgres
+
+        # Hit Miss Stats
+        self.acc += shoe.acc
+        self.accp += shoe.accp
+        self.evd += shoe.evd
+        self.evdp += shoe.evdp
+        self.penrate += shoe.penrate
+        self.block += shoe.block
+        self.abnormalstatres += shoe.abnormalstatres
+        self.ignore += shoe.ignore
+
+        # HP MP Stats
+        self.hp += shoe.hp
+        self.mp += shoe.mp
+        self.hpinc += shoe.hpinc
+        self.mpinc += shoe.mpinc
+        self.hprec += shoe.hprec
+        self.mprec += shoe.mprec
+        self.hprecp += shoe.hprecp
+        self.mprecp += shoe.mprecp
+        self.hppotionrecp += shoe.hppotionrecp
+        self.mppotionrecp += shoe.mppotionrecp
+        self.buffdurationinc += shoe.buffdurationinc
+
+        # Mobility Stats
+        self.spd += shoe.spd
+        self.jmp += shoe.jmp
+        self.kbkres += shoe.kbkres
+
+        # Misc Stats
+        self.exp += shoe.exp
+        self.dr += shoe.dr
+        self.meso += shoe.meso
+        self.glincrease += shoe.glincrease
+        self.partyexp += shoe.partyexp
+        self.feverchargeinc += shoe.feverchargeinc
+        self.feverduration += shoe.feverduration
+        self.maxfeverchance += shoe.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += shoe.spmulti
+
+        # Set Stats
+        self.mempsetcount += shoe.mempsetcount
+        self.aempsetcount += shoe.aempsetcount
+        self.necrosetcount += shoe.necrosetcount
+        self.fafsetcount += shoe.fafsetcount
+        self.bosssetcount += shoe.bosssetcount
+        self.commandersetcount += shoe.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += shoe.atklinecount
+        self.crlinecount += shoe.crlinecount
+        self.cdlinecount += shoe.cdlinecount
+
+        # Shoulder
+        self.normal_emb += shoulder.normal_emb
+        self.partial_emb += shoulder.partial_emb
+        self.unique_acc_emb += shoulder.unique_acc_emb
+        self.legendary_acc_emb += shoulder.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += shoulder.emblem_cd
+        self.emblem_batk += shoulder.emblem_batk
+        self.emblem_atkp += shoulder.emblem_atkp
+
+        # SF Stats
+        self.sf += shoulder.sf
+
+        # Offensive Stats
+        self.atk += shoulder.atk
+        self.atkp += shoulder.atkp
+        self.dmg += shoulder.dmg
+        self.batk += shoulder.batk
+        self.platk += shoulder.platk
+        self.cr += shoulder.cr
+        self.cratk += shoulder.cratk
+        self.cd += shoulder.cd
+        self.maxdmg += shoulder.maxdmg
+        self.fd += shoulder.fd
+
+        # Defensive Stats
+        self.pdef += shoulder.pdef
+        self.pdefinc += shoulder.pdefinc
+        self.pdefdec += shoulder.pdefdec
+        self.mdef += shoulder.mdef
+        self.mdefinc += shoulder.mdefinc
+        self.mdefdec += shoulder.mdefdec
+        self.bdef += shoulder.bdef
+        self.pldef += shoulder.pldef
+        self.critres += shoulder.critres
+        self.critdmgres += shoulder.critdmgres
+
+        # Hit Miss Stats
+        self.acc += shoulder.acc
+        self.accp += shoulder.accp
+        self.evd += shoulder.evd
+        self.evdp += shoulder.evdp
+        self.penrate += shoulder.penrate
+        self.block += shoulder.block
+        self.abnormalstatres += shoulder.abnormalstatres
+        self.ignore += shoulder.ignore
+
+        # HP MP Stats
+        self.hp += shoulder.hp
+        self.mp += shoulder.mp
+        self.hpinc += shoulder.hpinc
+        self.mpinc += shoulder.mpinc
+        self.hprec += shoulder.hprec
+        self.mprec += shoulder.mprec
+        self.hprecp += shoulder.hprecp
+        self.mprecp += shoulder.mprecp
+        self.hppotionrecp += shoulder.hppotionrecp
+        self.mppotionrecp += shoulder.mppotionrecp
+        self.buffdurationinc += shoulder.buffdurationinc
+
+        # Mobility Stats
+        self.spd += shoulder.spd
+        self.jmp += shoulder.jmp
+        self.kbkres += shoulder.kbkres
+
+        # Misc Stats
+        self.exp += shoulder.exp
+        self.dr += shoulder.dr
+        self.meso += shoulder.meso
+        self.glincrease += shoulder.glincrease
+        self.partyexp += shoulder.partyexp
+        self.feverchargeinc += shoulder.feverchargeinc
+        self.feverduration += shoulder.feverduration
+        self.maxfeverchance += shoulder.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += shoulder.spmulti
+
+        # Set Stats
+        self.mempsetcount += shoulder.mempsetcount
+        self.aempsetcount += shoulder.aempsetcount
+        self.necrosetcount += shoulder.necrosetcount
+        self.fafsetcount += shoulder.fafsetcount
+        self.bosssetcount += shoulder.bosssetcount
+        self.commandersetcount += shoulder.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += shoulder.atklinecount
+        self.crlinecount += shoulder.crlinecount
+        self.cdlinecount += shoulder.cdlinecount
+
+        # Soul
         self.normal_emb += soul.normal_emb
+        self.partial_emb += soul.partial_emb
         self.unique_acc_emb += soul.unique_acc_emb
         self.legendary_acc_emb += soul.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += soul.emblem_cd
         self.emblem_batk += soul.emblem_batk
         self.emblem_atkp += soul.emblem_atkp
@@ -1708,6 +1823,7 @@ class flamestats:
         self.penrate += soul.penrate
         self.block += soul.block
         self.abnormalstatres += soul.abnormalstatres
+        self.ignore += soul.ignore
 
         # HP MP Stats
         self.hp += soul.hp
@@ -1716,6 +1832,10 @@ class flamestats:
         self.mpinc += soul.mpinc
         self.hprec += soul.hprec
         self.mprec += soul.mprec
+        self.hprecp += soul.hprecp
+        self.mprecp += soul.mprecp
+        self.hppotionrecp += soul.hppotionrecp
+        self.mppotionrecp += soul.mppotionrecp
         self.buffdurationinc += soul.buffdurationinc
 
         # Mobility Stats
@@ -1749,264 +1869,278 @@ class flamestats:
         self.crlinecount += soul.crlinecount
         self.cdlinecount += soul.cdlinecount
 
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem(self):
-        emblem = self.emblem
-        return emblem
-
-    def emblem_level(self):
-        emblem_level = self.emblem_level
-        return emblem_level
-
-    def emblem_amount(self):
-        emblem_amount = self.emblem_amount
-        return emblem_amount
-
-    def type(self):
-        type = self.type
-        return type
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount
-
-
+        # TBO
+        self.normal_emb += tbo.normal_emb
+        self.partial_emb += tbo.partial_emb
+        self.unique_acc_emb += tbo.unique_acc_emb
+        self.legendary_acc_emb += tbo.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += tbo.emblem_cd
+        self.emblem_batk += tbo.emblem_batk
+        self.emblem_atkp += tbo.emblem_atkp
+
+        # SF Stats
+        self.sf += tbo.sf
+
+        # Offensive Stats
+        self.atk += tbo.atk
+        self.atkp += tbo.atkp
+        self.dmg += tbo.dmg
+        self.batk += tbo.batk
+        self.platk += tbo.platk
+        self.cr += tbo.cr
+        self.cratk += tbo.cratk
+        self.cd += tbo.cd
+        self.maxdmg += tbo.maxdmg
+        self.fd += tbo.fd
+
+        # Defensive Stats
+        self.pdef += tbo.pdef
+        self.pdefinc += tbo.pdefinc
+        self.pdefdec += tbo.pdefdec
+        self.mdef += tbo.mdef
+        self.mdefinc += tbo.mdefinc
+        self.mdefdec += tbo.mdefdec
+        self.bdef += tbo.bdef
+        self.pldef += tbo.pldef
+        self.critres += tbo.critres
+        self.critdmgres += tbo.critdmgres
+
+        # Hit Miss Stats
+        self.acc += tbo.acc
+        self.accp += tbo.accp
+        self.evd += tbo.evd
+        self.evdp += tbo.evdp
+        self.penrate += tbo.penrate
+        self.block += tbo.block
+        self.abnormalstatres += tbo.abnormalstatres
+        self.ignore += tbo.ignore
+
+        # HP MP Stats
+        self.hp += tbo.hp
+        self.mp += tbo.mp
+        self.hpinc += tbo.hpinc
+        self.mpinc += tbo.mpinc
+        self.hprec += tbo.hprec
+        self.mprec += tbo.mprec
+        self.hprecp += tbo.hprecp
+        self.mprecp += tbo.mprecp
+        self.hppotionrecp += tbo.hppotionrecp
+        self.mppotionrecp += tbo.mppotionrecp
+        self.buffdurationinc += tbo.buffdurationinc
+
+        # Mobility Stats
+        self.spd += tbo.spd
+        self.jmp += tbo.jmp
+        self.kbkres += tbo.kbkres
+
+        # Misc Stats
+        self.exp += tbo.exp
+        self.dr += tbo.dr
+        self.meso += tbo.meso
+        self.glincrease += tbo.glincrease
+        self.partyexp += tbo.partyexp
+        self.feverchargeinc += tbo.feverchargeinc
+        self.feverduration += tbo.feverduration
+        self.maxfeverchance += tbo.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += tbo.spmulti
+
+        # Set Stats
+        self.mempsetcount += tbo.mempsetcount
+        self.aempsetcount += tbo.aempsetcount
+        self.necrosetcount += tbo.necrosetcount
+        self.fafsetcount += tbo.fafsetcount
+        self.bosssetcount += tbo.bosssetcount
+        self.commandersetcount += tbo.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += tbo.atklinecount
+        self.crlinecount += tbo.crlinecount
+        self.cdlinecount += tbo.cdlinecount
+
+        # Title
+        self.normal_emb += title.normal_emb
+        self.partial_emb += title.partial_emb
+        self.unique_acc_emb += title.unique_acc_emb
+        self.legendary_acc_emb += title.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += title.emblem_cd
+        self.emblem_batk += title.emblem_batk
+        self.emblem_atkp += title.emblem_atkp
+
+        # SF Stats
+        self.sf += title.sf
+
+        # Offensive Stats
+        self.atk += title.atk
+        self.atkp += title.atkp
+        self.dmg += title.dmg
+        self.batk += title.batk
+        self.platk += title.platk
+        self.cr += title.cr
+        self.cratk += title.cratk
+        self.cd += title.cd
+        self.maxdmg += title.maxdmg
+        self.fd += title.fd
+
+        # Defensive Stats
+        self.pdef += title.pdef
+        self.pdefinc += title.pdefinc
+        self.pdefdec += title.pdefdec
+        self.mdef += title.mdef
+        self.mdefinc += title.mdefinc
+        self.mdefdec += title.mdefdec
+        self.bdef += title.bdef
+        self.pldef += title.pldef
+        self.critres += title.critres
+        self.critdmgres += title.critdmgres
+
+        # Hit Miss Stats
+        self.acc += title.acc
+        self.accp += title.accp
+        self.evd += title.evd
+        self.evdp += title.evdp
+        self.penrate += title.penrate
+        self.block += title.block
+        self.abnormalstatres += title.abnormalstatres
+        self.ignore += title.ignore
+
+        # HP MP Stats
+        self.hp += title.hp
+        self.mp += title.mp
+        self.hpinc += title.hpinc
+        self.mpinc += title.mpinc
+        self.hprec += title.hprec
+        self.mprec += title.mprec
+        self.hprecp += title.hprecp
+        self.mprecp += title.mprecp
+        self.hppotionrecp += title.hppotionrecp
+        self.mppotionrecp += title.mppotionrecp
+        self.buffdurationinc += title.buffdurationinc
+
+        # Mobility Stats
+        self.spd += title.spd
+        self.jmp += title.jmp
+        self.kbkres += title.kbkres
+
+        # Misc Stats
+        self.exp += title.exp
+        self.dr += title.dr
+        self.meso += title.meso
+        self.glincrease += title.glincrease
+        self.partyexp += title.partyexp
+        self.feverchargeinc += title.feverchargeinc
+        self.feverduration += title.feverduration
+        self.maxfeverchance += title.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += title.spmulti
+
+        # Set Stats
+        self.mempsetcount += title.mempsetcount
+        self.aempsetcount += title.aempsetcount
+        self.necrosetcount += title.necrosetcount
+        self.fafsetcount += title.fafsetcount
+        self.bosssetcount += title.bosssetcount
+        self.commandersetcount += title.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += title.atklinecount
+        self.crlinecount += title.crlinecount
+        self.cdlinecount += title.cdlinecount
+
+        # Weapon
+        self.normal_emb += weapon.normal_emb
+        self.partial_emb += weapon.partial_emb
+        self.unique_acc_emb += weapon.unique_acc_emb
+        self.legendary_acc_emb += weapon.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += weapon.emblem_cd
+        self.emblem_batk += weapon.emblem_batk
+        self.emblem_atkp += weapon.emblem_atkp
+
+        # SF Stats
+        self.sf += weapon.sf
+
+        # Offensive Stats
+        self.atk += weapon.atk
+        self.atkp += weapon.atkp
+        self.dmg += weapon.dmg
+        self.batk += weapon.batk
+        self.platk += weapon.platk
+        self.cr += weapon.cr
+        self.cratk += weapon.cratk
+        self.cd += weapon.cd
+        self.maxdmg += weapon.maxdmg
+        self.fd += weapon.fd
+
+        # Defensive Stats
+        self.pdef += weapon.pdef
+        self.pdefinc += weapon.pdefinc
+        self.pdefdec += weapon.pdefdec
+        self.mdef += weapon.mdef
+        self.mdefinc += weapon.mdefinc
+        self.mdefdec += weapon.mdefdec
+        self.bdef += weapon.bdef
+        self.pldef += weapon.pldef
+        self.critres += weapon.critres
+        self.critdmgres += weapon.critdmgres
+
+        # Hit Miss Stats
+        self.acc += weapon.acc
+        self.accp += weapon.accp
+        self.evd += weapon.evd
+        self.evdp += weapon.evdp
+        self.penrate += weapon.penrate
+        self.block += weapon.block
+        self.abnormalstatres += weapon.abnormalstatres
+        self.ignore += weapon.ignore
+
+        # HP MP Stats
+        self.hp += weapon.hp
+        self.mp += weapon.mp
+        self.hpinc += weapon.hpinc
+        self.mpinc += weapon.mpinc
+        self.hprec += weapon.hprec
+        self.mprec += weapon.mprec
+        self.hprecp += weapon.hprecp
+        self.mprecp += weapon.mprecp
+        self.hppotionrecp += weapon.hppotionrecp
+        self.mppotionrecp += weapon.mppotionrecp
+        self.buffdurationinc += weapon.buffdurationinc
+
+        # Mobility Stats
+        self.spd += weapon.spd
+        self.jmp += weapon.jmp
+        self.kbkres += weapon.kbkres
+
+        # Misc Stats
+        self.exp += weapon.exp
+        self.dr += weapon.dr
+        self.meso += weapon.meso
+        self.glincrease += weapon.glincrease
+        self.partyexp += weapon.partyexp
+        self.feverchargeinc += weapon.feverchargeinc
+        self.feverduration += weapon.feverduration
+        self.maxfeverchance += weapon.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += weapon.spmulti
+
+        # Set Stats
+        self.mempsetcount += weapon.mempsetcount
+        self.aempsetcount += weapon.aempsetcount
+        self.necrosetcount += weapon.necrosetcount
+        self.fafsetcount += weapon.fafsetcount
+        self.bosssetcount += weapon.bosssetcount
+        self.commandersetcount += weapon.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += weapon.atklinecount
+        self.crlinecount += weapon.crlinecount
+        self.cdlinecount += weapon.cdlinecount

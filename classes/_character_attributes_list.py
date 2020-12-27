@@ -1,3 +1,4 @@
+"""
 # Offensive Stats
 self.atk =
 self.atkp = 0
@@ -107,3 +108,4 @@ self.tcratk = 0
 self.tcd = 0
 self.tmaxdmg = 0
 self.tfd = 0
+"""

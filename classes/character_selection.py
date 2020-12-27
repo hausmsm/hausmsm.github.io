@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-class character_selection:
+class Character_selection:
     def __init__(self):
         with st.beta_expander("Class"):
             self.character_type = st.selectbox("Choose Class Type", ["Warrior", "Mage", "Archer", "Thief", "Pirate"])
@@ -10,39 +10,39 @@ class character_selection:
                                                ["Dark Knight", "Hero", "Paladin", "Dawn Warrior", "Aran", "Demon Slayer",
                                                 "Demon Avenger"])
                 if self.character_class == "Dark Knight":
-                    type = "PHYSICAL"
-                    from classes.dk import dk
-                    self.char = dk()
+                    self.type = "PHYSICAL"
+                    from classes.dk import Dk
+                    self.char = Dk()
 
                 elif self.character_class == "Hero":
-                    type = "PHYSICAL"
-                    from classes.hero import hero
-                    self.char = hero()
+                    self.type = "PHYSICAL"
+                    from classes.hero import Hero
+                    self.char = Hero()
 
                 elif self.character_class == "Paladin":
-                    type = "PHYSICAL"
-                    from classes.pala import pala
-                    self.char = pala()
+                    self.type = "PHYSICAL"
+                    from classes.pala import Pala
+                    self.char = Pala()
 
                 elif self.character_class == "Dawn Warrior":
-                    type = "PHYSICAL"
-                    from classes.dw import dw
-                    self.char = dw()
+                    self.type = "PHYSICAL"
+                    from classes.dw import Dw
+                    self.char = Dw()
 
                 elif self.character_class == "Aran":
-                    type = "PHYSICAL"
-                    from classes.aran import aran
-                    self.char = aran()
+                    self.type = "PHYSICAL"
+                    from classes.aran import Aran
+                    self.char = Aran()
 
                 elif self.character_class == "Demon Slayer":
-                    type = "PHYSICAL"
-                    from classes.ds import ds
-                    self.char = ds()
+                    self.type = "PHYSICAL"
+                    from classes.ds import Ds
+                    self.char = Ds()
 
                 elif self.character_class == "Demon Avenger":
-                    type = "PHYSICAL"
-                    from classes.da import da
-                    self.char = da()
+                    self.type = "PHYSICAL"
+                    from classes.da import Da
+                    self.char = Da()
 
             elif self.character_type == "Mage":
                 self.character_class = st.selectbox("Choose Class",
@@ -50,130 +50,115 @@ class character_selection:
                                                 "Evan",
                                                 "Luminous", "Battle Mage"])
                 if self.character_class == "Bishop":
-                    type = "MAGICAL"
-                    from classes.bsp import bsp
-                    self.char = bsp()
+                    self.type = "MAGICAL"
+                    from classes.bsp import Bsp
+                    self.char = Bsp()
 
                 elif self.character_class == "Ice Lightning Mage":
-                    type = "MAGICAL"
-                    from classes.ilm import ilm
-                    self.char = ilm()
+                    self.type = "MAGICAL"
+                    from classes.ilm import Ilm
+                    self.char = Ilm()
 
                 elif self.character_class == "Fire Poison Mage":
-                    type = "MAGICAL"
-                    from classes.fpm import fpm
-                    self.char = fpm()
+                    self.type = "MAGICAL"
+                    from classes.fpm import Fpm
+                    self.char = Fpm()
 
                 elif self.character_class == "Blaze Wizard":
-                    type = "MAGICAL"
-                    from classes.bw import bw
-                    self.char = bw()
+                    self.type = "MAGICAL"
+                    from classes.bw import Bw
+                    self.char = Bw()
 
                 elif self.character_class == "Evan":
-                    type = "MAGICAL"
-                    from classes.evan import evan
-                    self.char = evan()
+                    self.type = "MAGICAL"
+                    from classes.evan import Evan
+                    self.char = Evan()
 
                 elif self.character_class == "Luminous":
-                    type = "MAGICAL"
-                    from classes.lumi import lumi
-                    self.char = lumi()
+                    self.type = "MAGICAL"
+                    from classes.lumi import Lumi
+                    self.char = Lumi()
 
                 elif self.character_class == "Battle Mage":
-                    type = "MAGICAL"
-                    from classes.bam import bam
-                    self.char = bam()
+                    self.type = "MAGICAL"
+                    from classes.bam import Bam
+                    self.char = Bam()
 
             elif self.character_type == "Archer":
                 self.character_class = st.selectbox("Choose Class",
                                                ["Bow Master", "Marksman", "Wind Archer", "Mercedes", "Wild Hunter"])
                 if self.character_class == "Bow Master":
-                    type = "PHYSICAL"
-                    from classes.bm import bm
-                    self.char = bm()
+                    self.type = "PHYSICAL"
+                    from classes.bm import Bm
+                    self.char = Bm()
 
                 elif self.character_class == "Marksman":
-                    type = "PHYSICAL"
-                    from classes.mm import mm
-                    self.char = mm()
+                    self.type = "PHYSICAL"
+                    from classes.mm import Mm
+                    self.char = Mm()
 
                 elif self.character_class == "Wind Archer":
-                    type = "PHYSICAL"
-                    from classes.wa import wa
-                    self.char = wa()
+                    self.type = "PHYSICAL"
+                    from classes.wa import Wa
+                    self.char = Wa()
 
                 elif self.character_class == "Mercedes":
-                    type = "PHYSICAL"
-                    from classes.merc import merc
-                    self.char = merc()
+                    self.type = "PHYSICAL"
+                    from classes.merc import Merc
+                    self.char = Merc()
 
                 elif self.character_class == "Wild Hunter":
-                    type = "PHYSICAL"
-                    from classes.wh import wh
-                    self.char = wh()
+                    self.type = "PHYSICAL"
+                    from classes.wh import Wh
+                    self.char = Wh()
 
             elif self.character_type == "Thief":
                 self.character_class = st.selectbox("Choose Class", ["Night Lord", "Shadower", "Night Walker", "Phantom"])
                 if self.character_class == "Night Lord":
-                    type = "PHYSICAL"
-                    from classes.nl import nl
-                    self.char = nl()
+                    self.type = "PHYSICAL"
+                    from classes.nl import Nl
+                    self.char = Nl()
 
                 elif self.character_class == "Shadower":
-                    type = "PHYSICAL"
-                    from classes.shad import shad
-                    self.char = shad()
+                    self.type = "PHYSICAL"
+                    from classes.shad import Shad
+                    self.char = Shad()
 
                 elif self.character_class == "Night Walker":
-                    type = "PHYSICAL"
-                    from classes.nw import nw
-                    self.char = nw()
+                    self.type = "PHYSICAL"
+                    from classes.nw import Nw
+                    self.char = Nw()
 
                 elif self.character_class == "Phantom":
-                    type = "PHYSICAL"
-                    from classes.phan import phan
-                    self.char = phan()
+                    self.type = "PHYSICAL"
+                    from classes.phan import Phan
+                    self.char = Phan()
 
             elif self.character_type == "Pirate":
                 self.character_class = st.selectbox("Choose Class",
                                                ["Corsair", "Buccaneer", "Thunder Breaker", "Shade", "Mechanic"])
                 if self.character_class == "Corsair":
-                    type = "MAGICAL"
-                    from classes.csr import csr
-                    self.char = csr()
+                    self.type = "MAGICAL"
+                    from classes.csr import Csr
+                    self.char = Csr()
 
                 elif self.character_class == "Buccaneer":
-                    type = "PHYSICAL"
-                    from classes.bucc import bucc
-                    self.char = bucc()
+                    self.type = "PHYSICAL"
+                    from classes.bucc import Bucc
+                    self.char = Bucc()
 
                 elif self.character_class == "Thunder Breaker":
-                    type = "PHYSICAL"
-                    from classes.tb import tb
-                    self.char = tb()
+                    self.type = "PHYSICAL"
+                    from classes.tb import Tb
+                    self.char = Tb()
 
                 elif self.character_class == "Shade":
-                    type = "PHYSICAL"
-                    from classes.shade import shade
-                    self.char = shade()
+                    self.type = "PHYSICAL"
+                    from classes.shade import Shade
+                    self.char = Shade()
 
                 elif self.character_class == "Mechanic":
-                    type = "MAGICAL"
-                    from classes.mech import mech
-                    self.char = mech()
+                    self.type = "MAGICAL"
+                    from classes.mech import Mech
+                    self.char = Mech()
 
-    def char(self):
-        char = self.char
-        return char
-
-    def character_class(self):
-        character_class = self.character_class
-        return character_class
-
-    def character_type(self):
-        character_type = self.character_type
-        return character_type
-
-    def type(self):
-        type = self.type
-        return type

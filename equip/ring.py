@@ -1,33 +1,44 @@
 import streamlit as st
 
 
-class ring:
+class Ring:
     def __init__(self):
         # Unique To Rings
-        self.ring_amount = 0
-        self.ring1_emblem = "None"
-        self.ring1_emblem_amount = 0
-
-        self.ring2_emblem = "None"
-        self.ring2_emblem_amount = 0
-
-        self.ring3_emblem = "None"
-        self.ring3_emblem_amount = 0
-
-        self.ring4_emblem = "None"
-        self.ring4_emblem_amount = 0
-
+        self.ring1 = "None"
+        self.ring2 = "None"
+        self.ring3 = "None"
+        self.ring4 = "None"
         self.ring1_flag = 0
         self.ring2_flag = 0
         self.ring3_flag = 0
 
-        # Common
+        # Emblem Visualization
+        self.ring1_emblem = "None"
+        self.ring1_emblem_amount = 0
+        self.ring1_emblem_level = 0
+
+        self.ring2_emblem = "None"
+        self.ring2_emblem_amount = 0
+        self.ring2_emblem_level = 0
+
+        self.ring3_emblem = "None"
+        self.ring3_emblem_amount = 0
+        self.ring3_emblem_level = 0
+
+        self.ring4_emblem = "None"
+        self.ring4_emblem_amount = 0
+        self.ring4_emblem_level = 0
+
+        # Type of Emblem
         self.normal_emb = 0
+        self.partial_emb = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+
+        # Emblem Stats
         self.emblem_cd = 0
         self.emblem_batk = 0
         self.emblem_atkp = 0
-        self.unique_acc_emb = 0
-        self.legendary_acc_emb = 0
 
         # SF Stats
         self.ring1_sf = 0
@@ -35,6 +46,12 @@ class ring:
         self.ring3_sf = 0
         self.ring4_sf = 0
         self.sf = 0
+
+        # Equipment Type, Stat & Rank
+        self.type = "None"
+        self.stat = "None"
+        self.stat_amount = 0
+        self.rank = "None"
 
         # Offensive Stats
         self.atk = 0
@@ -68,6 +85,7 @@ class ring:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 0
@@ -76,6 +94,10 @@ class ring:
         self.mpinc = 0
         self.hprec = 0
         self.mprec = 0
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -135,14 +157,14 @@ class ring:
 
         with st.beta_expander("Rings"):
             ring = st.multiselect("Choose 4 Rings", ["Cygnus Ring (Unique)", "Cygnus Ring (Legendary)",
-                                                     "Horntail Ring (Legendary)","Horntail Ring (Unique)",
+                                                     "Horntail Ring (Legendary)", "Horntail Ring (Unique)",
                                                      "Kerning Tower 50F Ring", "Kerning M Ring", "Attendance Ring",
                                                      "Ifia's Ring", "Noble Ifia's Ring", "Master Soul Ring SS"])
             self.ring_amount = len(ring)
             if len(ring) == 4:
                 _, ring1, _, ring2, _, ring3, _, ring4, _ = st.beta_columns([0.02, 0.235, 0.02, 0.235, 0.02, 0.235, 0.02, 0.235, 0.02])
 # Cygnus Ring (Unique)
-                if "Cygnus Ring (Unique)" in [ring[0],ring[1],ring[2],ring[3]]:
+                if "Cygnus Ring (Unique)" in [ring[0], ring[1], ring[2], ring[3]]:
                     # Base
                     self.hp += 120
                     self.mp += 60
@@ -296,7 +318,7 @@ class ring:
                             ring1_emblem = ring1.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring1_emblem_level = ring1.slider("Cygnus Ring (Legendary) Emblem Level",
-                                                              min_value=1,max_value=5)
+                                                              min_value=1, max_value=5)
                             self.legendary_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
@@ -362,7 +384,7 @@ class ring:
                             ring3_emblem = ring3.radio(f"Choose Cygnus Ring (Legendary) Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
                             ring3_emblem_level = ring3.slider("Cygnus Ring (Legendary) Emblem Level",
-                                                              min_value=1,max_value=5)
+                                                              min_value=1, max_value=5)
                             self.legendary_acc_emb += 1
                             self.ring3_emblem = ring3_emblem
                             self.ring3_emblem_level = ring3_emblem_level
@@ -455,7 +477,7 @@ class ring:
                                 self.ring1_flag = 1
                     elif self.ring2_flag == 0:
                         self.ring2 = "Horntail Ring (Unique)"
-                        ring2_sf_level = ring2.slider(f"Horntail Ring (Unique) SF Level", min_value=0,max_value=5)
+                        ring2_sf_level = ring2.slider(f"Horntail Ring (Unique) SF Level", min_value=0, max_value=5)
                         self.ring2_sf = ring2_sf_level
                         # SF
                         self.hp += ring2_sf_level * 120
@@ -487,7 +509,7 @@ class ring:
                         self.ring2_flag = 1
                     elif self.ring3_flag == 0:
                         self.ring3 = "Horntail Ring (Unique)"
-                        ring3_sf_level = ring3.slider(f"Horntail Ring (Unique) SF Level", min_value=0,max_value=5)
+                        ring3_sf_level = ring3.slider(f"Horntail Ring (Unique) SF Level", min_value=0, max_value=5)
                         self.ring3_sf = ring3_sf_level
                         # SF
                         self.hp += ring3_sf_level * 120
@@ -557,8 +579,7 @@ class ring:
                     self.mdefdec += 1.5
                     if self.ring1_flag == 0:
                         self.ring1 = "Horntail Ring (Legendary)"
-                        ring1_sf_level = ring1.slider(f"Horntail Ring (Legendary) SF Level", min_value=0,
-                                                      max_value=5)
+                        ring1_sf_level = ring1.slider(f"Horntail Ring (Legendary) SF Level", min_value=0, max_value=5)
                         self.ring1_sf = ring1_sf_level
                         # SF
                         self.hp += ring1_sf_level * 230
@@ -569,7 +590,7 @@ class ring:
                         if ring1_sf_level == 5:
                             ring1_emblem = ring1.radio(f"Choose Horntail Ring (Legendary) Emblem Stat",
                                                        ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-                            ring1_emblem_level = ring1.slider("Horntail Ring (Legendary) Emblem Level",min_value=1,max_value=5)
+                            ring1_emblem_level = ring1.slider("Horntail Ring (Legendary) Emblem Level", min_value=1, max_value=5)
                             self.legendary_acc_emb += 1
                             self.ring1_emblem = ring1_emblem
                             self.ring1_emblem_level = ring1_emblem_level
@@ -1017,343 +1038,3 @@ class ring:
                 self.sf = self.ring1_sf + self.ring2_sf + self.ring3_sf + self.ring4_sf
             else:
                 st.write("Error: Please Select 4 Rings Only")
-
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem_cd(self):
-        emblem_cd = self.emblem_cd
-        return emblem_cd
-
-    def emblem_batk(self):
-        emblem_batk = self.emblem_batk
-        return emblem_batk
-
-    def emblem_atkp(self):
-        emblem_atkp = self.emblem_atkp
-        return emblem_atkp
-
-    def ring_amount(self):
-        ring_amount = self.ring_amount
-        return ring_amount
-
-    def ring1_emblem(self):
-        ring1_emblem = self.ring1_emblem
-        return ring1_emblem
-
-    def ring1_emblem_level(self):
-        ring1_emblem_level = self.ring1_emblem_level
-        return ring1_emblem_level
-
-    def ring1_emblem_amount(self):
-        ring1_emblem_amount = self.ring1_emblem_amount
-        return ring1_emblem_amount
-
-    def ring1(self):
-        ring1 = self.ring1
-        return ring1
-
-    def ring1_sf(self):
-        ring1_sf = self.ring1_sf
-        return ring1_sf
-
-    def ring2_emblem(self):
-        ring2_emblem = self.ring2_emblem
-        return ring2_emblem
-
-    def ring2_emblem_level(self):
-        ring2_emblem_level = self.ring2_emblem_level
-        return ring2_emblem_level
-
-    def ring2_emblem_amount(self):
-        ring2_emblem_amount = self.ring2_emblem_amount
-        return ring2_emblem_amount
-
-    def ring2(self):
-        ring2 = self.ring2
-        return ring2
-
-    def ring2_sf(self):
-        ring2_sf = self.ring2_sf
-        return ring2_sf
-
-    def ring3_emblem(self):
-        ring3_emblem = self.ring3_emblem
-        return ring3_emblem
-
-    def ring3_emblem_level(self):
-        ring3_emblem_level = self.ring3_emblem_level
-        return ring3_emblem_level
-
-    def ring3_emblem_amount(self):
-        ring3_emblem_amount = self.ring3_emblem_amount
-        return ring3_emblem_amount
-
-    def ring3(self):
-        ring3 = self.ring3
-        return ring3
-
-    def ring3_sf(self):
-        ring3_sf = self.ring3_sf
-        return ring3_sf
-
-    def ring4_emblem(self):
-        ring4_emblem = self.ring4_emblem
-        return ring4_emblem
-
-    def ring4_emblem_level(self):
-        ring4_emblem_level = self.ring4_emblem_level
-        return ring4_emblem_level
-
-    def ring4_emblem_amount(self):
-        ring4_emblem_amount = self.ring4_emblem_amount
-        return ring4_emblem_amount
-
-    def ring4(self):
-        ring4 = self.ring4
-        return ring4
-
-    def ring4_sf(self):
-        ring4_sf = self.ring4_sf
-        return ring4_sf
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount

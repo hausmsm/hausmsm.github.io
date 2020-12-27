@@ -1,25 +1,46 @@
 import streamlit as st
 
 
-class tbo:
+class Tbo:
     def __init__(self):
-        # Initialize
-        self.stat_amount = 0
+        # Emblem Visualization
+        self.emblem = "None"
         self.emblem_amount = 0
+        self.emblem_level = 0
+        self.top_emblem = "None"
         self.top_emblem_amount = 0
+        self.top_emblem_level = 0
+        self.btm_emblem = "None"
         self.btm_emblem_amount = 0
+        self.btm_emblem_level = 0
+
+        # Type of Emblem
         self.normal_emb = 0
         self.partial_emb = 0
+        self.unique_acc_emb = 0
+        self.legendary_acc_emb = 0
+
+        # Emblem Stats
         self.emblem_cd = 0
         self.emblem_batk = 0
         self.emblem_atkp = 0
-        self.unique_acc_emb = 0
-        self.legendary_acc_emb = 0
 
         # SF Stats
         self.top_sf = 0
         self.btm_sf = 0
         self.sf = 0
+
+        # Equipment Type, Stat & Rank
+        self.type = "None"
+        self.stat = "None"
+        self.stat_amount = 0
+        self.top_type = "None"
+        self.top_stat = "None"
+        self.top_stat_amount = 0
+        self.btm_type = "None"
+        self.btm_stat = "None"
+        self.btm_stat_amount = 0
+        self.rank = "None"
 
         # Offensive Stats
         self.atk = 0
@@ -53,6 +74,7 @@ class tbo:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 0
@@ -61,6 +83,10 @@ class tbo:
         self.mpinc = 0
         self.hprec = 0
         self.mprec = 0
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -175,7 +201,7 @@ class tbo:
         }
         with st.beta_expander("Top+Bottom/Outfit"):
             tbo_type = st.selectbox("Choose Combination", ["Top+Bottom", "Outfit"])
-            self.tbo_combination = tbo_type
+            self.tbo_type = tbo_type
             if tbo_type == "Outfit":
                 _, outfit1, _, outfit2, _, outfit3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
                 outfit_type = outfit1.selectbox("Choose Outfit Type", ["Mythic Empress", "Ancient Empress", "Necro"])
@@ -392,314 +418,4 @@ class tbo:
                 self.fafsetcount += 1
                 self.atklinecount += 2
                 self.atk += 450
-                if self.partial_emb == 2:
-                    self.normal_emb += 1
                 self.sf += self.top_sf + self.btm_sf
-
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem_cd(self):
-        emblem_cd = self.emblem_cd
-        return emblem_cd
-
-    def emblem_batk(self):
-        emblem_batk = self.emblem_batk
-        return emblem_batk
-
-    def emblem_atkp(self):
-        emblem_atkp = self.emblem_atkp
-        return emblem_atkp
-
-    def tbo(self):
-        tbo = self.tbo_combination
-        return tbo
-
-    def emblem(self):
-        emblem = self.emblem
-        return emblem
-
-    def top_emblem(self):
-        top_emblem = self.top_emblem
-        return top_emblem
-
-    def btm_emblem(self):
-        btm_emblem = self.btm_emblem
-        return btm_emblem
-
-    def emblem_level(self):
-        emblem_level = self.emblem_level
-        return emblem_level
-
-    def top_emblem_level(self):
-        top_emblem_level = self.top_emblem_level
-        return top_emblem_level
-
-    def btm_emblem_level(self):
-        btm_emblem_level = self.btm_emblem_level
-        return btm_emblem_level
-
-    def emblem_amount(self):
-        emblem_amount = self.emblem_amount
-        return emblem_amount
-
-    def top_emblem_amount(self):
-        top_emblem_amount = self.top_emblem_amount
-        return top_emblem_amount
-
-    def btm_emblem_amount(self):
-        btm_emblem_amount = self.btm_emblem_amount
-        return btm_emblem_amount
-
-    def type(self):
-        type = self.type
-        return type
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def top_sf(self):
-        top_sf = self.top_sf
-        return top_sf
-
-    def btm_sf(self):
-        btm_sf = self.btm_sf
-        return btm_sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount

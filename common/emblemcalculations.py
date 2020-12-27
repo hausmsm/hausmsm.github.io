@@ -1,7 +1,7 @@
 from scipy.optimize import minimize
 
 
-class emblemcalculations:
+class Emblemcalculations:
     def __init__(self, nec, character):
         self.nb_poutput = 0
         self.b_poutput = 0
@@ -13,6 +13,10 @@ class emblemcalculations:
         self.cd_normalemb = 20
         self.batk_normalemb = 10
         self.atkp_normalemb = 10
+
+        self.cd_partialemb = 10
+        self.batk_partialemb = 5
+        self.atkp_partialemb = 5
 
         self.cd_uniqueemb = 1
         self.batk_uniqueemb = 1
@@ -26,17 +30,30 @@ class emblemcalculations:
         self.natkpnormalemb = 0
         self.nbatknormalemb = 0
 
-        self.stat_amount = 0
+        # Emblem Visualization
+        self.emblem = "None"
         self.emblem_amount = 0
+        self.emblem_level = 0
+
+        # Type of Emblem
         self.normal_emb = 0
-        self.emblem_cd = 0
-        self.emblem_batk = 0
-        self.emblem_atkp = 0
+        self.partial_emb = 0
         self.unique_acc_emb = 0
         self.legendary_acc_emb = 0
 
+        # Emblem Stats
+        self.emblem_cd = 0
+        self.emblem_batk = 0
+        self.emblem_atkp = 0
+
         # SF Stats
         self.sf = 0
+
+        # Equipment Type, Stat & Rank
+        self.type = "None"
+        self.stat = "None"
+        self.stat_amount = 0
+        self.rank = "None"
 
         # Offensive Stats
         self.atk = 0
@@ -70,6 +87,7 @@ class emblemcalculations:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 0
@@ -78,6 +96,10 @@ class emblemcalculations:
         self.mpinc = 0
         self.hprec = 0
         self.mprec = 0
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -112,8 +134,11 @@ class emblemcalculations:
         self.cdlinecount = 0
 
         self.normal_emb += nec.normal_emb
+        self.partial_emb += nec.partial_emb
         self.unique_acc_emb += nec.unique_acc_emb
         self.legendary_acc_emb += nec.legendary_acc_emb
+
+        # Emblem Stats
         self.emblem_cd += nec.emblem_cd
         self.emblem_batk += nec.emblem_batk
         self.emblem_atkp += nec.emblem_atkp
@@ -153,6 +178,7 @@ class emblemcalculations:
         self.penrate += nec.penrate
         self.block += nec.block
         self.abnormalstatres += nec.abnormalstatres
+        self.ignore += nec.ignore
 
         # HP MP Stats
         self.hp += nec.hp
@@ -161,6 +187,10 @@ class emblemcalculations:
         self.mpinc += nec.mpinc
         self.hprec += nec.hprec
         self.mprec += nec.mprec
+        self.hprecp += nec.hprecp
+        self.mprecp += nec.mprecp
+        self.hppotionrecp += nec.hppotionrecp
+        self.mppotionrecp += nec.mppotionrecp
         self.buffdurationinc += nec.buffdurationinc
 
         # Mobility Stats
@@ -195,38 +225,58 @@ class emblemcalculations:
         self.cdlinecount += nec.cdlinecount
 
         self.pname = char.pname
-        self.pskilldmg = char.sskilldmg
+        self.pskilldmg = char.pskilldmg
         self.phitcount = char.phitcount
-        self.phatkp = char.phatkp
-        self.phdmg = char.phdmg
-        self.phbatk = char.phbatk
-        self.phcr = char.phcr
-        self.phcd = char.phcd
-        self.phfd = char.phfd
+        self.pchance = char.pchance
+        self.patkp = char.patkp
+        self.pdmg = char.pdmg
+        self.pbatk = char.pbatk
+        self.pplatk = char.pplatk
+        self.pcr = char.pcr
+        self.pcratk = char.pcratk
+        self.pcd = char.pcd
+        self.pmaxdmg = char.pmaxdmg
+        self.pfd = char.pfd
 
         self.sname = char.sname
         self.sskilldmg = char.sskilldmg
         self.shitcount = char.shitcount
         self.schance = char.schance
-        self.shatkp = char.shatkp
-        self.shdmg = char.shdmg
-        self.shbatk = char.shbatk
-        self.shcr = char.shcr
-        self.shcd = char.shcd
-        self.shfd = char.shfd
+        self.satkp = char.satkp
+        self.sdmg = char.sdmg
+        self.sbatk = char.sbatk
+        self.splatk = char.splatk
+        self.scr = char.scr
+        self.scratk = char.scratk
+        self.scd = char.scd
+        self.smaxdmg = char.smaxdmg
+        self.sfd = char.sfd
+
+        self.tname = char.tname
+        self.tskilldmg = char.tskilldmg
+        self.thitcount = char.thitcount
+        self.tchance = char.tchance
+        self.tatkp = char.tatkp
+        self.tdmg = char.tdmg
+        self.tbatk = char.tbatk
+        self.tplatk = char.tplatk
+        self.tcr = char.tcr
+        self.tcratk = char.tcratk
+        self.tcd = char.tcd
+        self.tmaxdmg = char.tmaxdmg
+        self.tfd = char.tfd
 
         if self.cr >= 90:
             self.croverflow = 90.0
         else:
             self.croverflow = self.cr
 
-        def objective(x):
-            cd = x[0] * self.cd_normalemb + x[3]*self.cd_uniqueemb + x[6]*self.cd_legendaryemb
-            atkp = x[1] * self.atkp_normalemb + x[4]*self.atkp_uniqueemb + x[7]*self.atkp_legendaryemb
-            batk = x[2] * self.batk_normalemb + x[5]*self.batk_uniqueemb + x[8]*self.batk_legendaryemb
-            obj = -((1 + ((self.atkp + atkp) / 100) + (
-                    ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + batk) / 100))) \
-                    * (1 + ((self.cd + cd) / 100) + (self.phcd / 100) + 0.2))
+        def pobjective(x):
+            cd = x[0] * self.cd_normalemb + x[3]*self.cd_uniqueemb + x[6]*self.cd_legendaryemb + x[9]*self.cd_partialemb
+            atkp = x[1] * self.atkp_normalemb + x[4]*self.atkp_uniqueemb + x[7]*self.atkp_legendaryemb + x[10]*self.atkp_partialemb
+            batk = x[2] * self.batk_normalemb + x[5]*self.batk_uniqueemb + x[8]*self.batk_legendaryemb + x[11]*self.batk_partialemb
+            obj = -((1 + ((self.atkp + atkp + self.patkp) / 100) + ((self.pskilldmg / 100) * ((self.batk + batk + self.pbatk) / 100)))
+                    * (1 + ((self.cd + cd + self.pcd) / 100) + 0.2))
             return obj
 
         def constraint1(x):
@@ -244,17 +294,25 @@ class emblemcalculations:
             sum = sum - x[6] - x[7] - x[8]
             return sum
 
+        def constraint4(x):
+            sum = self.partial_emb
+            sum = sum - x[9] - x[10] - x[11]
+            return sum
+
         cd_normalamount = self.normal_emb * 20
         cd_uniqueamount = self.unique_acc_emb * 1
         cd_legendaryamount = self.legendary_acc_emb * 5
+        cd_partialamount = self.partial_emb * 10
         atkp_normalamount = self.normal_emb * 10
         atkp_uniqueamount = self.unique_acc_emb * 1
         atkp_legendaryamount = self.legendary_acc_emb * 5
+        atkp_partialamount = self.partial_emb * 5
         batk_normalamount = self.normal_emb * 10
         batk_uniqueamount = self.unique_acc_emb * 1
         batk_legendaryamount = self.legendary_acc_emb * 5
+        batk_partialamount = self.partial_emb * 5
 
-        x0 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        x0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         cd_normalbound = (0, cd_normalamount)
         atkp_normalbound = (0, atkp_normalamount)
         batk_normalbound = (0, batk_normalamount)
@@ -264,10 +322,14 @@ class emblemcalculations:
         cd_legendarybound = (0, cd_legendaryamount)
         atkp_legendarybound = (0, atkp_legendaryamount)
         batk_legendarybound = (0, batk_legendaryamount)
+        cd_partialbound = (0, cd_partialamount)
+        atkp_partialbound = (0, atkp_partialamount)
+        batk_partialbound = (0, batk_partialamount)
         bnds = (cd_normalbound, atkp_normalbound, batk_normalbound, cd_uniquebound, atkp_uniquebound, batk_uniquebound,
-                cd_legendarybound, atkp_legendarybound, batk_legendarybound)
-        cons = [{'type': 'eq', 'fun': constraint1}, {'type': 'eq', 'fun': constraint2}, {'type': 'eq', 'fun': constraint3}]
-        sol = minimize(objective, x0, method='SLSQP', bounds=bnds, constraints=cons)
+                cd_legendarybound, atkp_legendarybound, batk_legendarybound, cd_partialbound, atkp_partialbound, batk_partialbound)
+        cons = [{'type': 'eq', 'fun': constraint1}, {'type': 'eq', 'fun': constraint2},
+                {'type': 'eq', 'fun': constraint3}, {'type': 'eq', 'fun': constraint4}]
+        sol = minimize(pobjective, x0, method='SLSQP', bounds=bnds, constraints=cons)
 
         ncdnormalemb = int(round(sol.x[0]))
         natkpnormalemb = int(round(sol.x[1]))
@@ -278,6 +340,9 @@ class emblemcalculations:
         ncdlegendaryemb = int(round(sol.x[6]))
         natkplegendaryemb = int(round(sol.x[7]))
         nbatklegendaryemb = int(round(sol.x[8]))
+        ncdpartialemb = int(round(sol.x[9]))
+        natkppartialemb = int(round(sol.x[10]))
+        nbatkpartialemb = int(round(sol.x[11]))
 
         self.ncdnormalemb = ncdnormalemb
         self.natkpnormalemb = natkpnormalemb
@@ -291,369 +356,102 @@ class emblemcalculations:
         self.natkplegendaryemb = natkplegendaryemb
         self.nbatklegendaryemb = nbatklegendaryemb
 
-        self.embatkp = (self.atkp_normalemb * self.natkpnormalemb) + (self.atkp_uniqueemb * self.natkpuniqueemb) + \
-                       (self.atkp_legendaryemb * self.natkplegendaryemb)
-        self.embbatk = (self.batk_normalemb * self.nbatknormalemb) + (self.batk_uniqueemb * self.nbatkuniqueemb) + \
-                       (self.batk_legendaryemb * self.nbatklegendaryemb)
-        self.embcd = (self.cd_normalemb * self.ncdnormalemb) + (self.cd_uniqueemb * self.ncduniqueemb) + \
-                     (self.cd_legendaryemb * self.ncdlegendaryemb)
+        self.ncdpartialemb = ncdpartialemb
+        self.natkppartialemb = natkppartialemb
+        self.nbatkpartialemb = nbatkpartialemb
 
-        # FIRST EMBLEM COMBINATION
-        # Primary Skill
+        self.embatkp = (self.atkp_normalemb * self.natkpnormalemb) + (self.atkp_uniqueemb * self.natkpuniqueemb) + \
+                       (self.atkp_legendaryemb * self.natkplegendaryemb) + (self.atkp_partialemb * self.natkppartialemb)
+        self.embbatk = (self.batk_normalemb * self.nbatknormalemb) + (self.batk_uniqueemb * self.nbatkuniqueemb) + \
+                       (self.batk_legendaryemb * self.nbatklegendaryemb) + (self.batk_partialemb * self.nbatkpartialemb)
+        self.embcd = (self.cd_normalemb * self.ncdnormalemb) + (self.cd_uniqueemb * self.ncduniqueemb) + \
+                     (self.cd_legendaryemb * self.ncdlegendaryemb) + (self.cd_partialemb * self.ncdpartialemb)
+
+        def nb_nc_output(atk, dmg, hdmg, atkp, hatkp, embatkp, skilldmg, fd, hfd):
+            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100)) * (1 + ((fd + hfd) / 100)) \
+                     * (skilldmg / 100)
+            return output
+
+        def nb_c_output(atk, dmg, hdmg, atkp, hatkp, embatkp, cd, embcd, hcd, skilldmg, fd, hfd):
+            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100)) * (1 + ((fd + hfd) / 100)) \
+                     * (1 + ((cd + embcd + hcd) / 100) + 0.2) * (skilldmg / 100)
+            return output
+
+        def b_nc_output(atk, dmg, hdmg, atkp, hatkp, embatkp, batk, hbatk, embbatk, skilldmg, fd, hfd):
+            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100) + ((skilldmg / 100) * ((batk + hbatk + embbatk)/100))) * (1 + ((fd + hfd) / 100)) \
+                      * (skilldmg / 100)
+            return output
+
+        def b_c_output(atk, dmg, hdmg, atkp, hatkp, embatkp, batk, hbatk, embbatk, cd, embcd, hcd, skilldmg, fd, hfd):
+            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100) + ((skilldmg / 100) * ((batk + hbatk + embbatk)/100))) * (1 + ((fd + hfd) / 100)) \
+                      * (1 + ((cd + embcd + hcd) / 100) + 0.2) * (skilldmg / 100)
+            return output
+
+    # Primary Skill
         # Non Boss Non Crit
-        self.nb_nc_poutput = self.atk \
-                             * (1 + (self.dmg / 100)) \
-                             * (1 + ((self.atkp + self.embatkp) / 100)) \
-                             * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
-                             * (self.pskilldmg / 100) \
-                             * self.phitcount \
-                             * (1 + (self.fd / 100)) \
-                             * (1 + (self.spmulti / 100))
+        self.nb_nc_poutput = nb_nc_output(self.atk, self.dmg, self.pdmg, self.atkp, self.patkp, self.embatkp, self.pskilldmg, self.fd, self.pfd)
+
         # Non Boss Crit
-        self.nb_c_poutput = self.atk \
-                            * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.embatkp) / 100)) \
-                            * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
-                            * (1 + ((self.cd + self.embcd) / 100) + (self.phcd / 100) + 0.2) \
-                            * (self.pskilldmg / 100) \
-                            * self.phitcount \
-                            * (1 + (self.fd / 100)) \
-                            * (1 + (self.spmulti / 100))
+        self.nb_c_poutput = nb_c_output(self.atk, self.dmg, self.pdmg, self.atkp, self.patkp, self.embatkp, self.cd, self.embcd, self.pcd, self.pskilldmg, self.fd, self.pfd)
+
         # Non Boss Average
         self.nb_poutput = int(
             round((((self.nb_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_poutput)) / 100),
                   0))
-        # Boss Non Crit
-        self.b_nc_poutput = self.atk \
-                            * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.embatkp) / 100) + (
-                ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
-                            * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
-                            * (self.pskilldmg / 100) \
-                            * self.phitcount \
-                            * (1 + (self.fd / 100)) \
-                            * (1 + (self.spmulti / 100))
-        # Boss Crit
-        self.b_c_poutput = self.atk \
-                           * (1 + (self.dmg / 100)) \
-                           * (1 + ((self.atkp + self.embatkp) / 100) + (
-                ((self.pskilldmg / 100) + (self.phbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
-                           * (1 + ((self.dmg / 100) * (self.phdmg / 100))) \
-                           * (1 + ((self.cd + self.embcd) / 100) + (self.phcd / 100) + 0.2) \
-                           * (self.pskilldmg / 100) \
-                           * self.phitcount \
-                           * (1 + (self.fd / 100)) \
-                           * (1 + (self.spmulti / 100))
 
+        # Boss Non Crit
+        self.b_nc_poutput = b_nc_output(self.atk, self.dmg, self.pdmg, self.atkp, self.patkp, self.embatkp, self.batk, self.pbatk, self.embbatk, self.pskilldmg, self.fd, self.pfd)
+
+        # Boss Crit
+        self.b_c_poutput = b_c_output(self.atk, self.dmg, self.pdmg, self.atkp, self.patkp, self.embatkp, self.batk, self.pbatk, self.embbatk, self.cd, self.embcd, self.pcd, self.pskilldmg, self.fd, self.pfd)
+
+        # Boss Average
         self.b_poutput = int(
             round((((self.b_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_poutput)) / 100), 0))
 
-        # Secondary Skill
+    # Secondary Skill
         # Non Boss Non Crit
-        self.nb_nc_soutput = self.atk \
-                             * (1 + (self.dmg / 100)) \
-                             * (1 + ((self.atkp + self.embatkp) / 100)) \
-                             * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
-                             * (self.sskilldmg / 100) \
-                             * self.shitcount \
-                             * (1 + (self.fd / 100)) \
-                             * (1 + (self.spmulti / 100))
+        self.nb_nc_soutput = nb_nc_output(self.atk, self.dmg, self.sdmg, self.atkp, self.satkp, self.embatkp, self.sskilldmg, self.fd, self.sfd)
+
         # Non Boss Crit
-        self.nb_c_soutput = self.atk \
-                            * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.embatkp) / 100)) \
-                            * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
-                            * (1 + ((self.cd + self.embcd) / 100) + (self.shcd / 100) + 0.2) \
-                            * (self.sskilldmg / 100) \
-                            * self.shitcount \
-                            * (1 + (self.fd / 100)) \
-                            * (1 + (self.spmulti / 100))
+        self.nb_c_soutput = nb_c_output(self.atk, self.dmg, self.sdmg, self.atkp, self.satkp, self.embatkp, self.cd, self.embcd, self.scd, self.sskilldmg, self.fd, self.sfd)
+
         # Non Boss Average
-        self.nb_soutput = int(round(((((self.nb_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_soutput)) / 100)
-                                     * (self.schance / 100)), 0))
+        self.nb_soutput = int(round(((self.nb_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_soutput)) / 100))
 
         # Boss Non Crit
-        self.b_nc_soutput = self.atk \
-                            * (1 + (self.dmg / 100)) \
-                            * (1 + ((self.atkp + self.embatkp) / 100) + (
-                ((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
-                            * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
-                            * (self.sskilldmg / 100) \
-                            * self.shitcount \
-                            * (1 + (self.fd / 100)) \
-                            * (1 + (self.spmulti / 100))
+        self.b_nc_soutput = b_nc_output(self.atk, self.dmg, self.sdmg, self.atkp, self.satkp, self.embatkp, self.batk, self.sbatk, self.embbatk, self.sskilldmg, self.fd, self.sfd)
 
         # Boss Crit
-        self.b_c_soutput = self.atk \
-                           * (1 + (self.dmg / 100)) \
-                           * (1 + ((self.atkp + self.embatkp) / 100) + (
-                ((self.sskilldmg / 100) + (self.shbatk / 100)) * ((self.batk + self.embbatk) / 100))) \
-                           * (1 + ((self.dmg / 100) * (self.shdmg / 100))) \
-                           * (1 + ((self.cd + self.embcd) / 100) + (self.shcd / 100) + 0.2) \
-                           * (self.sskilldmg / 100) \
-                           * self.shitcount \
-                           * (1 + (self.fd / 100)) \
-                           * (1 + self.spmulti / 100)
+        self.b_c_soutput = b_c_output(self.atk, self.dmg, self.sdmg, self.atkp, self.satkp, self.embatkp, self.batk, self.sbatk, self.embbatk, self.cd, self.embcd, self.scd, self.sskilldmg, self.fd, self.sfd)
 
-        self.b_soutput = int(
-            round((((self.b_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_soutput)) / 100 \
-                   * (self.schance / 100)), 0))
+        # Boss Average
+        self.b_soutput = int(round((((self.b_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_soutput)) / 100), 0))
 
-        self.secondncdnormalemb = ncdnormalemb - 1
-        self.secondnbatknormalemb = nbatknormalemb + 1
-        self.secondnatkpnormalemb = natkpnormalemb
+    # Tertiary Skill
+        # Non Boss Non Crit
+        self.nb_nc_toutput = nb_nc_output(self.atk, self.dmg, self.tdmg, self.atkp, self.tatkp, self.embatkp,
+                                          self.tskilldmg, self.fd, self.tfd)
 
-        self.sembatkp = (self.atkp_normalemb * self.secondnatkpnormalemb) + (self.atkp_uniqueemb * self.natkpuniqueemb) + \
-                       (self.atkp_legendaryemb * self.natkplegendaryemb)
-        self.sembbatk = (self.batk_normalemb * self.secondnbatknormalemb) + (self.batk_uniqueemb * self.nbatkuniqueemb) + \
-                       (self.batk_legendaryemb * self.nbatklegendaryemb)
-        self.sembcd = (self.cd_normalemb * self.secondncdnormalemb) + (self.cd_uniqueemb * self.ncduniqueemb) + \
-                     (self.cd_legendaryemb * self.ncdlegendaryemb)
+        # Non Boss Crit
+        self.nb_c_toutput = nb_c_output(self.atk, self.dmg, self.tdmg, self.atkp, self.tatkp, self.embatkp, self.cd,
+                                        self.embcd, self.tcd, self.tskilldmg, self.fd, self.tfd)
+
+        # Non Boss Average
+        self.nb_toutput = int(round(((self.nb_c_toutput * self.croverflow) + ((100.0 - self.croverflow) * self.nb_nc_toutput)) / 100))
+
+        # Boss Non Crit
+        self.b_nc_toutput = b_nc_output(self.atk, self.dmg, self.tdmg, self.atkp, self.tatkp, self.embatkp, self.batk,
+                                        self.tbatk, self.embbatk, self.tskilldmg, self.fd, self.tfd)
+
+        # Boss Crit
+        self.b_c_toutput = b_c_output(self.atk, self.dmg, self.tdmg, self.atkp, self.tatkp, self.embatkp, self.batk,
+                                      self.tbatk, self.embbatk, self.cd, self.embcd, self.tcd, self.tskilldmg, self.fd,
+                                      self.tfd)
+
+        # Boss Average
+        self.b_toutput = int(round((((self.b_c_toutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_toutput)) / 100), 0))
 
         self.atkp += self.embatkp
         self.batk += self.embbatk
         self.cd += self.embcd
-
-    def ncdnormalemb(self):
-        ncdnormalemb = self.ncdnormalemb
-        return ncdnormalemb
-
-    def natkpnormalemb(self):
-        natkpnormalemb = self.natkpnormalemb
-        return natkpnormalemb
-
-    def nbatknormalemb(self):
-        nbatknormalemb = self.nbatknormalemb
-        return nbatknormalemb
-
-    def ncduniqueemb(self):
-        ncduniqueemb = self.ncduniqueemb
-        return ncduniqueemb
-
-    def natkpuniqueemb(self):
-        natkpuniqueemb = self.natkpuniqueemb
-        return natkpuniqueemb
-
-    def nbatkuniqueemb(self):
-        nbatkuniqueemb = self.nbatkuniqueemb
-        return nbatkuniqueemb
-
-    def ncdlegendaryemb(self):
-        ncdlegendaryemb = self.ncdlegendaryemb
-        return ncdlegendaryemb
-
-    def natkplegendaryemb(self):
-        natkplegendaryemb = self.natkplegendaryemb
-        return natkplegendaryemb
-
-    def nbatklegendaryemb(self):
-        nbatklegendaryemb = self.nbatklegendaryemb
-        return nbatklegendaryemb
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def empsetcount(self):
-        empsetcount = self.empsetcount
-        return empsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def nb_poutput(self):
-        nb_poutput = self.nb_poutput
-        return nb_poutput
-
-    def b_poutput(self):
-        b_poutput = self.b_poutput
-        return b_poutput
-
-    def nbsoutput(self):
-        nb_soutput = self.nb_soutput
-        return nb_soutput
-
-    def b_soutput(self):
-        b_soutput = self.b_soutput
-        return b_soutput
-
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def sname(self):
-        sname = self.sname
-        return sname

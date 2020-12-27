@@ -111,7 +111,6 @@ class Nw:
         self.tfd = 0
 
 # Skills
-
     # 1st Job
         # Dark Elemental
         # Haste
@@ -203,8 +202,8 @@ class Nw:
 
     # Hyper Skill
         # Quintuple Star - Reinforce
-        self.pfd += 20
-        self.sfd += 20
+        self.pskilldmg += 20
+        self.sskilldmg += 20
         # Quintuple Star - Boss Rush
         self.pbatk += 20
         self.sbatk += 20

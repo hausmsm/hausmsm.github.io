@@ -97,7 +97,7 @@ class Dk:
 
         # Revenge of the Evil Eye
         self.tname = "Revenge of the Evil Eye"
-        self.tskilldmg = 267.7
+        self.tskilldmg = 267.9
         self.thitcount = 1
         self.tchance = 100
         self.tatkp = 0

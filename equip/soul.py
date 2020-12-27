@@ -1,24 +1,38 @@
 import streamlit as st
 
 
-class soul:
-    def __init__(self,type):
+class Soul:
+    def __init__(self, character_type):
         # Initialize
-        self.emblem = "None"
-        self.emblem_amount = 0
         self.vonbonpierrecount = 0
         self.crimsonqueencount = 0
         self.vellumcount = 0
         self.vonleoncount = 0
+
+        # Emblem Visualization
+        self.emblem = "None"
+        self.emblem_amount = 0
+        self.emblem_level = 0
+
+        # Type of Emblem
         self.normal_emb = 0
+        self.partial_emb = 0
         self.unique_acc_emb = 0
         self.legendary_acc_emb = 0
+
+        # Emblem Stats
         self.emblem_cd = 0
         self.emblem_batk = 0
         self.emblem_atkp = 0
 
         # SF Stats
         self.sf = 0
+
+        # Equipment Type, Stat & Rank
+        self.type = "None"
+        self.stat = "None"
+        self.stat_amount = 0
+        self.rank = "None"
 
         # Offensive Stats
         self.atk = 0
@@ -52,6 +66,7 @@ class soul:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 0
@@ -60,6 +75,10 @@ class soul:
         self.mpinc = 0
         self.hprec = 0
         self.mprec = 0
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -93,29 +112,6 @@ class soul:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        emblem_cd_stats = {
-            1: 1,
-            2: 2,
-            3: 3,
-            4: 4,
-            5: 5
-        }
-
-        emblem_ba_stats = {
-            1: 1,
-            2: 2,
-            3: 3,
-            4: 4,
-            5: 5
-        }
-
-        emblem_atk_stats = {
-            1: 1,
-            2: 2,
-            3: 3,
-            4: 4,
-            5: 5
-        }
         with st.beta_expander("Soul"):
             _, soul1, _, soul2, _ = st.beta_columns([0.02, 0.47, 0.02, 0.47, 0.02])
             weapon_soul = soul1.selectbox("Choose a Weapon Soul", ["Von Bon/Pierre", "Crimson Queen", "Vellum",
@@ -130,10 +126,10 @@ class soul:
                 if "HP%" in [weapon_type]:
                     self.hpinc += 15
                 elif "Phy DMG%" in [weapon_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.dmg += 15
                 elif "Mag DMG%" in [weapon_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.dmg += 15
                 elif "Boss ATK%" in [weapon_type]:
                     self.batk += 15
@@ -150,10 +146,10 @@ class soul:
                 if "HP%" in [weapon_type]:
                     self.hpinc += 15.5
                 elif "Phy DMG%" in [weapon_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.dmg += 15.5
                 elif "Mag DMG%" in [weapon_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.dmg += 15.5
                 elif "Boss ATK%" in [weapon_type]:
                     self.batk += 15.5
@@ -170,10 +166,10 @@ class soul:
                 if "HP%" in [weapon_type]:
                     self.hpinc += 17
                 elif "Phy DMG%" in [weapon_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.dmg += 17
                 elif "Mag DMG%" in [weapon_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.dmg += 17
                 elif "Boss ATK%" in [weapon_type]:
                     self.batk += 17
@@ -190,10 +186,10 @@ class soul:
                 if "HP%" in [weapon_type]:
                     self.hpinc += 13
                 elif "Phy DMG%" in [weapon_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.dmg += 13
                 elif "Mag DMG%" in [weapon_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.dmg += 13
                 elif "Boss ATK%" in [weapon_type]:
                     self.batk += 13
@@ -207,8 +203,8 @@ class soul:
                     self.fd += 13
             swep_soul = soul1.selectbox("Choose Secondary Weapon Soul", ["Von Bon/Pierre", "Crimson Queen", "Vellum",
                                                                          "Von Leon"])
-            swep_type = soul2.selectbox("Choose Secondary Weapon Soul Stat", ["Final DMG%","EXP%", "Fever Buff Duration",
-                                                                  "Item Drop%", "Phy ATK%", "Mag ATK%"])
+            swep_type = soul2.selectbox("Choose Secondary Weapon Soul Stat", ["Final DMG%", "EXP%", "Fever Buff Duration",
+                                                                              "Item Drop%", "Phy ATK%", "Mag ATK%"])
             self.swep_soul = swep_soul
             self.swep_type = swep_type
             if "Von Bon/Pierre" in [swep_soul]:
@@ -216,10 +212,10 @@ class soul:
                 if "EXP%" in [swep_type]:
                     self.exp += 4.2
                 elif "Phy ATK%" in [swep_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.8
                 elif "Mag ATK%" in [swep_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.8
                 elif "Item Drop%" in [swep_type]:
                     self.dr += 3.8
@@ -232,10 +228,10 @@ class soul:
                 if "EXP%" in [swep_type]:
                     self.exp += 4.4
                 elif "Phy ATK%" in [swep_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 4
                 elif "Mag ATK%" in [swep_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4
                 elif "Item Drop%" in [swep_type]:
                     self.dr += 4
@@ -248,10 +244,10 @@ class soul:
                 if "EXP%" in [swep_type]:
                     self.exp += 4.7
                 elif "Phy ATK%" in [swep_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 34.3
                 elif "Mag ATK%" in [swep_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4.3
                 elif "Item Drop%" in [swep_type]:
                     self.dr += 4.3
@@ -264,10 +260,10 @@ class soul:
                 if "EXP%" in [swep_type]:
                     self.exp += 3.7
                 elif "Phy ATK%" in [swep_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.3
                 elif "Mag ATK%" in [swep_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.3
                 elif "Item Drop%" in [swep_type]:
                     self.dr += 3
@@ -277,8 +273,8 @@ class soul:
                     self.fd += 3.8
             shoulder_soul = soul1.selectbox("Choose Shoulder Soul", ["Von Bon/Pierre", "Crimson Queen", "Vellum",
                                                                      "Von Leon"])
-            shoulder_type = soul2.selectbox("Choose Shoulder Soul Stat", ["Final DMG%","EXP%", "Fever Buff Duration",
-                                                                  "Item Drop%", "Phy ATK%", "Mag ATK%"])
+            shoulder_type = soul2.selectbox("Choose Shoulder Soul Stat", ["Final DMG%", "EXP%", "Fever Buff Duration",
+                                                                          "Item Drop%", "Phy ATK%", "Mag ATK%"])
             self.shoulder_soul = shoulder_soul
             self.shoulder_type = shoulder_type
             if "Von Bon/Pierre" in [shoulder_soul]:
@@ -286,10 +282,10 @@ class soul:
                 if "EXP%" in [shoulder_type]:
                     self.exp += 4.2
                 elif "Phy ATK%" in [shoulder_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.8
                 elif "Mag ATK%" in [shoulder_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.8
                 elif "Item Drop%" in [shoulder_type]:
                     self.dr += 3.8
@@ -302,10 +298,10 @@ class soul:
                 if "EXP%" in [shoulder_type]:
                     self.exp += 4.4
                 elif "Phy ATK%" in [shoulder_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 4
                 elif "Mag ATK%" in [shoulder_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4
                 elif "Item Drop%" in [shoulder_type]:
                     self.dr += 4
@@ -318,10 +314,10 @@ class soul:
                 if "EXP%" in [shoulder_type]:
                     self.exp += 4.7
                 elif "Phy ATK%" in [shoulder_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 34.3
                 elif "Mag ATK%" in [shoulder_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4.3
                 elif "Item Drop%" in [shoulder_type]:
                     self.dr += 4.3
@@ -334,10 +330,10 @@ class soul:
                 if "EXP%" in [shoulder_type]:
                     self.exp += 3.7
                 elif "Phy ATK%" in [shoulder_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.3
                 elif "Mag ATK%" in [shoulder_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.3
                 elif "Item Drop%" in [shoulder_type]:
                     self.dr += 3
@@ -346,7 +342,7 @@ class soul:
                 elif "Final DMG%" in [shoulder_type]:
                     self.fd += 3.8
             belt_soul = soul1.selectbox("Choose Belt Soul", ["Von Bon/Pierre", "Crimson Queen", "Vellum", "Von Leon"])
-            belt_type = soul2.selectbox("Choose Belt Soul Stat", ["Final DMG%","EXP%", "Fever Buff Duration",
+            belt_type = soul2.selectbox("Choose Belt Soul Stat", ["Final DMG%", "EXP%", "Fever Buff Duration",
                                                                   "Item Drop%", "Phy ATK%", "Mag ATK%"])
             self.belt_soul = belt_soul
             self.belt_type = belt_type
@@ -355,10 +351,10 @@ class soul:
                 if "EXP%" in [belt_type]:
                     self.exp += 4.2
                 elif "Phy ATK%" in [belt_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.8
                 elif "Mag ATK%" in [belt_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.8
                 elif "Item Drop%" in [belt_type]:
                     self.dr += 3.8
@@ -371,10 +367,10 @@ class soul:
                 if "EXP%" in [belt_type]:
                     self.exp += 4.4
                 elif "Phy ATK%" in [belt_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 4
                 elif "Mag ATK%" in [belt_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4
                 elif "Item Drop%" in [belt_type]:
                     self.dr += 4
@@ -387,10 +383,10 @@ class soul:
                 if "EXP%" in [belt_type]:
                     self.exp += 4.7
                 elif "Phy ATK%" in [belt_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 34.3
                 elif "Mag ATK%" in [belt_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4.3
                 elif "Item Drop%" in [belt_type]:
                     self.dr += 4.3
@@ -403,10 +399,10 @@ class soul:
                 if "EXP%" in [belt_type]:
                     self.exp += 3.7
                 elif "Phy ATK%" in [belt_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.3
                 elif "Mag ATK%" in [belt_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.3
                 elif "Item Drop%" in [belt_type]:
                     self.dr += 3
@@ -415,7 +411,7 @@ class soul:
                 elif "Final DMG%" in [belt_type]:
                     self.fd += 3.8
             cape_soul = soul1.selectbox("Choose Cape Soul", ["Von Bon/Pierre", "Crimson Queen", "Vellum", "Von Leon"])
-            cape_type = soul2.selectbox("Choose Cape Soul Stat", ["Final DMG%","EXP%", "Fever Buff Duration",
+            cape_type = soul2.selectbox("Choose Cape Soul Stat", ["Final DMG%", "EXP%", "Fever Buff Duration",
                                                                   "Item Drop%", "Phy ATK%", "Mag ATK%"])
             self.cape_soul = cape_soul
             self.cape_type = cape_type
@@ -424,10 +420,10 @@ class soul:
                 if "EXP%" in [cape_type]:
                     self.exp += 4.2
                 elif "Phy ATK%" in [cape_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.8
                 elif "Mag ATK%" in [cape_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.8
                 elif "Item Drop%" in [cape_type]:
                     self.dr += 3.8
@@ -440,10 +436,10 @@ class soul:
                 if "EXP%" in [cape_type]:
                     self.exp += 4.4
                 elif "Phy ATK%" in [cape_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 4
                 elif "Mag ATK%" in [cape_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4
                 elif "Item Drop%" in [cape_type]:
                     self.dr += 4
@@ -456,10 +452,10 @@ class soul:
                 if "EXP%" in [cape_type]:
                     self.exp += 4.7
                 elif "Phy ATK%" in [cape_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 34.3
                 elif "Mag ATK%" in [cape_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 4.3
                 elif "Item Drop%" in [cape_type]:
                     self.dr += 4.3
@@ -472,10 +468,10 @@ class soul:
                 if "EXP%" in [cape_type]:
                     self.exp += 3.7
                 elif "Phy ATK%" in [cape_type]:
-                    if type == "PHYSICAL":
+                    if character_type == "PHYSICAL":
                         self.atkp += 3.3
                 elif "Mag ATK%" in [cape_type]:
-                    if type == "MAGICAL":
+                    if character_type == "MAGICAL":
                         self.atkp += 3.3
                 elif "Item Drop%" in [cape_type]:
                     self.dr += 3
@@ -528,283 +524,3 @@ class soul:
                     self.atk += 300
                 elif self.vonbonpierrecount == 1:
                     self.atk += 150
-
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem_cd(self):
-        emblem_cd = self.emblem_cd
-        return emblem_cd
-
-    def emblem_batk(self):
-        emblem_batk = self.emblem_batk
-        return emblem_batk
-
-    def emblem_atkp(self):
-        emblem_atkp = self.emblem_atkp
-        return emblem_atkp
-
-    def weapon_soul(self):
-        weapon_soul = self.weapon_soul
-        return weapon_soul
-
-    def weapon_type(self):
-        weapon_type = self.weapon_type
-        return weapon_type
-
-    def emblem(self):
-        emblem = self.emblem
-        return emblem
-
-    def emblem_level(self):
-        emblem_level = self.emblem_level
-        return emblem_level
-
-    def emblem_amount(self):
-        emblem_amount = self.emblem_amount
-        return emblem_amount
-
-    def type(self):
-        type = self.type
-        return type
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount

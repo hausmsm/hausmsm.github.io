@@ -1,17 +1,5 @@
-class bw:
+class Bw:
     def __init__(self):
-        # Initialize
-        self.stat_amount = 0
-        self.emblem_amount = 0
-        self.normal_emb = 0
-        self.emblem_cd = 0
-        self.emblem_batk = 0
-        self.emblem_atkp = 0
-        self.unique_acc_emb = 0
-        self.legendary_acc_emb = 0
-
-        self.sf = 0
-
         # Offensive Stats
         self.atk = 1580
         self.atkp = 0
@@ -21,7 +9,7 @@ class bw:
         self.cr = 5.1
         self.cratk = 0
         self.cd = 11.3
-        self.maxdmg = 0
+        self.maxdmg = 3999999
         self.fd = 0
 
         # Defensive Stats
@@ -44,6 +32,7 @@ class bw:
         self.penrate = 0
         self.block = 0
         self.abnormalstatres = 0
+        self.ignore = 0
 
         # HP MP Stats
         self.hp = 10267
@@ -52,6 +41,10 @@ class bw:
         self.mpinc = 0
         self.hprec = 1
         self.mprec = 1
+        self.hprecp = 0
+        self.mprecp = 0
+        self.hppotionrecp = 0
+        self.mppotionrecp = 0
         self.buffdurationinc = 0
 
         # Mobility Stats
@@ -72,61 +65,80 @@ class bw:
         # Shadow Partner Stats
         self.spmulti = 0
 
-        # Set Stats
-        self.mempsetcount = 0
-        self.aempsetcount = 0
-        self.necrosetcount = 0
-        self.fafsetcount = 0
-        self.bosssetcount = 0
-        self.commandersetcount = 0
-
-        # Flame Stats
-        self.atklinecount = 0
-        self.crlinecount = 0
-        self.cdlinecount = 0
-
         # Final Orbital Flame
         self.pname = "Final Orbital Flame"
         self.pskilldmg = 191
         self.phitcount = 2
-        self.phatkp = 0
-        self.phdmg = 0
-        self.phbatk = 0
-        self.phcr = 0
-        self.phcd = 0
-        self.phfd = 0
+        self.pchance = 100
+        self.patkp = 0
+        self.pdmg = 0
+        self.pbatk = 0
+        self.pplatk = 0
+        self.pcr = 0
+        self.pcratk = 0
+        self.pcd = 0
+        self.pmaxdmg = 0
+        self.pfd = 0
 
         # Blazing Extinction
         self.sname = "Blazing Extinction"
         self.sskilldmg = 440
         self.shitcount = 2
         self.schance = 100
-        self.shatkp = 0
-        self.shdmg = 0
-        self.shbatk = 0
-        self.shcr = 0
-        self.shcd = 0
-        self.shfd = 0
+        self.satkp = 0
+        self.sdmg = 0
+        self.sbatk = 0
+        self.splatk = 0
+        self.scr = 0
+        self.scratk = 0
+        self.scd = 0
+        self.smaxdmg = 0
+        self.sfd = 0
 
-        # Skills
+        # Ignition
+        self.tname = "Ignition"
+        self.tskilldmg = 276.3
+        self.thitcount = 1
+        self.tchance = 100
+        self.tatkp = 0
+        self.tdmg = 0
+        self.tbatk = 0
+        self.tplatk = 0
+        self.tcr = 0
+        self.tcratk = 0
+        self.tcd = 0
+        self.tmaxdmg = 0
+        self.tfd = 0
 
-        # 1st Job
+# Skills
+    # 1st Job
         # Flame Elemental
+        # Use Final Flame Elemental Instead
+        # Fire Walk
+        # Fire Repulsion
         # Natural Talent
         self.cr += 5
         self.critres += 5
 
-        # 2nd Job
+    # 2nd Job
+        # Ignition
+        # Word of Fire
+
         # Greater Flame Elemental
+        # Use Final Flame Elemental Instead
         # Spell Control
         self.pdefinc += 15
         self.mdefinc += 15
         self.pdefdec += 5
         self.mdefdec += 5
 
-        # 3rd Job
+    # 3rd Job
+        # Phoenix Run
         # Liberated Magic
         self.dmg += 30
+
+        # Grand Flame Elemental
+        # Use Final Flame Elemental Instead
         # Burning Focus
         self.cd += 10
         self.critdmgres += 10
@@ -135,20 +147,13 @@ class bw:
         self.penrate += 6
         self.atkp += 6
 
-        # 4th Job
-        # Final Flame Elemental
-        self.atkp += 15
+    # 4th Job
+        # Towering Inferno
         self.dmg += 10
-        self.batk += 5
-        self.platk += 5
-        self.cr += 5
         # Burning Conduit
         self.atkp += 20
         self.dmg += 5
-        # Pure Magic
-        self.atkp += 10
-        self.hpinc += 10
-        self.mpinc += 10
+
         # Fires of Creation
         self.kbkres += 25
         self.spd += 15
@@ -156,366 +161,29 @@ class bw:
         # Flame Barrier
         self.evdp += 6
 
-        # Hyper Buff
+        # Final Flame Elemental
+        self.atkp += 15
+        self.dmg += 10
+        self.batk += 5
+        self.platk += 5
+        self.cr += 5
+        # Pure Magic
+        self.atkp += 10
+        self.hpinc += 10
+        self.mpinc += 10
+        # Wild Blaze
+
+    # Hyper Buff
         # Glory Of The Guardians
         self.cd += 30
 
         # Hyper Skill
         # Orbital Flame- Boss Rush
-        self.phbatk += 20
+        self.pbatk += 20
         # Orbital Flame - Crit DMG
-        self.phcd += 20
+        self.pcd += 20
         # Orbtial Flame - Split Attack
-        self.phdmg -= 10
-        self.phitcount += 2
-        # Blazing Extinction - Reinforce
-        self.shdmg += 25
+        self.pfd -= 10
+        self.phitcount *= 2
+        # Ignition - Max Extinction
         # Blazing Extinction - Max Extinction
-
-    def pname(self):
-        pname = self.pname
-        return pname
-
-    def pskilldmg(self):
-        pskilldmg = self.sskilldmg
-        return pskilldmg
-
-    def phitcount(self):
-        phitcount = self.phitcount
-        return phitcount
-
-    def phatkp(self):
-        phatkp = self.phatkp
-        return phatkp
-
-    def phdmg(self):
-        phdmg = self.phdmg
-        return phdmg
-
-    def phbatk(self):
-        phbatk = self.phbatk
-        return phbatk
-
-    def phcr(self):
-        phcr = self.phcr
-        return phcr
-
-    def phcd(self):
-        phcd = self.phcd
-        return phcd
-
-    def phfd(self):
-        phfd = self.phfd
-        return phfd
-
-    def sname(self):
-        sname = self.sname
-        return sname
-
-    def sskilldmg(self):
-        sskilldmg = self.sskilldmg
-        return sskilldmg
-
-    def shitcount(self):
-        shitcount = self.shitcount
-        return shitcount
-
-    def schance(self):
-        schance = self.schance
-        return schance
-
-    def shatkp(self):
-        shatkp = self.shatkp
-        return shatkp
-
-    def shdmg(self):
-        shdmg = self.shdmg
-        return shdmg
-
-    def shbatk(self):
-        shbatk = self.shbatk
-        return shbatk
-
-    def shcr(self):
-        shcr = self.shcr
-        return shcr
-
-    def shcd(self):
-        shcd = self.shcd
-        return shcd
-
-    def shfd(self):
-        shfd = self.shfd
-        return shfd
-
-    def normal_emb(self):
-        normal_emb = self.normal_emb
-        return normal_emb
-
-    def unique_acc_emb(self):
-        unique_acc_emb = self.unique_acc_emb
-        return unique_acc_emb
-
-    def legendary_acc_emb(self):
-        legendary_acc_emb = self.legendary_acc_emb
-        return legendary_acc_emb
-
-    def emblem_cd(self):
-        emblem_cd = self.emblem_cd
-        return emblem_cd
-
-    def emblem_batk(self):
-        emblem_batk = self.emblem_batk
-        return emblem_batk
-
-    def emblem_atkp(self):
-        emblem_atkp = self.emblem_atkp
-        return emblem_atkp
-
-    def emblem(self):
-        emblem = self.emblem
-        return emblem
-
-    def emblem_level(self):
-        emblem_level = self.emblem_level
-        return emblem_level
-
-    def emblem_amount(self):
-        emblem_amount = self.emblem_amount
-        return emblem_amount
-
-    def type(self):
-        type = self.type
-        return type
-
-    def sf(self):
-        sf = self.sf
-        return sf
-
-    def stat(self):
-        stat = self.stat
-        return stat
-
-    def stat_amount(self):
-        stat_amount = self.stat_amount
-        return stat_amount
-
-    def level(self):
-        level = self.level
-        return level
-
-    def atk(self):
-        atk = self.atk
-        return atk
-
-    def atkp(self):
-        atkp = self.atkp
-        return atkp
-
-    def dmg(self):
-        dmg = self.dmg
-        return dmg
-
-    def batk(self):
-        batk = self.batk
-        return batk
-
-    def platk(self):
-        platk = self.platk
-        return platk
-
-    def cr(self):
-        cr = self.cr
-        return cr
-
-    def cratk(self):
-        cratk = self.cratk
-        return cratk
-
-    def cd(self):
-        cd = self.cd
-        return cd
-
-    def maxdmg(self):
-        maxdmg = self.maxdmg
-        return maxdmg
-
-    def fd(self):
-        fd = self.fd
-        return fd
-
-    def pdef(self):
-        pdef = self.pdef
-        return pdef
-
-    def pdefinc(self):
-        pdefinc = self.pdefinc
-        return pdefinc
-
-    def pdefdec(self):
-        pdefdec = self.pdefdec
-        return pdefdec
-
-    def mdef(self):
-        mdef = self.mdef
-        return mdef
-
-    def mdefinc(self):
-        mdefinc = self.mdefinc
-        return mdefinc
-
-    def mdefdec(self):
-        mdefdec = self.mdefdec
-        return mdefdec
-
-    def bdef(self):
-        bdef = self.bdef
-        return bdef
-
-    def pldef(self):
-        pldef = self.pldef
-        return pldef
-
-    def critres(self):
-        critres = self.critres
-        return critres
-
-    def critdmgres(self):
-        critdmgres = self.critdmgres
-        return critdmgres
-
-    def acc(self):
-        acc = self.acc
-        return acc
-
-    def accp(self):
-        accp = self.accp
-        return accp
-
-    def evd(self):
-        evd = self.evd
-        return evd
-
-    def evdp(self):
-        evdp = self.evdp
-        return evdp
-
-    def penrate(self):
-        penrate = self.penrate
-        return penrate
-
-    def block(self):
-        block = self.block
-        return block
-
-    def abnormalstatres(self):
-        abnormalstatres = self.abnormalstatres
-        return abnormalstatres
-
-    def hp(self):
-        hp = self.hp
-        return hp
-
-    def hpinc(self):
-        hpinc = self.hpinc
-        return hpinc
-
-    def mp(self):
-        mp = self.mp
-        return mp
-
-    def mpinc(self):
-        mpinc = self.mpinc
-        return mpinc
-
-    def hprec(self):
-        hprec = self.hprec
-        return hprec
-
-    def mprec(self):
-        mprec = self.mprec
-        return mprec
-
-    def spd(self):
-        spd = self.spd
-        return spd
-
-    def jmp(self):
-        jmp = self.jmp
-        return jmp
-
-    def kbkres(self):
-        kbkres = self.kbkres
-        return kbkres
-
-    def exp(self):
-        exp = self.exp
-        return exp
-
-    def dr(self):
-        dr = self.dr
-        return dr
-
-    def meso(self):
-        meso = self.meso
-        return meso
-
-    def glincrease(self):
-        glincrease = self.glincrease
-        return glincrease
-
-    def partyexp(self):
-        partyexp = self.partyexp
-        return partyexp
-
-    def feverchargeinc(self):
-        feverchargeinc = self.feverchargeinc
-        return feverchargeinc
-
-    def feverduration(self):
-        feverduration = self.feverduration
-        return feverduration
-
-    def maxfeverchance(self):
-        maxfeverchance = self.maxfeverchance
-        return maxfeverchance
-
-    def spmulti(self):
-        spmulti = self.spmulti
-        return spmulti
-
-    def mempsetcount(self):
-        mempsetcount = self.mempsetcount
-        return mempsetcount
-
-    def aempsetcount(self):
-        aempsetcount = self.aempsetcount
-        return aempsetcount
-
-    def necrosetcount(self):
-        necrosetcount = self.necrosetcount
-        return necrosetcount
-
-    def fafsetcount(self):
-        fafsetcount = self.fafsetcount
-        return fafsetcount
-
-    def bosssetcount(self):
-        bosssetcount = self.bosssetcount
-        return bosssetcount
-
-    def commandersetcount(self):
-        commandersetcount = self.commandersetcount
-        return commandersetcount
-
-    def atklinecount(self):
-        atklinecount = self.atklinecount
-        return atklinecount
-
-    def crlinecount(self):
-        crlinecount = self.crlinecount
-        return crlinecount
-
-    def cdlinecount(self):
-        cdlinecount = self.cdlinecount
-        return cdlinecount

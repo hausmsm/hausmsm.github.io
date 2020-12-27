@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-class Face:
+class Pet:
     def __init__(self):
         # Emblem Visualization
         self.emblem = "None"
@@ -106,24 +106,19 @@ class Face:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        with st.beta_expander("Face Accessory"):
-            face_list = st.selectbox("Choose an Face Accessory", ["Dark Premium Symbol (Legendary)",
-                                                                  "Dark Premium Symbol (Unique)",
-                                                                  "Condensed Power Crystal"])
-            self.type = face_list
-            _, face1, _ = st.beta_columns([0.02, 0.96, 0.02])
-            if "Condensed Power Crystal" in [face_list]:
-                # Base
-                self.atk += 30
-                self.cr += 2
-                self.bosssetcount += 1
-            elif "Dark Premium Symbol (Legendary)" in [face_list]:
-                # Base
-                self.atk += 50
-                self.cd += 4
-                self.bosssetcount += 1
-            elif "Dark Premium Symbol (Unique)" in [face_list]:
-                # Base
-                self.atk += 35
-                self.cd += 2
-                self.bosssetcount += 1
+        with st.beta_expander("Pet Set"):
+            _, pet1, _ = st.beta_columns([0.02, 0.96, 0.02])
+            pet_type = st.selectbox("Choose a Combination", ["M Label", "Wonder Black"])
+            self.type = pet_type
+            if "Wonder Black" in [pet_type]:
+                self.atk += 20
+                self.accp += 3
+                self.cr += 3
+            elif "M Label" in [pet_type]:
+                self.atk += 700
+                self.accp += 3
+                self.batk += 3
+                self.bdef += 3
+                self.dmg += 3
+                self.cr += 3
+                self.cd += 3
