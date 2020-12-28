@@ -179,3 +179,6 @@ class Flame:
             self.f_cdflamebase = "CR"
         else:
             self.f_cdflamebase = "EXP"
+        self.atk = self.f_atkflame
+        self.cr = self.f_crflame
+        self.cd = self.f_cdflame

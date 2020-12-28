@@ -390,9 +390,12 @@ from common.mapletree import Mapletree
 
 mapletree = Mapletree()
 
+from common.guildskills import Guildskills
+guildskills = Guildskills()
+
 from common.nonemblemcalculations import Nonemblemcalculations
 
-nec = Nonemblemcalculations(buffs, flamestats, flames, petstats, sf, hs, link, mapletree, char.char)
+nec = Nonemblemcalculations(buffs, flamestats, flames, petstats, sf, hs, link, mapletree, char.char, guildskills)
 with st.sidebar.beta_expander("Non Emblem Calculations"):
     st.write(f"ATK: {nec.atk}")
     st.write(f"Crit Rate: {nec.cr}")

@@ -120,7 +120,7 @@ class Jewel:
             elif colour == "Yellow":
                 stat = jewel1.selectbox("Choose Jewel Type", ["EXP (Yellow)", "PEN Rate (Yellow)", "KBK Res (Yellow)", "Drop Rate (Yellow)"])
             elif colour == "Purple":
-                stat = jewel1.selectbox("Choose Jewel Type", ["Crit Rate (Purple)", "Boss ATK (Purple)", "Boss DEF (Purple)", "Block (Purple)"])
+                stat = jewel1.selectbox("Choose Jewel Type", ["Boss ATK (Purple)", "Crit Rate (Purple)",  "Boss DEF (Purple)", "Block (Purple)"])
             self.stat = stat
             if colour == "Red":
                 if rank == "S":

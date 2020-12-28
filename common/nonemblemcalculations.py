@@ -1,5 +1,5 @@
 class Nonemblemcalculations:
-    def __init__(self, buffs, flamestats, flame, petstats, starforce, hyperstats, links, mapletree, char):
+    def __init__(self, buffs, flamestats, flame, petstats, starforce, hyperstats, links, mapletree, char, guildskills):
         # Emblem Visualization
         self.emblem = "None"
         self.emblem_amount = 0
@@ -286,97 +286,13 @@ class Nonemblemcalculations:
         self.atklinecount += flamestats.atklinecount
         self.crlinecount += flamestats.crlinecount
         self.cdlinecount += flamestats.cdlinecount
+
 # Flame
-        self.normal_emb += flame.normal_emb
-        self.partial_emb += flame.partial_emb
-        self.unique_acc_emb += flame.unique_acc_emb
-        self.legendary_acc_emb += flame.legendary_acc_emb
-
-        # Emblem Stats
-        self.emblem_cd += flame.emblem_cd
-        self.emblem_batk += flame.emblem_batk
-        self.emblem_atkp += flame.emblem_atkp
-
-        # SF Stats
-        self.sf += flame.sf
-
         # Offensive Stats
         self.atk += flame.atk
-        self.atkp += flame.atkp
-        self.dmg += flame.dmg
-        self.batk += flame.batk
-        self.platk += flame.platk
         self.cr += flame.cr
-        self.cratk += flame.cratk
         self.cd += flame.cd
-        self.maxdmg += flame.maxdmg
-        self.fd += flame.fd
 
-        # Defensive Stats
-        self.pdef += flame.pdef
-        self.pdefinc += flame.pdefinc
-        self.pdefdec += flame.pdefdec
-        self.mdef += flame.mdef
-        self.mdefinc += flame.mdefinc
-        self.mdefdec += flame.mdefdec
-        self.bdef += flame.bdef
-        self.pldef += flame.pldef
-        self.critres += flame.critres
-        self.critdmgres += flame.critdmgres
-
-        # Hit Miss Stats
-        self.acc += flame.acc
-        self.accp += flame.accp
-        self.evd += flame.evd
-        self.evdp += flame.evdp
-        self.penrate += flame.penrate
-        self.block += flame.block
-        self.abnormalstatres += flame.abnormalstatres
-        self.ignore += flame.ignore
-
-        # HP MP Stats
-        self.hp += flame.hp
-        self.mp += flame.mp
-        self.hpinc += flame.hpinc
-        self.mpinc += flame.mpinc
-        self.hprec += flame.hprec
-        self.mprec += flame.mprec
-        self.hprecp += flame.hprecp
-        self.mprecp += flame.mprecp
-        self.hppotionrecp += flame.hppotionrecp
-        self.mppotionrecp += flame.mppotionrecp
-        self.buffdurationinc += flame.buffdurationinc
-
-        # Mobility Stats
-        self.spd += flame.spd
-        self.jmp += flame.jmp
-        self.kbkres += flame.kbkres
-
-        # Misc Stats
-        self.exp += flame.exp
-        self.dr += flame.dr
-        self.meso += flame.meso
-        self.glincrease += flame.glincrease
-        self.partyexp += flame.partyexp
-        self.feverchargeinc += flame.feverchargeinc
-        self.feverduration += flame.feverduration
-        self.maxfeverchance += flame.maxfeverchance
-
-        # Shadow Partner Stats
-        self.spmulti += flame.spmulti
-
-        # Set Stats
-        self.mempsetcount += flame.mempsetcount
-        self.aempsetcount += flame.aempsetcount
-        self.necrosetcount += flame.necrosetcount
-        self.fafsetcount += flame.fafsetcount
-        self.bosssetcount += flame.bosssetcount
-        self.commandersetcount += flame.commandersetcount
-
-        # Flame Stats
-        self.atklinecount += flame.atklinecount
-        self.crlinecount += flame.crlinecount
-        self.cdlinecount += flame.cdlinecount
 
 # Pet Stats
         self.normal_emb += petstats.normal_emb
@@ -903,3 +819,95 @@ class Nonemblemcalculations:
 
         # Shadow Partner Stats
         self.spmulti += char.spmulti
+
+# Guildskills
+        self.normal_emb += guildskills.normal_emb
+        self.partial_emb += guildskills.partial_emb
+        self.unique_acc_emb += guildskills.unique_acc_emb
+        self.legendary_acc_emb += guildskills.legendary_acc_emb
+
+        # Emblem Stats
+        self.emblem_cd += guildskills.emblem_cd
+        self.emblem_batk += guildskills.emblem_batk
+        self.emblem_atkp += guildskills.emblem_atkp
+
+        # SF Stats
+        self.sf += guildskills.sf
+
+        # Offensive Stats
+        self.atk += guildskills.atk
+        self.atkp += guildskills.atkp
+        self.dmg += guildskills.dmg
+        self.batk += guildskills.batk
+        self.platk += guildskills.platk
+        self.cr += guildskills.cr
+        self.cratk += guildskills.cratk
+        self.cd += guildskills.cd
+        self.maxdmg += guildskills.maxdmg
+        self.fd += guildskills.fd
+
+        # Defensive Stats
+        self.pdef += guildskills.pdef
+        self.pdefinc += guildskills.pdefinc
+        self.pdefdec += guildskills.pdefdec
+        self.mdef += guildskills.mdef
+        self.mdefinc += guildskills.mdefinc
+        self.mdefdec += guildskills.mdefdec
+        self.bdef += guildskills.bdef
+        self.pldef += guildskills.pldef
+        self.critres += guildskills.critres
+        self.critdmgres += guildskills.critdmgres
+
+        # Hit Miss Stats
+        self.acc += guildskills.acc
+        self.accp += guildskills.accp
+        self.evd += guildskills.evd
+        self.evdp += guildskills.evdp
+        self.penrate += guildskills.penrate
+        self.block += guildskills.block
+        self.abnormalstatres += guildskills.abnormalstatres
+        self.ignore += guildskills.ignore
+
+        # HP MP Stats
+        self.hp += guildskills.hp
+        self.mp += guildskills.mp
+        self.hpinc += guildskills.hpinc
+        self.mpinc += guildskills.mpinc
+        self.hprec += guildskills.hprec
+        self.mprec += guildskills.mprec
+        self.hprecp += guildskills.hprecp
+        self.mprecp += guildskills.mprecp
+        self.hppotionrecp += guildskills.hppotionrecp
+        self.mppotionrecp += guildskills.mppotionrecp
+        self.buffdurationinc += guildskills.buffdurationinc
+
+        # Mobility Stats
+        self.spd += guildskills.spd
+        self.jmp += guildskills.jmp
+        self.kbkres += guildskills.kbkres
+
+        # Misc Stats
+        self.exp += guildskills.exp
+        self.dr += guildskills.dr
+        self.meso += guildskills.meso
+        self.glincrease += guildskills.glincrease
+        self.partyexp += guildskills.partyexp
+        self.feverchargeinc += guildskills.feverchargeinc
+        self.feverduration += guildskills.feverduration
+        self.maxfeverchance += guildskills.maxfeverchance
+
+        # Shadow Partner Stats
+        self.spmulti += guildskills.spmulti
+
+        # Set Stats
+        self.mempsetcount += guildskills.mempsetcount
+        self.aempsetcount += guildskills.aempsetcount
+        self.necrosetcount += guildskills.necrosetcount
+        self.fafsetcount += guildskills.fafsetcount
+        self.bosssetcount += guildskills.bosssetcount
+        self.commandersetcount += guildskills.commandersetcount
+
+        # Flame Stats
+        self.atklinecount += guildskills.atklinecount
+        self.crlinecount += guildskills.crlinecount
+        self.cdlinecount += guildskills.cdlinecount

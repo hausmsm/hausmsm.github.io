@@ -1,92 +1,92 @@
 # Type of Emblem
-nec = pet
-self.normal_emb += nec.normal_emb
-self.partial_emb += nec.partial_emb
-self.unique_acc_emb += nec.unique_acc_emb
-self.legendary_acc_emb += nec.legendary_acc_emb
+guildskills = pet
+self.normal_emb += guildskills.normal_emb
+self.partial_emb += guildskills.partial_emb
+self.unique_acc_emb += guildskills.unique_acc_emb
+self.legendary_acc_emb += guildskills.legendary_acc_emb
 
 # Emblem Stats
-self.emblem_cd += nec.emblem_cd
-self.emblem_batk += nec.emblem_batk
-self.emblem_atkp += nec.emblem_atkp
+self.emblem_cd += guildskills.emblem_cd
+self.emblem_batk += guildskills.emblem_batk
+self.emblem_atkp += guildskills.emblem_atkp
 
 # SF Stats
-self.sf += nec.sf
+self.sf += guildskills.sf
 
 # Offensive Stats
-self.atk += nec.atk
-self.atkp += nec.atkp
-self.dmg += nec.dmg
-self.batk += nec.batk
-self.platk += nec.platk
-self.cr += nec.cr
-self.cratk += nec.cratk
-self.cd += nec.cd
-self.maxdmg += nec.maxdmg
-self.fd += nec.fd
+self.atk += guildskills.atk
+self.atkp += guildskills.atkp
+self.dmg += guildskills.dmg
+self.batk += guildskills.batk
+self.platk += guildskills.platk
+self.cr += guildskills.cr
+self.cratk += guildskills.cratk
+self.cd += guildskills.cd
+self.maxdmg += guildskills.maxdmg
+self.fd += guildskills.fd
 
 # Defensive Stats
-self.pdef += nec.pdef
-self.pdefinc += nec.pdefinc
-self.pdefdec += nec.pdefdec
-self.mdef += nec.mdef
-self.mdefinc += nec.mdefinc
-self.mdefdec += nec.mdefdec
-self.bdef += nec.bdef
-self.pldef += nec.pldef
-self.critres += nec.critres
-self.critdmgres += nec.critdmgres
+self.pdef += guildskills.pdef
+self.pdefinc += guildskills.pdefinc
+self.pdefdec += guildskills.pdefdec
+self.mdef += guildskills.mdef
+self.mdefinc += guildskills.mdefinc
+self.mdefdec += guildskills.mdefdec
+self.bdef += guildskills.bdef
+self.pldef += guildskills.pldef
+self.critres += guildskills.critres
+self.critdmgres += guildskills.critdmgres
 
 # Hit Miss Stats
-self.acc += nec.acc
-self.accp += nec.accp
-self.evd += nec.evd
-self.evdp += nec.evdp
-self.penrate += nec.penrate
-self.block += nec.block
-self.abnormalstatres += nec.abnormalstatres
-self.ignore += nec.ignore
+self.acc += guildskills.acc
+self.accp += guildskills.accp
+self.evd += guildskills.evd
+self.evdp += guildskills.evdp
+self.penrate += guildskills.penrate
+self.block += guildskills.block
+self.abnormalstatres += guildskills.abnormalstatres
+self.ignore += guildskills.ignore
 
 # HP MP Stats
-self.hp += nec.hp
-self.mp += nec.mp
-self.hpinc += nec.hpinc
-self.mpinc += nec.mpinc
-self.hprec += nec.hprec
-self.mprec += nec.mprec
-self.hprecp += nec.hprecp
-self.mprecp += nec.mprecp
-self.hppotionrecp += nec.hppotionrecp
-self.mppotionrecp += nec.mppotionrecp
-self.buffdurationinc += nec.buffdurationinc
+self.hp += guildskills.hp
+self.mp += guildskills.mp
+self.hpinc += guildskills.hpinc
+self.mpinc += guildskills.mpinc
+self.hprec += guildskills.hprec
+self.mprec += guildskills.mprec
+self.hprecp += guildskills.hprecp
+self.mprecp += guildskills.mprecp
+self.hppotionrecp += guildskills.hppotionrecp
+self.mppotionrecp += guildskills.mppotionrecp
+self.buffdurationinc += guildskills.buffdurationinc
 
 # Mobility Stats
-self.spd += nec.spd
-self.jmp += nec.jmp
-self.kbkres += nec.kbkres
+self.spd += guildskills.spd
+self.jmp += guildskills.jmp
+self.kbkres += guildskills.kbkres
 
 # Misc Stats
-self.exp += nec.exp
-self.dr += nec.dr
-self.meso += nec.meso
-self.glincrease += nec.glincrease
-self.partyexp += nec.partyexp
-self.feverchargeinc += nec.feverchargeinc
-self.feverduration += nec.feverduration
-self.maxfeverchance += nec.maxfeverchance
+self.exp += guildskills.exp
+self.dr += guildskills.dr
+self.meso += guildskills.meso
+self.glincrease += guildskills.glincrease
+self.partyexp += guildskills.partyexp
+self.feverchargeinc += guildskills.feverchargeinc
+self.feverduration += guildskills.feverduration
+self.maxfeverchance += guildskills.maxfeverchance
 
 # Shadow Partner Stats
-self.spmulti += nec.spmulti
+self.spmulti += guildskills.spmulti
 
 # Set Stats
-self.mempsetcount += nec.mempsetcount
-self.aempsetcount += nec.aempsetcount
-self.necrosetcount += nec.necrosetcount
-self.fafsetcount += nec.fafsetcount
-self.bosssetcount += nec.bosssetcount
-self.commandersetcount += nec.commandersetcount
+self.mempsetcount += guildskills.mempsetcount
+self.aempsetcount += guildskills.aempsetcount
+self.necrosetcount += guildskills.necrosetcount
+self.fafsetcount += guildskills.fafsetcount
+self.bosssetcount += guildskills.bosssetcount
+self.commandersetcount += guildskills.commandersetcount
 
 # Flame Stats
-self.atklinecount += nec.atklinecount
-self.crlinecount += nec.crlinecount
-self.cdlinecount += nec.cdlinecount
+self.atklinecount += guildskills.atklinecount
+self.crlinecount += guildskills.crlinecount
+self.cdlinecount += guildskills.cdlinecount
