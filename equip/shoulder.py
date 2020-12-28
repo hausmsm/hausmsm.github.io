@@ -193,7 +193,7 @@ class Shoulder:
                 self.pdef += ((shoulder_refine_level - 1) * 50 + 250)
                 self.mdef += ((shoulder_refine_level - 1) * 50 + 250)
                 # Stat
-                if shoulder_stat == "Crit ATK":
+                if shoulder_stat == "Crit Atk":
                     self.cratk += ((shoulder_level - 30) * 8.1 + 163)
                     self.stat_amount += self.cratk
                 elif shoulder_stat == "EXP":
@@ -222,7 +222,7 @@ class Shoulder:
                 self.pdef += ((shoulder_refine_level - 1) * 50 + 250)
                 self.mdef += ((shoulder_refine_level - 1) * 50 + 250)
                 # Stat
-                if shoulder_stat == "Crit ATK":
+                if shoulder_stat == "Crit Atk":
                     self.cratk += ((shoulder_level - 1) * (134/49) + 166)
                     self.stat_amount += self.cratk
                 elif shoulder_stat == "EXP":
@@ -247,7 +247,7 @@ class Shoulder:
                 self.pdef += sfdefdict[shoulder_sf_level]
                 self.mdef += sfdefdict[shoulder_sf_level]
                 # Stat
-                if shoulder_stat == "Crit ATK":
+                if shoulder_stat == "Crit Atk":
                     self.cratk += ((shoulder_level - 1) * (134/49) + 166)
                     self.stat_amount += self.cratk
                 elif shoulder_stat == "EXP":
@@ -279,3 +279,11 @@ class Shoulder:
         self.atklinecount += 2
         # Potential
         self.dmg += 6
+
+        """"print("\n")
+        print(f"mprec: {self.mprec}")
+        print(f"cratk: {self.cratk}")
+        print(f"hprec: {self.hprec}")
+        print(f"exp: {self.exp}")
+        print(f"mp: {self.mp}")"""
+

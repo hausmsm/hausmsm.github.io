@@ -122,12 +122,12 @@ class Flame:
         self.cr_on_batk = 0.06
         self.cr_on_cd = 0.014
         self.cr_on_exp = 0.06
-        self.hp += flamestats.hp
-        self.mp += flamestats.mp
-        self.batk += flamestats.batk
-        self.cr += flamestats.cr
-        self.cd += flamestats.cd
-        self.exp += flamestats.exp
+        self.hp += int(round(flamestats.hp, 0))
+        self.mp += int(round(flamestats.mp, 0))
+        self.batk += float(round(flamestats.batk, 1))
+        self.cr += float(round(flamestats.cr, 1))
+        self.cd += float(round(flamestats.cd, 1))
+        self.exp += float(round(flamestats.exp, 1))
         self.fatklinecount = flamestats.atklinecount
         self.fcrlinecount = flamestats.crlinecount
         self.fcdlinecount = flamestats.cdlinecount
@@ -138,8 +138,8 @@ class Flame:
         self.f_atk_on_cr = self.atk_on_cr * self.cr
         self.f_atk_on_cd = self.atk_on_cd * self.cd
         self.f_atk_on_exp = self.atk_on_exp * self.exp
-        self.f_atkflame = max(self.f_atk_on_hp, self.f_atk_on_mp, self.f_atk_on_batk, self.f_atk_on_cr, self.f_atk_on_cd,
-                              self.f_atk_on_exp) * self.fatklinecount
+        self.f_atkflame = int(round((max(self.f_atk_on_hp, self.f_atk_on_mp, self.f_atk_on_batk, self.f_atk_on_cr, self.f_atk_on_cd,
+                              self.f_atk_on_exp) * self.fatklinecount), 0))
         if self.f_atk_on_hp > self.f_atk_on_mp and self.f_atk_on_hp > self.f_atk_on_batk and self.f_atk_on_hp > self.f_atk_on_cr \
                 and self.f_atk_on_hp > self.f_atk_on_cd and self.f_atk_on_hp > self.f_atk_on_exp:
             self.f_atkflamebase = "HP"
@@ -161,7 +161,7 @@ class Flame:
         self.f_cr_on_batk = self.cr_on_batk * self.batk
         self.f_cr_on_cd = self.cr_on_cd * self.cd
         self.f_cr_on_exp = self.cr_on_exp * self.exp
-        self.f_crflame = max(self.f_cr_on_batk, self.f_cr_on_cd, self.f_cr_on_exp) * self.fcrlinecount
+        self.f_crflame = float(round((max(self.f_cr_on_batk, self.f_cr_on_cd, self.f_cr_on_exp) * self.fcrlinecount), 1))
         if self.f_cr_on_batk > self.f_cr_on_cd and self.f_cr_on_batk > self.f_cr_on_exp:
             self.f_crflamebase = "BATK"
         elif self.f_cr_on_cd > self.f_cr_on_batk and self.f_cr_on_cd > self.f_cr_on_exp:
@@ -172,7 +172,7 @@ class Flame:
         self.f_cd_on_batk = self.cd_on_batk * self.batk
         self.f_cd_on_cr = self.cd_on_cr * self.cr
         self.f_cd_on_exp = self.cd_on_exp * self.exp
-        self.f_cdflame = max(self.f_cd_on_batk, self.f_cd_on_cr, self.f_cd_on_exp) * self.fcdlinecount
+        self.f_cdflame = float(round((max(self.f_cd_on_batk, self.f_cd_on_cr, self.f_cd_on_exp) * self.fcdlinecount), 1))
         if self.f_cd_on_batk > self.f_cd_on_cr and self.f_cd_on_batk > self.f_cd_on_exp:
             self.f_cdflamebase = "BATK"
         elif self.f_cd_on_cr > self.f_cd_on_batk and self.f_cd_on_cr > self.f_cd_on_exp:

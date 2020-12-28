@@ -492,35 +492,40 @@ class Soul:
                 elif self.vonbonpierrecount == 1:
                     self.atk += 180
             elif "Crimson Queen" in [weapon_soul]:
-                if self.vonbonpierrecount == 5:
+                if self.crimsonqueencount == 5:
                     self.atk += 900
-                elif self.vonbonpierrecount == 4:
+                elif self.crimsonqueencount == 4:
                     self.atk += 720
-                elif self.vonbonpierrecount == 3:
+                elif self.crimsonqueencount == 3:
                     self.atk += 540
-                elif self.vonbonpierrecount == 2:
+                elif self.crimsonqueencount == 2:
                     self.atk += 360
-                elif self.vonbonpierrecount == 1:
+                elif self.crimsonqueencount == 1:
                     self.atk += 180
             elif "Vellum" in [weapon_soul]:
-                if self.vonbonpierrecount == 5:
+                if self.vellumcount == 5:
                     self.atk += 900
-                elif self.vonbonpierrecount == 4:
+                elif self.vellumcount == 4:
                     self.atk += 720
-                elif self.vonbonpierrecount == 3:
+                elif self.vellumcount == 3:
                     self.atk += 540
-                elif self.vonbonpierrecount == 2:
+                elif self.vellumcount == 2:
                     self.atk += 360
-                elif self.vonbonpierrecount == 1:
+                elif self.vellumcount == 1:
                     self.atk += 180
             elif "Von Leon" in [weapon_soul]:
-                if self.vonbonpierrecount == 5:
+                if self.vonleoncount == 5:
                     self.atk += 750
-                elif self.vonbonpierrecount == 4:
+                elif self.vonleoncount == 4:
                     self.atk += 600
-                elif self.vonbonpierrecount == 3:
+                elif self.vonleoncount == 3:
                     self.atk += 450
-                elif self.vonbonpierrecount == 2:
+                elif self.vonleoncount == 2:
                     self.atk += 300
-                elif self.vonbonpierrecount == 1:
+                elif self.vonleoncount == 1:
                     self.atk += 150
+
+            """print('\n')
+            print(f"atk: {self.atk}")
+            print(f"fd: {self.fd}")
+            print(f"maxdmg: {self.maxdmg}")"""

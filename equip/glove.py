@@ -192,16 +192,16 @@ class Glove:
                 self.mdef += ((glove_refine_level - 1) * 50 + 250)
                 # Stat
                 if glove_stat == "ACC":
-                    self.acc += ((glove_level - 30) * 11.4 + 1175)
+                    self.acc += ((glove_level - 1) * (441/39) + 848)
                     self.stat_amount += self.acc
                 elif glove_stat == "Crit ATK":
-                    self.cratk += ((glove_level - 30) * 8.7 + 174)
+                    self.cratk += ((glove_level - 1) * (136/39) + 125)
                     self.stat_amount += self.cratk
                 elif glove_stat == "Crit DMG":
-                    self.cd += ((glove_level - 30) * 0.67 + 6.7)
+                    self.cd += ((glove_level - 1) * (8.6/39) + 4.8)
                     self.stat_amount += self.cd
                 else:
-                    self.exp += ((glove_level - 30) * 0.5 + 1)
+                    self.exp += ((glove_level - 1) * (0.8/39) + 0.7)
                     self.stat_amount += self.exp
                 self.mempsetcount += 1
             elif glove_type == "Ancient Empress":
@@ -279,3 +279,14 @@ class Glove:
 
         # Potential
         self.dmg += 6
+
+
+        """print("\n")
+        print(f"acc: {self.acc}")
+        print(f"cratk: {self.cratk}")
+        print(f"cd: {self.cd}")
+        print(f"exp: {self.exp}")
+        print(f"hp: {self.hp}")"""
+
+
+

@@ -197,3 +197,7 @@ class Secweapon:
                 self.cd += 18
             else:
                 self.cd += 15
+            """print("\n")
+            print(f"batk: {self.batk}")
+            print(f"fd: {self.fd}")
+            print(f"cd: {self.cd}")"""

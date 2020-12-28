@@ -203,3 +203,9 @@ class Earring:
                 self.batk += 4.5
                 # Set
                 self.bosssetcount += 1
+
+            """print("\n")
+            print(f"hp: {self.hp}")
+            print(f"mp: {self.mp}")
+            print(f"cratk: {self.cratk}")
+            print(f"cd: {self.cd}")"""

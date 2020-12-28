@@ -110,16 +110,6 @@ class Flamestats:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        self.normal_emb += badge.normal_emb
-        self.unique_acc_emb += badge.unique_acc_emb
-        self.legendary_acc_emb += badge.legendary_acc_emb
-        self.emblem_cd += badge.emblem_cd
-        self.emblem_batk += badge.emblem_batk
-        self.emblem_atkp += badge.emblem_atkp
-
-        # SF Stats
-        self.sf += badge.sf
-
         # Badge
         # Type of Emblem
         self.normal_emb += badge.normal_emb
@@ -2144,3 +2134,4 @@ class Flamestats:
         self.atklinecount += weapon.atklinecount
         self.crlinecount += weapon.crlinecount
         self.cdlinecount += weapon.cdlinecount
+

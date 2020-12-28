@@ -184,7 +184,7 @@ class Belt:
                 # Level
                 self.pdef += ((belt_level - 30) * 47.2)
                 self.mdef += ((belt_level - 30) * 47.2)
-                self.mp += ((belt_level - 30) * 77.3 + 1547)
+                self.mp += ((belt_level - 30) * ((2320-1547)/10) + 1547)
                 # SF
                 self.pdef += sfdefdict[belt_sf_level]
                 self.mdef += sfdefdict[belt_sf_level]
@@ -269,3 +269,11 @@ class Belt:
         self.crlinecount += 2
         # Potential
         self.atkp += 9
+
+        """print("\n")
+        print(f"acc: {self.acc}")
+        print(f"cr: {self.cr}")
+        print(f"dr: {self.dr}")
+        print(f"exp: {self.exp}")
+        print(f"mp: {self.mp}")"""
+

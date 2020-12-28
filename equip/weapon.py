@@ -321,7 +321,7 @@ class Weapon:
                             self.atk += ((weapon_refine_level - 4) * 100) + 400
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -331,7 +331,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -355,7 +355,7 @@ class Weapon:
                         self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -365,7 +365,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -411,7 +411,7 @@ class Weapon:
                             self.atk += ((weapon_refine_level - 4) * 100) + 400
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -421,7 +421,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -447,7 +447,7 @@ class Weapon:
                         self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -457,7 +457,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -503,7 +503,7 @@ class Weapon:
                         self.atk += ((weapon_refine_level - 4) * 100) + 400
                     # Stats
                     if weapon_stat == "Boss ATK":
-                        self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                        self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                         self.stat_amount += self.batk
                     elif weapon_stat == "Crit DMG":
                         if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -513,7 +513,7 @@ class Weapon:
                             self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                             self.stat_amount += self.cd
                     elif weapon_stat == "Crit Rate":
-                        self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                        self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                         self.stat_amount += self.cr
                     else:
                         self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -538,7 +538,7 @@ class Weapon:
                     self.atk += sfdict[weapon_sf_level]
                     # Stats
                     if weapon_stat == "Boss ATK":
-                        self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                        self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                         self.stat_amount += self.batk
                     elif weapon_stat == "Crit DMG":
                         if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -548,7 +548,7 @@ class Weapon:
                             self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                             self.stat_amount += self.cd
                     elif weapon_stat == "Crit Rate":
-                        self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                        self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                         self.stat_amount += self.cr
                     else:
                         self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -594,7 +594,7 @@ class Weapon:
                         self.atk += ((weapon_refine_level - 4) * 100) + 400
                     # Stats
                     if weapon_stat == "Boss ATK":
-                        self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                        self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                         self.stat_amount += self.batk
                     elif weapon_stat == "Crit DMG":
                         if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -604,7 +604,7 @@ class Weapon:
                             self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                             self.stat_amount += self.cd
                     elif weapon_stat == "Crit Rate":
-                        self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                        self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                         self.stat_amount += self.cr
                     else:
                         self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -629,7 +629,7 @@ class Weapon:
                     self.atk += sfdict[weapon_sf_level]
                     # Stats
                     if weapon_stat == "Boss ATK":
-                        self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                        self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                         self.stat_amount += self.batk
                     elif weapon_stat == "Crit DMG":
                         if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -639,7 +639,7 @@ class Weapon:
                             self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                             self.stat_amount += self.cd
                     elif weapon_stat == "Crit Rate":
-                        self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                        self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                         self.stat_amount += self.cr
                     else:
                         self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -685,7 +685,7 @@ class Weapon:
                         self.atk += ((weapon_refine_level - 4) * 100) + 400
                     # Stats
                     if weapon_stat == "Boss ATK":
-                        self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                        self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                         self.stat_amount += self.batk
                     elif weapon_stat == "Crit DMG":
                         if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -695,7 +695,7 @@ class Weapon:
                             self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                             self.stat_amount += self.cd
                     elif weapon_stat == "Crit Rate":
-                        self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                        self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                         self.stat_amount += self.cr
                     else:
                         self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -720,7 +720,7 @@ class Weapon:
                     self.atk += sfdict[weapon_sf_level]
                     # Stats
                     if weapon_stat == "Boss ATK":
-                        self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                        self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                         self.stat_amount += self.batk
                     elif weapon_stat == "Crit DMG":
                         if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -730,7 +730,7 @@ class Weapon:
                             self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                             self.stat_amount += self.cd
                     elif weapon_stat == "Crit Rate":
-                        self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                        self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                         self.stat_amount += self.cr
                     else:
                         self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -777,7 +777,7 @@ class Weapon:
                             self.atk += ((weapon_refine_level - 4) * 100) + 400
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -787,7 +787,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -812,7 +812,7 @@ class Weapon:
                         self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -822,7 +822,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -868,7 +868,7 @@ class Weapon:
                             self.atk += ((weapon_refine_level - 4) * 100) + 400
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -878,7 +878,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -903,7 +903,7 @@ class Weapon:
                         self.atk += sfdict[weapon_sf_level]
                         # Stats
                         if weapon_stat == "Boss ATK":
-                            self.batk += ((weapon_level - 30) * ((30 - 13.3) / 49) + 23.2)
+                            self.batk += ((weapon_level - 1) * ((30 - 13.3) / 49) + 13.3)
                             self.stat_amount += self.batk
                         elif weapon_stat == "Crit DMG":
                             if weapon_level in [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
@@ -913,7 +913,7 @@ class Weapon:
                                 self.cd += ((weapon_level - 40) * 0.99 + 110.1)
                                 self.stat_amount += self.cd
                         elif weapon_stat == "Crit Rate":
-                            self.cr += ((weapon_level - 30) * ((24 - 17.7) / 49) + 21.4285714286)
+                            self.cr += ((weapon_level - 1) * ((24 - 17.7) / 49) + 17.7)
                             self.stat_amount += self.cr
                         else:
                             self.exp += ((weapon_level - 30) * 0.2 + 16.0)
@@ -942,3 +942,11 @@ class Weapon:
                 self.aempsetcount += 1
             elif weapon_type == "Fafnir":
                 self.fafsetcount += 1
+
+            """print("\n")
+            print(f"cd: {self.cd}")
+            print(f"cr: {self.cr}")
+            print(f"batk: {self.batk}")
+            print(f"exp: {self.exp}")
+            print(f"dmg: {self.dmg}")
+            print(f"fd: {self.fd}")"""

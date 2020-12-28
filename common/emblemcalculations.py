@@ -1,4 +1,6 @@
 from scipy.optimize import minimize
+import streamlit as st
+import pandas as pd
 
 
 class Emblemcalculations:
@@ -368,23 +370,23 @@ class Emblemcalculations:
                      (self.cd_legendaryemb * self.ncdlegendaryemb) + (self.cd_partialemb * self.ncdpartialemb)
 
         def nb_nc_output(atk, dmg, hdmg, atkp, hatkp, embatkp, skilldmg, fd, hfd):
-            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100)) * (1 + ((fd + hfd) / 100)) \
-                     * (skilldmg / 100)
+            output = int(round(atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100)) * (1 + ((fd + hfd) / 100)) \
+                     * (skilldmg / 100), 0))
             return output
 
         def nb_c_output(atk, dmg, hdmg, atkp, hatkp, embatkp, cd, embcd, hcd, skilldmg, fd, hfd):
-            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100)) * (1 + ((fd + hfd) / 100)) \
-                     * (1 + ((cd + embcd + hcd) / 100) + 0.2) * (skilldmg / 100)
+            output = int(round(atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100)) * (1 + ((fd + hfd) / 100)) \
+                     * (1 + ((cd + embcd + hcd) / 100) + 0.2) * (skilldmg / 100), 0))
             return output
 
         def b_nc_output(atk, dmg, hdmg, atkp, hatkp, embatkp, batk, hbatk, embbatk, skilldmg, fd, hfd):
-            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100) + ((skilldmg / 100) * ((batk + hbatk + embbatk)/100))) * (1 + ((fd + hfd) / 100)) \
-                      * (skilldmg / 100)
+            output = int(round(atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100) + ((skilldmg / 100) * ((batk + hbatk + embbatk)/100))) * (1 + ((fd + hfd) / 100)) \
+                      * (skilldmg / 100), 0))
             return output
 
         def b_c_output(atk, dmg, hdmg, atkp, hatkp, embatkp, batk, hbatk, embbatk, cd, embcd, hcd, skilldmg, fd, hfd):
-            output = atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100) + ((skilldmg / 100) * ((batk + hbatk + embbatk)/100))) * (1 + ((fd + hfd) / 100)) \
-                      * (1 + ((cd + embcd + hcd) / 100) + 0.2) * (skilldmg / 100)
+            output = int(round(atk * (1 + ((dmg + hdmg) / 100)) * (1 + ((atkp + hatkp + embatkp) / 100) + ((skilldmg / 100) * ((batk + hbatk + embbatk)/100))) * (1 + ((fd + hfd) / 100)) \
+                      * (1 + ((cd + embcd + hcd) / 100) + 0.2) * (skilldmg / 100), 0))
             return output
 
     # Primary Skill
@@ -409,6 +411,8 @@ class Emblemcalculations:
         self.b_poutput = int(
             round((((self.b_c_poutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_poutput)) / 100), 0))
 
+        primaryoutput = [self.pname, self.nb_nc_poutput, self.nb_c_poutput, self.nb_poutput, self.b_nc_poutput, self.b_c_poutput, self.b_poutput]
+
     # Secondary Skill
         # Non Boss Non Crit
         self.nb_nc_soutput = nb_nc_output(self.atk, self.dmg, self.sdmg, self.atkp, self.satkp, self.embatkp, self.sskilldmg, self.fd, self.sfd)
@@ -427,6 +431,9 @@ class Emblemcalculations:
 
         # Boss Average
         self.b_soutput = int(round((((self.b_c_soutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_soutput)) / 100), 0))
+
+        secondaryoutput = [self.sname, self.nb_nc_soutput, self.nb_c_soutput, self.nb_soutput, self.b_nc_soutput, self.b_c_soutput,
+                         self.b_soutput]
 
     # Tertiary Skill
         # Non Boss Non Crit
@@ -452,6 +459,19 @@ class Emblemcalculations:
         # Boss Average
         self.b_toutput = int(round((((self.b_c_toutput * self.croverflow) + ((100.0 - self.croverflow) * self.b_nc_toutput)) / 100), 0))
 
+        tertiaryoutput = [self.tname, self.nb_nc_toutput, self.nb_c_toutput, self.nb_toutput, self.b_nc_toutput, self.b_c_toutput,
+                         self.b_toutput]
+
         self.atkp += self.embatkp
         self.batk += self.embbatk
         self.cd += self.embcd
+
+        outputdf = pd.DataFrame(columns = ["Skill Name", "Non-Boss Non-Crit", "Non-Boss Crit", "Non-Boss Average", "Boss Non-Crit", "Boss Crit", "Boss Average"])
+        outputdf.loc[len(outputdf)] = primaryoutput
+        outputdf.loc[len(outputdf)] = secondaryoutput
+        outputdf.loc[len(outputdf)] = tertiaryoutput
+
+        with st.beta_expander("Emblem Calculations"):
+            _, ec1, _ = st.beta_columns([0.02, 0.96, 0.02])
+            ec1.table(outputdf)
+

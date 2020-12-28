@@ -286,7 +286,6 @@ class Nonemblemcalculations:
         self.atklinecount += flamestats.atklinecount
         self.crlinecount += flamestats.crlinecount
         self.cdlinecount += flamestats.cdlinecount
-
 # Flame
         self.normal_emb += flame.normal_emb
         self.partial_emb += flame.partial_emb

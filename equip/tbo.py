@@ -205,7 +205,7 @@ class Tbo:
             if tbo_type == "Outfit":
                 _, outfit1, _, outfit2, _, outfit3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
                 outfit_type = outfit1.selectbox("Choose Outfit Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-                outfit_stat = outfit1.radio("Choose Outfit Stat", ["Crit ATK", "EVD", "MP Rec", "EXP"])
+                outfit_stat = outfit1.radio("Choose Outfit Stat", ["Crit Atk", "EVD", "MP Rec", "EXP"])
                 self.type = outfit_type
                 self.stat = outfit_stat
                 if outfit_type == "Mythic Empress":
@@ -231,12 +231,12 @@ class Tbo:
                     self.pdef += ((outfit_refine_level - 1) * 82 + 410)
                     self.mdef += ((outfit_refine_level - 1) * 82 + 410)
                     # Stat
-                    if outfit_stat == "Crit ATK":
-                        self.batk += ((outfit_level - 30) * 5.4 + 108)
-                        self.stat_amount += self.batk
-                    elif outfit_stat == "EVD":
-                        self.cratk += ((outfit_level - 30) * 18.8 + 375)
+                    if outfit_stat == "Crit Atk":
+                        self.cratk += ((outfit_level - 1) * 5.4 + 110)
                         self.stat_amount += self.cratk
+                    elif outfit_stat == "EVD":
+                        self.evd += ((outfit_level - 30) * 18.8 + 375)
+                        self.stat_amount += self.evd
                     elif outfit_stat == "MP Rec":
                         self.mprec += ((outfit_level - 30) * 0.2 + 3)
                         self.stat_amount += self.mprec
@@ -277,12 +277,12 @@ class Tbo:
                     self.pdef += ((outfit_refine_level - 1) * 82 + 410)
                     self.mdef += ((outfit_refine_level - 1) * 82 + 410)
                     # Stat
-                    if outfit_stat == "Crit ATK":
-                        self.batk += ((outfit_level - 1) * (90/49) + 110)
-                        self.stat_amount += self.batk
-                    elif outfit_stat == "EVD":
-                        self.cratk += ((outfit_level - 1) * (299/49) + 381)
+                    if outfit_stat == "Crit Atk":
+                        self.cratk += ((outfit_level - 1) * (90/49) + 110)
                         self.stat_amount += self.cratk
+                    elif outfit_stat == "EVD":
+                        self.evd += ((outfit_level - 1) * (299/49) + 381)
+                        self.stat_amount += self.evd
                     elif outfit_stat == "MP Rec":
                         self.mprec += ((outfit_level - 1) * (3/49) + 3)
                         self.stat_amount += self.mprec
@@ -319,12 +319,12 @@ class Tbo:
                     self.pdef += o_sfdefdict[outfit_sf_level]
                     self.mdef += o_sfdefdict[outfit_sf_level]
                     # Stat
-                    if outfit_stat == "Crit ATK":
-                        self.batk += ((outfit_level - 1) * (90 / 49) + 110)
-                        self.stat_amount += self.batk
-                    elif outfit_stat == "EVD":
-                        self.cratk += ((outfit_level - 1) * (299 / 49) + 381)
+                    if outfit_stat == "Crit Atk":
+                        self.cratk += ((outfit_level - 1) * (90 / 49) + 110)
                         self.stat_amount += self.cratk
+                    elif outfit_stat == "EVD":
+                        self.evd += ((outfit_level - 1) * (299 / 49) + 381)
+                        self.stat_amount += self.evd
                     elif outfit_stat == "MP Rec":
                         self.mprec += ((outfit_level - 1) * (3 / 49) + 3)
                         self.stat_amount += self.mprec
@@ -361,7 +361,7 @@ class Tbo:
                 # Level
                 self.pdef += (top_level - 1) * 29.326
                 self.mdef += (top_level - 1) * 29.326
-                self.hp += ((top_level - 1) * (3092 / 39) + 6475)
+                self.hp += ((top_level - 1) * (3885 / 49) + 6475)
                 self.dmg += 0.1*top_level
                 # SF
                 self.pdef += o_sfdefdict[top_sf_level] * (923/1333)
@@ -395,7 +395,7 @@ class Tbo:
                 # Level
                 self.pdef += (btm_level - 1) * 29.326
                 self.mdef += (btm_level - 1) * 29.326
-                self.hp += ((btm_level - 1) * (3092 / 39) + 6475)
+                self.hp += ((btm_level - 1) * (3885 / 49) + 6475)
                 self.dmg += 0.1*btm_level
                 # SF
                 self.pdef += o_sfdefdict[btm_sf_level] * (923 / 799)
@@ -419,3 +419,12 @@ class Tbo:
                 self.atklinecount += 2
                 self.atk += 450
                 self.sf += self.top_sf + self.btm_sf
+
+            """print("\n")
+            print(f"mprec: {self.mprec}")
+            print(f"cratk: {self.cratk}")
+            print(f"evd: {self.evd}")
+            print(f"exp: {self.exp}")
+            print(f"dmg: {self.dmg}")
+            print(f"hp: {self.hp}")"""
+

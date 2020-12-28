@@ -279,3 +279,10 @@ class Cape:
         self.crlinecount += 2
         # Potential
         self.atkp += 9
+
+        """print("\n")
+        print(f"evd: {self.evd}")
+        print(f"cr: {self.cr}")
+        print(f"meso: {self.meso}")
+        print(f"exp: {self.exp}")
+        print(f"mp: {self.mp}")"""

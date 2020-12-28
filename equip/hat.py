@@ -196,16 +196,16 @@ class Hat:
                 self.mdef += ((hat_refine_level - 1) * 32 + 160)
                 # Stat
                 if hat_stat == "Boss ATK":
-                    self.batk += ((hat_level-30)*0.14 + 1.6)
+                    self.batk += ((hat_level-1) * (1.9/39) + 1.1)
                     self.stat_amount += self.batk
                 elif hat_stat == "Crit ATK":
-                    self.cratk += ((hat_level-30)*5.4 + 108)
+                    self.cratk += ((hat_level-1) * (84/39) + 78)
                     self.stat_amount += self.cratk
                 elif hat_stat == "Crit DMG":
-                    self.cd += ((hat_level-30)*0.67 + 6.7)
+                    self.cd += ((hat_level-1) * (8.6/39) + 4.8)
                     self.stat_amount += self.cd
                 else:
-                    self.exp += ((hat_level-30)*0.5 + 1)
+                    self.exp += ((hat_level-1) * (0.8/39) + 0.7)
                     self.stat_amount += self.exp
                 self.mempsetcount += 1
             elif hat_type == "Ancient Empress":
@@ -225,16 +225,16 @@ class Hat:
                 self.mdef += ((hat_refine_level - 1) * 32 + 160)
                 # Stat
                 if hat_stat == "Boss ATK":
-                    self.batk += ((hat_level-1)*0.048 + 1.6)
+                    self.batk += ((hat_level-1) * (2.4/49) + 1.6)
                     self.stat_amount += self.batk
                 elif hat_stat == "Crit ATK":
-                    self.cratk += ((hat_level-1)*1.8 + 110)
+                    self.cratk += ((hat_level-1) * (90/49) + 110)
                     self.stat_amount += self.cratk
                 elif hat_stat == "Crit DMG":
-                    self.cd += ((hat_level-1)*0.182 + 6.9)
+                    self.cd += ((hat_level-1) * (9.1/49) + 6.9)
                     self.stat_amount += self.cd
                 else:
-                    self.exp += ((hat_level-1)*0.02 + 1)
+                    self.exp += ((hat_level-1) * (1/49) + 1)
                     self.stat_amount += self.exp
                 self.aempsetcount += 1
             elif hat_type == "Fafnir":
@@ -244,7 +244,7 @@ class Hat:
                 # Level
                 self.pdef += ((hat_level - 30) * 22.45 + 651)
                 self.mdef += ((hat_level - 30) * 22.45 + 651)
-                self.hp += ((hat_level - 30) * 107.15 + 8750)
+                self.hp += ((hat_level - 30) * 107.15 + 11857)
                 self.dmg += 0.1*hat_level
                 # SF
                 self.pdef += sfdefdict[hat_sf_level]
@@ -257,22 +257,22 @@ class Hat:
                 # Level
                 self.pdef += ((hat_level - 1) * 27.3)
                 self.mdef += ((hat_level - 1) * 27.3)
-                self.hp += ((hat_level - 1) * 115.7 + 9450)
+                self.hp += ((hat_level - 1) * ((15120-9450)/49) + 9450)
                 # SF
                 self.pdef += sfdefdict[hat_sf_level]
                 self.mdef += sfdefdict[hat_sf_level]
                 # Stat
                 if hat_stat == "Boss ATK":
-                    self.batk += ((hat_level - 1) * 0.048 + 1.6)
+                    self.batk += ((hat_level - 1) * (2.4/49) + 1.6)
                     self.stat_amount += self.batk
                 elif hat_stat == "Crit ATK":
-                    self.cratk += ((hat_level - 1) * 1.8 + 110)
+                    self.cratk += ((hat_level - 1) * (90/49) + 110)
                     self.stat_amount += self.cratk
                 elif hat_stat == "Crit DMG":
-                    self.cd += ((hat_level - 1) * 0.182 + 6.9)
+                    self.cd += ((hat_level - 1) * (9.1/49) + 6.9)
                     self.stat_amount += self.cd
                 else:
-                    self.exp += ((hat_level - 1) * 0.02 + 1)
+                    self.exp += ((hat_level - 1) * (1/49) + 1)
                     self.stat_amount += self.exp
                 self.necrosetcount += 1
 
@@ -297,3 +297,12 @@ class Hat:
 
         # Potential
         self.atkp += 6
+
+
+        """print("\n")
+        print(f"batk: {self.batk}")
+        print(f"cratk: {self.cratk}")
+        print(f"cd: {self.cd}")
+        print(f"exp: {self.exp}")
+        print(f"dmg: {self.dmg}")
+        print(f"hp: {self.hp}")"""

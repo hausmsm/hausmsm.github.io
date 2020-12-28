@@ -373,3 +373,10 @@ class Necklace:
                 self.sf = self.neck1_sf + self.neck2_sf
             else:
                 st.write("Error: Please Select 2 Necklaces Only")
+
+            """print("\n")
+            print(f"hp: {self.hp}")
+            print(f"mp: {self.mp}")
+            print(f"cratk: {self.cratk}")
+            print(f"cd: {self.cd}")
+            print(f"batk: {self.batk}")"""

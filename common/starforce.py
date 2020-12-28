@@ -17,7 +17,7 @@ class Starforce:
         self.emblem_atkp = 0
 
         # SF Stats
-        self.sf = 0
+        self.sf = sf_amount
 
         # Equipment Type, Stat & Rank
         self.type = "None"

@@ -20,79 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="1.0.0">
-      <change afterPath="$PROJECT_DIR$/equip/_equipment_attributes_list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equip/_flame_stats_template.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15-Dec-20_22_34_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15-Dec-20_22_34__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-Dec-20_22_27_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-Dec-20_22_27__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2020_10_03_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2020_10_03_AM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18-Dec-20_03_25_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18-Dec-20_03_25__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hausmsm.github.io.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Dec-20_01_09__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/_character_attributes_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/_character_attributes_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/aran.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/aran.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bam.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bsp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bucc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bucc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/bw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/bw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/character_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/character_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/csr.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/csr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/da.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/da.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/dk.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/dw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/evan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/evan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/fpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/fpm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ilm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/ilm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/lumi.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/lumi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/mech.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mech.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/merc.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/merc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/mm.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/nl.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/nw.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/nw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/pala.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/pala.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/phan.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/phan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/shad.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/shade.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/shade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/tb.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/tb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/tmp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/wa.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/wh.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/wh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/buffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/buffs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/emblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/emblemcalculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/flamestats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/flamestats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/hyperstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/hyperstats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/link.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mapletree.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mapletree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/nonemblemcalculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/nonemblemcalculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pet.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/pet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/petstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/petstats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/soul.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/soul.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/starforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/starforce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/badge.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/earring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/earring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/eye.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/eye.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/face.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/glove.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/glove.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/hat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/jewel.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/jewel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/medal.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/medal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/necklace.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/necklace.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/ring.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/ring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/secweapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/secweapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/seteffect.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/seteffect.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/shoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/shoulder.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/shoulder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/soul.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/soul.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/tbo.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/tbo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/title.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/title.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equip/tmp.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/equip/weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/weapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flame/flame.py" beforeDir="false" afterPath="$PROJECT_DIR$/flame/flame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -127,32 +74,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Calvin\Documents\GitHub\hausmsm.github.io\equip" />
       <recent name="C:\Users\Calvin\Documents\GitHub\hausmsm.github.io\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.character_selection">
-    <configuration name="character_selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="hausmsm.github.io" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/character_selection.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="mapletree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hausmsm.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,12 +101,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.character_selection" />
         <item itemvalue="Python.mapletree" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -313,35 +237,5 @@
     <MESSAGE value="0.3" />
     <MESSAGE value="1.0.0" />
     <option name="LAST_COMMIT_MESSAGE" value="1.0.0" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608289745712">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1608289745712" />
-    <state width="1345" height="111" key="GridCell.Tab.0.bottom" timestamp="1609075144077">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1345" height="111" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1609075144077" />
-    <state width="1345" height="111" key="GridCell.Tab.0.center" timestamp="1609075144077">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1345" height="111" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1609075144077" />
-    <state width="1345" height="111" key="GridCell.Tab.0.left" timestamp="1609075144077">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1345" height="111" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1609075144077" />
-    <state width="1345" height="111" key="GridCell.Tab.0.right" timestamp="1609075144077">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1345" height="111" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1609075144077" />
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608876334498">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1608876334498" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1609094520004">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1609094520004" />
   </component>
 </project>

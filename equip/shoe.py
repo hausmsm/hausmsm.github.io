@@ -193,7 +193,7 @@ class Shoe:
                 self.pdef += ((shoes_refine_level - 1) * 50 + 250)
                 self.mdef += ((shoes_refine_level - 1) * 50 + 250)
                 # Stat
-                if shoes_stat == "Crit ATK":
+                if shoes_stat == "Crit Atk":
                     self.cratk += ((shoes_level - 30) * 5.4 + 108)
                     self.stat_amount += self.cratk
                 elif shoes_stat == "EVD":
@@ -222,7 +222,7 @@ class Shoe:
                 self.pdef += ((shoes_refine_level - 1) * 50 + 250)
                 self.mdef += ((shoes_refine_level - 1) * 50 + 250)
                 # Stat
-                if shoes_stat == "Crit ATK":
+                if shoes_stat == "Crit Atk":
                     self.cratk += ((shoes_level - 1) * (90/49) + 110)
                     self.stat_amount += self.cratk
                 elif shoes_stat == "EVD":
@@ -247,7 +247,7 @@ class Shoe:
                 self.pdef += sfdefdict[shoes_sf_level]
                 self.mdef += sfdefdict[shoes_sf_level]
                 # Stat
-                if shoes_stat == "Crit ATK":
+                if shoes_stat == "Crit Atk":
                     self.cratk += ((shoes_level - 1) * (90/49) + 110)
                     self.stat_amount += self.cratk
                 elif shoes_stat == "EVD":
@@ -280,3 +280,10 @@ class Shoe:
             self.cdlinecount += 2
             # Potential
             self.atk += 450
+
+            """print("\n")
+            print(f"evd: {self.evd}")
+            print(f"cratk: {self.cratk}")
+            print(f"hprec: {self.hprec}")
+            print(f"exp: {self.exp}")
+            print(f"hp: {self.hp}")"""

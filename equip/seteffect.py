@@ -342,3 +342,13 @@ class Seteffect:
                 self.batk += 10
                 if self.necrosetcount >= 7:
                     self.atk += 1500
+        """print("\n")
+        print(f"boss set: {self.bosssetcount}")
+        print(f"memp set: {self.mempsetcount}")
+        print(f"aemp set: {self.aempsetcount}")
+        print(f"necro set: {self.necrosetcount}")
+        print(f"fafnir set: {self.fafsetcount}")
+        print(f"commander set: {self.commandersetcount}")
+        print(f"atk: {self.atk}")
+        print(f"batk: {self.batk}")
+        print(f"hp: {self.hp}")"""

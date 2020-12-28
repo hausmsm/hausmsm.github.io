@@ -1038,3 +1038,9 @@ class Ring:
                 self.sf = self.ring1_sf + self.ring2_sf + self.ring3_sf + self.ring4_sf
             else:
                 st.write("Error: Please Select 4 Rings Only")
+            """print("\n")
+            print(f"hp: {self.hp}")
+            print(f"mp: {self.mp}")
+            print(f"cratk: {self.cratk}")
+            print(f"cd: {self.cd}")
+            print(f"dmg: {self.dmg}")"""
