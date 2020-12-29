@@ -108,9 +108,9 @@ class Jewel:
 
         with st.beta_expander("Jewels"):
             _, jewel1, _, jewel2, _, jewel3, _ = st.beta_columns([0.02, 0.305, 0.02, 0.305, 0.02, 0.305, 0.02])
-            rank = jewel1.selectbox("Choose Jewel Rank", ["S", "SS", "SSS"])
+            rank = jewel1.selectbox("Choose Jewel Rank", ["SSS", "SS", "S"])
             self.rank = rank
-            colour = jewel2.selectbox("Choose Jewel Colour", ["Red", "Blue", "Green", "Yellow", "Purple"])
+            colour = jewel2.selectbox("Choose Jewel Colour", ["Purple", "Red", "Blue", "Green", "Yellow"])
             if colour == "Red":
                 stat = jewel1.selectbox("Choose Jewel Type", ["Phy ATK (Red)", "Mag ATK (Red)", "JMP (RED)", "Crit DMG Res (Red)"])
             elif colour == "Blue":

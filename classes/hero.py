@@ -162,8 +162,8 @@ class Hero:
         self.batk += 4
         self.platk += 4
         # Advanced Final Attack
-        self.schance += 18
-        self.sskilldmg += 34
+        self.schance += 20
+        self.sskilldmg += 33.9
 
     # Hyper Buff
         # Cry Valhalla

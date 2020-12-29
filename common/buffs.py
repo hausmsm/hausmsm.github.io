@@ -149,7 +149,7 @@ class Buffs:
         buffs_list = ["Hyper Body (Phy DMG Reduction, Mag DMG Reduction)", "Iron Will (Boss DEF%, Player DEF%)",
                       "Unmanaged Anger (Phy ATK%)", "Combat Orders (Phy DMG%, Mag DMG%)",
                       "Parashock Guard (Phy DMG Reduction, Mag DMG Reduction)", "Maha's Blessing (HP, MP)",
-                      "Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)", "Holy Shell (HP%, MP%, HP, MP)",
+                      "Advanced Blessing (Phy ATK%, Mag ATK%, Boss ATK%, ACC%, EVD%)", "Holy Shell (HP%, MP%, HP, MP)",
                       "Holy Symbol (EXP, KBK Res)", "Meditation (Mag DMG%)",
                       "Absolute Zero Aura (KBK RES, Abnormal Status RES)",
                       "Burning Conduit (Phy ATK%, Mag ATK%, Phy DMG%, Mag DMG%)", "Return Dive (Phy DMG%, Mag DMG%)",
@@ -203,7 +203,7 @@ class Buffs:
                 self.mpinc += 10
         # Mages
             # Bishop
-            if "Advanced Blessing (Phy ATK%, Mag ATK%, ACC%, EVD%)" in buff_list:
+            if "Advanced Blessing (Phy ATK%, Mag ATK%, Boss ATK%, ACC%, EVD%)" in buff_list:
                 self.atkp += 35
                 self.batk += 15
                 self.accp += 10

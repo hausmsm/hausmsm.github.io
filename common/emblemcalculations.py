@@ -270,7 +270,7 @@ class Emblemcalculations:
 
         with st.beta_expander("Emblem Calculations"):
             _, cres1, _ = st.beta_columns([0.02, 0.96, 0.02])
-            cres = cres1.number_input("Input Boss Crit Res Here, (For No Crit Res Put 0")
+            cres = cres1.number_input("Input Boss Crit Res Here, (For No Crit Res Put 0)")
             maxdmginc = cres1.number_input("Input Extra Max Dmg Here")
             self.maxdmg += maxdmginc
             if self.cr >= 100: # If cr above 100, revert back to 100 and minus crit res
@@ -279,6 +279,7 @@ class Emblemcalculations:
                 self.croverflow = 0
             else:
                 self.croverflow = self.cr - cres
+
             def pobjective(x):
                 cd = x[0] * self.cd_normalemb + x[3]*self.cd_uniqueemb + x[6]*self.cd_legendaryemb + x[9]*self.cd_partialemb
                 atkp = x[1] * self.atkp_normalemb + x[4]*self.atkp_uniqueemb + x[7]*self.atkp_legendaryemb + x[10]*self.atkp_partialemb
@@ -475,10 +476,11 @@ class Emblemcalculations:
             self.batk += self.embbatk
             self.cd += self.embcd
 
-            outputdf = pd.DataFrame(columns = ["Skill Name", "Non-Boss Non-Crit", "Non-Boss Crit", "Non-Boss Average", "Boss Non-Crit", "Boss Crit", "Boss Average"])
+            outputdf = pd.DataFrame(columns=["Skill Name", "Non-Boss Non-Crit", "Non-Boss Crit", "Non-Boss Average", "Boss Non-Crit", "Boss Crit", "Boss Average"])
             outputdf.loc[len(outputdf)] = primaryoutput
             outputdf.loc[len(outputdf)] = secondaryoutput
             outputdf.loc[len(outputdf)] = tertiaryoutput
+            cres1.write(f"Max DMG: {self.maxdmg}")
 
             cres1.table(outputdf)
 
