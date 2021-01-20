@@ -163,118 +163,33 @@ class Cape:
             4: 7,
             5: 10
         }
-
-        with st.beta_expander("Cape"):
-            _, cape1, _, cape2, _, cape3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-            cape_type = cape1.selectbox("Choose Cape Type", ["Mythic Empress", "Ancient Empress", "Necro"])
-            cape_stat = cape1.radio("Choose Cape Stat", ["Crit Rate", "EVD", "EXP", "Meso"])
-            self.type = cape_type
-            self.stat = cape_stat
-            if cape_type == "Mythic Empress":
-                cape_level = cape2.slider('Cape Level', min_value=30, max_value=40)
-            else:
-                cape_level = cape2.slider('Cape Level', min_value=30, max_value=50)
-            self.level = cape_level
-            cape_sf_level = cape2.slider("Cape SF Level", min_value=0, max_value=30)
-            self.sf = cape_sf_level
-            if cape_type == "Mythic Empress":
-                cape_refine_level = cape2.slider("Cape Refinement Level", min_value=1, max_value=10)
-                # Base
-                self.pdef += 314
-                self.mdef += 314
-                # Level
-                self.pdef += ((cape_level - 30) * 15.7)
-                self.mdef += ((cape_level - 30) * 15.7)
-                self.mp += ((cape_level - 30) * 154.7 + 3095)
-                # SF
-                self.pdef += sfdefdict[cape_sf_level]
-                self.mdef += sfdefdict[cape_sf_level]
-                # Refinement
-                self.pdef += ((cape_refine_level - 1) * 16 + 80)
-                self.mdef += ((cape_refine_level - 1) * 16 + 80)
-                # Stat
-                if cape_stat == "Crit Rate":
-                    self.cr += ((cape_level - 30) * 0.1 + 1)
-                    self.stat_amount += self.cr
-                elif cape_stat == "EVD":
-                    self.evd += ((cape_level - 30) * 28.1 + 563)
-                    self.stat_amount += self.evd
-                elif cape_stat == "EXP":
-                    self.exp += ((cape_level - 30) * 0.05 + 0.9)
-                    self.stat_amount += self.exp
-                else:
-                    self.meso += ((cape_level - 30) * 0.16 + 3.1)
-                    self.stat_amount += self.meso
-                self.mempsetcount += 1
-            elif cape_type == "Ancient Empress":
-                cape_refine_level = cape2.slider("Cape Refinement Level", min_value=1, max_value=10)
-                # Base
-                self.pdef += 1053
-                self.mdef += 1053
-                # Level
-                self.pdef += ((cape_level - 1) * (548/49))
-                self.mdef += ((cape_level - 1) * (548/49))
-                self.mp += ((cape_level - 1) * (2258/49) + 3763)
-                # SF
-                self.pdef += sfdefdict[cape_sf_level]
-                self.mdef += sfdefdict[cape_sf_level]
-                # Refinement
-                self.pdef += ((cape_refine_level - 1) * 16 + 80)
-                self.mdef += ((cape_refine_level - 1) * 16 + 80)
-                # Stat
-                if cape_stat == "Crit Rate":
-                    self.cr += ((cape_level - 1) * (2/49) + 1)
-                    self.stat_amount += self.cr
-                elif cape_stat == "EVD":
-                    self.evd += ((cape_level - 1) * (428/49) + 572)
-                    self.stat_amount += self.evd
-                elif cape_stat == "EXP":
-                    self.exp += ((cape_level - 1) * (1.7/49) + 0.9)
-                    self.stat_amount += self.exp
-                else:
-                    self.meso += ((cape_level - 1) * (2.8/49) + 3.2)
-                    self.stat_amount += self.meso
-                self.aempsetcount += 1
-            else:
-                # Base
-                self.pdef += 1478
-                self.mdef += 1478
-                # Level
-                self.pdef += ((cape_level - 1) * (667/49))
-                self.mdef += ((cape_level - 1) * (667/49))
-                self.mp += ((cape_level - 1) * (2439/49) + 4064)
-                # SF
-                self.pdef += sfdefdict[cape_sf_level]
-                self.mdef += sfdefdict[cape_sf_level]
-                # Stat
-                if cape_stat == "Crit Rate":
-                    self.cr += ((cape_level - 1) * (2 / 49) + 1)
-                    self.stat_amount += self.cr
-                elif cape_stat == "EVD":
-                    self.evd += ((cape_level - 1) * (428 / 49) + 572)
-                    self.stat_amount += self.evd
-                elif cape_stat == "EXP":
-                    self.exp += ((cape_level - 1) * (1.7 / 49) + 0.9)
-                    self.stat_amount += self.exp
-                else:
-                    self.meso += ((cape_level - 1) * (2.8 / 49) + 3.2)
-                    self.stat_amount += self.meso
-                self.necrosetcount += 1
-            cape_emblem = cape3.radio("Choose Cape Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-            cape_emblem_level = cape3.slider("Cape Emblem Level", min_value=1, max_value=5)
-            self.normal_emb += 1
-            self.emblem = cape_emblem
-            self.emblem_level = cape_emblem_level
-            # Emblem
-            if cape_emblem == "Crit DMG":
-                self.emblem_amount += emblem_cd_stats[cape_emblem_level]
-                self.emblem_cd += self.emblem_amount
-            elif cape_emblem == "Boss ATK":
-                self.emblem_amount += emblem_ba_stats[cape_emblem_level]
-                self.emblem_batk += self.emblem_amount
-            else:
-                self.emblem_amount += emblem_atk_stats[cape_emblem_level]
-                self.emblem_atkp += self.emblem_amount
+        # Necro
+        cape_level = 50
+        cape_sf_level = 30
+        cape_stat = "Crit Rate"
+        # Base
+        self.pdef += 1478
+        self.mdef += 1478
+        # Level
+        self.pdef += ((cape_level - 1) * (667/49))
+        self.mdef += ((cape_level - 1) * (667/49))
+        self.mp += ((cape_level - 1) * (2439/49) + 4064)
+        # SF
+        self.pdef += sfdefdict[cape_sf_level]
+        self.mdef += sfdefdict[cape_sf_level]
+        # Stat
+        if cape_stat == "Crit Rate":
+            self.cr += ((cape_level - 1) * (2 / 49) + 1)
+            self.stat_amount += self.cr
+        cape_emblem = "Crit DMG"
+        cape_emblem_level = 5
+        self.normal_emb += 1
+        self.emblem = cape_emblem
+        self.emblem_level = cape_emblem_level
+        # Emblem
+        if cape_emblem == "Crit DMG":
+            self.emblem_amount += emblem_cd_stats[cape_emblem_level]
+            self.emblem_cd += self.emblem_amount
         # Flame
         self.crlinecount += 2
         # Potential

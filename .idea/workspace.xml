@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="86463ee9-8a9e-4290-add8-b34f73fdca97" name="Default Changelist" comment="1.0.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/badge.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/badge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/belt.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/belt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equip/cape.py" beforeDir="false" afterPath="$PROJECT_DIR$/equip/cape.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

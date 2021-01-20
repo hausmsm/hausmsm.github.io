@@ -3,7 +3,6 @@ import streamlit as st
 
 class Badge:
     def __init__(self):
-        #Test
         # Emblem Visualization
         self.emblem = "None"
         self.emblem_amount = 0
@@ -107,12 +106,8 @@ class Badge:
         self.crlinecount = 0
         self.cdlinecount = 0
 
-        with st.beta_expander("Badge"):
-            badge_list = st.selectbox("Choose an Badge", ["Crystal Ventus Badge"])
-            self.type = badge_list
-            _, badge1, _ = st.beta_columns([0.02, 0.96, 0.02])
-            if "Crystal Ventus Badge" in [badge_list]:
-                # Base
-                self.atk += 55
-                self.cd += 5
-                self.bosssetcount += 1
+        # Crystal Ventus Badge
+        # Base
+        self.atk += 55
+        self.cd += 5
+        self.bosssetcount += 1

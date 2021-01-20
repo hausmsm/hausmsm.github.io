@@ -163,108 +163,43 @@ class Belt:
             4: 7,
             5: 10
         }
-
-        with st.beta_expander("Belt"):
-            _, belt1, _, belt2, _, belt3, _ = st.beta_columns([0.02, 0.303, 0.02, 0.303, 0.02, 0.303, 0.02])
-            belt_type = belt1.selectbox("Choose Belt Type", ["Mythic", "Ancient", "Necro"])
-            belt_stat = belt1.radio("Choose Belt Stat", ["ACC", "Crit Rate", "Drop", "EXP"])
-            self.type = belt_type
-            self.stat = belt_stat
-            if belt_type == "Mythic":
-                belt_level = belt2.slider('Belt Level', min_value=30, max_value=40)
-            else:
-                belt_level = belt2.slider('Belt Level', min_value=30, max_value=50)
-            self.level = belt_level
-            belt_sf_level = belt2.slider("Belt SF Level", min_value=0, max_value=30)
-            self.sf = belt_sf_level
-            if belt_type == "Mythic":
-                # Base
-                self.pdef += 945
-                self.mdef += 945
-                # Level
-                self.pdef += ((belt_level - 30) * 47.2)
-                self.mdef += ((belt_level - 30) * 47.2)
-                self.mp += ((belt_level - 30) * ((2320-1547)/10) + 1547)
-                # SF
-                self.pdef += sfdefdict[belt_sf_level]
-                self.mdef += sfdefdict[belt_sf_level]
-                # Stat
-                if belt_stat == "ACC":
-                    self.acc += ((belt_level - 30) * 58.8 + 1175)
-                    self.stat_amount += self.acc
-                elif belt_stat == "Crit Rate":
-                    self.cr += ((belt_level - 30) * 0.1 + 1)
-                    self.stat_amount += self.cr
-                elif belt_stat == "Drop":
-                    self.dr += ((belt_level - 30) * 0.16 + 3.1)
-                    self.stat_amount += self.dr
-                else:
-                    self.exp += ((belt_level - 30) * 0.03 + 0.6)
-                    self.stat_amount += self.exp
-            elif belt_type == "Ancient":
-                # Base
-                self.pdef += 3169
-                self.mdef += 3169
-                # Level
-                self.pdef += ((belt_level - 1) * (1647/49))
-                self.mdef += ((belt_level - 1) * (1647/49))
-                self.mp += ((belt_level - 1) * (1129/49) + 1881)
-                # SF
-                self.pdef += sfdefdict[belt_sf_level]
-                self.mdef += sfdefdict[belt_sf_level]
-                # Stat
-                if belt_stat == "ACC":
-                    self.acc += ((belt_level - 1) * (1004/49) + 1196)
-                    self.stat_amount += self.acc
-                elif belt_stat == "Crit Rate":
-                    self.cr += ((belt_level - 1) * (2/49) + 1)
-                    self.stat_amount += self.cr
-                elif belt_stat == "Drop":
-                    self.dr += ((belt_level - 1) * (2.8/49) + 3.2)
-                    self.stat_amount += self.dr
-                else:
-                    self.exp += ((belt_level - 1) * (1.3/49) + 0.6)
-                    self.stat_amount += self.exp
-            else:
-                # Base
-                self.pdef += 4449
-                self.mdef += 4449
-                # Level
-                self.pdef += ((belt_level - 1) * (2005/49))
-                self.mdef += ((belt_level - 1) * (2005/49))
-                self.mp += ((belt_level - 1) * (1219/49) + 2032)
-                # SF
-                self.pdef += sfdefdict[belt_sf_level]
-                self.mdef += sfdefdict[belt_sf_level]
-                # Stat
-                if belt_stat == "ACC":
-                    self.acc += ((belt_level - 1) * (1004 / 49) + 1196)
-                    self.stat_amount += self.acc
-                elif belt_stat == "Crit Rate":
-                    self.cr += ((belt_level - 1) * (2 / 49) + 1)
-                    self.stat_amount += self.cr
-                elif belt_stat == "Drop":
-                    self.dr += ((belt_level - 1) * (2.8 / 49) + 3.2)
-                    self.stat_amount += self.dr
-                else:
-                    self.exp += ((belt_level - 1) * (1.3 / 49) + 0.6)
-                    self.stat_amount += self.exp
-                self.necrosetcount += 1
-            belt_emblem = belt3.radio("Choose Belt Emblem Stat", ["Crit DMG", "Boss ATK", "Phy/Mag ATK"])
-            belt_emblem_level = belt3.slider("Belt Emblem Level", min_value=1, max_value=5)
-            self.normal_emb += 1
-            self.emblem = belt_emblem
-            self.emblem_level = belt_emblem_level
-            # Emblem
-            if belt_emblem == "Crit DMG":
-                self.emblem_amount += emblem_cd_stats[belt_emblem_level]
-                self.emblem_cd += self.emblem_amount
-            elif belt_emblem == "Boss ATK":
-                self.emblem_amount += emblem_ba_stats[belt_emblem_level]
-                self.emblem_batk += self.emblem_amount
-            else:
-                self.emblem_amount += emblem_atk_stats[belt_emblem_level]
-                self.emblem_atkp += self.emblem_amount
+        # Necro
+        belt_level = 50
+        belt_sf_level = 30
+        belt_stat = "Crit Rate"
+        # Base
+        self.pdef += 4449
+        self.mdef += 4449
+        # Level
+        self.pdef += ((belt_level - 1) * (2005/49))
+        self.mdef += ((belt_level - 1) * (2005/49))
+        self.mp += ((belt_level - 1) * (1219/49) + 2032)
+        # SF
+        self.pdef += sfdefdict[belt_sf_level]
+        self.mdef += sfdefdict[belt_sf_level]
+        # Stat
+        if belt_stat == "ACC":
+            self.acc += ((belt_level - 1) * (1004 / 49) + 1196)
+            self.stat_amount += self.acc
+        elif belt_stat == "Crit Rate":
+            self.cr += ((belt_level - 1) * (2 / 49) + 1)
+            self.stat_amount += self.cr
+        elif belt_stat == "Drop":
+            self.dr += ((belt_level - 1) * (2.8 / 49) + 3.2)
+            self.stat_amount += self.dr
+        else:
+            self.exp += ((belt_level - 1) * (1.3 / 49) + 0.6)
+            self.stat_amount += self.exp
+            self.necrosetcount += 1
+        belt_emblem = "Crit DMG"
+        belt_emblem_level = 5
+        self.normal_emb += 1
+        self.emblem = belt_emblem
+        self.emblem_level = belt_emblem_level
+        # Emblem
+        if belt_emblem == "Crit DMG":
+            self.emblem_amount += emblem_cd_stats[belt_emblem_level]
+            self.emblem_cd += self.emblem_amount
         # Flame
         self.crlinecount += 2
         # Potential
