@@ -3,6 +3,7 @@ import streamlit as st
 
 class Badge:
     def __init__(self):
+        #Test
         # Emblem Visualization
         self.emblem = "None"
         self.emblem_amount = 0
